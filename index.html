@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método MAIP | Julián Ignacio Lell - Nutrición Deportiva</title>
+    <meta name="description" content="Método MAIP: ciclo de 12 semanas de nutrición deportiva, antropometría y performance con Julián Ignacio Lell, Lic. en Nutrición. Medir, analizar, interpretar y planificar.">
+    <meta name="theme-color" content="#0b1d30">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:title" content="Método MAIP | Nutrición Deportiva con Julián Lell">
+    <meta property="og:description" content="Un sistema de 12 semanas que integra nutrición deportiva, antropometría y performance para transformar información en una estrategia adaptada a vos.">
+    <meta property="og:image" content="img/logo-maip.jpg">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" type="image/jpeg" href="img/logo-maip.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0056b3', // A professional blue to match the medical/sports vibe
+                        primaryDark: '#004494',
+                        secondary: '#1A1A1A', // Dark for text/contrast
+                        accent: '#FFC107', // Amber for highlights
+                        lightBg: '#F8F9FA'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #0056b3, #4dabf7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .step-line::before {
+            content: '';
+            position: absolute;
+            top: 50px;
+            bottom: -50px;
+            left: 24px;
+            width: 2px;
+            background: #e2e8f0;
+            z-index: 0;
+        }
+        .step-item:last-child .step-line::before {
+            display: none;
+        }
+
+        /* Imágenes originales incluidas dentro de este archivo HTML. */
+        .maip-nav-logo { display: block; width: 56px; height: 56px; object-fit: contain; border-radius: 8px; }
+        .maip-hero-logo { display: block; width: min(100%, 380px); height: auto; aspect-ratio: 1; object-fit: contain; border-radius: 24px; box-shadow: 0 24px 60px rgba(0,0,0,.35); }
+        .maip-footer-logo { display: block; width: 72px; height: 72px; object-fit: contain; border-radius: 10px; }
+        .maip-professional-photo { display: block; aspect-ratio: 4 / 5; height: auto; object-fit: cover; object-position: center 65%; }
+        .maip-report-modal img { -webkit-user-drag: none; user-select: none; -webkit-touch-callout: none; }
+        .maip-hero-badge { max-width: 380px; }
+        @media (max-width: 767px) { .maip-hero-logo { width: min(80vw, 300px); } .maip-hero-badge { max-width: min(88vw, 340px); margin-bottom: 80px; } }
+        .maip-consultation { padding: 96px 24px; background: #f2f6fb; color: #1a1a1a; scroll-margin-top: 80px; }
+        .maip-consultation * { box-sizing: border-box; }
+        .consulta-container { max-width: 1120px; margin: 0 auto; }
+        .consulta-heading { max-width: 700px; margin: 0 auto 44px; text-align: center; }
+        .consulta-eyebrow { display: block; margin-bottom: 12px; font-size: 11px; font-weight: 800; letter-spacing: .16em; color: #0056b3; }
+        .consulta-heading h2 { margin: 0 0 18px; font-size: clamp(32px, 3.5vw, 46px); font-weight: 900; line-height: 1.12; letter-spacing: -.04em; }
+        .consulta-heading p { margin: 0; font-size: 17px; line-height: 1.7; color: #526173; }
+        .consulta-card { display: grid; grid-template-columns: .82fr 1.18fr; border: 1px solid #dde5ef; border-radius: 24px; overflow: hidden; background: #fff; box-shadow: 0 16px 48px #1636590b; }
+        .consulta-intro { padding: 40px 34px; background: linear-gradient(145deg,#142237,#0b3562); color: #fff; display: flex; flex-direction: column; }
+        .consulta-tag { font-size: 9px; font-weight: 700; letter-spacing: .12em; line-height: 1.8; color: #b2d4fc; }
+        .consulta-intro h3 { margin: 30px 0 18px; font-size: 30px; font-weight: 800; line-height: 1.2; letter-spacing: -.035em; }
+        .consulta-intro-copy { color: #cfdae9; font-size: 14px; line-height: 1.75; margin: 0 0 34px; }
+        .consulta-steps { list-style: none; margin: 0; padding: 0; }
+        .consulta-steps li { display: flex; gap: 15px; padding-bottom: 26px; }
+        .consulta-step-number { display: flex; flex: 0 0 32px; height: 32px; justify-content: center; align-items: center; border: 1px solid #91bcec66; border-radius: 50%; font-size: 13px; font-weight: 700; color: #d2e6ff; background: #ffffff08; }
+        .consulta-steps h4 { margin: 3px 0 6px; font-size: 15px; font-weight: 700; }
+        .consulta-steps p { margin: 0; font-size: 13px; line-height: 1.7; color: #cad6e7; }
+        .consulta-direct { margin-top: auto; padding-top: 26px; border-top: 1px solid #ffffff24; }
+        .consulta-direct > span { display: block; font-size: 12px; color: #cad6e7; margin-bottom: 12px; }
+        .consulta-direct a { display: block; font-size: 13px; color: #fff; text-decoration: none; margin-top: 10px; overflow-wrap: anywhere; }
+        .consulta-direct a:hover { text-decoration: underline; }
+        .consulta-form-panel { padding: 40px; min-width: 0; }
+        .consulta-form-heading h3 { margin: 0 0 10px; font-size: 28px; font-weight: 800; letter-spacing: -.03em; }
+        .consulta-form-heading p { font-size: 14px; line-height: 1.7; color: #5e6b7b; margin: 0 0 26px; }
+        #maip-consulta-form { display: flex; flex-direction: column; gap: 20px; }
+        .consulta-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .consulta-field { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+        .consulta-field label, .consulta-contact-fields legend { font-size: 12px; font-weight: 700; color: #29384c; }
+        .consulta-optional { color: #687689; font-weight: 400; }
+        .consulta-field input, .consulta-field select, .consulta-field textarea { width: 100%; border: 1px solid #d9e2ed; border-radius: 10px; background: #f8fafc; color: #203047; font: inherit; font-size: 13px; line-height: 1.5; padding: 12px; min-height: 46px; transition: border-color .15s, box-shadow .15s; }
+        .consulta-field select { text-overflow: ellipsis; }
+        .consulta-field textarea { resize: vertical; }
+        .consulta-field input::placeholder, .consulta-field textarea::placeholder { color: #758294; opacity: 1; }
+        .consulta-field input:focus, .consulta-field select:focus, .consulta-field textarea:focus { outline: none; border-color: #0056b3; box-shadow: 0 0 0 3px #0056b31c; }
+        .consulta-field [aria-invalid="true"] { border-color: #b42318; }
+        .consulta-contact-fields { border: 0; padding: 0; margin: 0; min-width: 0; }
+        .consulta-contact-fields legend { padding: 0; margin-bottom: 4px; }
+        .consulta-field-hint { font-size: 11px; color: #627086; line-height: 1.55; margin: 0; }
+        #consulta-contact-hint { margin-bottom: 12px; }
+        .consulta-error { font-size: 12px; color: #b42318; line-height: 1.5; margin: 8px 0 0; }
+        .consulta-primary, .consulta-whatsapp-action { display: flex; justify-content: space-between; align-items: center; gap: 12px; border: 0; border-radius: 10px; background: #0056b3; color: #fff; font: inherit; font-size: 14px; font-weight: 700; padding: 15px 18px; cursor: pointer; text-decoration: none; }
+        .consulta-primary:hover { background: #004494; }
+        .consulta-primary:focus-visible, .consulta-message-actions a:focus-visible, .consulta-message-actions button:focus-visible, .consulta-direct a:focus-visible { outline: 3px solid #4dabf7; outline-offset: 4px; }
+        .consulta-note { margin: -6px 0 0; font-size: 11px; line-height: 1.7; color: #627086; }
+        .consulta-message-panel { margin-top: 28px; padding: 22px; border: 1px solid #d4e5fa; border-radius: 14px; background: #f4f8fd; }
+        .maip-consultation [hidden] { display: none !important; }
+        .consulta-message-panel h4 { font-size: 20px; font-weight: 800; margin: 0 0 8px; }
+        .consulta-message-panel > p { font-size: 12px; line-height: 1.7; color: #526173; }
+        #consulta-message-text { white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; font-size: 12px; line-height: 1.8; color: #29384c; background: #fff; padding: 16px; border: 1px solid #e1e8f1; border-radius: 8px; margin: 18px 0; }
+        .consulta-message-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+        .consulta-whatsapp-action { background: #146743; font-size: 12px; padding: 12px 14px; }
+        .consulta-whatsapp-action:hover { background: #0f5235; }
+        #consulta-copy { border: 1px solid #cbd8e8; border-radius: 8px; padding: 10px 12px; background: #fff; font: inherit; font-weight: 600; font-size: 12px; cursor: pointer; }
+        #consulta-copy-status { min-height: 18px; margin: 10px 0 0; }
+        .consulta-bottom { margin: 24px auto 0; text-align: center; font-size: 12px; line-height: 1.8; color: #627086; }
+        .consulta-bottom strong { font-weight: 600; }
+        @media (max-width: 820px) { .consulta-card { grid-template-columns: 1fr; } .consulta-intro { padding: 30px; } .consulta-intro h3 { margin-top: 20px; } .consulta-form-panel { padding: 32px; } }
+        @media (max-width: 480px) { .maip-consultation { padding: 64px 16px; } .consulta-heading { margin-bottom: 28px; } .consulta-heading p { font-size: 15px; } .consulta-intro, .consulta-form-panel { padding: 26px 22px; } .consulta-intro h3 { font-size: 27px; } .consulta-row { grid-template-columns: 1fr; } .consulta-card { border-radius: 18px; } .consulta-message-panel { padding: 16px; } .consulta-whatsapp-action { width: 100%; } }
+
+        .hero-pattern { background: #0b1d30; isolation: isolate; }
+        .hero-athletes { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+        .hero-athlete { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 1.4s ease; }
+        .hero-athlete.is-active { opacity: 1; }
+        .hero-athletes::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg,rgba(5,17,31,.88) 0%,rgba(5,17,31,.67) 52%,rgba(5,17,31,.25) 100%),linear-gradient(0deg,rgba(5,17,31,.6),transparent 40%); }
+        #inicio { padding-bottom: 92px; overflow: hidden; }
+        #inicio h1 .text-primary { color: #62b7ff; border-color: #62b7ff; }
+        .hero-sport-controls { position: absolute; bottom: 24px; left: max(24px,calc((100vw - 1216px)/2)); z-index: 20; display: flex; align-items: center; flex-wrap: wrap; gap: 12px; color: white; }
+        .hero-sport-label { font-size: 12px; font-weight: 700; letter-spacing: .1em; min-width: 84px; text-transform: uppercase; }
+        .hero-sport-dots { display: flex; gap: 3px; }
+        .hero-sport-dot { width: 28px; height: 32px; display: grid; place-items: center; border: 0; background: transparent; cursor: pointer; }
+        .hero-sport-dot::after { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #ffffff66; }
+        .hero-sport-dot[aria-pressed="true"]::after { background: #62b7ff; box-shadow: 0 0 0 3px #62b7ff24; }
+        .hero-pause { border: 1px solid #ffffff50; border-radius: 20px; background: #07192b66; color: white; font: inherit; font-size: 11px; padding: 7px 12px; cursor: pointer; }
+        .hero-sport-dot:focus-visible, .hero-pause:focus-visible { outline: 2px solid #62b7ff; outline-offset: 2px; }
+        .maip-pillar-letter { color: #0056b3 !important; }
+        .dashboard-preview-button { display: block; width: 100%; text-align: left; padding: 0; background: #f3f7fc; border: 1px solid #dbe5ef; border-radius: 12px; overflow: hidden; cursor: pointer; }
+        .dashboard-preview-image { width: 100%; height: 200px; object-fit: cover; object-position: top; display: block; border-bottom: 1px solid #dbe5ef; }
+        .dashboard-preview-label { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 16px; font: inherit; font-size: 13px; font-weight: 700; color: #0056b3; }
+        .dashboard-preview-button:hover { border-color: #0056b3; box-shadow: 0 8px 24px #0056b314; }
+        .dashboard-preview-note { font-size: 11px; color: #627086; line-height: 1.6; margin: 12px 0 0; }
+        .maip-report-modal { position: fixed; margin: auto; padding: 0; width: min(1120px,calc(100vw - 32px)); height: min(92dvh,980px); max-width: none; max-height: none; border: 0; border-radius: 18px; color: #1a1a1a; background: #fff; overflow: hidden; box-shadow: 0 28px 100px #0007; }
+        .maip-report-modal:not([open]) { display: none; }
+        .maip-report-modal[open] { display: flex; flex-direction: column; }
+        .maip-report-modal::backdrop { background: rgba(4,14,26,.82); backdrop-filter: blur(5px); }
+        .dashboard-toolbar { flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; padding: 18px 22px; border-bottom: 1px solid #dbe4ef; }
+        .dashboard-toolbar h2 { margin: 0; font-size: 20px; font-weight: 800; }
+        .dashboard-toolbar p { margin: 4px 0 0; font-size: 11px; color: #627086; }
+        .dashboard-controls { display: flex; align-items: center; gap: 8px; }
+        .dashboard-controls button { display: grid; place-items: center; min-width: 36px; min-height: 36px; padding: 6px 10px; background: #f3f6fa; border: 1px solid #dbe4ef; border-radius: 8px; color: #243449; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
+        .dashboard-controls button:disabled { opacity: .4; cursor: default; }
+        .dashboard-controls output { min-width: 44px; font-size: 12px; text-align: center; font-weight: 600; }
+        .dashboard-controls #dashboard-close { background: #142237; color: #fff; border-color: #142237; margin-left: 6px; }
+        .dashboard-scroll { min-height: 0; flex: 1; overflow: auto; background: #e9eef5; padding: 20px; overscroll-behavior: contain; }
+        .dashboard-document { width: 100%; margin: 0 auto; }
+        .dashboard-page { margin: 0 0 20px; }
+        .dashboard-page figcaption { padding: 0 0 9px; font-size: 11px; font-weight: 600; color: #43556b; }
+        .dashboard-page img { display: block; width: 100%; height: auto; max-width: none; background: #fff; box-shadow: 0 3px 16px #14223712; }
+        .dashboard-transcript { padding: 16px; background: #fff; border-radius: 8px; font-size: 13px; line-height: 1.65; }
+        .dashboard-transcript summary { cursor: pointer; font-weight: 700; color: #0056b3; }
+        .dashboard-transcript p { margin: 10px 0; }
+        .dashboard-transcript table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+        .dashboard-transcript td { border: 1px solid #d9d9d9; padding: 8px; }
+        .dashboard-preview-button:focus-visible, .dashboard-controls button:focus-visible, .dashboard-transcript summary:focus-visible { outline: 3px solid #0056b3; outline-offset: 3px; }
+        @media (max-width: 767px) { .hero-athletes::after { background: linear-gradient(0deg,#07192bee,#07192b88 60%,#07192bb0); } .hero-sport-controls { left: 16px; right: 16px; justify-content: center; } #inicio > .animate-bounce { display: none; } .dashboard-toolbar { padding: 14px; } .dashboard-toolbar h2 { font-size: 18px; } .dashboard-scroll { padding: 12px; } .maip-report-modal { width: calc(100vw - 16px); height: 94dvh; border-radius: 12px; } }
+        @media (prefers-reduced-motion: reduce) { .hero-athlete { transition: none; } }
+
+
+        .adc-preview-wrapper { margin: 20px 0; }
+        .dashboard-controls .report-close { background: #142237; color: #fff; border-color: #142237; margin-left: 6px; }
+        .adc-transcript-text { white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; font-size: 12px; line-height: 1.7; margin: 16px 0 0; }
+
+        .maip-services-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+        .maip-services-grid > div { min-width: 0; }
+        .maip-training-optional { background: #1a1a1a; color: #fff; border: 1px solid #303030; }
+        .maip-training-icon { background: #ffffff0d; color: #6bb9ff; border: 1px solid #ffffff18; }
+        .maip-optional-label { display: inline-block; margin-bottom: 14px; padding: 5px 9px; border: 1px solid #6bb9ff45; border-radius: 6px; font-size: 10px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: #b8dcff; background: #0056b325; }
+        .maip-training-copy { font-size: 14px; line-height: 1.7; color: #d1d5db; margin-bottom: 16px; }
+        .maip-training-program { font-size: 12px; font-weight: 800; letter-spacing: .1em; color: #6bb9ff; margin: 24px 0 10px; }
+        .maip-training-footnote { font-size: 12px; line-height: 1.7; color: #abb4c1; padding-top: 16px; margin-top: 20px; border-top: 1px solid #ffffff18; }
+        @media (min-width: 768px) { .maip-services-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+        @media (min-width: 1200px) { .maip-services-grid { grid-template-columns: repeat(4,minmax(0,1fr)); } }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-lightBg antialiased selection:bg-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300 border-b border-gray-100" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <a href="#inicio" aria-label="Método MAIP — Inicio"><img src="img/logo-maip.jpg" alt="Logo Método MAIP by Julián Lell" width="56" height="56" class="maip-nav-logo"></a>
+                    
+                    <a href="#" class="text-xl font-black text-secondary tracking-tight flex flex-col leading-none hidden sm:flex">
+                        <span>MÉTODO</span>
+                        <span class="text-primary">MAIP</span>
+                    </a>
+                </div>
+                <div class="hidden lg:flex space-x-6 items-center">
+                    <a href="#que-es" class="text-sm text-gray-600 hover:text-primary font-semibold transition">El Método</a>
+                    <a href="#ciclo" class="text-sm text-gray-600 hover:text-primary font-semibold transition">12 Semanas</a>
+                    <a href="#herramientas" class="text-sm text-gray-600 hover:text-primary font-semibold transition">Herramientas</a>
+                    <a href="#modalidades" class="text-sm text-gray-600 hover:text-primary font-semibold transition">Modalidades</a>
+                    <a href="#equipo" class="text-sm text-gray-600 hover:text-primary font-semibold transition">¿Quiénes somos?</a>
+                    <a href="#contacto" class="bg-primary hover:bg-primaryDark text-white px-5 py-2.5 rounded-lg font-bold shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5 text-sm">
+                        Ingresar a MAIP
+                    </a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu" class="text-gray-600 hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#que-es" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg">El Método</a>
+                <a href="#ciclo" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg">Ciclo de 12 Semanas</a>
+                <a href="#herramientas" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg">Herramientas</a>
+                <a href="#modalidades" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg">Modalidades y Precios</a>
+                <a href="#equipo" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg">¿Quiénes somos?</a>
+                <a href="#contacto" class="block px-3 py-3 mt-4 text-center text-base font-bold bg-primary text-white rounded-lg hover:bg-primaryDark shadow-md">Formulario de Ingreso</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-pattern min-h-[90vh] flex items-center pt-20 relative">
+            <div class="hero-athletes" aria-hidden="true">
+                <!-- Foto: Fitsum Admasu · https://unsplash.com/photos/oGv9xIl7DkY · Unsplash License -->
+                <img src="img/hero-running.jpg" alt="" data-sport="Running" class="hero-athlete is-active" decoding="async" fetchpriority="high">
+                <!-- Foto: Alexandre Ricart · https://unsplash.com/photos/tbjIlLVmamQ · Unsplash License -->
+                <img src="img/hero-hyrox.jpg" alt="" data-sport="HYROX" class="hero-athlete" decoding="async">
+                <!-- Foto: Brian Matangelo · https://unsplash.com/photos/-BUPaAMSOdE · Unsplash License -->
+                <img src="img/hero-natacion.jpg" alt="" data-sport="Natación" class="hero-athlete" decoding="async">
+                <!-- Foto: Anastase Maragos · https://unsplash.com/photos/LcQtitblYXw · Unsplash License -->
+                <img src="img/hero-boxeo.jpg" alt="" data-sport="Boxeo" class="hero-athlete" decoding="async">
+                <!-- Foto: Matheus Protzen · https://unsplash.com/photos/ADJLyiCpEHE · Unsplash License -->
+                <img src="img/hero-futbol.jpg" alt="" data-sport="Fútbol" class="hero-athlete" decoding="async">
+                <!-- Foto: Max Leveridge · https://unsplash.com/photos/ApRROE5h7Kw · Unsplash License -->
+                <img src="img/hero-rugby.jpg" alt="" data-sport="Rugby" class="hero-athlete" decoding="async">
+            </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-12">
+            
+            <div class="md:w-3/5 md:pr-8 mb-12 md:mb-0 fade-in-up mt-10 md:mt-0">
+                <h1 class="text-4xl md:text-5xl lg:text-7xl font-black text-white leading-[1.1] mb-6 tracking-tight">
+                    No se puede planificar sin conocer el <span class="text-primary border-b-4 border-primary">punto de partida.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto md:mx-0 font-light leading-relaxed">
+                    Un sistema de 12 semanas que integra nutrición deportiva, antropometría y performance para transformar información en una estrategia adaptada a vos.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#contacto" class="bg-primary hover:bg-primaryDark text-white px-8 py-4 rounded-lg font-bold text-lg shadow-[0_4px_14px_0_rgba(0,86,179,0.39)] transition transform hover:-translate-y-1 text-center flex items-center justify-center gap-2">
+                        Quiero ingresar a MAIP <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#que-es" class="bg-transparent hover:bg-white/5 text-white border border-white/20 px-8 py-4 rounded-lg font-semibold text-lg transition text-center flex items-center justify-center">
+                        Conocer el proceso
+                    </a>
+                </div>
+            </div>
+            
+            <div class="md:w-2/5 flex flex-col items-center fade-in-up" style="transition-delay: 0.2s;">
+                <img src="img/logo-maip.jpg" alt="Método MAIP by Julián Lell" width="1254" height="1254" class="maip-hero-logo" decoding="async">
+                <span class="maip-hero-badge inline-block py-2 px-5 rounded-full bg-blue-900/40 text-blue-300 font-bold text-xs md:text-sm mt-6 border border-blue-500/30 uppercase tracking-widest leading-relaxed text-center backdrop-blur-sm">
+                    Nutrición Deportiva · Antropometría · Performance
+                </span>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce z-20">
+            <span class="text-white/40 text-[10px] tracking-widest uppercase mb-2 font-semibold">Descubrir MAIP</span>
+            <i class="fas fa-chevron-down text-white/40 text-sm"></i>
+        </div>
+
+        <div class="hero-sport-controls" aria-label="Fotos de disciplinas deportivas"><span id="hero-sport-label" class="hero-sport-label">Running</span><div class="hero-sport-dots"><button class="hero-sport-dot" type="button" aria-label="Ver foto de Running" aria-pressed="true"></button><button class="hero-sport-dot" type="button" aria-label="Ver foto de HYROX" aria-pressed="false"></button><button class="hero-sport-dot" type="button" aria-label="Ver foto de Natación" aria-pressed="false"></button><button class="hero-sport-dot" type="button" aria-label="Ver foto de Boxeo" aria-pressed="false"></button><button class="hero-sport-dot" type="button" aria-label="Ver foto de Fútbol" aria-pressed="false"></button><button class="hero-sport-dot" type="button" aria-label="Ver foto de Rugby" aria-pressed="false"></button></div><button id="hero-pause" class="hero-pause" type="button" aria-pressed="false">Pausar fotos</button></div>
+    </section>
+
+    <!-- Qué es MAIP / Los 4 Pilares -->
+    <section id="que-es" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20 fade-in-up">
+                <h2 class="text-primary font-bold tracking-widest uppercase text-sm mb-3">La Filosofía</h2>
+                <h3 class="text-3xl md:text-5xl font-black text-secondary mb-6 tracking-tight">MAIP transforma datos en decisiones.</h3>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    No se trata de recibir una dieta o una rutina aislada. Se trata de comprender tu punto de partida, establecer prioridades, desarrollar una estrategia y evaluar cómo respondés a ella.
+                </p>
+            </div>
+
+            <!-- M.A.I.P Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- M -->
+                <div class="bg-lightBg p-8 rounded-2xl border border-gray-100 hover:border-primary/30 transition-all duration-300 fade-in-up group hover:shadow-lg hover:-translate-y-1">
+                    <div class="text-6xl font-black text-primary maip-pillar-letter mb-2 transition-colors">M</div>
+                    <h4 class="text-2xl font-bold text-secondary mb-3 flex items-center gap-2">
+                        MEDIR
+                    </h4>
+                    <p class="text-sm font-semibold text-primary mb-4 uppercase tracking-wider">Conocer tu punto de partida</p>
+                    <p class="text-gray-600 text-sm">Medir no significa solamente obtener un peso. Significa construir una imagen completa del deportista: entrenamiento, hábitos, hidratación, descanso y composición corporal.</p>
+                </div>
+
+                <!-- A -->
+                <div class="bg-lightBg p-8 rounded-2xl border border-gray-100 hover:border-primary/30 transition-all duration-300 fade-in-up group hover:shadow-lg hover:-translate-y-1" style="transition-delay: 0.1s;">
+                    <div class="text-6xl font-black text-primary maip-pillar-letter mb-2 transition-colors">A</div>
+                    <h4 class="text-2xl font-bold text-secondary mb-3 flex items-center gap-2">
+                        ANALIZAR
+                    </h4>
+                    <p class="text-sm font-semibold text-primary mb-4 uppercase tracking-wider">Ordenar la información</p>
+                    <p class="text-gray-600 text-sm">Buscamos relaciones entre alimentación, entrenamiento y recuperación. Detectamos fortalezas, barreras, oportunidades y definimos qué debemos trabajar primero.</p>
+                </div>
+
+                <!-- I -->
+                <div class="bg-lightBg p-8 rounded-2xl border border-gray-100 hover:border-primary/30 transition-all duration-300 fade-in-up group hover:shadow-lg hover:-translate-y-1" style="transition-delay: 0.2s;">
+                    <div class="text-6xl font-black text-primary maip-pillar-letter mb-2 transition-colors">I</div>
+                    <h4 class="text-2xl font-bold text-secondary mb-3 flex items-center gap-2">
+                        INTERPRETAR
+                    </h4>
+                    <p class="text-sm font-semibold text-primary mb-4 uppercase tracking-wider">Entender tus datos</p>
+                    <p class="text-gray-600 text-sm">Los números no determinan una estrategia por sí solos. Interpretamos la info según tu deporte, carga, momento de temporada y contexto para responder: ¿Qué necesitás realmente?</p>
+                </div>
+
+                <!-- P -->
+                <div class="bg-lightBg p-8 rounded-2xl border border-gray-100 hover:border-primary/30 transition-all duration-300 fade-in-up group hover:shadow-lg hover:-translate-y-1" style="transition-delay: 0.3s;">
+                    <div class="text-6xl font-black text-primary maip-pillar-letter mb-2 transition-colors">P</div>
+                    <h4 class="text-2xl font-bold text-secondary mb-3 flex items-center gap-2">
+                        PLANIFICAR
+                    </h4>
+                    <p class="text-sm font-semibold text-primary mb-4 uppercase tracking-wider">Transformar en acción</p>
+                    <p class="text-gray-600 text-sm">Construimos la estrategia: distribución de macros, timing alrededor del entreno, hidratación y organización semanal adaptada a tus días fuertes, suaves y de competencia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- El Ciclo de 12 Semanas -->
+    <section id="ciclo" class="py-24 bg-secondary text-white relative overflow-hidden">
+        <!-- Decoraciones sutiles de fondo -->
+        <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row gap-16">
+                
+                <div class="lg:w-1/3 fade-in-up">
+                    <h2 class="text-primary font-bold tracking-widest uppercase text-sm mb-3">El Proceso</h2>
+                    <h3 class="text-3xl md:text-5xl font-black mb-6 tracking-tight">Un ciclo de 12 semanas.</h3>
+                    <p class="text-gray-400 mb-6 text-lg">
+                        Modificar hábitos, composición corporal y rendimiento requiere tiempo. No buscamos cambios improvisados ni soluciones inmediatas.
+                    </p>
+                    <p class="text-gray-400 mb-8">
+                        La verdadera metodología es: <strong class="text-white">MEDIR → ANALIZAR → INTERPRETAR → PLANIFICAR → APLICAR → <span class="text-primary">VOLVER A MEDIR</span></strong>.
+                    </p>
+                    
+                    <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+                        <h4 class="font-bold text-xl mb-4 text-white">¿Qué pasa después?</h4>
+                        <ul class="space-y-3 text-sm text-gray-400">
+                            <li class="flex items-start gap-3"><i class="fas fa-check text-primary mt-1"></i> <div><strong class="text-white block">Mantener:</strong> Objetivo alcanzado, buscamos consolidarlo.</div></li>
+                            <li class="flex items-start gap-3"><i class="fas fa-arrow-up text-primary mt-1"></i> <div><strong class="text-white block">Progresar:</strong> Continuamos sobre la misma meta.</div></li>
+                            <li class="flex items-start gap-3"><i class="fas fa-sync-alt text-primary mt-1"></i> <div><strong class="text-white block">Cambiar:</strong> Nuevo ciclo con un objetivo diferente (ej. pasar de grasa a músculo).</div></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lg:w-2/3 fade-in-up" style="transition-delay: 0.2s;">
+                    <div class="relative space-y-8">
+                        
+                        <!-- Baseline -->
+                        <div class="relative pl-10 md:pl-0 step-item">
+                            <div class="md:flex items-start gap-8">
+                                <div class="hidden md:block w-32 text-right pt-2 flex-shrink-0">
+                                    <span class="text-primary font-bold text-xl block">Semana 0</span>
+                                    <span class="text-gray-500 text-sm">BASELINE</span>
+                                </div>
+                                <div class="absolute left-0 md:relative md:left-auto w-12 h-12 bg-secondary border-4 border-primary rounded-full flex items-center justify-center z-10 flex-shrink-0 step-line md:before:left-[22px] md:before:-top-[20px] md:before:bottom-[-80px]">
+                                    <i class="fas fa-flag text-primary text-sm"></i>
+                                </div>
+                                <div class="md:hidden mb-2">
+                                    <span class="text-primary font-bold text-lg">Semana 0 - BASELINE</span>
+                                </div>
+                                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl flex-grow">
+                                    <h4 class="text-xl font-bold mb-2">Ciclo 1: Base (Sem 1 a 4)</h4>
+                                    <p class="text-gray-400 text-sm mb-4">Ingreso, primera evaluación y antropometría. El objetivo es construir una base sólida: organización de comidas, hidratación, distribución de proteína y adherencia.</p>
+                                    <div class="inline-block bg-primary/20 text-primary-200 text-xs px-3 py-1 rounded font-semibold">Se entrega la planificación inicial</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Checkpoint -->
+                        <div class="relative pl-10 md:pl-0 step-item">
+                            <div class="md:flex items-start gap-8">
+                                <div class="hidden md:block w-32 text-right pt-2 flex-shrink-0">
+                                    <span class="text-primary font-bold text-xl block">Semana 6</span>
+                                    <span class="text-gray-500 text-sm">CHECKPOINT</span>
+                                </div>
+                                <div class="absolute left-0 md:relative md:left-auto w-12 h-12 bg-secondary border-4 border-primary rounded-full flex items-center justify-center z-10 flex-shrink-0 step-line md:before:left-[22px] md:before:-top-[20px] md:before:bottom-[-80px]">
+                                    <i class="fas fa-search text-primary text-sm"></i>
+                                </div>
+                                <div class="md:hidden mb-2">
+                                    <span class="text-primary font-bold text-lg">Semana 6 - CHECKPOINT</span>
+                                </div>
+                                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl flex-grow">
+                                    <h4 class="text-xl font-bold mb-2">Ciclo 2: Progresión (Sem 5 a 8)</h4>
+                                    <p class="text-gray-400 text-sm mb-4">Avanzamos. Profundizamos en composición corporal, periodización, preparación de competencias. Comparamos la evolución con el punto inicial buscando tendencias, no solo números grandes.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Result -->
+                        <div class="relative pl-10 md:pl-0 step-item">
+                            <div class="md:flex items-start gap-8">
+                                <div class="hidden md:block w-32 text-right pt-2 flex-shrink-0">
+                                    <span class="text-primary font-bold text-xl block">Semana 12</span>
+                                    <span class="text-gray-500 text-sm">RESULT</span>
+                                </div>
+                                <div class="absolute left-0 md:relative md:left-auto w-12 h-12 bg-secondary border-4 border-primary rounded-full flex items-center justify-center z-10 flex-shrink-0 step-line">
+                                    <i class="fas fa-trophy text-primary text-sm"></i>
+                                </div>
+                                <div class="md:hidden mb-2">
+                                    <span class="text-primary font-bold text-lg">Semana 12 - RESULT</span>
+                                </div>
+                                <div class="bg-primary/10 border border-primary/30 p-6 rounded-2xl flex-grow">
+                                    <h4 class="text-xl font-bold mb-2 text-white">Ciclo 3: Consolidación (Sem 9 a 12)</h4>
+                                    <p class="text-gray-300 text-sm mb-4">Consolidamos lo aprendido. Autonomía, ajustes finales, sostenibilidad. Se realiza el RE-MAIP FINAL: nueva evaluación, informe de evolución y definición del próximo paso.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Herramientas del Método MAIP -->
+    <section id="herramientas" class="py-24 bg-gray-50 border-y border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <h2 class="text-primary font-bold tracking-widest uppercase text-sm mb-3">El Sistema Integral</h2>
+                <h3 class="text-3xl md:text-5xl font-black text-secondary mb-6 tracking-tight">Más que solo Nutrición</h3>
+            </div>
+
+            <div class="maip-services-grid">
+                
+                <!-- Antropometría -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 fade-in-up hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-blue-50 text-primary rounded-lg flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-ruler"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Antropometría</h4>
+                    <p class="text-gray-600 text-sm mb-4">Una de las herramientas principales. Analizamos pliegues, masa muscular, masa adiposa mediante Ambrosini ADC.</p>
+                    <div class="adc-preview-wrapper">
+                        <button id="adc-open" class="dashboard-preview-button" type="button" aria-haspopup="dialog" aria-controls="adc-modal">
+                            <img src="img/adc-report.png" alt="Vista previa del reporte antropométrico ADC" class="dashboard-preview-image" loading="lazy" decoding="async">
+                            <span class="dashboard-preview-label">Ver reporte ADC ampliado <span aria-hidden="true">↗</span></span>
+                        </button>
+                        <p class="dashboard-preview-note">Composición corporal, comparación entre mediciones y detalle antropométrico.</p>
+                    </div>
+                    <p class="text-gray-500 text-sm italic border-l-2 border-primary pl-3">"En MAIP la antropometría no se interpreta aislada, se relaciona con alimentación + entrenamiento + objetivo."</p>
+                </div>
+
+                <!-- Dashboard -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 fade-in-up hover:shadow-md transition" style="transition-delay: 0.1s;">
+                    <div class="w-12 h-12 bg-blue-50 text-primary rounded-lg flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Dashboard MAIP</h4>
+                    <p class="text-gray-600 text-sm mb-4">Cada deportista cuenta con un resumen individual de su proceso. Visualizá tu punto de partida, prioridades, acciones acordadas y seguimiento hasta el próximo control.</p>
+                    <button id="dashboard-open" class="dashboard-preview-button" type="button" aria-haspopup="dialog" aria-controls="dashboard-modal">
+                        <img src="img/dashboard-modelo-p1.jpg" alt="Vista previa del informe MAIP de un paciente modelo" class="dashboard-preview-image" width="1700" height="2404" loading="lazy" decoding="async">
+                        <span class="dashboard-preview-label">Ver dashboard ampliado <span aria-hidden="true">↗</span></span>
+                    </button>
+                    <p class="dashboard-preview-note">Ejemplo con un paciente modelo ficticio: punto de partida, plan nutricional, semana tipo y acciones hasta el próximo control.</p>
+                </div>
+
+                <!-- Nutrición -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 fade-in-up hover:shadow-md transition" style="transition-delay: 0.2s;">
+                    <div class="w-12 h-12 bg-blue-50 text-primary rounded-lg flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-utensils" aria-hidden="true"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Nutrición</h4>
+                    <p class="text-gray-600 text-sm mb-4">Construimos un plan de alimentación personalizado según tu objetivo, deporte, horarios y carga de entrenamiento.</p>
+                    <p class="text-gray-600 text-sm mb-4">Trabajamos con porciones o intercambios, organización de comidas e hidratación. El seguimiento permite ajustar la estrategia a tu respuesta y a tu rutina.</p>
+                    <div class="adc-preview-wrapper">
+                        <button id="info-plan-open" class="dashboard-preview-button" type="button" aria-haspopup="dialog" aria-controls="info-plan-modal">
+                            <img src="img/plan-pdf/pagina-01.jpg" alt="Primera página del documento: ¿Qué recibirás en tu plan de alimentación?" class="dashboard-preview-image" width="1000" height="1414" loading="lazy" decoding="async">
+                            <span class="dashboard-preview-label">Ver qué incluye tu plan de alimentación <span aria-hidden="true">↗</span></span>
+                        </button>
+                        <p class="dashboard-preview-note">Plato orientativo, selección de alimentos, intercambios, organización diaria, ideas de menú e hidratación.</p>
+                    </div>
+                    <p class="text-gray-500 text-sm italic border-l-2 border-primary pl-3">La alimentación acompaña la demanda de cada día: entrenamiento, recuperación o competencia.</p>
+                </div>
+
+                <!-- Entrenamiento opcional -->
+                <div class="maip-training-optional p-8 rounded-2xl shadow-sm fade-in-up hover:shadow-md transition" style="transition-delay: 0.3s;">
+                    <div class="maip-training-icon w-12 h-12 rounded-lg flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-dumbbell" aria-hidden="true"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Entrenamiento</h4>
+                    <p class="maip-training-copy">Evaluación física, programación del entrenamiento y ajustes de carga a cargo del preparador físico, coordinados con tu objetivo.</p>
+                    <p class="maip-training-program">MAIP 360</p>
+                    <p class="maip-training-copy">Podés sumar nutrición y entrenamiento en un mismo proceso, con seguimiento y coordinación entre profesionales.</p>
+                    <button id="rutina-open" class="dashboard-preview-button" type="button" aria-haspopup="dialog" aria-controls="rutina-modal">
+                        <img src="img/rutina-modelo-p1.jpg" alt="Vista previa de una rutina semanal MAIP Performance" class="dashboard-preview-image" width="1200" height="1697" loading="lazy" decoding="async">
+                        <span class="dashboard-preview-label">Ver rutina semanal modelo <span aria-hidden="true">↗</span></span>
+                    </button>
+                    <p class="dashboard-preview-note" style="color:#abb4c1">Ejemplo con un paciente modelo ficticio: fuerza, running y descanso organizados en la semana.</p>
+                    <p class="maip-training-footnote">El entrenamiento se integra con la nutrición dentro de MAIP 360.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reporte antropométrico ADC en ventana ampliada -->
+    <dialog id="adc-modal" class="maip-report-modal" aria-labelledby="adc-title" aria-describedby="adc-description">
+        <header class="dashboard-toolbar">
+            <div><h2 id="adc-title">Reporte antropométrico ADC</h2><p id="adc-description">Composición corporal y evolución entre mediciones · 1 página</p></div>
+            <div class="dashboard-controls" aria-label="Controles del reporte ADC">
+                <button id="adc-zoom-out" type="button" aria-label="Reducir zoom del reporte ADC">−</button>
+                <output id="adc-zoom-label" aria-live="polite">100%</output>
+                <button id="adc-zoom-in" type="button" aria-label="Ampliar zoom del reporte ADC">+</button>
+                <button id="adc-fit" type="button">Ajustar</button>
+                <button id="adc-close" class="report-close" type="button" aria-label="Cerrar reporte ADC" autofocus>Cerrar ✕</button>
+            </div>
+        </header>
+        <div id="adc-scroll" class="dashboard-scroll" tabindex="0" aria-label="Reporte antropométrico completo">
+            <div id="adc-document" class="dashboard-document">
+                <figure class="dashboard-page"><figcaption>Reporte ADC · Composición corporal y mediciones antropométricas</figcaption><img src="img/adc-report.png" alt="Reporte ADC completo con peso, talla, índice músculo óseo, suma de pliegues, composición corporal, Z scores y medidas brutas" decoding="async"></figure>
+            </div>
+            <details class="dashboard-transcript"><summary>Leer el contenido del reporte</summary><pre class="adc-transcript-text">INFORME ANTROPOM&#201;TRICO
+PACIENTE MODELO &#183; Running &#183; Ejemplo ilustrativo &#183; Medici&#243;n del 27-08-2026
+Lic. en Nutrici&#243;n Julian Ignacio Lell &#183; MP: 8669
+
+PESO 80,5 kg &#183; TALLA 174,0 cm &#183; IMO 4,56 &#183; SUMA DE 6 PLIEGUES 51,0 mm
+
+COMPOSICI&#211;N CORPORAL &#183; 5 FRACCIONES (anterior 23-03-2026, actual 27-08-2026, diferencia, objetivo corto)
+Masa muscular: 44,1 kg, 42,9 kg, -1,2, objetivo 44,4
+Masa adiposa: 13,8 kg, 15,1 kg, +1,2, objetivo 14,1
+Masa &#243;sea: 9,4 kg, 9,4 kg, =0,0
+Masa piel: 4,0 kg, 3,9 kg, -0,1
+Masa residual: 9,9 kg, 9,2 kg, -0,7
+Peso total: 81,2 kg, 80,5 kg, -0,7, objetivo 81,0
+IMO: 4,69, 4,56, -0,12, objetivo 4,72
+
+FRACCIONAMIENTO 5 MASAS &#183; Z SCORE (0 es igual al modelo de referencia Phantom)
+Peso +1,2 &#183; Masa adiposa -1,9 &#183; Masa muscular +3,1 &#183; Masa residual +3,3 &#183; Masa &#243;sea +0,7
+
+MEDIDAS BRUTAS (valor, Z, diferencia)
+Pliegues (mm): Tr&#237;ceps 6,0 (-2,13; +1,0) &#183; Subescapular 9,0 (-1,66; =0,0) &#183; Supraespinal 9,0 (-1,48; +2,0) &#183; Abdominal 16,0 (-1,25; +4,0) &#183; Muslo 7,0 (-2,42; +1,0) &#183; Pantorrilla 4,0 (-2,59; =0,0)
+Per&#237;metros (cm): Cabeza 57,8 (+1,25; =0,0) &#183; Brazo relajado 33,0 (+2,31; -1,0) &#183; Brazo flexionado 36,1 (+2,49; -1,4) &#183; Antebrazo 29,8 (+2,85; -0,2) &#183; T&#243;rax 104,0 (+2,68; =0,0) &#183; Cintura 82,0 (+1,86; -2,5) &#183; Cadera 101,0 (+0,74; -0,5) &#183; Muslo m&#225;x 58,2 (+0,26; =0,0) &#183; Muslo medial 53,7 (-0,15; -0,7) &#183; Pantorrilla 38,0 (+0,83; =0,0)
+Di&#225;metros (cm): Biacromial 40,0 (+0,56) &#183; T&#243;rax transverso 32,2 (+2,05) &#183; T&#243;rax AP 20,1 (+1,56) &#183; Biiliocrest&#237;deo 30,2 (+0,40) &#183; Humeral 7,1 (+1,33) &#183; Femoral 10,3 (+1,15)
+B&#225;sicos: Peso bruto 80,5 kg (+1,25; -0,7) &#183; Talla 174,0 cm &#183; Talla sentado 87,5 cm (-0,96)
+
+Dif.: cambio desde la medici&#243;n anterior (23-03-2026). Emitido el 04-10-2026. Generado por ADC &#183; Anthropometric Data Center.</pre></details>
+        </div>
+    </dialog>
+
+    <!-- Rutina semanal modelo (paciente ficticio) en ventana ampliada -->
+    <dialog id="rutina-modal" class="maip-report-modal" aria-labelledby="rutina-title" aria-describedby="rutina-description">
+        <header class="dashboard-toolbar">
+            <div><h2 id="rutina-title">Rutina semanal modelo</h2><p id="rutina-description">MAIP Performance · Paciente modelo (ejemplo ficticio) · 2 páginas</p></div>
+            <div class="dashboard-controls" aria-label="Controles de la rutina semanal">
+                <button id="rutina-zoom-out" type="button" aria-label="Reducir zoom de la rutina">−</button>
+                <output id="rutina-zoom-label" aria-live="polite">100%</output>
+                <button id="rutina-zoom-in" type="button" aria-label="Ampliar zoom de la rutina">+</button>
+                <button id="rutina-fit" type="button">Ajustar</button>
+                <button id="rutina-close" class="report-close" type="button" aria-label="Cerrar rutina semanal" autofocus>Cerrar ✕</button>
+            </div>
+        </header>
+        <div id="rutina-scroll" class="dashboard-scroll" tabindex="0" aria-label="Páginas de la rutina semanal modelo">
+            <div id="rutina-document" class="dashboard-document">
+                <figure class="dashboard-page"><figcaption>Página 1 · Ciclo 1: Base (semanas 1 a 4)</figcaption><img src="img/rutina-modelo-p1.jpg" alt="Rutina semanal modelo, ciclo 1: tren superior A el lunes, pierna de fuerza el martes, series de running y tren superior B el miércoles, pierna de potencia el jueves, core y transmisión de fuerza el viernes, salida larga de 14 km el sábado y descanso el domingo" width="1200" height="1697" loading="lazy" decoding="async"></figure>
+                <figure class="dashboard-page"><figcaption>Página 2 · Ciclo 2: Progresión (semanas 5 a 8)</figcaption><img src="img/rutina-modelo-p2.jpg" alt="Rutina semanal modelo, ciclo 2: más carga en fuerza y potencia, running de tempo y tren superior B el miércoles, salida larga de 16 km el sábado" width="1200" height="1697" loading="lazy" decoding="async"></figure>
+            </div>
+            <details class="dashboard-transcript"><summary>Leer el contenido de la rutina</summary><p><strong>MAIP Performance · Paciente modelo (ejemplo)</strong> · Runner de calle, media maratón. Gimnasio 5 días por semana y running 4 días.</p><p><strong>Ciclo 1: Base (semanas 1 a 4).</strong> Lunes: tren superior A de fuerza (press de banco, remo con barra, press militar, dominadas asistidas, face pull) más trote suave de 5 km. Martes: pierna de fuerza (sentadilla trasera, peso muerto rumano, sentadilla búlgara, hip thrust, elevación de talones). Miércoles: running con series, 4 x 5 minutos fuerte con pausa de 2 minutos, unos 9 km, y tren superior B de volumen. Jueves: pierna de potencia y explosividad (salto al cajón, cargada de potencia, swing con kettlebell, zancada con salto, sprints de 30 m). Viernes: trote suave de 7 km y core con transmisión de fuerza (plancha lateral, Pallof press, balón medicinal, skipping y saltos laterales, bird dog). Sábado: salida larga de 14 km a ritmo conversacional. Domingo: descanso y preparación de las comidas. Total semanal: 35 km de running y 5 sesiones de gimnasio.</p><p><strong>Ciclo 2: Progresión (semanas 5 a 8).</strong> Más carga en fuerza y más potencia (sentadilla 5x4, salto al cajón 5x3, cargada 5x3, sprints de 8 x 30 m), running de tempo de 20 minutos continuos el miércoles, bounds y pliometría en el día de core, y salida larga de 16 km el sábado con los últimos 2 km un poco más rápido. Total semanal: 37 km de running y 5 sesiones de gimnasio.</p><p>Ejemplo ilustrativo de un paciente modelo. La rutina real la define el preparador físico según la evaluación.</p></details>
+        </div>
+    </dialog>
+
+    <!-- Qué incluye tu plan de alimentación (PDF) en ventana ampliada -->
+    <dialog id="info-plan-modal" class="maip-report-modal" aria-labelledby="info-plan-title" aria-describedby="info-plan-description">
+        <header class="dashboard-toolbar">
+            <div><h2 id="info-plan-title">¿Qué recibirás en tu plan de alimentación?</h2><p id="info-plan-description">Documento informativo · 11 páginas</p></div>
+            <div class="dashboard-controls" aria-label="Controles del documento">
+                <button id="info-plan-zoom-out" type="button" aria-label="Reducir zoom del documento">−</button>
+                <output id="info-plan-zoom-label" aria-live="polite">100%</output>
+                <button id="info-plan-zoom-in" type="button" aria-label="Ampliar zoom del documento">+</button>
+                <button id="info-plan-fit" type="button">Ajustar</button>
+                <button id="info-plan-close" class="report-close" type="button" aria-label="Cerrar documento" autofocus>Cerrar ✕</button>
+            </div>
+        </header>
+        <div id="info-plan-scroll" class="dashboard-scroll" tabindex="0" aria-label="Páginas del documento sobre el plan de alimentación">
+            <div id="info-plan-document" class="dashboard-document">
+                <figure class="dashboard-page"><figcaption>Página 1 de 11 · Plato orientativo</figcaption><img src="img/plan-pdf/pagina-01.jpg" alt="Documento del plan de alimentación, página 1: título, índice y tres platos orientativos con distintas proporciones de verduras y frutas, proteínas e hidratos" width="1000" height="1414" decoding="async"></figure>
+                <figure class="dashboard-page"><figcaption>Página 2 de 11 · Selección de alimentos</figcaption><img src="img/plan-pdf/pagina-02.jpg" alt="Documento del plan de alimentación, página 2: selección de alimentos por grupo con ejemplos" width="1000" height="1414" loading="lazy" decoding="async"></figure>
+                <figure class="dashboard-page"><figcaption>Página 3 de 11 · Dos caminos para tu plan</figcaption><img src="img/plan-pdf/pagina-03.jpg" alt="Documento del plan de alimentación, página 3: plan cualitativo y plan cuantitativo con el sistema de intercambios" width="1000" height="1414" loading="lazy" decoding="async"></figure>
+                <figure class="dashboard-page"><figcaption>Página 4 de 11 · Organización diaria de las comidas</figcaption><img src="img/plan-pdf/pagina-04.jpg" alt="Documento del plan de alimentación, página 4: horarios de comidas de un día con entrenamiento y ajuste según el tipo de día" width="1000" height="1414" loading="lazy" decoding="async"></figure>
+                <figure class="dashboard-page"><figcaption>Página 5 de 11 · Ideas de menú</figcaption><img src="img/plan-pdf/pagina-05.jpg" alt="Documento del plan de alimentación, página 5: ideas de menú para seis comidas con tres opciones cada una" width="1000" height="1414" loading="lazy" decoding="async"></figure>
+                <figure class="dashboard-page"><figcaption>Página 6 de 11 · Pre, intra y post entrenamiento</figcaption><img src="img/plan-pdf/pagina-06.jpg" alt="Documento del plan de alimentación, página 6: ideas antes, durante y después de entrenar" width="1000" height="1414" loading="lazy" decoding="async"></figure>
+                <figure class="dashboard-page"><figcaption>Página 7 de 11 · Hidratación</figcaption><img src="img/plan-pdf/pagina-07.jpg" alt="Documento del plan de alimentación, página 7: hidratación diaria y alrededor del entrenamiento" width="1000" height="1414" loading="lazy" decoding="async"></figure>
+                <figure class="dashboard-page"><figcaption>Página 8 de 11 · Anexo: lista de intercambios</figcaption><img src="img/plan-pdf/pagina-08.jpg" alt="Documento del plan de alimentación, página 8: valor nutricional de cada intercambio y lista de almidones" width="1000" height="1414" loading="lazy" decoding="async"></figure>
+                <figure class="dashboard-page"><figcaption>Página 9 de 11 · Anexo: lista de intercambios</figcaption><img src="img/plan-pdf/pagina-09.jpg" alt="Documento del plan de alimentación, página 9: lista de intercambios de almidones, frutas y verduras" width="1000" height="1414" loading="lazy" decoding="async"></figure>
+                <figure class="dashboard-page"><figcaption>Página 10 de 11 · Anexo: lista de intercambios</figcaption><img src="img/plan-pdf/pagina-10.jpg" alt="Documento del plan de alimentación, página 10: lista de intercambios de lácteos, carnes, grasas y azúcares simples" width="1000" height="1414" loading="lazy" decoding="async"></figure>
+                <figure class="dashboard-page"><figcaption>Página 11 de 11 · Anexo: lista de intercambios</figcaption><img src="img/plan-pdf/pagina-11.jpg" alt="Documento del plan de alimentación, página 11: azúcares simples, suplementos y medidas comunes" width="1000" height="1414" loading="lazy" decoding="async"></figure>
+            </div>
+            <details class="dashboard-transcript"><summary>Leer el contenido del documento</summary><p><strong>¿Qué recibirás en tu plan de alimentación?</strong> El plan de alimentación es personalizado y adaptado a cada deportista teniendo en cuenta toda la información recopilada en el apartado de MEDIR.</p><p><strong>1. El plato orientativo.</strong> Tres platos según el contexto: 50% verduras y frutas con 25% proteínas y 25% hidratos; 35% verduras y frutas, 35% proteínas y 30% hidratos; 35% verduras y frutas, 25% proteínas y 40% hidratos. El plato se elige de acuerdo al contexto.</p><p><strong>2. Selección de alimentos.</strong> Lácteos, carnes, frutas, hortalizas, cereales, tubérculos, legumbres y grasas, con ejemplos y recomendaciones.</p><p><strong>3. Dos caminos para tu plan.</strong> Plan cualitativo, con cantidades adaptadas y revisión por fotos y videos, o plan cuantitativo, con el sistema de intercambios.</p><p><strong>4. Organización diaria de las comidas.</strong> Horarios, tipo de día (bajo, medio, alto y competencia) y adaptaciones según el entrenamiento.</p><p><strong>5. Ideas de menú.</strong> Desayuno, colación de media mañana, almuerzo, merienda, cena y colación nocturna, con tres opciones cada uno.</p><p><strong>6. Pre, intra y post entrenamiento.</strong> Ideas para antes, durante y después de entrenar.</p><p><strong>7. Hidratación.</strong> Pautas diarias y alrededor del entrenamiento.</p><p><strong>Anexo.</strong> Lista de intercambios por grupo de alimentos, suplementos y medidas comunes.</p></details>
+        </div>
+    </dialog>
+    <!-- Vista ampliada del informe original MAIP -->
+    <dialog id="dashboard-modal" class="maip-report-modal" aria-labelledby="dashboard-title" aria-describedby="dashboard-description">
+        <header class="dashboard-toolbar">
+            <div><h2 id="dashboard-title">Dashboard MAIP</h2><p id="dashboard-description">Informe del deportista · Paciente modelo (ejemplo ficticio) · 3 páginas</p></div>
+            <div class="dashboard-controls" aria-label="Controles del documento">
+                <button id="dashboard-zoom-out" type="button" aria-label="Reducir zoom">−</button>
+                <output id="dashboard-zoom-label" aria-live="polite">100%</output>
+                <button id="dashboard-zoom-in" type="button" aria-label="Ampliar zoom">+</button>
+                <button id="dashboard-fit" type="button">Ajustar</button>
+                <button id="dashboard-close" type="button" aria-label="Cerrar dashboard" autofocus>Cerrar ✕</button>
+            </div>
+        </header>
+        <div id="dashboard-scroll" class="dashboard-scroll" tabindex="0" aria-label="Páginas del informe">
+            <div id="dashboard-document" class="dashboard-document">
+                <figure class="dashboard-page"><figcaption>Página 1 · Objetivo y método MAIP aplicado al deportista</figcaption><img src="img/dashboard-modelo-p1.jpg" alt="Informe MAIP de un paciente modelo: datos, estrategia en una frase, objetivo y los cuatro pasos medir, analizar, interpretar y planificar" width="1700" height="2404" decoding="async"></figure>
+                <figure class="dashboard-page"><figcaption>Página 2 · Prioridades, plan nutricional y combustible del entrenamiento</figcaption><img src="img/dashboard-modelo-p2.jpg" alt="Informe MAIP de un paciente modelo: tres prioridades, plan nutricional resumido y combustible antes, durante y después de entrenar" width="1700" height="2404" loading="lazy" decoding="async"></figure>
+                <figure class="dashboard-page"><figcaption>Página 3 · Tu semana y seguimiento hasta el próximo control</figcaption><img src="img/dashboard-modelo-p3.jpg" alt="Informe MAIP de un paciente modelo: tipos de día, tres acciones, qué volver a medir e indicador principal" width="1700" height="2404" loading="lazy" decoding="async"></figure>
+            </div>
+            <details class="dashboard-transcript"><summary>Leer el contenido del informe</summary><p><strong>Informe MAIP del deportista</strong> · Ejemplo con un paciente modelo ficticio.</p><table><tr><td>Nombre</td><td>Paciente Modelo (ejemplo)</td><td>Fecha</td><td>4 de octubre de 2026</td></tr><tr><td>Deporte</td><td>Running (calle)</td><td>Etapa / competencia</td><td>Preparación de base</td></tr><tr><td>Objetivo principal</td><td>Rendimiento en media maratón</td><td>Próximo control</td><td>16 de noviembre de 2026</td></tr></table><p><strong>Tu estrategia en una frase:</strong> llegar a los entrenamientos largos con energía, ordenar las comidas alrededor de cada sesión y sostener la proteína durante todo el día.</p><p><strong>El método MAIP aplicado a vos.</strong> Medir: peso 80,5 kg, talla 1,74 m, suma de 6 pliegues 51 mm, corre 4 días por semana (35 km). Analizar: desayuna sin proteína y cena tarde, salidas largas en ayunas con cansancio, toma poca agua durante el día. Interpretar: primero energía y después composición, proteína repartida para cuidar el músculo, hidratarse mejor ayuda a recuperar. Planificar: desayuno con proteína e hidratos, comer antes de salidas de más de 60 minutos, tomar agua durante el día.</p><table><tr><td>Prioridad</td><td>Qué vamos a cambiar</td><td>Cómo sabremos si funciona</td></tr><tr><td>1</td><td>Sumar proteína al desayuno y a la merienda</td><td>Lo completa 5 de 7 días por semana</td></tr><tr><td>2</td><td>Comer hidratos 1 a 3 horas antes de las salidas largas</td><td>Termina la salida con energía y sin molestias digestivas</td></tr><tr><td>3</td><td>Tomar agua a lo largo del día</td><td>Orina clara durante el día; botella terminada antes de las 18 h</td></tr></table><p><strong>Plan nutricional resumido.</strong> Energía: cubrir el gasto del entrenamiento sin déficit marcado. Hidratos de carbono: más porciones los días de salida larga y en el pre entreno. Proteínas: 4 a 5 tomas al día. Grasas: aceite de oliva, frutos secos y palta en porciones moderadas. Hidratación: agua todo el día y bebida deportiva en salidas de más de 90 minutos. Suplementación: no indicada por ahora.</p><p><strong>Combustible alrededor del entrenamiento.</strong> Antes: comida con hidratos 2 a 3 horas antes y colación liviana 45 a 60 minutos antes. Durante: agua y, en salidas de más de 90 minutos, hidratos. Después: proteína con hidratos en la primera hora.</p><p><strong>Tu semana.</strong> Día bajo: descanso y movilidad. Día medio: gimnasio y running suave, lunes, martes, jueves y viernes. Día alto: series del miércoles y salida larga del sábado, más hidratos el día anterior y en el pre entreno. Competencia: repetir lo ensayado en los entrenamientos, nada nuevo.</p><p><strong>Hasta el próximo control.</strong> Acción 1: desayunar con proteína e hidratos todos los días. Acción 2: comer algo con hidratos antes de cada salida de más de 60 minutos. Acción 3: tomar agua durante el día y anotarlo en el celular. Indicador principal: cómo se siente al terminar la salida larga del sábado (energía de 1 a 10).</p><p>En el próximo control volvemos a medir lo importante, analizamos tu respuesta, interpretamos qué cambió y planificamos el siguiente ajuste.</p></details>
+        </div>
+    </dialog>
+
+    <!-- Filtro: Para quién es / Qué no es (Nuevo) -->
+    <section class="py-20 bg-gray-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="fade-in-up">
+                    <h3 class="text-2xl md:text-3xl font-black mb-6 flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> ¿Para quién es MAIP?</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-gray-300"><span class="w-2 h-2 rounded-full bg-green-500"></span> Deportistas recreativos, amateurs y competitivos.</li>
+                        <li class="flex items-center gap-3 text-gray-300"><span class="w-2 h-2 rounded-full bg-green-500"></span> Personas que entrenan en gimnasio (Fuerza/Hipertrofia).</li>
+                        <li class="flex items-center gap-3 text-gray-300"><span class="w-2 h-2 rounded-full bg-green-500"></span> Corredores y deportes de resistencia.</li>
+                        <li class="flex items-center gap-3 text-gray-300"><span class="w-2 h-2 rounded-full bg-green-500"></span> CrossFit, Hyrox y deportes de equipo.</li>
+                        <li class="flex items-center gap-3 text-gray-300"><span class="w-2 h-2 rounded-full bg-green-500"></span> Quienes buscan mejorar su composición corporal con acompañamiento.</li>
+                    </ul>
+                </div>
+                
+                <div class="fade-in-up" style="transition-delay: 0.2s;">
+                    <h3 class="text-2xl md:text-3xl font-black mb-6 flex items-center gap-3"><i class="fas fa-times-circle text-red-500"></i> ¿Qué NO es MAIP?</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-gray-400"><i class="fas fa-times text-red-500/70 mt-1"></i> <div><strong class="text-white block">No es una dieta descargable.</strong> La planificación es 100% individual.</div></li>
+                        <li class="flex items-start gap-3 text-gray-400"><i class="fas fa-times text-red-500/70 mt-1"></i> <div><strong class="text-white block">No es una rutina genérica.</strong> MAIP 360 adapta el entrenamiento a tu contexto.</div></li>
+                        <li class="flex items-start gap-3 text-gray-400"><i class="fas fa-times text-red-500/70 mt-1"></i> <div><strong class="text-white block">No es solamente una antropometría.</strong> Los datos se interpretan, no solo se entregan.</div></li>
+                        <li class="flex items-start gap-3 text-gray-400"><i class="fas fa-times text-red-500/70 mt-1"></i> <div><strong class="text-white block">No es perseguir un número en la balanza.</strong> Es un proceso de rendimiento integral.</div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modalidades Section -->
+    <section id="modalidades" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <h2 class="text-primary font-bold tracking-widest uppercase text-sm mb-3">Ingreso al Método</h2>
+                <h3 class="text-3xl md:text-5xl font-black text-secondary mb-6 tracking-tight">Elegí tu modalidad</h3>
+                <p class="text-lg text-gray-600">Todos los programas están diseñados como un ciclo completo de 12 semanas para medir, aplicar y volver a evaluar tu proceso.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                
+                <!-- MAIP NUTRICIÓN -->
+                <div class="bg-white rounded-3xl shadow-lg border border-gray-100 flex flex-col fade-in-up overflow-hidden group hover:shadow-xl transition-all">
+                    <div class="p-8 flex-grow">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h4 class="text-2xl font-black text-secondary mb-1">MAIP NUTRICIÓN</h4>
+                                <p class="text-primary text-sm font-bold uppercase tracking-wider">Nutrición + Antropometría</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-500 mb-6 text-sm">Pensado para deportistas que buscan trabajar principalmente sobre alimentación, composición corporal y recuperación.</p>
+                        
+                        <div class="mb-8">
+                            <span class="text-4xl font-black text-gray-900">$260.000</span>
+                            <p class="text-sm text-gray-500 mt-1">Pago completo por las 12 semanas</p>
+                            <p class="text-xs text-gray-400 mt-1">O 3 pagos de $95.000</p>
+                        </div>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start text-sm"><i class="fas fa-check text-green-500 mt-1 mr-3 flex-shrink-0"></i><span class="text-gray-700">Evaluación inicial y Antropometría</span></li>
+                            <li class="flex items-start text-sm"><i class="fas fa-check text-green-500 mt-1 mr-3 flex-shrink-0"></i><span class="text-gray-700">Informe ADC y Dashboard MAIP</span></li>
+                            <li class="flex items-start text-sm"><i class="fas fa-check text-green-500 mt-1 mr-3 flex-shrink-0"></i><span class="text-gray-700">Planificación nutricional e intercambios</span></li>
+                            <li class="flex items-start text-sm"><i class="fas fa-check text-green-500 mt-1 mr-3 flex-shrink-0"></i><span class="text-gray-700">Estrategias pre, intra y post entreno</span></li>
+                            <li class="flex items-start text-sm"><i class="fas fa-check text-green-500 mt-1 mr-3 flex-shrink-0"></i><span class="text-gray-700">Seguimiento, controles y reevaluaciones</span></li>
+                        </ul>
+                    </div>
+                    <div class="p-6 bg-gray-50 border-t border-gray-100">
+                        <a href="#contacto" data-programa="MAIP Nutrición" class="block w-full text-center bg-white border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-bold py-3.5 rounded-xl transition duration-300">Aplicar a Nutrición</a>
+                    </div>
+                </div>
+
+                <!-- MAIP 360 -->
+                <div class="bg-secondary rounded-3xl shadow-2xl border border-secondary flex flex-col fade-in-up relative overflow-hidden transform md:-translate-y-4" style="transition-delay: 0.1s;">
+                    <div class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl uppercase tracking-wider">
+                        Experiencia Integral
+                    </div>
+                    <div class="p-8 flex-grow">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h4 class="text-2xl font-black text-white mb-1">MAIP 360</h4>
+                                <p class="text-primary-300 text-sm font-bold uppercase tracking-wider text-blue-300">Nutrición + Antropometría + Performance</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 mb-6 text-sm">La modalidad integral. Para quienes quieren coordinar alimentación y programación física (fuerza, hipertrofia, velocidad, HIIT) en un único proceso.</p>
+                        
+                        <div class="mb-8">
+                            <span class="text-4xl font-black text-white">$390.000</span>
+                            <p class="text-sm text-gray-400 mt-1">Pago completo por las 12 semanas</p>
+                            <p class="text-xs text-gray-500 mt-1">O 3 pagos de $145.000</p>
+                        </div>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start text-sm"><i class="fas fa-plus text-primary mt-1 mr-3 flex-shrink-0"></i><span class="text-gray-300 font-semibold">Todo lo incluido en MAIP Nutrición, más:</span></li>
+                            <li class="flex items-start text-sm"><i class="fas fa-check text-primary mt-1 mr-3 flex-shrink-0"></i><span class="text-gray-300">Rutina personalizada por preparador físico</span></li>
+                            <li class="flex items-start text-sm"><i class="fas fa-check text-primary mt-1 mr-3 flex-shrink-0"></i><span class="text-gray-300">Periodización de cargas (Fuerza, Potencia, etc.)</span></li>
+                            <li class="flex items-start text-sm"><i class="fas fa-check text-primary mt-1 mr-3 flex-shrink-0"></i><span class="text-gray-300">Ajustes conjuntos (Nutrición + Entrenamiento)</span></li>
+                        </ul>
+                    </div>
+                    <div class="p-6 bg-gray-900 border-t border-gray-800">
+                        <a href="#contacto" data-programa="MAIP 360" class="block w-full text-center bg-primary hover:bg-primaryDark text-white font-bold py-3.5 rounded-xl transition duration-300 shadow-lg">Aplicar a 360</a>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+    </section>
+
+    <!-- Sobre Julián / Equipo -->
+    <section id="equipo" class="py-24 bg-lightBg relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                
+                <div class="md:w-1/2 fade-in-up">
+                    <div class="relative w-72 h-auto md:w-96 mx-auto">
+                        <!-- Decorative shapes -->
+                        <div class="absolute -inset-4 bg-primary/10 rounded-3xl z-0 transform rotate-3"></div>
+                        <div class="absolute -inset-4 bg-secondary/10 rounded-3xl z-0 transform -rotate-3"></div>
+                        <img src="img/julian-lell.jpg" alt="Julián Ignacio Lell, licenciado en Nutrición y director del Método MAIP" width="1216" height="2048" class="relative z-10 rounded-2xl object-cover w-full shadow-2xl maip-professional-photo" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 fade-in-up" style="transition-delay: 0.2s;">
+                    <h2 class="text-primary font-bold tracking-widest uppercase text-sm mb-2">Director del Método</h2>
+                    <h3 class="text-3xl md:text-5xl font-black text-secondary mb-2 tracking-tight">Julián Ignacio Lell</h3>
+                    <p class="text-primary-dark font-bold mb-6 text-sm bg-blue-50 inline-block px-3 py-1 rounded-full border border-blue-100">Lic. en Nutrición — MP: 8669 | MN: 14319</p>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        Especialista en Nutrición Deportiva y Antropometría. Mi trabajo se centra en la interpretación de resultados y la planificación nutricional estructurada para deportistas.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Creé MAIP al entender que una dieta genérica no funciona. El rendimiento requiere coordinación. Por eso, en la modalidad MAIP 360, trabajo en conjunto con un <strong>Preparador Físico responsable</strong> del área Performance, asegurando que tu entrenamiento y nutrición hablen el mismo idioma.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6 mb-8 border-y border-gray-200 py-6">
+                        <div>
+                            <h4 class="text-sm font-bold text-secondary mb-1 uppercase">Área Nutrición</h4>
+                            <ul class="text-sm text-gray-500 space-y-1">
+                                <li>• Antropometría</li>
+                                <li>• Estrategia energética</li>
+                                <li>• Seguimiento MAIP</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-secondary mb-1 uppercase">Área Performance</h4>
+                            <ul class="text-sm text-gray-500 space-y-1">
+                                <li>• Evaluación física</li>
+                                <li>• Programación (Fuerza/Potencia)</li>
+                                <li>• Control de carga</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <a href="#contacto" class="inline-flex items-center gap-2 text-primary font-bold hover:text-primaryDark transition group">
+                        Iniciar mi proceso con Julián <i class="fas fa-arrow-right transform group-hover:translate-x-1 transition"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preparación de consulta MAIP -->
+    <section id="contacto" class="maip-consultation" aria-labelledby="consulta-title">
+        <div class="consulta-container">
+            <header class="consulta-heading">
+                <span class="consulta-eyebrow">TU PRÓXIMO PASO</span>
+                <h2 id="consulta-title">Tu objetivo es el punto de partida.</h2>
+                <p>No necesitás tener todo resuelto. Contame qué querés mejorar y empecemos a construir tu proceso MAIP.</p>
+            </header>
+            <div class="consulta-card">
+                <aside class="consulta-intro" aria-labelledby="consulta-process-title">
+                    <span class="consulta-tag">MEDIR · ANALIZAR · INTERPRETAR · PLANIFICAR</span>
+                    <h3 id="consulta-process-title">Primero nos conocemos.<br>Después planificamos.</h3>
+                    <p class="consulta-intro-copy">Antes de iniciar el ciclo de 12 semanas, acordamos un camino que tenga sentido para vos.</p>
+                    <ol class="consulta-steps">
+                        <li><span class="consulta-step-number">1</span><div><h4>Contame sobre vos</h4><p>Completás tus datos, tu actividad y el objetivo que querés trabajar.</p></div></li>
+                        <li><span class="consulta-step-number">2</span><div><h4>Tenemos una sesión 1 a 1</h4><p>Nos conocemos y conversamos sobre tus hábitos, entrenamiento y expectativas.</p></div></li>
+                        <li><span class="consulta-step-number">3</span><div><h4>Acordamos el proceso</h4><p>Definimos programa, modalidad, consultas y antropometrías según tus necesidades.</p></div></li>
+                    </ol>
+                    <div class="consulta-direct">
+                        <span>¿Preferís hablar directamente?</span>
+                        <a href="https://wa.me/5491157509159" target="_blank" rel="noopener noreferrer">WhatsApp · 11 5750 9159 <span aria-hidden="true">↗</span></a>
+                        <a href="mailto:lic.julianlell@gmail.com">lic.julianlell@gmail.com</a>
+                    </div>
+                </aside>
+                <div class="consulta-form-panel">
+                    <div class="consulta-form-heading"><span class="consulta-eyebrow">EMPECEMOS POR VOS</span><h3>Prepará tu consulta</h3><p>Completá tus datos y armá un mensaje para iniciar la conversación con Julián.</p></div>
+                    <form id="maip-consulta-form">
+                        <div class="consulta-row">
+                            <div class="consulta-field"><label for="consulta-nombre">Nombre y apellido <span aria-hidden="true">*</span></label><input id="consulta-nombre" name="nombre" autocomplete="name" required maxlength="100" placeholder="¿Cómo te llamás?"></div>
+                            <div class="consulta-field"><label for="consulta-edad">Edad <span class="consulta-optional">(opcional)</span></label><input id="consulta-edad" name="edad" type="number" min="1" max="120" inputmode="numeric" placeholder="En años"></div>
+                        </div>
+                        <fieldset class="consulta-contact-fields" aria-describedby="consulta-contact-hint consulta-contact-error">
+                            <legend>¿Cómo podemos contactarte?</legend>
+                            <p id="consulta-contact-hint" class="consulta-field-hint">Completá al menos un medio de contacto.</p>
+                            <div class="consulta-row">
+                                <div class="consulta-field"><label for="consulta-email">Email</label><input id="consulta-email" name="email" type="email" autocomplete="email" maxlength="150" placeholder="tu@email.com"></div>
+                                <div class="consulta-field"><label for="consulta-whatsapp">WhatsApp</label><input id="consulta-whatsapp" name="whatsapp" type="tel" autocomplete="tel" maxlength="30" placeholder="Ej. +54 9 11 1234 5678"><span class="consulta-field-hint">Incluí el código de país.</span></div>
+                            </div>
+                            <p id="consulta-contact-error" class="consulta-error" role="alert" hidden>Ingresá tu email o WhatsApp para poder contactarte.</p>
+                        </fieldset>
+                        <div class="consulta-field"><label for="consulta-deporte">¿Qué deporte o actividad practicás? <span aria-hidden="true">*</span></label><input id="consulta-deporte" name="deporte" required maxlength="150" placeholder="Ej. CrossFit, running, hockey subacuático…"></div>
+                        <div class="consulta-row">
+                            <div class="consulta-field"><label for="consulta-objetivo">¿Qué querés trabajar? <span aria-hidden="true">*</span></label><select id="consulta-objetivo" name="objetivo" required><option value="" disabled selected>Elegí tu objetivo</option><option>Mejorar mi rendimiento</option><option>Cambiar mi composición corporal</option><option>Preparar una competencia</option><option>Organizar mi alimentación</option><option>Mejorar mi recuperación</option><option>Definir mi objetivo en consulta</option><option>Otro (explayate abajo)</option></select></div>
+                            <div class="consulta-field"><label for="consulta-programa">¿Qué programa te interesa? <span aria-hidden="true">*</span></label><select id="consulta-programa" name="programa" required><option value="" disabled selected>Elegí un programa</option><option>MAIP Nutrición</option><option>MAIP 360</option></select></div>
+                        </div>
+                        <div class="consulta-field"><label for="consulta-detalle">Algo más que quieras contarme <span class="consulta-optional">(opcional)</span></label><textarea id="consulta-detalle" name="detalle" rows="3" maxlength="600" placeholder="Si elegiste Otro, explayate acá. También podés contarme tu próximo desafío, tus horarios o qué te gustaría mejorar…"></textarea></div>
+                        <button type="submit" class="consulta-primary">Preparar mi mensaje <span aria-hidden="true">→</span></button>
+                        <p class="consulta-note">No hace falta incluir antecedentes de salud. Podés revisar el mensaje antes de enviarlo por WhatsApp.</p>
+                    </form>
+                    <div id="consulta-message-panel" class="consulta-message-panel" aria-labelledby="consulta-message-title" hidden>
+                        <span class="consulta-eyebrow">LISTO PARA CONVERSAR</span>
+                        <h4 id="consulta-message-title" tabindex="-1">Este es tu mensaje</h4>
+                        <p>Revisalo y, cuando estés listo, continuá por WhatsApp.</p>
+                        <pre id="consulta-message-text"></pre>
+                        <div class="consulta-message-actions"><a id="consulta-whatsapp-link" class="consulta-whatsapp-action" target="_blank" rel="noopener noreferrer">Continuar por WhatsApp <span aria-hidden="true">↗</span></a><button id="consulta-copy" type="button">Copiar mensaje</button></div>
+                        <p id="consulta-copy-status" class="consulta-field-hint" role="status"></p>
+                    </div>
+                </div>
+            </div>
+            <p class="consulta-bottom">Un objetivo compartido. Un plan que se adapta a vos. <strong>12 semanas para medir, aplicar y volver a evaluar.</strong></p>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+                
+                <div class="col-span-1 md:col-span-5">
+                    <div class="flex items-center gap-3 mb-4">
+                        <a href="#inicio" aria-label="Volver al inicio"><img src="img/logo-maip.jpg" alt="Logo Método MAIP by Julián Lell" width="72" height="72" class="maip-footer-logo" loading="lazy" decoding="async"></a>
+                        
+                        <a href="#" class="text-xl font-black text-white tracking-tight flex flex-col leading-none">
+                            <span>MÉTODO MAIP</span>
+                            <span class="text-gray-400 text-sm font-normal">by Julián Ignacio Lell</span>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-2 max-w-sm leading-relaxed">Un sistema de evaluación, planificación y seguimiento diseñado para transformar datos en decisiones de rendimiento.</p>
+                    <p class="text-gray-500 text-xs mb-6 font-bold">Lic. en Nutrición — MP: 8669 | MN: 14319</p>
+                    <div class="flex gap-4">
+                        <a href="https://www.instagram.com/nutricionconjulian" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Julián Lell" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram text-xl" aria-hidden="true"></i></a>
+                        <a href="https://wa.me/5491157509159" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp de Julián Lell" class="text-gray-400 hover:text-white transition"><i class="fab fa-whatsapp text-xl" aria-hidden="true"></i></a>
+                        <a href="mailto:lic.julianlell@gmail.com" aria-label="Enviar email a Julián Lell" class="text-gray-400 hover:text-white transition"><i class="fas fa-envelope text-xl" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-span-1 md:col-span-4">
+                    <h4 class="text-sm font-bold mb-4 uppercase tracking-wider text-gray-300">El Método</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#que-es" class="text-gray-400 hover:text-primary transition">¿Qué es MAIP?</a></li>
+                        <li><a href="#ciclo" class="text-gray-400 hover:text-primary transition">Ciclo de 12 semanas</a></li>
+                        <li><a href="#herramientas" class="text-gray-400 hover:text-primary transition">Antropometría y Herramientas</a></li>
+                        <li><a href="#modalidades" class="text-gray-400 hover:text-primary transition">Modalidades de Trabajo</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-span-1 md:col-span-3">
+                    <h4 class="text-sm font-bold mb-4 uppercase tracking-wider text-gray-300">Para Quién Es</h4>
+                    <ul class="space-y-1 text-sm text-gray-400">
+                        <li>• Deportistas recreativos</li>
+                        <li>• Amateurs y competitivos</li>
+                        <li>• CrossFit / Hyrox / Gym</li>
+                        <li>• Deportes de resistencia</li>
+                        <li>• Deportes de fuerza</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-xs mb-4 md:mb-0">
+                    &copy; 2026 Julián Ignacio Lell - Método MAIP. Todos los derechos reservados.
+                </p>
+                <p class="text-gray-600 text-[10px] uppercase tracking-widest font-bold">
+                    Medir · Analizar · Interpretar · Planificar
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    navbar.classList.add('shadow-md');
+                    navbar.classList.remove('bg-white/95');
+                    navbar.classList.add('bg-white');
+                } else {
+                    navbar.classList.remove('shadow-md');
+                    navbar.classList.add('bg-white/95');
+                    navbar.classList.remove('bg-white');
+                }
+            });
+
+            // Mobile menu toggle
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+
+            function setMenu(open) {
+                menu.classList.toggle('hidden', !open);
+                btn.setAttribute('aria-expanded', String(open));
+                btn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+            }
+            btn.addEventListener('click', () => setMenu(menu.classList.contains('hidden')));
+
+            // Close mobile menu on link click
+            const mobileLinks = menu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => setMenu(false));
+            });
+
+            // Intersection Observer for scroll animations
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // Optional: unobserve to animate only once
+                        // observer.unobserve(entry.target); 
+                    }
+                });
+            }, observerOptions);
+
+            const animatedElements = document.querySelectorAll('.fade-in-up');
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+    <script>
+    function buildMAIPMessage(data) {
+        const lines = ['Hola Julián, quiero conocer el Método MAIP y preparar mi primera consulta.', '', `Nombre: ${data.nombre.trim()}`];
+        if (data.edad.trim()) lines.push(`Edad: ${data.edad.trim()} años`);
+        if (data.email.trim()) lines.push(`Email: ${data.email.trim()}`);
+        if (data.whatsapp.trim()) lines.push(`WhatsApp: ${data.whatsapp.trim()}`);
+        lines.push(`Deporte / actividad: ${data.deporte.trim()}`, `Objetivo: ${data.objetivo}`, `Programa: ${data.programa}`);
+        if (data.detalle.trim()) lines.push('', `Me gustaría contarte: ${data.detalle.trim()}`);
+        lines.push('', '¿Cómo podemos coordinar la sesión 1 a 1 y acordar la modalidad, las consultas y las evaluaciones del proceso?');
+        return lines.join('\n');
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('maip-consulta-form');
+        const panel = document.getElementById('consulta-message-panel');
+        const email = document.getElementById('consulta-email');
+        const whatsapp = document.getElementById('consulta-whatsapp');
+        const error = document.getElementById('consulta-contact-error');
+        const status = document.getElementById('consulta-copy-status');
+        const programa = document.getElementById('consulta-programa');
+        let message = '';
+        document.querySelectorAll('a[data-programa]').forEach(link => {
+            link.addEventListener('click', () => {
+                programa.value = link.dataset.programa;
+                panel.hidden = true;
+            });
+        });
+        form.addEventListener('input', () => {
+            panel.hidden = true;
+            status.textContent = '';
+            error.hidden = true;
+            email.removeAttribute('aria-invalid');
+            whatsapp.removeAttribute('aria-invalid');
+        });
+        form.addEventListener('change', () => { panel.hidden = true; });
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            if (!form.reportValidity()) return;
+            if (!email.value.trim() && !whatsapp.value.trim()) {
+                error.hidden = false;
+                email.setAttribute('aria-invalid', 'true');
+                whatsapp.setAttribute('aria-invalid', 'true');
+                email.focus();
+                return;
+            }
+            const data = Object.fromEntries(new FormData(form).entries());
+            message = buildMAIPMessage(data);
+            document.getElementById('consulta-message-text').textContent = message;
+            document.getElementById('consulta-whatsapp-link').href = 'https://wa.me/5491157509159?text=' + encodeURIComponent(message);
+            panel.hidden = false;
+            document.getElementById('consulta-message-title').focus({preventScroll: true});
+            panel.scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'nearest'});
+        });
+        document.getElementById('consulta-copy').addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(message);
+                status.textContent = 'Mensaje copiado.';
+            } catch {
+                status.textContent = 'Podés seleccionar el texto del mensaje y copiarlo manualmente.';
+            }
+        });
+    });
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const slides = [...document.querySelectorAll('.hero-athlete')];
+        const dots = [...document.querySelectorAll('.hero-sport-dot')];
+        const label = document.getElementById('hero-sport-label');
+        const pause = document.getElementById('hero-pause');
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const dialog = document.getElementById('dashboard-modal');
+        let current = 0;
+        let paused = reducedMotion.matches;
+        function showSlide(index) {
+            current = index;
+            slides.forEach((slide,i) => slide.classList.toggle('is-active',i === index));
+            dots.forEach((dot,i) => dot.setAttribute('aria-pressed',String(i === index)));
+            label.textContent = slides[index].dataset.sport;
+        }
+        function updatePause() { pause.textContent = paused ? 'Reanudar fotos' : 'Pausar fotos'; pause.setAttribute('aria-pressed',String(paused)); }
+        dots.forEach((dot,index) => dot.addEventListener('click', () => showSlide(index)));
+        pause.addEventListener('click', () => { paused = !paused; updatePause(); });
+        reducedMotion.addEventListener('change', e => { paused = e.matches; updatePause(); });
+        updatePause();
+        setInterval(() => { if (!paused && !document.hidden && !document.querySelector('dialog[open]')) showSlide((current + 1) % slides.length); },7000);
+
+        const opener = document.getElementById('dashboard-open');
+        const documentView = document.getElementById('dashboard-document');
+        const zoomOut = document.getElementById('dashboard-zoom-out');
+        const zoomIn = document.getElementById('dashboard-zoom-in');
+        const zoomLabel = document.getElementById('dashboard-zoom-label');
+        let zoom = 100;
+        let previousOverflow = '';
+        function setZoom(value) {
+            zoom = Math.max(75,Math.min(250,value));
+            documentView.style.width = zoom + '%';
+            zoomLabel.value = zoom + '%';
+            zoomLabel.textContent = zoom + '%';
+            zoomOut.disabled = zoom === 75;
+            zoomIn.disabled = zoom === 250;
+        }
+        opener.addEventListener('click', () => {
+            previousOverflow = document.body.style.overflow;
+            setZoom(100);
+            dialog.showModal();
+            document.body.style.overflow = 'hidden';
+            document.getElementById('dashboard-scroll').scrollTop = 0;
+        });
+        document.getElementById('dashboard-close').addEventListener('click', () => dialog.close());
+        dialog.addEventListener('close', () => { document.body.style.overflow = previousOverflow; opener.focus({preventScroll:true}); });
+        dialog.addEventListener('click', e => {
+            if (e.target !== dialog) return;
+            const r = dialog.getBoundingClientRect();
+            if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) dialog.close();
+        });
+        zoomOut.addEventListener('click', () => setZoom(zoom - 25));
+        zoomIn.addEventListener('click', () => setZoom(zoom + 25));
+        document.getElementById('dashboard-fit').addEventListener('click', () => setZoom(100));
+    });
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const dialog = document.getElementById('adc-modal');
+        const opener = document.getElementById('adc-open');
+        const report = document.getElementById('adc-document');
+        const zoomOut = document.getElementById('adc-zoom-out');
+        const zoomIn = document.getElementById('adc-zoom-in');
+        const zoomLabel = document.getElementById('adc-zoom-label');
+        let zoom = 100;
+        let previousOverflow = '';
+        function setZoom(value) {
+            zoom = Math.max(75, Math.min(250, value));
+            report.style.width = zoom + '%';
+            zoomLabel.value = zoom + '%';
+            zoomLabel.textContent = zoom + '%';
+            zoomOut.disabled = zoom === 75;
+            zoomIn.disabled = zoom === 250;
+        }
+        opener.addEventListener('click', () => {
+            previousOverflow = document.body.style.overflow;
+            setZoom(100);
+            dialog.showModal();
+            document.body.style.overflow = 'hidden';
+            document.getElementById('adc-scroll').scrollTop = 0;
+        });
+        document.getElementById('adc-close').addEventListener('click', () => dialog.close());
+        dialog.addEventListener('close', () => {
+            document.body.style.overflow = previousOverflow;
+            opener.focus({preventScroll: true});
+        });
+        dialog.addEventListener('click', event => {
+            if (event.target !== dialog) return;
+            const rect = dialog.getBoundingClientRect();
+            if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
+        });
+        zoomOut.addEventListener('click', () => setZoom(zoom - 25));
+        zoomIn.addEventListener('click', () => setZoom(zoom + 25));
+        document.getElementById('adc-fit').addEventListener('click', () => setZoom(100));
+    });
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const dialog = document.getElementById('rutina-modal');
+        const opener = document.getElementById('rutina-open');
+        const doc = document.getElementById('rutina-document');
+        const zoomOut = document.getElementById('rutina-zoom-out');
+        const zoomIn = document.getElementById('rutina-zoom-in');
+        const zoomLabel = document.getElementById('rutina-zoom-label');
+        let zoom = 100;
+        let previousOverflow = '';
+        function setZoom(value) {
+            zoom = Math.max(75, Math.min(250, value));
+            doc.style.width = zoom + '%';
+            zoomLabel.value = zoom + '%';
+            zoomLabel.textContent = zoom + '%';
+            zoomOut.disabled = zoom === 75;
+            zoomIn.disabled = zoom === 250;
+        }
+        opener.addEventListener('click', () => {
+            previousOverflow = document.body.style.overflow;
+            setZoom(100);
+            dialog.showModal();
+            document.body.style.overflow = 'hidden';
+            document.getElementById('rutina-scroll').scrollTop = 0;
+        });
+        document.getElementById('rutina-close').addEventListener('click', () => dialog.close());
+        dialog.addEventListener('close', () => {
+            document.body.style.overflow = previousOverflow;
+            opener.focus({preventScroll: true});
+        });
+        dialog.addEventListener('click', event => {
+            if (event.target !== dialog) return;
+            const rect = dialog.getBoundingClientRect();
+            if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
+        });
+        zoomOut.addEventListener('click', () => setZoom(zoom - 25));
+        zoomIn.addEventListener('click', () => setZoom(zoom + 25));
+        document.getElementById('rutina-fit').addEventListener('click', () => setZoom(100));
+    });
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const dialog = document.getElementById('info-plan-modal');
+        const opener = document.getElementById('info-plan-open');
+        const doc = document.getElementById('info-plan-document');
+        const zoomOut = document.getElementById('info-plan-zoom-out');
+        const zoomIn = document.getElementById('info-plan-zoom-in');
+        const zoomLabel = document.getElementById('info-plan-zoom-label');
+        let zoom = 100;
+        let previousOverflow = '';
+        function setZoom(value) {
+            zoom = Math.max(75, Math.min(250, value));
+            doc.style.width = zoom + '%';
+            zoomLabel.value = zoom + '%';
+            zoomLabel.textContent = zoom + '%';
+            zoomOut.disabled = zoom === 75;
+            zoomIn.disabled = zoom === 250;
+        }
+        opener.addEventListener('click', () => {
+            previousOverflow = document.body.style.overflow;
+            setZoom(100);
+            dialog.showModal();
+            document.body.style.overflow = 'hidden';
+            document.getElementById('info-plan-scroll').scrollTop = 0;
+        });
+        document.getElementById('info-plan-close').addEventListener('click', () => dialog.close());
+        dialog.addEventListener('close', () => {
+            document.body.style.overflow = previousOverflow;
+            opener.focus({preventScroll: true});
+        });
+        dialog.addEventListener('click', event => {
+            if (event.target !== dialog) return;
+            const rect = dialog.getBoundingClientRect();
+            if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
+        });
+        zoomOut.addEventListener('click', () => setZoom(zoom - 25));
+        zoomIn.addEventListener('click', () => setZoom(zoom + 25));
+        document.getElementById('info-plan-fit').addEventListener('click', () => setZoom(100));
+    });
+    </script>
+    <script>
+    // Contenido de propiedad intelectual: se muestra solo para lectura (sin menú contextual ni arrastre de imágenes)
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.maip-report-modal img').forEach(img => {
+            img.draggable = false;
+            img.addEventListener('contextmenu', e => e.preventDefault());
+            img.addEventListener('dragstart', e => e.preventDefault());
+        });
+    });
+    </script>
+</body>
+</html>
