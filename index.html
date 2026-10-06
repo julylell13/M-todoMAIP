@@ -99,7 +99,7 @@
         .consulta-steps p { margin: 0; font-size: 13px; line-height: 1.7; color: #cad6e7; }
         .consulta-direct { margin-top: auto; padding-top: 26px; border-top: 1px solid #ffffff24; }
         .consulta-direct > span { display: block; font-size: 12px; color: #cad6e7; margin-bottom: 12px; }
-        .consulta-direct a { display: block; font-size: 13px; color: #fff; text-decoration: none; margin-top: 10px; overflow-wrap: anywhere; }
+        .consulta-direct a { display: block; font-size: 14px; color: #fff; text-decoration: none; margin-top: 4px; padding: 10px 0; overflow-wrap: anywhere; }
         .consulta-direct a:hover { text-decoration: underline; }
         .consulta-form-panel { padding: 40px; min-width: 0; }
         .consulta-form-heading h3 { margin: 0 0 10px; font-size: 28px; font-weight: 800; letter-spacing: -.03em; }
@@ -149,10 +149,10 @@
         .hero-sport-controls { position: absolute; bottom: 24px; left: max(24px,calc((100vw - 1216px)/2)); z-index: 20; display: flex; align-items: center; flex-wrap: wrap; gap: 12px; color: white; }
         .hero-sport-label { font-size: 12px; font-weight: 700; letter-spacing: .1em; min-width: 84px; text-transform: uppercase; }
         .hero-sport-dots { display: flex; gap: 3px; }
-        .hero-sport-dot { width: 28px; height: 32px; display: grid; place-items: center; border: 0; background: transparent; cursor: pointer; }
+        .hero-sport-dot { width: 30px; height: 40px; display: grid; place-items: center; border: 0; background: transparent; cursor: pointer; }
         .hero-sport-dot::after { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #ffffff66; }
         .hero-sport-dot[aria-pressed="true"]::after { background: #62b7ff; box-shadow: 0 0 0 3px #62b7ff24; }
-        .hero-pause { border: 1px solid #ffffff50; border-radius: 20px; background: #07192b66; color: white; font: inherit; font-size: 11px; padding: 7px 12px; cursor: pointer; }
+        .hero-pause { border: 1px solid #ffffff50; border-radius: 20px; background: #07192b66; color: white; font: inherit; font-size: 11px; padding: 11px 14px; cursor: pointer; }
         .hero-sport-dot:focus-visible, .hero-pause:focus-visible { outline: 2px solid #62b7ff; outline-offset: 2px; }
         .maip-pillar-letter { color: #0056b3 !important; }
         .dashboard-preview-button { display: block; width: 100%; text-align: left; padding: 0; background: #f3f7fc; border: 1px solid #dbe5ef; border-radius: 12px; overflow: hidden; cursor: pointer; }
@@ -394,16 +394,16 @@
                     <div class="relative space-y-8">
                         
                         <!-- Baseline -->
-                        <div class="relative pl-10 md:pl-0 step-item">
+                        <div class="relative md:pl-0 step-item">
                             <div class="md:flex items-start gap-8">
                                 <div class="hidden md:block w-32 text-right pt-2 flex-shrink-0">
                                     <span class="text-primary font-bold text-xl block">Semana 0</span>
                                     <span class="text-gray-500 text-sm">BASELINE</span>
                                 </div>
-                                <div class="absolute left-0 md:relative md:left-auto w-12 h-12 bg-secondary border-4 border-primary rounded-full flex items-center justify-center z-10 flex-shrink-0 step-line md:before:left-[22px] md:before:-top-[20px] md:before:bottom-[-80px]">
+                                <div class="absolute left-0 top-0 md:relative md:left-auto md:top-auto w-9 h-9 md:w-12 md:h-12 bg-secondary border-[3px] md:border-4 border-primary rounded-full flex items-center justify-center z-10 flex-shrink-0 step-line md:before:left-[22px] md:before:-top-[20px] md:before:bottom-[-80px]">
                                     <i class="fas fa-flag text-primary text-sm"></i>
                                 </div>
-                                <div class="md:hidden mb-2">
+                                <div class="md:hidden mb-3 pl-12 h-9 flex items-center">
                                     <span class="text-primary font-bold text-lg">Semana 0 - BASELINE</span>
                                 </div>
                                 <div class="bg-white/5 border border-white/10 p-6 rounded-2xl flex-grow">
@@ -415,16 +415,16 @@
                         </div>
 
                         <!-- Checkpoint -->
-                        <div class="relative pl-10 md:pl-0 step-item">
+                        <div class="relative md:pl-0 step-item">
                             <div class="md:flex items-start gap-8">
                                 <div class="hidden md:block w-32 text-right pt-2 flex-shrink-0">
                                     <span class="text-primary font-bold text-xl block">Semana 6</span>
                                     <span class="text-gray-500 text-sm">CHECKPOINT</span>
                                 </div>
-                                <div class="absolute left-0 md:relative md:left-auto w-12 h-12 bg-secondary border-4 border-primary rounded-full flex items-center justify-center z-10 flex-shrink-0 step-line md:before:left-[22px] md:before:-top-[20px] md:before:bottom-[-80px]">
+                                <div class="absolute left-0 top-0 md:relative md:left-auto md:top-auto w-9 h-9 md:w-12 md:h-12 bg-secondary border-[3px] md:border-4 border-primary rounded-full flex items-center justify-center z-10 flex-shrink-0 step-line md:before:left-[22px] md:before:-top-[20px] md:before:bottom-[-80px]">
                                     <i class="fas fa-search text-primary text-sm"></i>
                                 </div>
-                                <div class="md:hidden mb-2">
+                                <div class="md:hidden mb-3 pl-12 h-9 flex items-center">
                                     <span class="text-primary font-bold text-lg">Semana 6 - CHECKPOINT</span>
                                 </div>
                                 <div class="bg-white/5 border border-white/10 p-6 rounded-2xl flex-grow">
@@ -435,16 +435,16 @@
                         </div>
 
                         <!-- Result -->
-                        <div class="relative pl-10 md:pl-0 step-item">
+                        <div class="relative md:pl-0 step-item">
                             <div class="md:flex items-start gap-8">
                                 <div class="hidden md:block w-32 text-right pt-2 flex-shrink-0">
                                     <span class="text-primary font-bold text-xl block">Semana 12</span>
                                     <span class="text-gray-500 text-sm">RESULT</span>
                                 </div>
-                                <div class="absolute left-0 md:relative md:left-auto w-12 h-12 bg-secondary border-4 border-primary rounded-full flex items-center justify-center z-10 flex-shrink-0 step-line">
+                                <div class="absolute left-0 top-0 md:relative md:left-auto md:top-auto w-9 h-9 md:w-12 md:h-12 bg-secondary border-[3px] md:border-4 border-primary rounded-full flex items-center justify-center z-10 flex-shrink-0 step-line">
                                     <i class="fas fa-trophy text-primary text-sm"></i>
                                 </div>
-                                <div class="md:hidden mb-2">
+                                <div class="md:hidden mb-3 pl-12 h-9 flex items-center">
                                     <span class="text-primary font-bold text-lg">Semana 12 - RESULT</span>
                                 </div>
                                 <div class="bg-primary/10 border border-primary/30 p-6 rounded-2xl flex-grow">
@@ -805,7 +805,7 @@ Dif.: cambio desde la medici&#243;n anterior (23-03-2026). Emitido el 04-10-2026
                         </div>
                     </div>
                     
-                    <a href="#contacto" class="inline-flex items-center gap-2 text-primary font-bold hover:text-primaryDark transition group">
+                    <a href="#contacto" class="inline-flex items-center gap-2 text-primary font-bold hover:text-primaryDark transition group py-3">
                         Iniciar mi proceso con Julián <i class="fas fa-arrow-right transform group-hover:translate-x-1 transition"></i>
                     </a>
                 </div>
@@ -894,19 +894,19 @@ Dif.: cambio desde la medici&#243;n anterior (23-03-2026). Emitido el 04-10-2026
                     <p class="text-gray-400 text-sm mb-2 max-w-sm leading-relaxed">Un sistema de evaluación, planificación y seguimiento diseñado para transformar datos en decisiones de rendimiento.</p>
                     <p class="text-gray-500 text-xs mb-6 font-bold">Lic. en Nutrición — MP: 8669 | MN: 14319</p>
                     <div class="flex gap-4">
-                        <a href="https://www.instagram.com/nutricionconjulian" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Julián Lell" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram text-xl" aria-hidden="true"></i></a>
-                        <a href="https://wa.me/5491126108920" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp de Julián Lell" class="text-gray-400 hover:text-white transition"><i class="fab fa-whatsapp text-xl" aria-hidden="true"></i></a>
-                        <a href="mailto:lic.julianlell@gmail.com" aria-label="Enviar email a Julián Lell" class="text-gray-400 hover:text-white transition"><i class="fas fa-envelope text-xl" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/nutricionconjulian" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Julián Lell" class="text-gray-400 hover:text-white transition inline-flex items-center justify-center p-3 -m-3"><i class="fab fa-instagram text-xl" aria-hidden="true"></i></a>
+                        <a href="https://wa.me/5491126108920" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp de Julián Lell" class="text-gray-400 hover:text-white transition inline-flex items-center justify-center p-3 -m-3"><i class="fab fa-whatsapp text-xl" aria-hidden="true"></i></a>
+                        <a href="mailto:lic.julianlell@gmail.com" aria-label="Enviar email a Julián Lell" class="text-gray-400 hover:text-white transition inline-flex items-center justify-center p-3 -m-3"><i class="fas fa-envelope text-xl" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 
                 <div class="col-span-1 md:col-span-4">
                     <h4 class="text-sm font-bold mb-4 uppercase tracking-wider text-gray-300">El Método</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#que-es" class="text-gray-400 hover:text-primary transition">¿Qué es MAIP?</a></li>
-                        <li><a href="#ciclo" class="text-gray-400 hover:text-primary transition">Ciclo de 12 semanas</a></li>
-                        <li><a href="#herramientas" class="text-gray-400 hover:text-primary transition">Antropometría y Herramientas</a></li>
-                        <li><a href="#modalidades" class="text-gray-400 hover:text-primary transition">Modalidades de Trabajo</a></li>
+                        <li><a href="#que-es" class="text-gray-400 hover:text-primary transition inline-block py-2">¿Qué es MAIP?</a></li>
+                        <li><a href="#ciclo" class="text-gray-400 hover:text-primary transition inline-block py-2">Ciclo de 12 semanas</a></li>
+                        <li><a href="#herramientas" class="text-gray-400 hover:text-primary transition inline-block py-2">Antropometría y Herramientas</a></li>
+                        <li><a href="#modalidades" class="text-gray-400 hover:text-primary transition inline-block py-2">Modalidades de Trabajo</a></li>
                     </ul>
                 </div>
                 
