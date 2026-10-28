@@ -203,6 +203,70 @@
         .maip-training-footnote { font-size: 12px; line-height: 1.7; color: #abb4c1; padding-top: 16px; margin-top: 20px; border-top: 1px solid #ffffff18; }
         @media (min-width: 768px) { .maip-services-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
         @media (min-width: 1200px) { .maip-services-grid { grid-template-columns: repeat(4,minmax(0,1fr)); } }
+
+        /* ── Planilla de entrenamiento (MAIP 360) ── */
+        .rt-t-bajo  { --rt-bg: #dff5ea; --rt-fg: #146c43; --rt-dot: #2f9e6b; }
+        .rt-t-medio { --rt-bg: #fff1cc; --rt-fg: #7a5600; --rt-dot: #e0a100; }
+        .rt-t-alto  { --rt-bg: #fde0de; --rt-fg: #a12622; --rt-dot: #d9534f; }
+        .rt-chip { display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; background: var(--rt-bg); color: var(--rt-fg); white-space: nowrap; }
+        .rt-preview { padding: 14px 14px 0; }
+        .rt-preview-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 10px; margin-bottom: 10px; font-size: 11px; font-weight: 700; color: #243449; }
+        .rt-preview-head span:last-child { font-weight: 600; color: #627086; }
+        .rt-week { display: grid; gap: 5px; }
+        .rt-wd { display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 8px; padding: 5px 8px; border-radius: 8px; background: #fff; border: 1px solid #dbe5ef; font-size: 12px; color: #1a1a1a; }
+        .rt-wd b { font-size: 11px; font-weight: 800; color: #0056b3; }
+        .rt-wd .rt-chip { font-size: 9px; padding: 2px 7px; }
+        .rt-preview-label { margin: 12px -14px 0; border-top: 1px solid #dbe5ef; }
+        .rt-modal .dashboard-scroll { padding: 18px; }
+        .rt-wrap { max-width: 1040px; margin: 0 auto; }
+        .rt-summary { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: 16px; }
+        .rt-summary div { background: #fff; border-radius: 10px; padding: 10px 12px; }
+        .rt-summary dt { font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #627086; }
+        .rt-summary dd { margin: 2px 0 0; font-size: 13px; font-weight: 700; color: #142237; }
+        .rt-tabs { display: flex; gap: 8px; margin-bottom: 8px; }
+        .rt-tab { flex: 1; padding: 11px 12px; border: 1px solid #c9d6e6; border-radius: 10px; background: #fff; font: inherit; font-size: 13px; font-weight: 800; color: #243449; cursor: pointer; }
+        .rt-tab small { display: block; margin-top: 2px; font-size: 11px; font-weight: 600; color: #627086; }
+        .rt-tab[aria-selected="true"] { background: #0056b3; border-color: #0056b3; color: #fff; }
+        .rt-tab[aria-selected="true"] small { color: #dbe9fb; }
+        .rt-tab:focus-visible, .rt-log select:focus-visible, .rt-reset:focus-visible { outline: 3px solid #0056b3; outline-offset: 2px; }
+        .rt-cycle-note { margin: 0 0 14px; font-size: 12px; line-height: 1.6; color: #43556b; }
+        .rt-days { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 20px; }
+        .rt-day { background: #fff; border-radius: 12px; padding: 14px 14px 12px; border-top: 4px solid var(--rt-dot); box-shadow: 0 2px 10px #14223710; }
+        .rt-dayhead { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 4px; }
+        .rt-dayname { font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #627086; }
+        .rt-daytitle { margin: 0 0 10px; font-size: 16px; font-weight: 800; color: #0b3b78; }
+        .rt-block { padding: 8px 0; border-top: 1px dashed #d5deea; }
+        .rt-blockhead { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 8px; margin-bottom: 6px; font-size: 12px; }
+        .rt-blockhead strong { color: #142237; }
+        .rt-blockhead span { color: #627086; font-weight: 600; }
+        .rt-items { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+        .rt-items li { display: grid; grid-template-columns: 1fr auto 46px; align-items: center; gap: 8px; font-size: 13px; color: #1f2d3f; }
+        .rt-items li.rt-plain { grid-template-columns: 1fr; color: #43556b; }
+        .rt-sr { font-weight: 800; font-variant-numeric: tabular-nums; color: #0056b3; }
+        .rt-lock { display: block; height: 9px; border-radius: 5px; background: #c3cedd; filter: blur(2.5px); }
+        .rt-cols { display: grid; grid-template-columns: 1fr auto 46px; gap: 8px; margin: 0 0 4px; font-size: 9px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #8a97a9; }
+        .rt-cols span:last-child { text-align: right; }
+        .rt-nutri { margin: 8px 0 0; padding: 8px 10px; border-radius: 8px; background: #f1f6fd; font-size: 12px; line-height: 1.5; color: #243449; }
+        .rt-nutri i { color: #0056b3; margin-right: 4px; }
+        .rt-log { background: #fff; border-radius: 12px; padding: 16px; }
+        .rt-log h3 { margin: 0 0 4px; font-size: 16px; font-weight: 800; color: #142237; }
+        .rt-log > p { margin: 0 0 12px; font-size: 12px; line-height: 1.6; color: #43556b; }
+        .rt-tablewrap { overflow-x: auto; }
+        .rt-log table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        .rt-logday { display: block; font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #627086; }
+        .rt-log td { line-height: 1.3; }
+        .rt-log th { padding: 6px 8px; text-align: left; font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #627086; border-bottom: 2px solid #dbe4ef; }
+        .rt-log td { padding: 6px 8px; border-bottom: 1px solid #e8eef6; font-variant-numeric: tabular-nums; }
+        .rt-log th.n, .rt-log td.n { text-align: right; }
+        .rt-log select { padding: 5px 6px; border: 1px solid #c9d6e6; border-radius: 6px; background: #f7faff; font: inherit; font-size: 13px; font-weight: 700; color: #0b3b78; }
+        .rt-totals { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 14px 0 0; }
+        .rt-totals div { background: #f1f6fd; border-radius: 10px; padding: 9px 12px; }
+        .rt-totals dt { font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #627086; }
+        .rt-totals dd { margin: 2px 0 0; font-size: 20px; font-weight: 800; color: #0056b3; font-variant-numeric: tabular-nums; }
+        .rt-reset { margin-top: 12px; padding: 8px 12px; border: 1px solid #c9d6e6; border-radius: 8px; background: #f7faff; font: inherit; font-size: 12px; font-weight: 700; color: #243449; cursor: pointer; }
+        .rt-foot { margin: 14px 2px 4px; font-size: 11px; line-height: 1.6; color: #627086; }
+        @media (min-width: 700px) { .rt-days { grid-template-columns: repeat(2, minmax(0, 1fr)); } .rt-summary { grid-template-columns: repeat(4, minmax(0, 1fr)); } .rt-totals { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+        @media (min-width: 1000px) { .rt-days { grid-template-columns: repeat(3, minmax(0, 1fr)); } .rt-modal .dashboard-scroll { padding: 24px; } }
     </style>
 </head>
 <body class="font-sans text-gray-800 bg-lightBg antialiased selection:bg-primary selection:text-white">
@@ -532,11 +596,20 @@
                     <p class="maip-training-copy">Evaluación física, programación del entrenamiento y ajustes de carga a cargo del preparador físico, coordinados con tu objetivo.</p>
                     <p class="maip-training-program">MAIP 360</p>
                     <p class="maip-training-copy">Podés sumar nutrición y entrenamiento en un mismo proceso, con seguimiento y coordinación entre profesionales.</p>
-                    <button id="rutina-open" class="dashboard-preview-button" type="button" aria-haspopup="dialog" aria-controls="rutina-modal">
-                        <img src="img/rutina-modelo-p1.jpg" alt="Vista previa de una rutina semanal MAIP Performance" class="dashboard-preview-image" width="1200" height="1697" loading="lazy" decoding="async">
-                        <span class="dashboard-preview-label">Ver rutina semanal modelo <span aria-hidden="true">↗</span></span>
+                    <button id="rutina-open" class="dashboard-preview-button rt-preview" type="button" aria-haspopup="dialog" aria-controls="rutina-modal" aria-label="Ver la planilla de entrenamiento modelo: semana con tipo de día nutricional, ejercicios y carga">
+                        <span class="rt-preview-head"><span>Semana modelo · Ciclo 1 Base</span><span>Gimnasio 5 días + running 4 días</span></span>
+                        <span class="rt-week" aria-hidden="true">
+                            <span class="rt-wd rt-t-medio"><b>LUN</b><span>Tren superior A</span><span class="rt-chip">Medio</span></span>
+                            <span class="rt-wd rt-t-alto"><b>MAR</b><span>Pierna: fuerza</span><span class="rt-chip">Alto</span></span>
+                            <span class="rt-wd rt-t-alto"><b>MIÉ</b><span>Series + tren B</span><span class="rt-chip">Alto</span></span>
+                            <span class="rt-wd rt-t-medio"><b>JUE</b><span>Pierna: potencia</span><span class="rt-chip">Medio</span></span>
+                            <span class="rt-wd rt-t-medio"><b>VIE</b><span>Core y transmisión</span><span class="rt-chip">Medio</span></span>
+                            <span class="rt-wd rt-t-alto"><b>SÁB</b><span>Salida larga</span><span class="rt-chip">Alto</span></span>
+                            <span class="rt-wd rt-t-bajo"><b>DOM</b><span>Descanso</span><span class="rt-chip">Bajo</span></span>
+                        </span>
+                        <span class="dashboard-preview-label rt-preview-label">Ver planilla de entrenamiento <span aria-hidden="true">↗</span></span>
                     </button>
-                    <p class="dashboard-preview-note" style="color:#abb4c1">Ejemplo con un paciente modelo ficticio: fuerza, running y descanso organizados en la semana.</p>
+                    <p class="dashboard-preview-note" style="color:#abb4c1">Ejemplo con un paciente modelo ficticio: cada día de entrenamiento marca cómo ajustar la alimentación. Probá el registro de carga dentro.</p>
                     <p class="maip-training-footnote">El entrenamiento se integra con la nutrición dentro de MAIP 360.</p>
                 </div>
             </div>
@@ -587,24 +660,47 @@ Dif.: cambio desde la medici&#243;n anterior (23-03-2026). Emitido el 04-10-2026
         </div>
     </dialog>
 
-    <!-- Rutina semanal modelo (paciente ficticio) en ventana ampliada -->
-    <dialog id="rutina-modal" class="maip-report-modal" aria-labelledby="rutina-title" aria-describedby="rutina-description">
+    <!-- Planilla de entrenamiento modelo (paciente ficticio) en ventana ampliada -->
+    <dialog id="rutina-modal" class="maip-report-modal rt-modal" aria-labelledby="rutina-title" aria-describedby="rutina-description">
         <header class="dashboard-toolbar">
-            <div><h2 id="rutina-title">Rutina semanal modelo</h2><p id="rutina-description">MAIP Performance · Paciente modelo (ejemplo ficticio) · 2 páginas</p></div>
-            <div class="dashboard-controls" aria-label="Controles de la rutina semanal">
-                <button id="rutina-zoom-out" type="button" aria-label="Reducir zoom de la rutina">−</button>
-                <output id="rutina-zoom-label" aria-live="polite">100%</output>
-                <button id="rutina-zoom-in" type="button" aria-label="Ampliar zoom de la rutina">+</button>
-                <button id="rutina-fit" type="button">Ajustar</button>
-                <button id="rutina-close" class="report-close" type="button" aria-label="Cerrar rutina semanal" autofocus>Cerrar ✕</button>
+            <div><h2 id="rutina-title">Planilla de entrenamiento modelo</h2><p id="rutina-description">MAIP 360 · Paciente modelo (ejemplo ficticio) · Runner de calle, media maratón</p></div>
+            <div class="dashboard-controls" aria-label="Controles de la planilla">
+                <button id="rutina-close" class="report-close" type="button" aria-label="Cerrar planilla de entrenamiento" autofocus>Cerrar ✕</button>
             </div>
         </header>
-        <div id="rutina-scroll" class="dashboard-scroll" tabindex="0" aria-label="Páginas de la rutina semanal modelo">
-            <div id="rutina-document" class="dashboard-document">
-                <figure class="dashboard-page"><figcaption>Página 1 · Ciclo 1: Base (semanas 1 a 4)</figcaption><img src="img/rutina-modelo-p1.jpg" alt="Rutina semanal modelo, ciclo 1: tren superior A el lunes, pierna de fuerza el martes, series de running y tren superior B el miércoles, pierna de potencia el jueves, core y transmisión de fuerza el viernes, salida larga de 14 km el sábado y descanso el domingo" width="1200" height="1697" loading="lazy" decoding="async"></figure>
-                <figure class="dashboard-page"><figcaption>Página 2 · Ciclo 2: Progresión (semanas 5 a 8)</figcaption><img src="img/rutina-modelo-p2.jpg" alt="Rutina semanal modelo, ciclo 2: más carga en fuerza y potencia, running de tempo y tren superior B el miércoles, salida larga de 16 km el sábado" width="1200" height="1697" loading="lazy" decoding="async"></figure>
+        <div id="rutina-scroll" class="dashboard-scroll" tabindex="0" aria-label="Planilla de entrenamiento modelo">
+            <div class="rt-wrap">
+                <dl class="rt-summary">
+                    <div><dt>Programa</dt><dd>MAIP 360</dd></div>
+                    <div><dt>Objetivo</dt><dd>Media maratón</dd></div>
+                    <div><dt>Frecuencia</dt><dd>Gimnasio 5 días + running 4 días</dd></div>
+                    <div><dt>A cargo de</dt><dd>Preparador físico</dd></div>
+                </dl>
+
+                <div class="rt-tabs" role="tablist" aria-label="Ciclo del programa">
+                    <button class="rt-tab" id="rt-tab-c1" role="tab" type="button" aria-selected="true" aria-controls="rt-days" data-cycle="c1">Ciclo 1 · Base<small>Semanas 1 a 4</small></button>
+                    <button class="rt-tab" id="rt-tab-c2" role="tab" type="button" aria-selected="false" aria-controls="rt-days" data-cycle="c2" tabindex="-1">Ciclo 2 · Progresión<small>Semanas 5 a 8</small></button>
+                </div>
+                <p id="rt-cycle-note" class="rt-cycle-note"></p>
+
+                <div id="rt-days" class="rt-days" role="tabpanel" aria-labelledby="rt-tab-c1"></div>
+
+                <section class="rt-log" aria-labelledby="rt-log-title">
+                    <h3 id="rt-log-title">Registro y carga de la semana</h3>
+                    <p>Cada sesión se registra con su RPE (esfuerzo percibido de 1 a 10). La carga se calcula sola: <strong>sRPE = minutos × RPE</strong>. Probalo: cambiá un RPE y mirá cómo se actualiza el total.</p>
+                    <div class="rt-tablewrap">
+                        <table>
+                            <caption class="sr-only" style="position:absolute;left:-9999px">Sesiones de la semana con duración, RPE y carga sRPE</caption>
+                            <thead><tr><th scope="col">Sesión</th><th scope="col" class="n">Min</th><th scope="col">RPE</th><th scope="col" class="n">sRPE</th></tr></thead>
+                            <tbody id="rt-log-body"></tbody>
+                        </table>
+                    </div>
+                    <dl id="rt-totals" class="rt-totals" aria-live="polite"></dl>
+                    <button id="rt-reset" class="rt-reset" type="button">Volver a los valores del ejemplo</button>
+                </section>
+
+                <p class="rt-foot">Ejemplo ilustrativo de un paciente modelo. Los tiempos y el esfuerzo (RPE) son valores de muestra. En tu planilla real el preparador físico define cada carga, descanso y progresión según tu evaluación, y el tipo de día (bajo, medio o alto) se coordina con tu plan de alimentación.</p>
             </div>
-            <details class="dashboard-transcript"><summary>Leer el contenido de la rutina</summary><p><strong>MAIP Performance · Paciente modelo (ejemplo)</strong> · Runner de calle, media maratón. Gimnasio 5 días por semana y running 4 días.</p><p><strong>Ciclo 1: Base (semanas 1 a 4).</strong> Lunes: tren superior A de fuerza (press de banco, remo con barra, press militar, dominadas asistidas, face pull) más trote suave de 5 km. Martes: pierna de fuerza (sentadilla trasera, peso muerto rumano, sentadilla búlgara, hip thrust, elevación de talones). Miércoles: running con series, 4 x 5 minutos fuerte con pausa de 2 minutos, unos 9 km, y tren superior B de volumen. Jueves: pierna de potencia y explosividad (salto al cajón, cargada de potencia, swing con kettlebell, zancada con salto, sprints de 30 m). Viernes: trote suave de 7 km y core con transmisión de fuerza (plancha lateral, Pallof press, balón medicinal, skipping y saltos laterales, bird dog). Sábado: salida larga de 14 km a ritmo conversacional. Domingo: descanso y preparación de las comidas. Total semanal: 35 km de running y 5 sesiones de gimnasio.</p><p><strong>Ciclo 2: Progresión (semanas 5 a 8).</strong> Más carga en fuerza y más potencia (sentadilla 5x4, salto al cajón 5x3, cargada 5x3, sprints de 8 x 30 m), running de tempo de 20 minutos continuos el miércoles, bounds y pliometría en el día de core, y salida larga de 16 km el sábado con los últimos 2 km un poco más rápido. Total semanal: 37 km de running y 5 sesiones de gimnasio.</p><p>Ejemplo ilustrativo de un paciente modelo. La rutina real la define el preparador físico según la evaluación.</p></details>
         </div>
     </dialog>
 
@@ -1168,26 +1264,161 @@ Dif.: cambio desde la medici&#243;n anterior (23-03-2026). Emitido el 04-10-2026
     });
     </script>
     <script>
+    // Planilla de entrenamiento modelo (MAIP 360). Todo es un ejemplo ficticio: tiempos y RPE son valores de muestra.
     document.addEventListener('DOMContentLoaded', () => {
         const dialog = document.getElementById('rutina-modal');
         const opener = document.getElementById('rutina-open');
-        const doc = document.getElementById('rutina-document');
-        const zoomOut = document.getElementById('rutina-zoom-out');
-        const zoomIn = document.getElementById('rutina-zoom-in');
-        const zoomLabel = document.getElementById('rutina-zoom-label');
-        let zoom = 100;
-        let previousOverflow = '';
-        function setZoom(value) {
-            zoom = Math.max(75, Math.min(250, value));
-            doc.style.width = zoom + '%';
-            zoomLabel.value = zoom + '%';
-            zoomLabel.textContent = zoom + '%';
-            zoomOut.disabled = zoom === 75;
-            zoomIn.disabled = zoom === 250;
+        const daysEl = document.getElementById('rt-days');
+        const noteEl = document.getElementById('rt-cycle-note');
+        const logBody = document.getElementById('rt-log-body');
+        const totalsEl = document.getElementById('rt-totals');
+        const tabs = [...document.querySelectorAll('.rt-tab')];
+        if (!dialog || !opener || !daysEl) return;
+
+        const ex = (n, s) => ({ n, s });   // ejercicio: nombre y series × repeticiones
+        const st = t => ({ t });           // paso o indicación sin series
+
+        const CYCLES = {
+            c1: {
+                note: 'Construimos la base: técnica, fuerza general y volumen aeróbico. 35 km de running y 5 sesiones de gimnasio por semana.',
+                days: [
+                    { day: 'Lunes', title: 'Tren superior A', type: 'medio', sessions: [
+                        { name: 'Fuerza', min: 50, rpe: 7, items: [ex('Press de banco', '4×6'), ex('Remo con barra', '4×6'), ex('Press militar', '3×8'), ex('Dominadas asistidas', '3×6'), ex('Face pull', '3×15')] },
+                        { name: 'Trote suave', min: 30, rpe: 3, items: [st('5 km a ritmo suave')] } ] },
+                    { day: 'Martes', title: 'Pierna: fuerza', type: 'alto', sessions: [
+                        { name: 'Fuerza', min: 50, rpe: 8, items: [ex('Sentadilla trasera', '4×5'), ex('Peso muerto rumano', '4×6'), ex('Sentadilla búlgara', '3×8'), ex('Hip thrust', '3×8'), ex('Elevación de talones', '4×12'), st('Movilidad 5 min')] } ] },
+                    { day: 'Miércoles', title: 'Series + tren B', type: 'alto', sessions: [
+                        { name: 'Running con series (9 km)', min: 50, rpe: 8, items: [st('Entrada en calor 10 min'), st('4 × 5 min fuerte, pausa 2 min'), st('Vuelta a la calma 10 min')] },
+                        { name: 'Tren superior B', min: 40, rpe: 6, items: [ex('Press inclinado', '3×10'), ex('Jalón al pecho', '3×10'), ex('Remo con mancuerna', '3×10'), ex('Vuelos laterales', '3×12'), ex('Curl y tríceps', '2×12')] } ] },
+                    { day: 'Jueves', title: 'Pierna: potencia', type: 'medio', sessions: [
+                        { name: 'Explosividad', min: 45, rpe: 7, items: [st('Saltos suaves 8 min'), ex('Salto al cajón', '4×4'), ex('Cargada de potencia', '4×3'), ex('Swing con kettlebell', '4×10'), ex('Zancada con salto', '3×6'), ex('Sprints', '6×30 m')] } ] },
+                    { day: 'Viernes', title: 'Core y transmisión', type: 'medio', sessions: [
+                        { name: 'Trote suave', min: 40, rpe: 3, items: [st('7 km a ritmo suave')] },
+                        { name: 'Core', min: 40, rpe: 5, items: [ex('Plancha lateral', '3×30 s'), ex('Pallof press', '3×10'), ex('Balón medicinal', '3×8'), ex('Skipping y saltos laterales', '3×20 s'), ex('Bird dog', '3×10')] } ] },
+                    { day: 'Sábado', title: 'Salida larga', type: 'alto', nutri: 'Hidratos 2 a 3 h antes, agua durante la salida y, al terminar, proteína con hidratos.', sessions: [
+                        { name: 'Salida larga', min: 95, rpe: 5, items: [st('14 km a ritmo conversacional')] } ] },
+                    { day: 'Domingo', title: 'Descanso', type: 'bajo', nutri: 'Preparar las comidas de la semana.', sessions: [], rest: 'Caminata libre o descanso total. Movilidad 15 min.' }
+                ]
+            },
+            c2: {
+                note: 'Progresión: más carga en fuerza, más potencia y un tempo de 20 minutos. 37 km de running y 5 sesiones de gimnasio por semana.',
+                days: [
+                    { day: 'Lunes', title: 'Tren superior A', type: 'medio', sessions: [
+                        { name: 'Fuerza', min: 55, rpe: 7, items: [ex('Press de banco', '5×5'), ex('Remo con barra', '5×5'), ex('Press militar', '4×6'), ex('Dominadas', '4×6'), ex('Face pull', '3×15')] },
+                        { name: 'Trote suave', min: 30, rpe: 3, items: [st('5 km a ritmo suave')] } ] },
+                    { day: 'Martes', title: 'Pierna: fuerza', type: 'alto', sessions: [
+                        { name: 'Fuerza', min: 55, rpe: 8, items: [ex('Sentadilla trasera', '5×4'), ex('Peso muerto rumano', '4×5'), ex('Sentadilla búlgara', '3×6'), ex('Hip thrust', '4×6'), ex('Elevación de talones', '4×10'), st('Movilidad 5 min')] } ] },
+                    { day: 'Miércoles', title: 'Tempo + tren B', type: 'alto', sessions: [
+                        { name: 'Running de tempo (9 km)', min: 55, rpe: 8, items: [st('Entrada en calor 10 min'), st('20 min continuos, ritmo cómodo-fuerte'), st('Vuelta a la calma 10 min')] },
+                        { name: 'Tren superior B', min: 45, rpe: 6, items: [ex('Press inclinado', '4×8'), ex('Jalón al pecho', '4×8'), ex('Remo con mancuerna', '3×10'), ex('Vuelos laterales', '3×12'), ex('Curl y tríceps', '3×10')] } ] },
+                    { day: 'Jueves', title: 'Pierna: potencia', type: 'medio', sessions: [
+                        { name: 'Explosividad', min: 50, rpe: 8, items: [st('Saltos suaves 8 min'), ex('Salto al cajón', '5×3'), ex('Cargada de potencia', '5×3'), ex('Swing con kettlebell', '4×12'), ex('Zancada con salto', '4×6'), ex('Sprints', '8×30 m')] } ] },
+                    { day: 'Viernes', title: 'Core y transmisión', type: 'medio', sessions: [
+                        { name: 'Trote suave', min: 40, rpe: 3, items: [st('7 km a ritmo suave')] },
+                        { name: 'Core y pliometría', min: 40, rpe: 5, items: [ex('Plancha lateral con elevación', '3×30 s'), ex('Pallof press', '4×10'), ex('Balón medicinal', '4×8'), ex('Bounds (zancadas largas)', '3×20 m'), ex('Dead bug', '3×10')] } ] },
+                    { day: 'Sábado', title: 'Salida larga', type: 'alto', nutri: 'Probar el combustible de la carrera y, al terminar, proteína con hidratos.', sessions: [
+                        { name: 'Salida larga', min: 105, rpe: 5, items: [st('16 km a ritmo conversacional'), st('Los últimos 2 km un poco más rápido')] } ] },
+                    { day: 'Domingo', title: 'Descanso', type: 'bajo', nutri: 'Preparar las comidas de la semana.', sessions: [], rest: 'Caminata libre o descanso total. Movilidad 15 min.' }
+                ]
+            }
+        };
+
+        const TYPE_LABEL = { bajo: 'Día bajo', medio: 'Día medio', alto: 'Día alto' };
+        const fmt = (n, d = 0) => n.toLocaleString('es-AR', { minimumFractionDigits: d, maximumFractionDigits: d });
+        const rpeState = { c1: {}, c2: {} };   // RPE elegido por sesión: { cicloId: { 'día-índice': valor } }
+        let current = 'c1';
+
+        const sessionsOf = id => CYCLES[id].days.flatMap((d, di) => d.sessions.map((s, si) => ({ ...s, day: d.day, key: di + '-' + si })));
+        const rpeOf = (id, s) => rpeState[id][s.key] ?? s.rpe;
+
+        function renderDays() {
+            const c = CYCLES[current];
+            noteEl.textContent = c.note;
+            daysEl.setAttribute('aria-labelledby', 'rt-tab-' + current);
+            daysEl.innerHTML = c.days.map((d, di) => {
+                const blocks = d.sessions.map((s, si) => {
+                    const rpe = rpeOf(current, { ...s, key: di + '-' + si });
+                    const hasEx = s.items.some(i => i.n);
+                    const list = s.items.map(i => i.n
+                        ? '<li><span>' + i.n + '</span><span class="rt-sr">' + i.s + '</span><span class="rt-lock" aria-hidden="true"></span></li>'
+                        : '<li class="rt-plain">' + i.t + '</li>').join('');
+                    return '<div class="rt-block"><div class="rt-blockhead"><strong>' + s.name + '</strong><span>' + s.min + ' min · RPE ' + rpe + '</span></div>' +
+                        (hasEx ? '<div class="rt-cols" aria-hidden="true"><span>Ejercicio</span><span>Series × reps</span><span>Carga</span></div>' : '') +
+                        '<ul class="rt-items">' + list + '</ul></div>';
+                }).join('');
+                const rest = d.rest ? '<div class="rt-block"><ul class="rt-items"><li class="rt-plain">' + d.rest + '</li></ul></div>' : '';
+                const nutri = d.nutri ? '<p class="rt-nutri"><i class="fas fa-utensils" aria-hidden="true"></i><strong>Nutrición:</strong> ' + d.nutri + '</p>' : '';
+                return '<article class="rt-day rt-t-' + d.type + '"><div class="rt-dayhead"><span class="rt-dayname">' + d.day + '</span><span class="rt-chip">' + TYPE_LABEL[d.type] + '</span></div>' +
+                    '<h3 class="rt-daytitle">' + d.title + '</h3>' + blocks + rest + nutri + '</article>';
+            }).join('');
         }
+
+        function renderLog() {
+            const rows = sessionsOf(current);
+            logBody.innerHTML = rows.map(s => {
+                const rpe = rpeOf(current, s);
+                const options = Array.from({ length: 10 }, (_, i) => '<option value="' + (i + 1) + '"' + (i + 1 === rpe ? ' selected' : '') + '>' + (i + 1) + '</option>').join('');
+                return '<tr><td><span class="rt-logday">' + s.day + '</span>' + s.name + '</td><td class="n">' + s.min + '</td>' +
+                    '<td><select data-key="' + s.key + '" aria-label="RPE de ' + s.name + ' del ' + s.day.toLowerCase() + '">' + options + '</select></td>' +
+                    '<td class="n" data-srpe="' + s.key + '">' + fmt(s.min * rpe) + '</td></tr>';
+            }).join('');
+            updateTotals();
+        }
+
+        function updateTotals() {
+            const rows = sessionsOf(current);
+            const minutes = rows.reduce((a, s) => a + s.min, 0);
+            const load = rows.reduce((a, s) => a + s.min * rpeOf(current, s), 0);
+            const avg = rows.reduce((a, s) => a + rpeOf(current, s), 0) / rows.length;
+            totalsEl.innerHTML =
+                '<div><dt>Sesiones</dt><dd>' + rows.length + '</dd></div>' +
+                '<div><dt>Minutos</dt><dd>' + fmt(minutes) + '</dd></div>' +
+                '<div><dt>RPE medio</dt><dd>' + fmt(avg, 1) + '</dd></div>' +
+                '<div><dt>Carga sRPE</dt><dd>' + fmt(load) + '</dd></div>';
+        }
+
+        function selectCycle(id) {
+            current = id;
+            tabs.forEach(t => {
+                const on = t.dataset.cycle === id;
+                t.setAttribute('aria-selected', on ? 'true' : 'false');
+                t.tabIndex = on ? 0 : -1;
+            });
+            renderDays();
+            renderLog();
+        }
+
+        tabs.forEach((t, i) => {
+            t.addEventListener('click', () => selectCycle(t.dataset.cycle));
+            t.addEventListener('keydown', e => {
+                if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+                const next = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+                next.focus();
+                selectCycle(next.dataset.cycle);
+            });
+        });
+
+        logBody.addEventListener('change', e => {
+            const sel = e.target.closest('select[data-key]');
+            if (!sel) return;
+            const s = sessionsOf(current).find(x => x.key === sel.dataset.key);
+            rpeState[current][s.key] = Number(sel.value);
+            const cell = logBody.querySelector('[data-srpe="' + s.key + '"]');
+            if (cell) cell.textContent = fmt(s.min * Number(sel.value));
+            updateTotals();
+            renderDays();   // las tarjetas muestran el RPE vigente
+        });
+
+        document.getElementById('rt-reset').addEventListener('click', () => {
+            rpeState[current] = {};
+            renderDays();
+            renderLog();
+        });
+
+        let previousOverflow = '';
         opener.addEventListener('click', () => {
             previousOverflow = document.body.style.overflow;
-            setZoom(100);
+            selectCycle('c1');
             dialog.showModal();
             document.body.style.overflow = 'hidden';
             document.getElementById('rutina-scroll').scrollTop = 0;
@@ -1195,16 +1426,13 @@ Dif.: cambio desde la medici&#243;n anterior (23-03-2026). Emitido el 04-10-2026
         document.getElementById('rutina-close').addEventListener('click', () => dialog.close());
         dialog.addEventListener('close', () => {
             document.body.style.overflow = previousOverflow;
-            opener.focus({preventScroll: true});
+            opener.focus({ preventScroll: true });
         });
         dialog.addEventListener('click', event => {
             if (event.target !== dialog) return;
             const rect = dialog.getBoundingClientRect();
             if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
         });
-        zoomOut.addEventListener('click', () => setZoom(zoom - 25));
-        zoomIn.addEventListener('click', () => setZoom(zoom + 25));
-        document.getElementById('rutina-fit').addEventListener('click', () => setZoom(100));
     });
     </script>
     <script>
