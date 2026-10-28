@@ -270,6 +270,84 @@
         .rt-foot { margin: 14px 2px 4px; font-size: 11px; line-height: 1.6; color: #627086; }
         @media (min-width: 700px) { .rt-days { grid-template-columns: repeat(2, minmax(0, 1fr)); } .rt-summary { grid-template-columns: repeat(4, minmax(0, 1fr)); } .rt-totals { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
         @media (min-width: 1000px) { .rt-days { grid-template-columns: repeat(3, minmax(0, 1fr)); } .rt-modal .dashboard-scroll { padding: 24px; } }
+    
+        /* ── Informe MAIP del deportista (dashboard) ── */
+        .ip-preview { padding: 14px 14px 0; }
+        .ip-pv-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 10px; margin-bottom: 10px; font-size: 12px; color: #243449; }
+        .ip-pv-head b { font-weight: 800; }
+        .ip-pv-head span { font-weight: 600; color: #627086; }
+        .ip-pv-quote { display: block; margin-bottom: 10px; padding: 9px 11px; border-left: 4px solid #2f5cff; background: #e8eeff; border-radius: 0 8px 8px 0; font-size: 12px; line-height: 1.5; color: #1a2a55; }
+        .ip-pv-maip { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; margin-bottom: 4px; }
+        .ip-pv-maip > span { display: flex; align-items: center; gap: 8px; padding: 7px 9px; border-radius: 8px; background: var(--ip-bg); border-top: 3px solid var(--ip-c); font-size: 12px; font-weight: 800; color: #1a2433; }
+        .ip-pv-maip b { color: var(--ip-c); font-size: 15px; }
+        .ip-pv-maip small { display: block; font-size: 10px; font-weight: 600; color: #4b5870; }
+        .ip-pv-meta { display: block; margin: 8px 0 0; font-size: 11px; color: #627086; }
+        .ip-preview .dashboard-preview-label { margin: 12px -14px 0; border-top: 1px solid #dbe5ef; }
+        .ip-m { --ip-c: #2f5cff; --ip-bg: #e8eeff; } .ip-a { --ip-c: #0e8fa8; --ip-bg: #e0f3f8; } .ip-i { --ip-c: #d98200; --ip-bg: #fdf0db; } .ip-p { --ip-c: #159a55; --ip-bg: #e1f5e9; }
+        .ip-modal .dashboard-scroll { padding: 16px; }
+        .ip-wrap { max-width: 900px; margin: 0 auto; display: grid; gap: 16px; }
+        .ip-page { background: #fff; border-radius: 14px; padding: 18px; box-shadow: 0 2px 10px #14223710; }
+        .ip-pagehead { margin: 0 0 14px; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #627086; }
+        .ip-banner { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; padding: 14px 16px; border-radius: 12px 12px 0 0; background: #111318; border-bottom: 4px solid #2f5cff; color: #fff; }
+        .ip-banner img { width: 56px; height: 56px; border-radius: 8px; flex-shrink: 0; }
+        .ip-banner small { display: block; font-size: 10px; font-weight: 800; letter-spacing: .22em; color: #8ea6ff; }
+        .ip-banner h3 { margin: 2px 0; font-size: 18px; font-weight: 800; line-height: 1.2; }
+        .ip-banner p { margin: 0; font-size: 12px; color: #c4cee3; }
+        .ip-info { display: grid; grid-template-columns: 1fr; gap: 1px; margin: 0 0 14px; background: #dde4ef; border: 1px solid #dde4ef; border-radius: 10px; overflow: hidden; }
+        .ip-info div { display: flex; flex-direction: column; padding: 8px 12px; background: #f6f8fe; }
+        .ip-info dt { font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #5b6475; }
+        .ip-info dd { margin: 2px 0 0; font-size: 14px; font-weight: 600; color: #111318; }
+        .ip-phrase { margin: 0 0 14px; padding: 12px 14px; border-left: 5px solid #2f5cff; background: #e8eeff; border-radius: 0 10px 10px 0; }
+        .ip-phrase small { display: block; margin-bottom: 4px; font-size: 10px; font-weight: 800; letter-spacing: .16em; color: #2f5cff; }
+        .ip-phrase p { margin: 0; font-size: 15px; line-height: 1.55; color: #1a2a55; }
+        .ip-h { margin: 18px 0 8px; padding-bottom: 6px; border-bottom: 2px solid #dde4ef; font-size: 16px; font-weight: 800; color: #111318; }
+        .ip-box { margin: 0 0 8px; padding: 9px 12px; border: 1px solid #dde4ef; border-radius: 8px; background: #f6f8fe; }
+        .ip-box small { display: block; font-size: 11px; font-weight: 800; color: #1737a8; }
+        .ip-box p { margin: 2px 0 0; font-size: 14px; line-height: 1.55; color: #111318; }
+        .ip-quads { display: grid; grid-template-columns: 1fr; gap: 10px; }
+        .ip-quad { padding: 12px 14px 8px; border-radius: 10px; background: var(--ip-bg); border-top: 5px solid var(--ip-c); }
+        .ip-quad small { display: block; font-size: 11px; font-weight: 800; letter-spacing: .16em; color: var(--ip-c); }
+        .ip-quad h4 { margin: 2px 0 0; font-size: 16px; font-weight: 800; color: #111318; }
+        .ip-quad em { display: block; margin: 4px 0 6px; font-size: 11px; font-style: normal; font-weight: 700; color: #5b6475; }
+        .ip-quad ul { list-style: none; margin: 0; padding: 0; }
+        .ip-quad li { position: relative; padding: 6px 0 6px 16px; border-bottom: 1px solid #00000014; font-size: 13.5px; color: #1a2433; }
+        .ip-quad li::before { content: ''; position: absolute; left: 2px; top: 13px; width: 7px; height: 7px; border-radius: 50%; background: var(--ip-c); }
+        .ip-table, .ip-table tbody { display: block; width: 100%; font-size: 13.5px; }
+        .ip-table thead { position: absolute; left: -9999px; }
+        .ip-table tr { display: block; margin-bottom: 8px; border: 1px solid #dde4ef; border-radius: 8px; overflow: hidden; background: #f6f8fe; }
+        .ip-table td, .ip-table th[scope="row"] { display: block; padding: 7px 12px; text-align: left; border-bottom: 1px solid #e6ebf4; }
+        .ip-table td:last-child { border-bottom: 0; }
+        .ip-table td::before { content: attr(data-label); display: block; margin-bottom: 1px; font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #5b6475; }
+        .ip-table th[scope="row"] { background: #eef1f7; font-weight: 800; color: #4b5870; }
+        .ip-blur { display: inline-block; filter: blur(4.5px); user-select: none; color: #6b7b92; }
+        .ip-acts { display: grid; gap: 6px; margin: 0 0 12px; padding: 0; list-style: none; }
+        .ip-acts li { display: grid; grid-template-columns: 74px 1fr; align-items: stretch; border: 1px solid #dde4ef; border-radius: 8px; overflow: hidden; background: #f6f8fe; font-size: 13.5px; }
+        .ip-acts b { display: grid; place-items: center; padding: 8px 6px; background: #2f5cff; color: #fff; font-size: 12px; }
+        .ip-acts span { padding: 8px 12px; }
+        .ip-sub { margin: 14px 0 6px; font-size: 12px; font-weight: 800; color: #5b6475; }
+        .ip-checks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0 0 12px; padding: 0; list-style: none; border: 1px solid #dde4ef; border-radius: 8px; overflow: hidden; background: #dde4ef; gap: 1px; }
+        .ip-checks li { display: flex; align-items: center; gap: 8px; padding: 8px 10px; background: #f6f8fe; font-size: 13px; }
+        .ip-checks li::before { content: ''; width: 14px; height: 14px; flex-shrink: 0; border: 1.5px solid #2f5cff; border-radius: 2px; background: #fff; }
+        .ip-checks li.on::before { content: '✕'; display: grid; place-items: center; font-size: 10px; font-weight: 800; color: #2f5cff; line-height: 1; }
+        .ip-close { margin-top: 14px; padding: 14px 16px; border-left: 5px solid #2f5cff; border-radius: 0 10px 10px 0; background: #111318; color: #fff; }
+        .ip-close strong.t { display: block; margin-bottom: 4px; font-size: 15px; color: #8ea6ff; }
+        .ip-close p { margin: 0; font-size: 13.5px; line-height: 1.6; }
+        .ip-foot { margin: 10px 2px 0; font-size: 11px; line-height: 1.6; color: #627086; }
+        @media (min-width: 700px) {
+            .ip-info { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .ip-quads { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .ip-checks { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .ip-page { padding: 24px; }
+            .ip-table thead { position: static; }
+            .ip-table tr { display: table-row; margin: 0; border: 0; background: transparent; }
+            .ip-table { display: table; border-collapse: collapse; border: 1px solid #dde4ef; }
+            .ip-table tbody { display: table-row-group; }
+            .ip-table th, .ip-table td { padding: 8px 12px; border: 1px solid #e6ebf4; }
+            .ip-table thead th { background: #111318; color: #fff; font-size: 12px; font-weight: 700; text-align: center; }
+            .ip-table td { display: table-cell; background: #f6f8fe; }
+            .ip-table td::before { content: none; }
+            .ip-table th[scope="row"] { display: table-cell; width: 20%; }
+        }
     </style>
 </head>
 <body class="font-sans text-gray-800 bg-lightBg antialiased selection:bg-primary selection:text-white">
@@ -567,11 +645,19 @@
                     </div>
                     <h4 class="text-xl font-bold mb-3">Dashboard MAIP</h4>
                     <p class="text-gray-600 text-sm mb-4">Cada deportista cuenta con un resumen individual de su proceso. Visualizá tu punto de partida, prioridades, acciones acordadas y seguimiento hasta el próximo control.</p>
-                    <button id="dashboard-open" class="dashboard-preview-button" type="button" aria-haspopup="dialog" aria-controls="dashboard-modal">
-                        <img src="img/dashboard-modelo-p1.jpg" alt="Vista previa del informe MAIP de un paciente modelo" class="dashboard-preview-image" width="1700" height="2404" loading="lazy" decoding="async">
+                    <button id="dashboard-open" class="dashboard-preview-button ip-preview" type="button" aria-haspopup="dialog" aria-controls="dashboard-modal" aria-label="Ver el dashboard ampliado: informe MAIP del deportista con estrategia, prioridades, plan y acciones">
+                        <span class="ip-pv-head"><b>Informe MAIP del deportista</b><span>Paciente modelo · Running</span></span>
+                        <span class="ip-pv-quote">Llegar a los entrenamientos largos con energía, ordenar las comidas alrededor de cada sesión…</span>
+                        <span class="ip-pv-maip" aria-hidden="true">
+                            <span class="ip-m"><b>M</b><span>Medir<small>Tu punto de partida</small></span></span>
+                            <span class="ip-a"><b>A</b><span>Analizar<small>Qué observamos</small></span></span>
+                            <span class="ip-i"><b>I</b><span>Interpretar<small>Qué significa para vos</small></span></span>
+                            <span class="ip-p"><b>P</b><span>Planificar<small>Qué vamos a hacer</small></span></span>
+                        </span>
+                        <span class="ip-pv-meta">3 prioridades · plan nutricional · semana tipo · 3 acciones</span>
                         <span class="dashboard-preview-label">Ver dashboard ampliado <span aria-hidden="true">↗</span></span>
                     </button>
-                    <p class="dashboard-preview-note">Ejemplo con un paciente modelo ficticio: punto de partida, plan nutricional, semana tipo y acciones hasta el próximo control.</p>
+                    <p class="dashboard-preview-note">Ejemplo con un paciente modelo ficticio: punto de partida, plan nutricional, semana tipo y acciones hasta el próximo control. Algunos detalles se muestran difuminados.</p>
                 </div>
 
                 <!-- Nutrición -->
@@ -736,25 +822,115 @@ Dif.: cambio desde la medici&#243;n anterior (23-03-2026). Emitido el 04-10-2026
             <details class="dashboard-transcript"><summary>Leer el contenido del documento</summary><p><strong>¿Qué recibirás en tu plan de alimentación?</strong> El plan de alimentación es personalizado y adaptado a cada deportista teniendo en cuenta toda la información recopilada en el apartado de MEDIR.</p><p><strong>1. El plato orientativo.</strong> Tres platos según el contexto: 50% verduras y frutas con 25% proteínas y 25% hidratos; 35% verduras y frutas, 35% proteínas y 30% hidratos; 35% verduras y frutas, 25% proteínas y 40% hidratos. El plato se elige de acuerdo al contexto.</p><p><strong>2. Selección de alimentos.</strong> Lácteos, carnes, frutas, hortalizas, cereales, tubérculos, legumbres y grasas, con ejemplos y recomendaciones.</p><p><strong>3. Dos caminos para tu plan.</strong> Plan cualitativo, con cantidades adaptadas y revisión por fotos y videos, o plan cuantitativo, con el sistema de intercambios.</p><p><strong>4. Organización diaria de las comidas.</strong> Horarios, tipo de día (bajo, medio, alto y competencia) y adaptaciones según el entrenamiento.</p><p><strong>5. Ideas de menú.</strong> Desayuno, colación de media mañana, almuerzo, merienda, cena y colación nocturna, con tres opciones cada uno.</p><p><strong>6. Pre, intra y post entrenamiento.</strong> Ideas para antes, durante y después de entrenar.</p><p><strong>7. Hidratación.</strong> Pautas diarias y alrededor del entrenamiento.</p><p><strong>Anexo.</strong> Lista de intercambios por grupo de alimentos, suplementos y medidas comunes.</p></details>
         </div>
     </dialog>
-    <!-- Vista ampliada del informe original MAIP -->
-    <dialog id="dashboard-modal" class="maip-report-modal" aria-labelledby="dashboard-title" aria-describedby="dashboard-description">
+    <!-- Informe MAIP del deportista (dashboard), ejemplo ficticio, con difuminado parcial -->
+    <dialog id="dashboard-modal" class="maip-report-modal ip-modal" aria-labelledby="dashboard-title" aria-describedby="dashboard-description">
         <header class="dashboard-toolbar">
-            <div><h2 id="dashboard-title">Dashboard MAIP</h2><p id="dashboard-description">Informe del deportista · Paciente modelo (ejemplo ficticio) · 3 páginas</p></div>
-            <div class="dashboard-controls" aria-label="Controles del documento">
-                <button id="dashboard-zoom-out" type="button" aria-label="Reducir zoom">−</button>
-                <output id="dashboard-zoom-label" aria-live="polite">100%</output>
-                <button id="dashboard-zoom-in" type="button" aria-label="Ampliar zoom">+</button>
-                <button id="dashboard-fit" type="button">Ajustar</button>
+            <div><h2 id="dashboard-title">Dashboard MAIP</h2><p id="dashboard-description">Informe del deportista · Paciente modelo (ejemplo ficticio)</p></div>
+            <div class="dashboard-controls" aria-label="Controles del informe">
                 <button id="dashboard-close" type="button" aria-label="Cerrar dashboard" autofocus>Cerrar ✕</button>
             </div>
         </header>
-        <div id="dashboard-scroll" class="dashboard-scroll" tabindex="0" aria-label="Páginas del informe">
-            <div id="dashboard-document" class="dashboard-document">
-                <figure class="dashboard-page"><figcaption>Página 1 · Objetivo y método MAIP aplicado al deportista</figcaption><img src="img/dashboard-modelo-p1.jpg" alt="Informe MAIP de un paciente modelo: datos, estrategia en una frase, objetivo y los cuatro pasos medir, analizar, interpretar y planificar" width="1700" height="2404" decoding="async"></figure>
-                <figure class="dashboard-page"><figcaption>Página 2 · Prioridades, plan nutricional y combustible del entrenamiento</figcaption><img src="img/dashboard-modelo-p2.jpg" alt="Informe MAIP de un paciente modelo: tres prioridades, plan nutricional resumido y combustible antes, durante y después de entrenar" width="1700" height="2404" loading="lazy" decoding="async"></figure>
-                <figure class="dashboard-page"><figcaption>Página 3 · Tu semana y seguimiento hasta el próximo control</figcaption><img src="img/dashboard-modelo-p3.jpg" alt="Informe MAIP de un paciente modelo: tipos de día, tres acciones, qué volver a medir e indicador principal" width="1700" height="2404" loading="lazy" decoding="async"></figure>
+        <div id="dashboard-scroll" class="dashboard-scroll" tabindex="0" aria-label="Informe MAIP del deportista">
+            <div class="ip-wrap">
+
+                <section class="ip-page" aria-labelledby="ip-p1">
+                    <p id="ip-p1" class="ip-pagehead">Objetivo y método MAIP aplicado al deportista</p>
+                    <div class="ip-banner">
+                        <img src="img/logo-maip.jpg" alt="" width="56" height="56" loading="lazy" decoding="async">
+                        <div><small>MÉTODO MAIP</small><h3>Informe MAIP del deportista</h3><p>Resumen de evaluación y estrategia nutricional personalizada</p></div>
+                    </div>
+                    <dl class="ip-info">
+                        <div><dt>Nombre</dt><dd>Paciente Modelo (ejemplo)</dd></div>
+                        <div><dt>Fecha</dt><dd>4 de octubre de 2026</dd></div>
+                        <div><dt>Deporte</dt><dd>Running (calle)</dd></div>
+                        <div><dt>Etapa / competencia</dt><dd>Preparación de base</dd></div>
+                        <div><dt>Objetivo principal</dt><dd>Rendimiento en media maratón</dd></div>
+                        <div><dt>Próximo control</dt><dd>16 de noviembre de 2026</dd></div>
+                    </dl>
+                    <div class="ip-phrase"><small>TU ESTRATEGIA EN UNA FRASE</small><p>Llegar a los entrenamientos largos con energía, ordenar las comidas alrededor de cada sesión y sostener la proteína durante todo el día.</p></div>
+
+                    <h3 class="ip-h">Tu objetivo</h3>
+                    <div class="ip-box"><small>Objetivo principal</small><p>Mejorar la tolerancia a las salidas largas y el rendimiento en la media maratón, cuidando la masa muscular.</p></div>
+                    <div class="ip-box"><small>Qué vamos a priorizar primero</small><p>Organizar las comidas principales y la proteína, el combustible antes y después de las salidas largas y la hidratación diaria.</p></div>
+
+                    <h3 class="ip-h">El método MAIP aplicado a vos</h3>
+                    <div class="ip-quads">
+                        <div class="ip-quad ip-m"><small>M — MEDIR</small><h4>Tu punto de partida</h4><em>Datos clave</em><ul><li>Peso 80,5 kg · talla 1,74 m</li><li>Suma de 6 pliegues: 51 mm</li><li aria-hidden="true"><span class="ip-blur">Corre varios días por semana</span></li></ul></div>
+                        <div class="ip-quad ip-a"><small>A — ANALIZAR</small><h4>Qué observamos</h4><em>Hallazgos principales</em><ul><li>Desayuna sin proteína y cena tarde</li><li>Salidas largas en ayunas, con cansancio</li><li aria-hidden="true"><span class="ip-blur">Hallazgo del informe real</span></li></ul></div>
+                        <div class="ip-quad ip-i"><small>I — INTERPRETAR</small><h4>Qué significa para vos</h4><em>Prioridades</em><ul><li>Primero energía; después composición</li><li>Proteína repartida: cuida el músculo</li><li aria-hidden="true"><span class="ip-blur">Prioridad del informe real</span></li></ul></div>
+                        <div class="ip-quad ip-p"><small>P — PLANIFICAR</small><h4>Qué vamos a hacer</h4><em>Acciones</em><ul><li>Desayuno con proteína e hidratos</li><li>Comer antes de salidas de más de 60 min</li><li aria-hidden="true"><span class="ip-blur">Acción del informe real</span></li></ul></div>
+                    </div>
+                </section>
+
+                <section class="ip-page" aria-labelledby="ip-p2">
+                    <p id="ip-p2" class="ip-pagehead">Prioridades, plan nutricional y combustible del entrenamiento</p>
+
+                    <h3 class="ip-h" style="margin-top:0">Tus 3 prioridades actuales</h3>
+                    <table class="ip-table">
+                        <thead><tr><th scope="col">Prioridad</th><th scope="col">Qué vamos a cambiar</th><th scope="col">Cómo sabremos si funciona</th></tr></thead>
+                        <tbody>
+                            <tr><th scope="row">1</th><td data-label="Qué vamos a cambiar">Sumar proteína al desayuno y a la merienda</td><td data-label="Cómo sabremos si funciona">Lo completa 5 de 7 días por semana (registro simple)</td></tr>
+                            <tr><th scope="row">2</th><td data-label="Qué vamos a cambiar">Comer hidratos 1 a 3 horas antes de las salidas largas</td><td data-label="Cómo sabremos si funciona" aria-hidden="true"><span class="ip-blur">Indicador que se define en tu informe</span></td></tr>
+                            <tr><th scope="row">3</th><td data-label="Qué vamos a cambiar" aria-hidden="true"><span class="ip-blur">Cambio que se define en tu informe</span></td><td data-label="Cómo sabremos si funciona" aria-hidden="true"><span class="ip-blur">Indicador que se define en tu informe</span></td></tr>
+                        </tbody>
+                    </table>
+
+                    <h3 class="ip-h">Plan nutricional resumido</h3>
+                    <table class="ip-table">
+                        <thead><tr><th scope="col">Área</th><th scope="col">Objetivo</th><th scope="col">Tu estrategia</th></tr></thead>
+                        <tbody>
+                            <tr><th scope="row">Energía</th><td data-label="Objetivo">Cubrir el gasto del entrenamiento sin déficit marcado</td><td data-label="Tu estrategia">Ajustar porciones según el tipo de día (bajo, medio o alto)</td></tr>
+                            <tr><th scope="row">Hidratos de carbono</th><td data-label="Objetivo">Sostener las sesiones largas</td><td data-label="Tu estrategia" aria-hidden="true"><span class="ip-blur">Estrategia personalizada del plan</span></td></tr>
+                            <tr><th scope="row">Proteínas</th><td data-label="Objetivo" aria-hidden="true"><span class="ip-blur">Objetivo personalizado del plan</span></td><td data-label="Tu estrategia" aria-hidden="true"><span class="ip-blur">Estrategia personalizada del plan</span></td></tr>
+                            <tr><th scope="row">Grasas</th><td data-label="Objetivo" aria-hidden="true"><span class="ip-blur">Objetivo personalizado del plan</span></td><td data-label="Tu estrategia" aria-hidden="true"><span class="ip-blur">Estrategia personalizada del plan</span></td></tr>
+                            <tr><th scope="row">Hidratación</th><td data-label="Objetivo" aria-hidden="true"><span class="ip-blur">Objetivo personalizado del plan</span></td><td data-label="Tu estrategia" aria-hidden="true"><span class="ip-blur">Estrategia personalizada del plan</span></td></tr>
+                            <tr><th scope="row">Suplementación (si aplica)</th><td data-label="Objetivo" aria-hidden="true"><span class="ip-blur">Objetivo personalizado del plan</span></td><td data-label="Tu estrategia" aria-hidden="true"><span class="ip-blur">Estrategia personalizada del plan</span></td></tr>
+                        </tbody>
+                    </table>
+
+                    <h3 class="ip-h">Combustible alrededor del entrenamiento</h3>
+                    <table class="ip-table">
+                        <thead><tr><th scope="col">Momento</th><th scope="col">Qué buscamos</th><th scope="col">Estrategia</th><th scope="col">Ejemplos / notas</th></tr></thead>
+                        <tbody>
+                            <tr><th scope="row">ANTES</th><td data-label="Qué buscamos">Llegar con energía y sin molestias</td><td data-label="Estrategia">Comida con hidratos 2 a 3 h antes; colación liviana 45 a 60 min antes</td><td data-label="Ejemplos / notas" aria-hidden="true"><span class="ip-blur">Ejemplos de alimentos</span></td></tr>
+                            <tr><th scope="row">DURANTE</th><td data-label="Qué buscamos">Sostener energía e hidratación</td><td data-label="Estrategia" aria-hidden="true"><span class="ip-blur">Estrategia durante la salida</span></td><td data-label="Ejemplos / notas" aria-hidden="true"><span class="ip-blur">Ejemplos de alimentos</span></td></tr>
+                            <tr><th scope="row">DESPUÉS</th><td data-label="Qué buscamos">Recuperar músculo y reponer energía</td><td data-label="Estrategia" aria-hidden="true"><span class="ip-blur">Estrategia después de entrenar</span></td><td data-label="Ejemplos / notas" aria-hidden="true"><span class="ip-blur">Ejemplos de alimentos</span></td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="ip-page" aria-labelledby="ip-p3">
+                    <p id="ip-p3" class="ip-pagehead">Tu semana y seguimiento hasta el próximo control</p>
+
+                    <h3 class="ip-h" style="margin-top:0">Tu semana: no todos los días necesitan lo mismo</h3>
+                    <table class="ip-table">
+                        <thead><tr><th scope="col">Tipo de día</th><th scope="col">Cuándo</th><th scope="col">Objetivo</th><th scope="col">Ajuste principal</th></tr></thead>
+                        <tbody>
+                            <tr><th scope="row">BAJO</th><td data-label="Cuándo">Descanso y movilidad</td><td data-label="Objetivo">Recuperar sin sobrealimentar</td><td data-label="Ajuste principal">Menos hidratos; proteína y verduras igual</td></tr>
+                            <tr><th scope="row">MEDIO</th><td data-label="Cuándo">Gimnasio y running suave (lunes, martes, jueves y viernes)</td><td data-label="Objetivo">Sostener el rendimiento</td><td data-label="Ajuste principal" aria-hidden="true"><span class="ip-blur">Ajuste personalizado</span></td></tr>
+                            <tr><th scope="row">ALTO</th><td data-label="Cuándo">Series del miércoles y salida larga del sábado</td><td data-label="Objetivo" aria-hidden="true"><span class="ip-blur">Objetivo del día</span></td><td data-label="Ajuste principal" aria-hidden="true"><span class="ip-blur">Ajuste personalizado</span></td></tr>
+                            <tr><th scope="row">COMPETENCIA</th><td data-label="Cuándo">Día de la carrera</td><td data-label="Objetivo" aria-hidden="true"><span class="ip-blur">Objetivo del día</span></td><td data-label="Ajuste principal" aria-hidden="true"><span class="ip-blur">Ajuste personalizado</span></td></tr>
+                        </tbody>
+                    </table>
+
+                    <h3 class="ip-h">Hasta el próximo control</h3>
+                    <ul class="ip-acts">
+                        <li><b>Acción 1</b><span>Desayunar con proteína e hidratos todos los días.</span></li>
+                        <li><b>Acción 2</b><span>Comer algo con hidratos antes de cada salida de más de 60 minutos.</span></li>
+                        <li><b>Acción 3</b><span aria-hidden="true"><span class="ip-blur">Acción que se define en tu informe real</span></span></li>
+                    </ul>
+                    <p class="ip-sub">Qué vamos a volver a medir</p>
+                    <ul class="ip-checks">
+                        <li class="on">Composición corporal</li><li class="on">Peso</li><li>Pliegues</li>
+                        <li class="on">Rendimiento</li><li class="on">Energía</li><li class="on">Recuperación</li>
+                        <li class="on">Hidratación</li><li>Síntomas GI</li><li class="on">Adherencia</li>
+                    </ul>
+                    <div class="ip-box"><small>Indicador principal</small><p>Cómo se siente al terminar la salida larga del sábado (energía de 1 a 10).</p></div>
+                    <div class="ip-close"><strong class="t">El método continúa</strong><p>En el próximo control volvemos a <strong>MEDIR</strong> lo importante, <strong>ANALIZAMOS</strong> tu respuesta, <strong>INTERPRETAMOS</strong> qué cambió y <strong>PLANIFICAMOS</strong> el siguiente ajuste. El plan evoluciona con vos.</p></div>
+                </section>
+
+                <p class="ip-foot">Ejemplo ilustrativo de un paciente modelo ficticio. Algunos detalles se muestran difuminados: en tu informe real encontrás el plan completo, hecho a tu medida.</p>
             </div>
-            <details class="dashboard-transcript"><summary>Leer el contenido del informe</summary><p><strong>Informe MAIP del deportista</strong> · Ejemplo con un paciente modelo ficticio.</p><table><tr><td>Nombre</td><td>Paciente Modelo (ejemplo)</td><td>Fecha</td><td>4 de octubre de 2026</td></tr><tr><td>Deporte</td><td>Running (calle)</td><td>Etapa / competencia</td><td>Preparación de base</td></tr><tr><td>Objetivo principal</td><td>Rendimiento en media maratón</td><td>Próximo control</td><td>16 de noviembre de 2026</td></tr></table><p><strong>Tu estrategia en una frase:</strong> llegar a los entrenamientos largos con energía, ordenar las comidas alrededor de cada sesión y sostener la proteína durante todo el día.</p><p><strong>El método MAIP aplicado a vos.</strong> Medir: peso 80,5 kg, talla 1,74 m, suma de 6 pliegues 51 mm, corre 4 días por semana (35 km). Analizar: desayuna sin proteína y cena tarde, salidas largas en ayunas con cansancio, toma poca agua durante el día. Interpretar: primero energía y después composición, proteína repartida para cuidar el músculo, hidratarse mejor ayuda a recuperar. Planificar: desayuno con proteína e hidratos, comer antes de salidas de más de 60 minutos, tomar agua durante el día.</p><table><tr><td>Prioridad</td><td>Qué vamos a cambiar</td><td>Cómo sabremos si funciona</td></tr><tr><td>1</td><td>Sumar proteína al desayuno y a la merienda</td><td>Lo completa 5 de 7 días por semana</td></tr><tr><td>2</td><td>Comer hidratos 1 a 3 horas antes de las salidas largas</td><td>Termina la salida con energía y sin molestias digestivas</td></tr><tr><td>3</td><td>Tomar agua a lo largo del día</td><td>Orina clara durante el día; botella terminada antes de las 18 h</td></tr></table><p><strong>Plan nutricional resumido.</strong> Energía: cubrir el gasto del entrenamiento sin déficit marcado. Hidratos de carbono: más porciones los días de salida larga y en el pre entreno. Proteínas: 4 a 5 tomas al día. Grasas: aceite de oliva, frutos secos y palta en porciones moderadas. Hidratación: agua todo el día y bebida deportiva en salidas de más de 90 minutos. Suplementación: no indicada por ahora.</p><p><strong>Combustible alrededor del entrenamiento.</strong> Antes: comida con hidratos 2 a 3 horas antes y colación liviana 45 a 60 minutos antes. Durante: agua y, en salidas de más de 90 minutos, hidratos. Después: proteína con hidratos en la primera hora.</p><p><strong>Tu semana.</strong> Día bajo: descanso y movilidad. Día medio: gimnasio y running suave, lunes, martes, jueves y viernes. Día alto: series del miércoles y salida larga del sábado, más hidratos el día anterior y en el pre entreno. Competencia: repetir lo ensayado en los entrenamientos, nada nuevo.</p><p><strong>Hasta el próximo control.</strong> Acción 1: desayunar con proteína e hidratos todos los días. Acción 2: comer algo con hidratos antes de cada salida de más de 60 minutos. Acción 3: tomar agua durante el día y anotarlo en el celular. Indicador principal: cómo se siente al terminar la salida larga del sábado (energía de 1 a 10).</p><p>En el próximo control volvemos a medir lo importante, analizamos tu respuesta, interpretamos qué cambió y planificamos el siguiente ajuste.</p></details>
         </div>
     </dialog>
 
@@ -1193,23 +1369,9 @@ Dif.: cambio desde la medici&#243;n anterior (23-03-2026). Emitido el 04-10-2026
         setInterval(() => { if (!paused && !document.hidden && !document.querySelector('dialog[open]')) showSlide((current + 1) % slides.length); },7000);
 
         const opener = document.getElementById('dashboard-open');
-        const documentView = document.getElementById('dashboard-document');
-        const zoomOut = document.getElementById('dashboard-zoom-out');
-        const zoomIn = document.getElementById('dashboard-zoom-in');
-        const zoomLabel = document.getElementById('dashboard-zoom-label');
-        let zoom = 100;
         let previousOverflow = '';
-        function setZoom(value) {
-            zoom = Math.max(75,Math.min(250,value));
-            documentView.style.width = zoom + '%';
-            zoomLabel.value = zoom + '%';
-            zoomLabel.textContent = zoom + '%';
-            zoomOut.disabled = zoom === 75;
-            zoomIn.disabled = zoom === 250;
-        }
         opener.addEventListener('click', () => {
             previousOverflow = document.body.style.overflow;
-            setZoom(100);
             dialog.showModal();
             document.body.style.overflow = 'hidden';
             document.getElementById('dashboard-scroll').scrollTop = 0;
@@ -1221,9 +1383,6 @@ Dif.: cambio desde la medici&#243;n anterior (23-03-2026). Emitido el 04-10-2026
             const r = dialog.getBoundingClientRect();
             if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) dialog.close();
         });
-        zoomOut.addEventListener('click', () => setZoom(zoom - 25));
-        zoomIn.addEventListener('click', () => setZoom(zoom + 25));
-        document.getElementById('dashboard-fit').addEventListener('click', () => setZoom(100));
     });
     </script>
     <script>
