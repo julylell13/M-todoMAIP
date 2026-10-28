@@ -244,6 +244,9 @@
         .rt-items li.rt-plain { grid-template-columns: 1fr; color: #43556b; }
         .rt-sr { font-weight: 800; font-variant-numeric: tabular-nums; color: #0056b3; }
         .rt-lock { display: block; height: 9px; border-radius: 5px; background: #c3cedd; filter: blur(2.5px); }
+        .rt-blurtext { filter: blur(4.5px); user-select: none; color: #6b7b92; }
+        .rt-hid .rt-sr { color: #6b7b92; }
+        .rt-more { margin-top: 2px; font-size: 11px; font-weight: 700; color: #627086; }
         .rt-cols { display: grid; grid-template-columns: 1fr auto 46px; gap: 8px; margin: 0 0 4px; font-size: 9px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #8a97a9; }
         .rt-cols span:last-child { text-align: right; }
         .rt-nutri { margin: 8px 0 0; padding: 8px 10px; border-radius: 8px; background: #f1f6fd; font-size: 12px; line-height: 1.5; color: #243449; }
@@ -1283,18 +1286,18 @@ Dif.: cambio desde la medici&#243;n anterior (23-03-2026). Emitido el 04-10-2026
                 note: 'Construimos la base: técnica, fuerza general y volumen aeróbico. 35 km de running y 5 sesiones de gimnasio por semana.',
                 days: [
                     { day: 'Lunes', title: 'Tren superior A', type: 'medio', sessions: [
-                        { name: 'Fuerza', min: 50, rpe: 7, items: [ex('Press de banco', '4×6'), ex('Remo con barra', '4×6'), ex('Press militar', '3×8'), ex('Dominadas asistidas', '3×6'), ex('Face pull', '3×15')] },
+                        { name: 'Fuerza', min: 50, rpe: 7, items: [ex('Press de banco', '4×6'), ex('Remo con barra', '4×6')], hid: 3 },
                         { name: 'Trote suave', min: 30, rpe: 3, items: [st('5 km a ritmo suave')] } ] },
                     { day: 'Martes', title: 'Pierna: fuerza', type: 'alto', sessions: [
-                        { name: 'Fuerza', min: 50, rpe: 8, items: [ex('Sentadilla trasera', '4×5'), ex('Peso muerto rumano', '4×6'), ex('Sentadilla búlgara', '3×8'), ex('Hip thrust', '3×8'), ex('Elevación de talones', '4×12'), st('Movilidad 5 min')] } ] },
+                        { name: 'Fuerza', min: 50, rpe: 8, items: [ex('Sentadilla trasera', '4×5'), ex('Peso muerto rumano', '4×6')], hid: 4 } ] },
                     { day: 'Miércoles', title: 'Series + tren B', type: 'alto', sessions: [
-                        { name: 'Running con series (9 km)', min: 50, rpe: 8, items: [st('Entrada en calor 10 min'), st('4 × 5 min fuerte, pausa 2 min'), st('Vuelta a la calma 10 min')] },
-                        { name: 'Tren superior B', min: 40, rpe: 6, items: [ex('Press inclinado', '3×10'), ex('Jalón al pecho', '3×10'), ex('Remo con mancuerna', '3×10'), ex('Vuelos laterales', '3×12'), ex('Curl y tríceps', '2×12')] } ] },
+                        { name: 'Running con series (9 km)', min: 50, rpe: 8, items: [st('Entrada en calor 10 min'), st('4 × 5 min fuerte, pausa 2 min')], hid: 1 },
+                        { name: 'Tren superior B', min: 40, rpe: 6, items: [ex('Press inclinado', '3×10'), ex('Jalón al pecho', '3×10')], hid: 3 } ] },
                     { day: 'Jueves', title: 'Pierna: potencia', type: 'medio', sessions: [
-                        { name: 'Explosividad', min: 45, rpe: 7, items: [st('Saltos suaves 8 min'), ex('Salto al cajón', '4×4'), ex('Cargada de potencia', '4×3'), ex('Swing con kettlebell', '4×10'), ex('Zancada con salto', '3×6'), ex('Sprints', '6×30 m')] } ] },
+                        { name: 'Explosividad', min: 45, rpe: 7, items: [st('Saltos suaves 8 min'), ex('Salto al cajón', '4×4')], hid: 4 } ] },
                     { day: 'Viernes', title: 'Core y transmisión', type: 'medio', sessions: [
                         { name: 'Trote suave', min: 40, rpe: 3, items: [st('7 km a ritmo suave')] },
-                        { name: 'Core', min: 40, rpe: 5, items: [ex('Plancha lateral', '3×30 s'), ex('Pallof press', '3×10'), ex('Balón medicinal', '3×8'), ex('Skipping y saltos laterales', '3×20 s'), ex('Bird dog', '3×10')] } ] },
+                        { name: 'Core', min: 40, rpe: 5, items: [ex('Plancha lateral', '3×30 s'), ex('Pallof press', '3×10')], hid: 3 } ] },
                     { day: 'Sábado', title: 'Salida larga', type: 'alto', nutri: 'Hidratos 2 a 3 h antes, agua durante la salida y, al terminar, proteína con hidratos.', sessions: [
                         { name: 'Salida larga', min: 95, rpe: 5, items: [st('14 km a ritmo conversacional')] } ] },
                     { day: 'Domingo', title: 'Descanso', type: 'bajo', nutri: 'Preparar las comidas de la semana.', sessions: [], rest: 'Caminata libre o descanso total. Movilidad 15 min.' }
@@ -1304,18 +1307,18 @@ Dif.: cambio desde la medici&#243;n anterior (23-03-2026). Emitido el 04-10-2026
                 note: 'Progresión: más carga en fuerza, más potencia y un tempo de 20 minutos. 37 km de running y 5 sesiones de gimnasio por semana.',
                 days: [
                     { day: 'Lunes', title: 'Tren superior A', type: 'medio', sessions: [
-                        { name: 'Fuerza', min: 55, rpe: 7, items: [ex('Press de banco', '5×5'), ex('Remo con barra', '5×5'), ex('Press militar', '4×6'), ex('Dominadas', '4×6'), ex('Face pull', '3×15')] },
+                        { name: 'Fuerza', min: 55, rpe: 7, items: [ex('Press de banco', '5×5'), ex('Remo con barra', '5×5')], hid: 3 },
                         { name: 'Trote suave', min: 30, rpe: 3, items: [st('5 km a ritmo suave')] } ] },
                     { day: 'Martes', title: 'Pierna: fuerza', type: 'alto', sessions: [
-                        { name: 'Fuerza', min: 55, rpe: 8, items: [ex('Sentadilla trasera', '5×4'), ex('Peso muerto rumano', '4×5'), ex('Sentadilla búlgara', '3×6'), ex('Hip thrust', '4×6'), ex('Elevación de talones', '4×10'), st('Movilidad 5 min')] } ] },
+                        { name: 'Fuerza', min: 55, rpe: 8, items: [ex('Sentadilla trasera', '5×4'), ex('Peso muerto rumano', '4×5')], hid: 4 } ] },
                     { day: 'Miércoles', title: 'Tempo + tren B', type: 'alto', sessions: [
-                        { name: 'Running de tempo (9 km)', min: 55, rpe: 8, items: [st('Entrada en calor 10 min'), st('20 min continuos, ritmo cómodo-fuerte'), st('Vuelta a la calma 10 min')] },
-                        { name: 'Tren superior B', min: 45, rpe: 6, items: [ex('Press inclinado', '4×8'), ex('Jalón al pecho', '4×8'), ex('Remo con mancuerna', '3×10'), ex('Vuelos laterales', '3×12'), ex('Curl y tríceps', '3×10')] } ] },
+                        { name: 'Running de tempo (9 km)', min: 55, rpe: 8, items: [st('Entrada en calor 10 min'), st('20 min continuos, ritmo cómodo-fuerte')], hid: 1 },
+                        { name: 'Tren superior B', min: 45, rpe: 6, items: [ex('Press inclinado', '4×8'), ex('Jalón al pecho', '4×8')], hid: 3 } ] },
                     { day: 'Jueves', title: 'Pierna: potencia', type: 'medio', sessions: [
-                        { name: 'Explosividad', min: 50, rpe: 8, items: [st('Saltos suaves 8 min'), ex('Salto al cajón', '5×3'), ex('Cargada de potencia', '5×3'), ex('Swing con kettlebell', '4×12'), ex('Zancada con salto', '4×6'), ex('Sprints', '8×30 m')] } ] },
+                        { name: 'Explosividad', min: 50, rpe: 8, items: [st('Saltos suaves 8 min'), ex('Salto al cajón', '5×3')], hid: 4 } ] },
                     { day: 'Viernes', title: 'Core y transmisión', type: 'medio', sessions: [
                         { name: 'Trote suave', min: 40, rpe: 3, items: [st('7 km a ritmo suave')] },
-                        { name: 'Core y pliometría', min: 40, rpe: 5, items: [ex('Plancha lateral con elevación', '3×30 s'), ex('Pallof press', '4×10'), ex('Balón medicinal', '4×8'), ex('Bounds (zancadas largas)', '3×20 m'), ex('Dead bug', '3×10')] } ] },
+                        { name: 'Core y pliometría', min: 40, rpe: 5, items: [ex('Plancha lateral con elevación', '3×30 s'), ex('Pallof press', '4×10')], hid: 3 } ] },
                     { day: 'Sábado', title: 'Salida larga', type: 'alto', nutri: 'Probar el combustible de la carrera y, al terminar, proteína con hidratos.', sessions: [
                         { name: 'Salida larga', min: 105, rpe: 5, items: [st('16 km a ritmo conversacional'), st('Los últimos 2 km un poco más rápido')] } ] },
                     { day: 'Domingo', title: 'Descanso', type: 'bajo', nutri: 'Preparar las comidas de la semana.', sessions: [], rest: 'Caminata libre o descanso total. Movilidad 15 min.' }
@@ -1339,9 +1342,14 @@ Dif.: cambio desde la medici&#243;n anterior (23-03-2026). Emitido el 04-10-2026
                 const blocks = d.sessions.map((s, si) => {
                     const rpe = rpeOf(current, { ...s, key: di + '-' + si });
                     const hasEx = s.items.some(i => i.n);
+                    // Solo se publican los primeros ejercicios de cada sesión. De los demás únicamente se guarda la
+                    // cantidad (hid): se dibujan como filas difuminadas de relleno, sin ningún dato real que recuperar.
+                    const hidden = s.hid || 0;
                     const list = s.items.map(i => i.n
                         ? '<li><span>' + i.n + '</span><span class="rt-sr">' + i.s + '</span><span class="rt-lock" aria-hidden="true"></span></li>'
-                        : '<li class="rt-plain">' + i.t + '</li>').join('');
+                        : '<li class="rt-plain">' + i.t + '</li>').join('') +
+                        '<li class="rt-hid" aria-hidden="true"><span class="rt-blurtext">Ejercicio del plan</span><span class="rt-blurtext rt-sr">0×0</span><span class="rt-lock"></span></li>'.repeat(hidden) +
+                        (hidden ? '<li class="rt-plain rt-more">+ ' + hidden + (hidden === 1 ? ' ejercicio más' : ' ejercicios más') + ' en tu planilla</li>' : '');
                     return '<div class="rt-block"><div class="rt-blockhead"><strong>' + s.name + '</strong><span>' + s.min + ' min · RPE ' + rpe + '</span></div>' +
                         (hasEx ? '<div class="rt-cols" aria-hidden="true"><span>Ejercicio</span><span>Series × reps</span><span>Carga</span></div>' : '') +
                         '<ul class="rt-items">' + list + '</ul></div>';
