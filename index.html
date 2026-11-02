@@ -170,11 +170,12 @@
         .maip-person { --p-ink: #1a1a1a; --p-muted: #475467; --p-accent: #0056b3; --p-line: #d6dfeb; --p-chip-bg: #e7f0fb; --p-chip-bd: #c4d9f3; --p-chip-tx: #00386f; --p-card-bg: #fff; --p-card-bd: #dbe5ef; --p-outline: rgba(0,86,179,.4); --p-cert-bg: #fff; --p-cert-bd: #d6dfeb; color: var(--p-ink); }
         .maip-person--dark { --p-ink: #fff; --p-muted: rgba(255,255,255,.8); --p-accent: #7fc0ff; --p-line: rgba(255,255,255,.14); --p-chip-bg: rgba(90,169,255,.12); --p-chip-bd: rgba(90,169,255,.34); --p-chip-tx: #dcecff; --p-card-bg: linear-gradient(135deg, rgba(0,86,179,.28), rgba(0,86,179,.08)); --p-card-bd: rgba(90,169,255,.3); --p-outline: rgba(90,169,255,.5); --p-cert-bg: rgba(255,255,255,.06); --p-cert-bd: rgba(255,255,255,.16); }
         .maip-person-grid { display: grid; grid-template-columns: 1fr; gap: 32px; align-items: start; }
-        .maip-photo { position: relative; width: 100%; max-width: 420px; margin: 0 auto; }
-        .maip-photo-frame { position: relative; margin: 0; display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 18px 16px 16px; border-radius: var(--radius-lg); overflow: hidden; background: linear-gradient(155deg, #0d4a96, #0b1d30); box-shadow: var(--shadow-2); color: #fff; text-align: center; }
-        .maip-photo-frame img { display: block; width: 104px; height: 104px; border-radius: 50%; object-fit: cover; object-position: var(--pos-m, center 18%); border: 3px solid rgba(255,255,255,.3); }
+        .maip-photo { position: relative; width: calc(100% - 14px); max-width: 340px; margin: 0 auto 14px; }
+        .maip-photo::before { content: ""; position: absolute; inset: 0; transform: translate(14px, 14px); border: 1.5px solid var(--p-outline); border-radius: var(--radius-lg); }
+        .maip-photo-frame { position: relative; margin: 0; display: block; aspect-ratio: 4 / 5; overflow: hidden; border-radius: var(--radius-lg); background: linear-gradient(155deg, #0d4a96, #0b1d30); box-shadow: var(--shadow-3); color: #fff; text-align: left; }
+        .maip-photo-frame img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: var(--pos-d, center 65%); }
         .maip-avatar { display: grid; place-items: center; width: 104px; height: 104px; border-radius: 50%; font-size: 38px; font-weight: 900; letter-spacing: .02em; color: #fff; background: linear-gradient(135deg, #0056b3, #4dabf7); border: 3px solid rgba(255,255,255,.3); }
-        .maip-photo figcaption { display: none; }
+        .maip-photo figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 64px 20px 18px; background: linear-gradient(180deg, transparent, rgba(5,12,22,.88)); }
         .maip-photo figcaption b { display: block; font-size: 17px; font-weight: 800; }
         .maip-photo figcaption span { font-size: 13px; font-weight: 600; color: #a9d2ff; }
         .maip-photo-note { display: none; }
@@ -216,12 +217,9 @@
             .maip-person-grid { grid-template-columns: 5fr 7fr; gap: 72px; }
             .maip-person-grid--flip { grid-template-columns: 7fr 5fr; }
             .maip-person-grid--flip > :first-child { order: 2; }
-            .maip-photo { position: sticky; top: 108px; max-width: 384px; }
-            .maip-photo::before { content: ""; position: absolute; inset: 0; transform: translate(14px, 14px); border: 1.5px solid var(--p-outline); border-radius: var(--radius-lg); }
-            .maip-photo-frame { display: block; aspect-ratio: 4 / 5; padding: 0; box-shadow: var(--shadow-3); text-align: left; }
-            .maip-photo-frame img { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: 0; border: 0; object-position: var(--pos-d, center 65%); }
+            .maip-photo { position: sticky; top: 108px; width: 100%; max-width: 384px; margin: 0 auto; }
             .maip-avatar { position: absolute; top: 44%; left: 50%; width: 36%; height: auto; aspect-ratio: 1; transform: translate(-50%, -50%); font-size: clamp(44px, 5vw, 72px); border-width: 4px; }
-            .maip-photo figcaption { display: block; position: absolute; left: 0; right: 0; bottom: 0; padding: 64px 22px 20px; background: linear-gradient(180deg, transparent, rgba(5,12,22,.88)); }
+            .maip-photo figcaption { padding: 64px 22px 20px; }
             .maip-photo-note { display: inline-block; position: absolute; top: 16px; left: 16px; padding: 4px 10px; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.6); border: 1px solid rgba(255,255,255,.25); border-radius: 999px; }
         }
         @media (max-width: 520px) { .maip-callout { flex-direction: column; } .maip-lead { padding-left: 16px; } .maip-cert img { width: 92px; height: 68px; } }        .dashboard-toolbar { flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; padding: 18px 22px; border-bottom: 1px solid #dbe4ef; }
