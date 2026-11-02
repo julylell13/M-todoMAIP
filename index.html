@@ -471,6 +471,22 @@
             .maip-wa-fab.is-hidden { opacity: 0; pointer-events: none; transform: scale(.8); }
             .maip-wa-fab:focus-visible { outline: 3px solid #fff; outline-offset: 2px; box-shadow: 0 0 0 6px #0056b3; }
         }
+        /* ── Consulta individual (opción simple debajo de las modalidades) ── */
+        .maip-simple { display: grid; gap: 26px; padding: 26px 22px; background: var(--maip-light-2); border: 1px solid #dbe5ef; border-radius: var(--radius-xl); align-items: center; }
+        .maip-simple .maip-eyebrow { margin-bottom: 8px; }
+        .maip-simple-title { margin: 0 0 8px; font-size: 26px; font-weight: 900; letter-spacing: -.02em; color: #1a1a1a; }
+        .maip-simple-copy { margin: 0 0 16px; font-size: 14px; line-height: 1.65; color: #4b5563; }
+        .maip-simple-price { display: flex; align-items: baseline; gap: 10px; margin-bottom: 16px; }
+        .maip-simple-price span { font-size: 36px; font-weight: 900; line-height: 1; color: #111; }
+        .maip-simple-price small { font-size: 14px; font-weight: 600; color: #4b5563; }
+        .maip-simple-list { display: grid; gap: 12px; margin: 0 0 18px; padding: 0; list-style: none; }
+        .maip-simple-note { margin: 0 0 12px; font-size: 13px; line-height: 1.5; color: #4b5563; }
+        .maip-simple-note i { color: var(--maip-blue); margin-right: 4px; }
+        .maip-simple-bridge { margin: 0; padding: 12px 14px; font-size: 14px; font-weight: 700; line-height: 1.5; color: #003d82; background: #e7f0fb; border: 1px solid #c4d9f3; border-radius: var(--radius-md); }
+        @media (min-width: 768px) {
+            .maip-simple { grid-template-columns: 5fr 7fr; gap: 40px; padding: 34px 40px; }
+            .maip-simple-body { padding-left: 40px; border-left: 1px solid #d3deeb; }
+        }
         /* ── Terminación: elevación suave, sombras consistentes y foco ── */
         section[id] { scroll-margin-top: 80px; }
         .maip-lift { box-shadow: var(--shadow-1); transition: opacity .7s ease-out, transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
@@ -1131,7 +1147,7 @@ Dif.: cambio desde la medici&#243;n anterior (23-03-2026). Emitido el 04-10-2026
             <div class="text-center max-w-3xl mx-auto mb-10 md:mb-16 fade-in-up">
                 <h2 class="maip-eyebrow">Ingreso al Método</h2>
                 <h3 class="maip-h2 mb-5">Elegí tu modalidad</h3>
-                <p class="text-lg text-gray-600">Todos los programas están diseñados como un ciclo completo de 12 semanas para medir, aplicar y volver a evaluar tu proceso.</p>
+                <p class="text-lg text-gray-600">Los programas MAIP están diseñados como un ciclo completo de 12 semanas para medir, aplicar y volver a evaluar tu proceso.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -1198,8 +1214,24 @@ Dif.: cambio desde la medici&#243;n anterior (23-03-2026). Emitido el 04-10-2026
                     </div>
                 </div>
             </div>
-            
-
+            <div class="maip-simple max-w-5xl mx-auto mt-12 md:mt-16 fade-in-up">
+                <div>
+                    <p class="maip-eyebrow">¿Preferís empezar más simple?</p>
+                    <h4 class="maip-simple-title">Consulta individual</h4>
+                    <p class="maip-simple-copy">Una consulta nutricional con plan de alimentación y seguimiento 1 a 1, sin mediciones ni ciclo de 12 semanas.</p>
+                    <div class="maip-simple-price"><span>USD 80</span><small>Pago único</small></div>
+                    <a href="#contacto" data-programa="Consulta individual" class="block w-full text-center bg-white border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-bold py-3.5 rounded-xl transition duration-300">Pedir una consulta</a>
+                </div>
+                <div class="maip-simple-body">
+                    <ul class="maip-simple-list">
+                        <li class="flex items-start text-sm"><i class="fas fa-check text-green-500 mt-1 mr-3 flex-shrink-0"></i><span class="text-gray-700">Consulta nutricional de 1 hora, presencial o virtual</span></li>
+                        <li class="flex items-start text-sm"><i class="fas fa-check text-green-500 mt-1 mr-3 flex-shrink-0"></i><span class="text-gray-700">Plan de alimentación personalizado</span></li>
+                        <li class="flex items-start text-sm"><i class="fas fa-check text-green-500 mt-1 mr-3 flex-shrink-0"></i><span class="text-gray-700">Seguimiento 1 a 1, con un control a las 3 semanas</span></li>
+                    </ul>
+                    <p class="maip-simple-note"><i class="fas fa-circle-info" aria-hidden="true"></i> No incluye antropometría ni Dashboard MAIP.</p>
+                    <p class="maip-simple-bridge">Si después pasás a MAIP Nutrición dentro de los 30 días, te descontamos USD 40.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1346,7 +1378,7 @@ Dif.: cambio desde la medici&#243;n anterior (23-03-2026). Emitido el 04-10-2026
                         <div class="consulta-field"><label for="consulta-deporte">¿Qué deporte o actividad practicás? <span aria-hidden="true">*</span></label><input id="consulta-deporte" name="deporte" required maxlength="150" placeholder="Ej. CrossFit, running, hockey subacuático…"></div>
                         <div class="consulta-row">
                             <div class="consulta-field"><label for="consulta-objetivo">¿Qué querés trabajar? <span aria-hidden="true">*</span></label><select id="consulta-objetivo" name="objetivo" required><option value="" disabled selected>Elegí tu objetivo</option><option>Mejorar mi rendimiento</option><option>Cambiar mi composición corporal</option><option>Preparar una competencia</option><option>Organizar mi alimentación</option><option>Mejorar mi recuperación</option><option>Definir mi objetivo en consulta</option><option>Otro (explayate abajo)</option></select></div>
-                            <div class="consulta-field"><label for="consulta-programa">¿Qué programa te interesa? <span aria-hidden="true">*</span></label><select id="consulta-programa" name="programa" required><option value="" disabled selected>Elegí un programa</option><option>MAIP Nutrición</option><option>MAIP 360</option></select></div>
+                            <div class="consulta-field"><label for="consulta-programa">¿Qué programa te interesa? <span aria-hidden="true">*</span></label><select id="consulta-programa" name="programa" required><option value="" disabled selected>Elegí un programa</option><option>MAIP Nutrición</option><option>MAIP 360</option><option>Consulta individual</option></select></div>
                         </div>
                         <div class="consulta-field"><label for="consulta-detalle">Algo más que quieras contarme <span class="consulta-optional">(opcional)</span></label><textarea id="consulta-detalle" name="detalle" rows="3" maxlength="600" placeholder="Si elegiste Otro, explayate acá. También podés contarme tu próximo desafío, tus horarios o qué te gustaría mejorar…"></textarea></div>
                         <button type="submit" class="consulta-primary">Preparar mi mensaje <span aria-hidden="true">→</span></button>
