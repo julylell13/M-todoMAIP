@@ -17,29 +17,29 @@
     <link rel="canonical" href="https://metodomaipbyjulianlell.com.ar/">
     <meta name="twitter:card" content="summary">
     <link rel="icon" type="image/jpeg" href="img/logo-maip.jpg">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preload" as="image" href="img/hero-running.webp" type="image/webp" fetchpriority="high">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: '#0056b3', // A professional blue to match the medical/sports vibe
-                        primaryDark: '#004494',
-                        secondary: '#1A1A1A', // Dark for text/contrast
-                        accent: '#FFC107', // Amber for highlights
-                        lightBg: '#F8F9FA'
-                    }
-                }
-            }
-        }
-    </script>
     <style>
+        /* ── Sistema visual MAIP: 2 fondos claros + 2 oscuros, radios y sombras ── */
+        :root {
+            --maip-light-1: #ffffff;
+            --maip-light-2: #f3f6fa;
+            --maip-dark-1: #101216;
+            --maip-dark-2: #0b1d30;
+            --maip-blue: #0056b3;
+            --radius-md: 12px; --radius-lg: 16px; --radius-xl: 24px;
+            --shadow-1: 0 1px 2px rgba(16,24,40,.06), 0 1px 3px rgba(16,24,40,.08);
+            --shadow-2: 0 8px 24px rgba(16,24,40,.10);
+            --shadow-3: 0 20px 48px rgba(16,24,40,.18);
+        }
+        picture { display: contents; }
+        picture > source { display: none; }
+        .maip-bg-light { background-color: var(--maip-light-1); }
+        .maip-bg-light-2 { background-color: var(--maip-light-2); }
+        .maip-bg-dark { background-color: var(--maip-dark-1); }
+        .maip-bg-navy { background-color: var(--maip-dark-2); }
         .fade-in-up {
             opacity: 0;
             transform: translateY(30px);
@@ -74,22 +74,22 @@
 
         /* Imágenes originales incluidas dentro de este archivo HTML. */
         .maip-nav-logo { display: block; width: 56px; height: 56px; object-fit: contain; border-radius: 8px; }
-        .maip-hero-logo { display: block; width: min(100%, 380px); height: auto; aspect-ratio: 1; object-fit: contain; border-radius: 24px; box-shadow: 0 24px 60px rgba(0,0,0,.35); }
+        .maip-hero-logo { display: block; width: min(100%, 240px); height: auto; aspect-ratio: 1; object-fit: contain; border-radius: 20px; border: 1px solid rgba(255,255,255,.14); box-shadow: 0 16px 40px rgba(0,0,0,.3); }
         .maip-footer-logo { display: block; width: 72px; height: 72px; object-fit: contain; border-radius: 10px; }
-        .maip-professional-photo { display: block; aspect-ratio: 4 / 5; height: auto; object-fit: cover; object-position: center 65%; }
+        
         .maip-report-modal img { -webkit-user-drag: none; user-select: none; -webkit-touch-callout: none; }
-        .maip-hero-badge { max-width: 380px; }
-        @media (max-width: 767px) { .maip-hero-logo { width: min(80vw, 300px); } .maip-hero-badge { max-width: min(88vw, 340px); margin-bottom: 80px; } }
-        .maip-consultation { padding: 96px 24px; background: #f2f6fb; color: #1a1a1a; scroll-margin-top: 80px; }
+        .maip-hero-badge { max-width: 360px; }
+        @media (max-width: 767px) { .maip-hero-logo { display: none; } .maip-hero-badge { max-width: none; } }
+        .maip-consultation { padding: 96px 24px; background: var(--maip-light-2); color: #1a1a1a; scroll-margin-top: 80px; }
         .maip-consultation * { box-sizing: border-box; }
         .consulta-container { max-width: 1120px; margin: 0 auto; }
         .consulta-heading { max-width: 700px; margin: 0 auto 44px; text-align: center; }
-        .consulta-eyebrow { display: block; margin-bottom: 12px; font-size: 11px; font-weight: 800; letter-spacing: .16em; color: #0056b3; }
-        .consulta-heading h2 { margin: 0 0 18px; font-size: clamp(32px, 3.5vw, 46px); font-weight: 900; line-height: 1.12; letter-spacing: -.04em; }
+        .consulta-eyebrow { display: block; margin-bottom: 12px; font-size: 13px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: #0056b3; }
+        .consulta-heading h2 { margin: 0 0 18px; font-size: clamp(30px, 5vw, 48px); font-weight: 900; line-height: 1.1; letter-spacing: -.03em; }
         .consulta-heading p { margin: 0; font-size: 17px; line-height: 1.7; color: #526173; }
         .consulta-card { display: grid; grid-template-columns: .82fr 1.18fr; border: 1px solid #dde5ef; border-radius: 24px; overflow: hidden; background: #fff; box-shadow: 0 16px 48px #1636590b; }
         .consulta-intro { padding: 40px 34px; background: linear-gradient(145deg,#142237,#0b3562); color: #fff; display: flex; flex-direction: column; }
-        .consulta-tag { font-size: 9px; font-weight: 700; letter-spacing: .12em; line-height: 1.8; color: #b2d4fc; }
+        .consulta-tag { font-size: 12px; font-weight: 700; letter-spacing: .12em; line-height: 1.8; color: #b2d4fc; }
         .consulta-intro h3 { margin: 30px 0 18px; font-size: 30px; font-weight: 800; line-height: 1.2; letter-spacing: -.035em; }
         .consulta-intro-copy { color: #cfdae9; font-size: 14px; line-height: 1.75; margin: 0 0 34px; }
         .consulta-steps { list-style: none; margin: 0; padding: 0; }
@@ -114,18 +114,18 @@
         .consulta-field input, .consulta-field select, .consulta-field textarea { width: 100%; border: 1px solid #d9e2ed; border-radius: 10px; background: #f8fafc; color: #203047; font: inherit; font-size: 13px; line-height: 1.5; padding: 12px; min-height: 46px; transition: border-color .15s, box-shadow .15s; }
         .consulta-field select { text-overflow: ellipsis; }
         .consulta-field textarea { resize: vertical; }
-        .consulta-field input::placeholder, .consulta-field textarea::placeholder { color: #758294; opacity: 1; }
+        .consulta-field input::placeholder, .consulta-field textarea::placeholder { color: #66748a; opacity: 1; }
         .consulta-field input:focus, .consulta-field select:focus, .consulta-field textarea:focus { outline: none; border-color: #0056b3; box-shadow: 0 0 0 3px #0056b31c; }
         .consulta-field [aria-invalid="true"] { border-color: #b42318; }
         .consulta-contact-fields { border: 0; padding: 0; margin: 0; min-width: 0; }
         .consulta-contact-fields legend { padding: 0; margin-bottom: 4px; }
-        .consulta-field-hint { font-size: 11px; color: #627086; line-height: 1.55; margin: 0; }
+        .consulta-field-hint { font-size: 12px; color: #4f5d70; line-height: 1.55; margin: 0; }
         #consulta-contact-hint { margin-bottom: 12px; }
         .consulta-error { font-size: 12px; color: #b42318; line-height: 1.5; margin: 8px 0 0; }
         .consulta-primary, .consulta-whatsapp-action { display: flex; justify-content: space-between; align-items: center; gap: 12px; border: 0; border-radius: 10px; background: #0056b3; color: #fff; font: inherit; font-size: 14px; font-weight: 700; padding: 15px 18px; cursor: pointer; text-decoration: none; }
         .consulta-primary:hover { background: #004494; }
         .consulta-primary:focus-visible, .consulta-message-actions a:focus-visible, .consulta-message-actions button:focus-visible, .consulta-direct a:focus-visible { outline: 3px solid #4dabf7; outline-offset: 4px; }
-        .consulta-note { margin: -6px 0 0; font-size: 11px; line-height: 1.7; color: #627086; }
+        .consulta-note { margin: -6px 0 0; font-size: 12px; line-height: 1.7; color: #4f5d70; }
         .consulta-message-panel { margin-top: 28px; padding: 22px; border: 1px solid #d4e5fa; border-radius: 14px; background: #f4f8fd; }
         .maip-consultation [hidden] { display: none !important; }
         .consulta-message-panel h4 { font-size: 20px; font-weight: 800; margin: 0 0 8px; }
@@ -136,17 +136,17 @@
         .consulta-whatsapp-action:hover { background: #0f5235; }
         #consulta-copy { border: 1px solid #cbd8e8; border-radius: 8px; padding: 10px 12px; background: #fff; font: inherit; font-weight: 600; font-size: 12px; cursor: pointer; }
         #consulta-copy-status { min-height: 18px; margin: 10px 0 0; }
-        .consulta-bottom { margin: 24px auto 0; text-align: center; font-size: 12px; line-height: 1.8; color: #627086; }
+        .consulta-bottom { margin: 24px auto 0; text-align: center; font-size: 12px; line-height: 1.8; color: #4f5d70; }
         .consulta-bottom strong { font-weight: 600; }
         @media (max-width: 820px) { .consulta-card { grid-template-columns: 1fr; } .consulta-intro { padding: 30px; } .consulta-intro h3 { margin-top: 20px; } .consulta-form-panel { padding: 32px; } }
         @media (max-width: 480px) { .maip-consultation { padding: 64px 16px; } .consulta-heading { margin-bottom: 28px; } .consulta-heading p { font-size: 15px; } .consulta-intro, .consulta-form-panel { padding: 26px 22px; } .consulta-intro h3 { font-size: 27px; } .consulta-row { grid-template-columns: 1fr; } .consulta-card { border-radius: 18px; } .consulta-message-panel { padding: 16px; } .consulta-whatsapp-action { width: 100%; } }
 
-        .hero-pattern { background: #0b1d30; isolation: isolate; }
+        .hero-pattern { background: var(--maip-dark-2); isolation: isolate; }
         .hero-athletes { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
         .hero-athlete { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 1.4s ease; }
         .hero-athlete.is-active { opacity: 1; }
-        .hero-athletes::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg,rgba(5,17,31,.88) 0%,rgba(5,17,31,.67) 52%,rgba(5,17,31,.25) 100%),linear-gradient(0deg,rgba(5,17,31,.6),transparent 40%); }
-        #inicio { padding-bottom: 92px; overflow: hidden; }
+        .hero-athletes::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg,rgba(8,20,36,.93) 0%,rgba(8,20,36,.8) 46%,rgba(8,20,36,.5) 100%),linear-gradient(0deg,rgba(8,20,36,.7),transparent 45%),linear-gradient(180deg,rgba(8,20,36,.55),transparent 30%); }
+        #inicio { padding-bottom: 76px; min-height: min(88vh, 780px); overflow: hidden; }
         #inicio h1 .text-primary { color: #62b7ff; border-color: #62b7ff; }
         .hero-sport-controls { position: absolute; bottom: 24px; left: max(24px,calc((100vw - 1216px)/2)); z-index: 20; display: flex; align-items: center; flex-wrap: wrap; gap: 12px; color: white; }
         .hero-sport-label { font-size: 12px; font-weight: 700; letter-spacing: .1em; min-width: 84px; text-transform: uppercase; }
@@ -154,21 +154,79 @@
         .hero-sport-dot { width: 30px; height: 40px; display: grid; place-items: center; border: 0; background: transparent; cursor: pointer; }
         .hero-sport-dot::after { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #ffffff66; }
         .hero-sport-dot[aria-pressed="true"]::after { background: #62b7ff; box-shadow: 0 0 0 3px #62b7ff24; }
-        .hero-pause { border: 1px solid #ffffff50; border-radius: 20px; background: #07192b66; color: white; font: inherit; font-size: 11px; padding: 11px 14px; cursor: pointer; }
+        .hero-pause { border: 1px solid #ffffff50; border-radius: 20px; background: #07192b66; color: white; font: inherit; font-size: 12px; padding: 11px 14px; cursor: pointer; }
         .hero-sport-dot:focus-visible, .hero-pause:focus-visible { outline: 2px solid #62b7ff; outline-offset: 2px; }
         .maip-pillar-letter { color: #0056b3 !important; }
         .dashboard-preview-button { display: block; width: 100%; text-align: left; padding: 0; background: #f3f7fc; border: 1px solid #dbe5ef; border-radius: 12px; overflow: hidden; cursor: pointer; }
         .dashboard-preview-image { width: 100%; height: 200px; object-fit: cover; object-position: top; display: block; border-bottom: 1px solid #dbe5ef; }
         .dashboard-preview-label { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 16px; font: inherit; font-size: 13px; font-weight: 700; color: #0056b3; }
         .dashboard-preview-button:hover { border-color: #0056b3; box-shadow: 0 8px 24px #0056b314; }
-        .dashboard-preview-note { font-size: 11px; color: #627086; line-height: 1.6; margin: 12px 0 0; }
+        .dashboard-preview-note { font-size: 12px; color: #4f5d70; line-height: 1.6; margin: 12px 0 0; }
         .maip-report-modal { position: fixed; margin: auto; padding: 0; width: min(1120px,calc(100vw - 32px)); height: min(92dvh,980px); max-width: none; max-height: none; border: 0; border-radius: 18px; color: #1a1a1a; background: #fff; overflow: hidden; box-shadow: 0 28px 100px #0007; }
         .maip-report-modal:not([open]) { display: none; }
         .maip-report-modal[open] { display: flex; flex-direction: column; }
         .maip-report-modal::backdrop { background: rgba(4,14,26,.82); backdrop-filter: blur(5px); }
-        .dashboard-toolbar { flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; padding: 18px 22px; border-bottom: 1px solid #dbe4ef; }
+        /* ── Julián y Martín: componentes compartidos para que las dos secciones se vean como un par ── */
+        .maip-person { --p-ink: #1a1a1a; --p-muted: #475467; --p-accent: #0056b3; --p-line: #d6dfeb; --p-chip-bg: #e7f0fb; --p-chip-bd: #c4d9f3; --p-chip-tx: #00386f; --p-card-bg: #fff; --p-card-bd: #dbe5ef; --p-outline: rgba(0,86,179,.4); --p-cert-bg: #fff; --p-cert-bd: #d6dfeb; color: var(--p-ink); }
+        .maip-person--dark { --p-ink: #fff; --p-muted: rgba(255,255,255,.8); --p-accent: #7fc0ff; --p-line: rgba(255,255,255,.14); --p-chip-bg: rgba(90,169,255,.12); --p-chip-bd: rgba(90,169,255,.34); --p-chip-tx: #dcecff; --p-card-bg: linear-gradient(135deg, rgba(0,86,179,.28), rgba(0,86,179,.08)); --p-card-bd: rgba(90,169,255,.3); --p-outline: rgba(90,169,255,.5); --p-cert-bg: rgba(255,255,255,.06); --p-cert-bd: rgba(255,255,255,.16); }
+        .maip-person-grid { display: grid; grid-template-columns: 1fr; gap: 32px; align-items: start; }
+        .maip-photo { position: relative; width: 100%; max-width: 420px; margin: 0 auto; }
+        .maip-photo-frame { position: relative; margin: 0; display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 18px 16px 16px; border-radius: var(--radius-lg); overflow: hidden; background: linear-gradient(155deg, #0d4a96, #0b1d30); box-shadow: var(--shadow-2); color: #fff; text-align: center; }
+        .maip-photo-frame img { display: block; width: 104px; height: 104px; border-radius: 50%; object-fit: cover; object-position: var(--pos-m, center 18%); border: 3px solid rgba(255,255,255,.3); }
+        .maip-avatar { display: grid; place-items: center; width: 104px; height: 104px; border-radius: 50%; font-size: 38px; font-weight: 900; letter-spacing: .02em; color: #fff; background: linear-gradient(135deg, #0056b3, #4dabf7); border: 3px solid rgba(255,255,255,.3); }
+        .maip-photo figcaption { display: none; }
+        .maip-photo figcaption b { display: block; font-size: 17px; font-weight: 800; }
+        .maip-photo figcaption span { font-size: 13px; font-weight: 600; color: #a9d2ff; }
+        .maip-photo-note { display: none; }
+        .maip-eyebrow { display: block; margin-bottom: 12px; font-size: 13px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--p-accent, var(--maip-blue)); }
+        .maip-bg-dark .maip-eyebrow, .maip-bg-navy .maip-eyebrow { color: #7fc0ff; }
+        .maip-h2 { font-size: clamp(30px, 5vw, 48px); line-height: 1.1; font-weight: 900; letter-spacing: -.03em; color: #1a1a1a; }
+        .maip-bg-dark .maip-h2, .maip-bg-navy .maip-h2 { color: #fff; }
+        .maip-bg-dark .text-primary, .maip-bg-navy .text-primary { color: #62b7ff; }
+        .maip-person .maip-eyebrow { display: flex; align-items: center; gap: 12px; }
+        .maip-person .maip-eyebrow::before { content: ""; width: 32px; height: 2px; background: currentColor; }
+        .maip-person .maip-h2 { color: var(--p-ink); margin-bottom: 10px; }
+        .maip-role { font-size: clamp(16px, 2.2vw, 19px); font-weight: 500; color: var(--p-muted); margin-bottom: 20px; }
+        .maip-chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 28px; padding: 0; list-style: none; }
+        .maip-chip { display: inline-flex; align-items: center; gap: 9px; font-size: 13px; font-weight: 700; color: var(--p-chip-tx); background: var(--p-chip-bg); border: 1px solid var(--p-chip-bd); border-radius: 999px; padding: 8px 15px; }
+        .maip-chip i { color: var(--p-accent); font-size: 13px; }
+        .maip-lead { margin: 0 0 24px; padding-left: 20px; border-left: 3px solid var(--p-accent); font-size: clamp(16px, 2vw, 18px); line-height: 1.75; color: var(--p-muted); }
+        .maip-lead strong, .maip-callout strong { color: var(--p-ink); }
+        .maip-callout { display: flex; gap: 16px; padding: 22px; margin: 0 0 28px; border-radius: var(--radius-lg); background: var(--p-card-bg); border: 1px solid var(--p-card-bd); }
+        .maip-callout > i { flex: none; width: 44px; height: 44px; border-radius: var(--radius-md); display: grid; place-items: center; font-size: 18px; color: #fff; background: #0056b3; }
+        .maip-callout h4 { margin: 0 0 6px; font-size: 12px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--p-accent); }
+        .maip-callout p { margin: 0; font-size: 15px; line-height: 1.7; color: var(--p-muted); }
+        .pf-section { position: relative; overflow: hidden; background: var(--maip-dark-2); color: #fff; }
+        .pf-section::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(55% 60% at 90% 0%, rgba(0,86,179,.32), transparent 70%), radial-gradient(40% 40% at 0% 100%, rgba(0,86,179,.16), transparent 70%); }
+        .pf-section::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5; background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); background-size: 56px 56px; -webkit-mask-image: linear-gradient(180deg, transparent, #000 25%, #000 75%, transparent); mask-image: linear-gradient(180deg, transparent, #000 25%, #000 75%, transparent); }
+        .maip-certs { margin: 0 0 28px; padding-top: 24px; border-top: 1px solid var(--p-line); }
+        .maip-certs-title { margin: 0 0 12px; font-size: 13px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--p-ink); }
+        .maip-cert-list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+        .maip-cert { display: flex; align-items: center; gap: 14px; width: 100%; padding: 10px; text-align: left; font: inherit; color: var(--p-ink); background: var(--p-cert-bg); border: 1px solid var(--p-cert-bd); border-radius: var(--radius-lg); cursor: pointer; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+        .maip-cert:hover, .maip-cert:focus-visible { transform: translateY(-2px); border-color: var(--p-accent); box-shadow: var(--shadow-2); outline: none; }
+        .maip-cert img { flex: none; display: block; width: 112px; height: 80px; object-fit: cover; object-position: top center; border-radius: 8px; background: #fff; border: 1px solid var(--p-cert-bd); }
+        .maip-cert b { display: block; font-size: 15px; font-weight: 800; line-height: 1.3; }
+        .maip-cert small { display: block; margin-top: 2px; font-size: 13px; line-height: 1.45; color: var(--p-muted); }
+        .maip-cert em { display: inline-block; margin-top: 6px; font-style: normal; font-size: 13px; font-weight: 700; color: var(--p-accent); }
+        .cert-modal { position: fixed; margin: auto; padding: 14px; width: min(calc(100vw - 24px), calc((94dvh - 76px) * var(--ar, 1.4) + 28px)); max-height: 94dvh; border: 0; border-radius: var(--radius-lg); background: #fff; box-shadow: var(--shadow-3); overflow: auto; }
+        .cert-modal::backdrop { background: rgba(0,0,0,.86); backdrop-filter: blur(5px); }
+        .cert-modal img { display: block; width: 100%; height: auto; margin: 0 auto; border-radius: 8px; -webkit-user-drag: none; }
+        .cert-modal button { position: sticky; top: 0; float: right; margin: 0 0 8px 8px; z-index: 2; padding: 8px 14px; border: 0; border-radius: 999px; background: #111; color: #fff; font-weight: 700; font-size: 13px; cursor: pointer; }
+        @media (min-width: 768px) {
+            .maip-person-grid { grid-template-columns: 5fr 7fr; gap: 72px; }
+            .maip-person-grid--flip { grid-template-columns: 7fr 5fr; }
+            .maip-person-grid--flip > :first-child { order: 2; }
+            .maip-photo { position: sticky; top: 108px; max-width: 384px; }
+            .maip-photo::before { content: ""; position: absolute; inset: 0; transform: translate(14px, 14px); border: 1.5px solid var(--p-outline); border-radius: var(--radius-lg); }
+            .maip-photo-frame { display: block; aspect-ratio: 4 / 5; padding: 0; box-shadow: var(--shadow-3); text-align: left; }
+            .maip-photo-frame img { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: 0; border: 0; object-position: var(--pos-d, center 65%); }
+            .maip-avatar { position: absolute; top: 44%; left: 50%; width: 36%; height: auto; aspect-ratio: 1; transform: translate(-50%, -50%); font-size: clamp(44px, 5vw, 72px); border-width: 4px; }
+            .maip-photo figcaption { display: block; position: absolute; left: 0; right: 0; bottom: 0; padding: 64px 22px 20px; background: linear-gradient(180deg, transparent, rgba(5,12,22,.88)); }
+            .maip-photo-note { display: inline-block; position: absolute; top: 16px; left: 16px; padding: 4px 10px; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.6); border: 1px solid rgba(255,255,255,.25); border-radius: 999px; }
+        }
+        @media (max-width: 520px) { .maip-callout { flex-direction: column; } .maip-lead { padding-left: 16px; } .maip-cert img { width: 92px; height: 68px; } }        .dashboard-toolbar { flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; padding: 18px 22px; border-bottom: 1px solid #dbe4ef; }
         .dashboard-toolbar h2 { margin: 0; font-size: 20px; font-weight: 800; }
-        .dashboard-toolbar p { margin: 4px 0 0; font-size: 11px; color: #627086; }
+        .dashboard-toolbar p { margin: 4px 0 0; font-size: 12px; color: #4f5d70; }
         .dashboard-controls { display: flex; align-items: center; gap: 8px; }
         .dashboard-controls button { display: grid; place-items: center; min-width: 36px; min-height: 36px; padding: 6px 10px; background: #f3f6fa; border: 1px solid #dbe4ef; border-radius: 8px; color: #243449; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
         .dashboard-controls button:disabled { opacity: .4; cursor: default; }
@@ -177,7 +235,7 @@
         .dashboard-scroll { min-height: 0; flex: 1; overflow: auto; background: #e9eef5; padding: 20px; overscroll-behavior: contain; }
         .dashboard-document { width: 100%; margin: 0 auto; }
         .dashboard-page { margin: 0 0 20px; }
-        .dashboard-page figcaption { padding: 0 0 9px; font-size: 11px; font-weight: 600; color: #43556b; }
+        .dashboard-page figcaption { padding: 0 0 9px; font-size: 12px; font-weight: 600; color: #43556b; }
         .dashboard-page img { display: block; width: 100%; height: auto; max-width: none; background: #fff; box-shadow: 0 3px 16px #14223712; }
         .dashboard-transcript { padding: 16px; background: #fff; border-radius: 8px; font-size: 13px; line-height: 1.65; }
         .dashboard-transcript summary { cursor: pointer; font-weight: 700; color: #0056b3; }
@@ -185,7 +243,7 @@
         .dashboard-transcript table { width: 100%; border-collapse: collapse; margin: 12px 0; }
         .dashboard-transcript td { border: 1px solid #d9d9d9; padding: 8px; }
         .dashboard-preview-button:focus-visible, .dashboard-controls button:focus-visible, .dashboard-transcript summary:focus-visible { outline: 3px solid #0056b3; outline-offset: 3px; }
-        @media (max-width: 767px) { .hero-athletes::after { background: linear-gradient(0deg,#07192bee,#07192b88 60%,#07192bb0); } .hero-sport-controls { left: 16px; right: 16px; justify-content: center; } #inicio > .animate-bounce { display: none; } .dashboard-toolbar { padding: 14px; } .dashboard-toolbar h2 { font-size: 18px; } .dashboard-scroll { padding: 12px; } .maip-report-modal { width: calc(100vw - 16px); height: 94dvh; border-radius: 12px; } }
+        @media (max-width: 767px) { .hero-athletes::after { background: linear-gradient(180deg,rgba(8,20,36,.84),rgba(8,20,36,.76) 55%,rgba(8,20,36,.92)); } #inicio { padding-bottom: 120px; } .hero-sport-controls { left: 16px; right: 16px; justify-content: center; } #inicio > .animate-bounce { display: none; } .dashboard-toolbar { padding: 14px; } .dashboard-toolbar h2 { font-size: 18px; } .dashboard-scroll { padding: 12px; } .maip-report-modal { width: calc(100vw - 16px); height: 94dvh; border-radius: 12px; } }
         @media (prefers-reduced-motion: reduce) { .hero-athlete { transition: none; } }
 
 
@@ -195,37 +253,37 @@
 
         .maip-services-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
         .maip-services-grid > div { min-width: 0; }
-        .maip-training-optional { background: #1a1a1a; color: #fff; border: 1px solid #303030; }
+        .maip-training-optional { background: var(--maip-dark-1); color: #fff; border: 1px solid #303030; }
         .maip-training-icon { background: #ffffff0d; color: #6bb9ff; border: 1px solid #ffffff18; }
-        .maip-optional-label { display: inline-block; margin-bottom: 14px; padding: 5px 9px; border: 1px solid #6bb9ff45; border-radius: 6px; font-size: 10px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: #b8dcff; background: #0056b325; }
+        .maip-optional-label { display: inline-block; margin-bottom: 14px; padding: 5px 9px; border: 1px solid #6bb9ff45; border-radius: 6px; font-size: 12px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: #b8dcff; background: #0056b325; }
         .maip-training-copy { font-size: 14px; line-height: 1.7; color: #d1d5db; margin-bottom: 16px; }
         .maip-training-program { font-size: 12px; font-weight: 800; letter-spacing: .1em; color: #6bb9ff; margin: 24px 0 10px; }
         .maip-training-footnote { font-size: 12px; line-height: 1.7; color: #abb4c1; padding-top: 16px; margin-top: 20px; border-top: 1px solid #ffffff18; }
         @media (min-width: 768px) { .maip-services-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
-        @media (min-width: 1200px) { .maip-services-grid { grid-template-columns: repeat(4,minmax(0,1fr)); } }
+        @media (min-width: 1320px) { .maip-services-grid { grid-template-columns: repeat(4,minmax(0,1fr)); } }
 
         /* ── Planilla de entrenamiento (MAIP 360) ── */
         .rt-t-bajo  { --rt-bg: #dff5ea; --rt-fg: #146c43; --rt-dot: #2f9e6b; }
         .rt-t-medio { --rt-bg: #fff1cc; --rt-fg: #7a5600; --rt-dot: #e0a100; }
         .rt-t-alto  { --rt-bg: #fde0de; --rt-fg: #a12622; --rt-dot: #d9534f; }
-        .rt-chip { display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; background: var(--rt-bg); color: var(--rt-fg); white-space: nowrap; }
+        .rt-chip { display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; background: var(--rt-bg); color: var(--rt-fg); white-space: nowrap; }
         .rt-preview { padding: 14px 14px 0; }
-        .rt-preview-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 10px; margin-bottom: 10px; font-size: 11px; font-weight: 700; color: #243449; }
-        .rt-preview-head span:last-child { font-weight: 600; color: #627086; }
+        .rt-preview-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 10px; margin-bottom: 10px; font-size: 12px; font-weight: 700; color: #243449; }
+        .rt-preview-head span:last-child { font-weight: 600; color: #4f5d70; }
         .rt-week { display: grid; gap: 5px; }
         .rt-wd { display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 8px; padding: 5px 8px; border-radius: 8px; background: #fff; border: 1px solid #dbe5ef; font-size: 12px; color: #1a1a1a; }
-        .rt-wd b { font-size: 11px; font-weight: 800; color: #0056b3; }
-        .rt-wd .rt-chip { font-size: 9px; padding: 2px 7px; }
+        .rt-wd b { font-size: 12px; font-weight: 800; color: #0056b3; }
+        .rt-wd .rt-chip { font-size: 12px; padding: 2px 7px; }
         .rt-preview-label { margin: 12px -14px 0; border-top: 1px solid #dbe5ef; }
         .rt-modal .dashboard-scroll { padding: 18px; }
         .rt-wrap { max-width: 1040px; margin: 0 auto; }
         .rt-summary { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: 16px; }
         .rt-summary div { background: #fff; border-radius: 10px; padding: 10px 12px; }
-        .rt-summary dt { font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #627086; }
+        .rt-summary dt { font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #4f5d70; }
         .rt-summary dd { margin: 2px 0 0; font-size: 13px; font-weight: 700; color: #142237; }
         .rt-tabs { display: flex; gap: 8px; margin-bottom: 8px; }
         .rt-tab { flex: 1; padding: 11px 12px; border: 1px solid #c9d6e6; border-radius: 10px; background: #fff; font: inherit; font-size: 13px; font-weight: 800; color: #243449; cursor: pointer; }
-        .rt-tab small { display: block; margin-top: 2px; font-size: 11px; font-weight: 600; color: #627086; }
+        .rt-tab small { display: block; margin-top: 2px; font-size: 12px; font-weight: 600; color: #4f5d70; }
         .rt-tab[aria-selected="true"] { background: #0056b3; border-color: #0056b3; color: #fff; }
         .rt-tab[aria-selected="true"] small { color: #dbe9fb; }
         .rt-tab:focus-visible, .rt-log select:focus-visible, .rt-reset:focus-visible { outline: 3px solid #0056b3; outline-offset: 2px; }
@@ -233,12 +291,12 @@
         .rt-days { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 20px; }
         .rt-day { background: #fff; border-radius: 12px; padding: 14px 14px 12px; border-top: 4px solid var(--rt-dot); box-shadow: 0 2px 10px #14223710; }
         .rt-dayhead { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 4px; }
-        .rt-dayname { font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #627086; }
+        .rt-dayname { font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #4f5d70; }
         .rt-daytitle { margin: 0 0 10px; font-size: 16px; font-weight: 800; color: #0b3b78; }
         .rt-block { padding: 8px 0; border-top: 1px dashed #d5deea; }
         .rt-blockhead { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 8px; margin-bottom: 6px; font-size: 12px; }
         .rt-blockhead strong { color: #142237; }
-        .rt-blockhead span { color: #627086; font-weight: 600; }
+        .rt-blockhead span { color: #4f5d70; font-weight: 600; }
         .rt-items { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
         .rt-items li { display: grid; grid-template-columns: 1fr auto 46px; align-items: center; gap: 8px; font-size: 13px; color: #1f2d3f; }
         .rt-items li.rt-plain { grid-template-columns: 1fr; color: #43556b; }
@@ -246,8 +304,8 @@
         .rt-lock { display: block; height: 9px; border-radius: 5px; background: #c3cedd; filter: blur(2.5px); }
         .rt-blurtext { filter: blur(4.5px); user-select: none; color: #6b7b92; }
         .rt-hid .rt-sr { color: #6b7b92; }
-        .rt-more { margin-top: 2px; font-size: 11px; font-weight: 700; color: #627086; }
-        .rt-cols { display: grid; grid-template-columns: 1fr auto 46px; gap: 8px; margin: 0 0 4px; font-size: 9px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #8a97a9; }
+        .rt-more { margin-top: 2px; font-size: 12px; font-weight: 700; color: #4f5d70; }
+        .rt-cols { display: grid; grid-template-columns: 1fr auto 46px; gap: 8px; margin: 0 0 4px; font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #66748a; }
         .rt-cols span:last-child { text-align: right; }
         .rt-nutri { margin: 8px 0 0; padding: 8px 10px; border-radius: 8px; background: #f1f6fd; font-size: 12px; line-height: 1.5; color: #243449; }
         .rt-nutri i { color: #0056b3; margin-right: 4px; }
@@ -256,18 +314,18 @@
         .rt-log > p { margin: 0 0 12px; font-size: 12px; line-height: 1.6; color: #43556b; }
         .rt-tablewrap { overflow-x: auto; }
         .rt-log table { width: 100%; border-collapse: collapse; font-size: 13px; }
-        .rt-logday { display: block; font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #627086; }
+        .rt-logday { display: block; font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #4f5d70; }
         .rt-log td { line-height: 1.3; }
-        .rt-log th { padding: 6px 8px; text-align: left; font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #627086; border-bottom: 2px solid #dbe4ef; }
+        .rt-log th { padding: 6px 8px; text-align: left; font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #4f5d70; border-bottom: 2px solid #dbe4ef; }
         .rt-log td { padding: 6px 8px; border-bottom: 1px solid #e8eef6; font-variant-numeric: tabular-nums; }
         .rt-log th.n, .rt-log td.n { text-align: right; }
         .rt-log select { padding: 5px 6px; border: 1px solid #c9d6e6; border-radius: 6px; background: #f7faff; font: inherit; font-size: 13px; font-weight: 700; color: #0b3b78; }
         .rt-totals { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 14px 0 0; }
         .rt-totals div { background: #f1f6fd; border-radius: 10px; padding: 9px 12px; }
-        .rt-totals dt { font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #627086; }
+        .rt-totals dt { font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #4f5d70; }
         .rt-totals dd { margin: 2px 0 0; font-size: 20px; font-weight: 800; color: #0056b3; font-variant-numeric: tabular-nums; }
         .rt-reset { margin-top: 12px; padding: 8px 12px; border: 1px solid #c9d6e6; border-radius: 8px; background: #f7faff; font: inherit; font-size: 12px; font-weight: 700; color: #243449; cursor: pointer; }
-        .rt-foot { margin: 14px 2px 4px; font-size: 11px; line-height: 1.6; color: #627086; }
+        .rt-foot { margin: 14px 2px 4px; font-size: 12px; line-height: 1.6; color: #4f5d70; }
         @media (min-width: 700px) { .rt-days { grid-template-columns: repeat(2, minmax(0, 1fr)); } .rt-summary { grid-template-columns: repeat(4, minmax(0, 1fr)); } .rt-totals { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
         @media (min-width: 1000px) { .rt-days { grid-template-columns: repeat(3, minmax(0, 1fr)); } .rt-modal .dashboard-scroll { padding: 24px; } }
     
@@ -275,40 +333,40 @@
         .ip-preview { padding: 14px 14px 0; }
         .ip-pv-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 10px; margin-bottom: 10px; font-size: 12px; color: #243449; }
         .ip-pv-head b { font-weight: 800; }
-        .ip-pv-head span { font-weight: 600; color: #627086; }
+        .ip-pv-head span { font-weight: 600; color: #4f5d70; }
         .ip-pv-quote { display: block; margin-bottom: 10px; padding: 9px 11px; border-left: 4px solid #2f5cff; background: #e8eeff; border-radius: 0 8px 8px 0; font-size: 12px; line-height: 1.5; color: #1a2a55; }
-        .ip-pv-maip { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; margin-bottom: 4px; }
-        .ip-pv-maip > span { display: flex; align-items: center; gap: 8px; padding: 7px 9px; border-radius: 8px; background: var(--ip-bg); border-top: 3px solid var(--ip-c); font-size: 12px; font-weight: 800; color: #1a2433; }
-        .ip-pv-maip b { color: var(--ip-c); font-size: 15px; }
-        .ip-pv-maip small { display: block; font-size: 10px; font-weight: 600; color: #4b5870; }
-        .ip-pv-meta { display: block; margin: 8px 0 0; font-size: 11px; color: #627086; }
+        .ip-pv-maip { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; margin-bottom: 4px; }
+        .ip-pv-maip > span { display: flex; align-items: center; gap: 4px; min-width: 0; padding: 7px 5px; border-radius: 8px; background: var(--ip-bg); border-top: 3px solid var(--ip-c); font-size: 12px; font-weight: 800; color: #1a2433; }
+        .ip-pv-maip b { color: var(--ip-t); font-size: 15px; }
+        .ip-pv-maip small { display: block; font-size: 12px; font-weight: 500; letter-spacing: -.01em; color: #4b5870; }
+        .ip-pv-meta { display: block; margin: 8px 0 0; font-size: 12px; color: #4f5d70; }
         .ip-preview .dashboard-preview-label { margin: 12px -14px 0; border-top: 1px solid #dbe5ef; }
-        .ip-m { --ip-c: #2f5cff; --ip-bg: #e8eeff; } .ip-a { --ip-c: #0e8fa8; --ip-bg: #e0f3f8; } .ip-i { --ip-c: #d98200; --ip-bg: #fdf0db; } .ip-p { --ip-c: #159a55; --ip-bg: #e1f5e9; }
+        .ip-m { --ip-c: #2f5cff; --ip-bg: #e8eeff; --ip-t: #2349d6; } .ip-a { --ip-c: #0e8fa8; --ip-bg: #e0f3f8; --ip-t: #0a6b80; } .ip-i { --ip-c: #d98200; --ip-bg: #fdf0db; --ip-t: #8f5200; } .ip-p { --ip-c: #159a55; --ip-bg: #e1f5e9; --ip-t: #0d6e3b; }
         .ip-modal .dashboard-scroll { padding: 16px; }
         .ip-wrap { max-width: 900px; margin: 0 auto; display: grid; gap: 16px; }
         .ip-page { background: #fff; border-radius: 14px; padding: 18px; box-shadow: 0 2px 10px #14223710; }
-        .ip-pagehead { margin: 0 0 14px; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #627086; }
+        .ip-pagehead { margin: 0 0 14px; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #4f5d70; }
         .ip-banner { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; padding: 14px 16px; border-radius: 12px 12px 0 0; background: #111318; border-bottom: 4px solid #2f5cff; color: #fff; }
         .ip-banner img { width: 56px; height: 56px; border-radius: 8px; flex-shrink: 0; }
-        .ip-banner small { display: block; font-size: 10px; font-weight: 800; letter-spacing: .22em; color: #8ea6ff; }
+        .ip-banner small { display: block; font-size: 12px; font-weight: 800; letter-spacing: .22em; color: #8ea6ff; }
         .ip-banner h3 { margin: 2px 0; font-size: 18px; font-weight: 800; line-height: 1.2; }
         .ip-banner p { margin: 0; font-size: 12px; color: #c4cee3; }
         .ip-info { display: grid; grid-template-columns: 1fr; gap: 1px; margin: 0 0 14px; background: #dde4ef; border: 1px solid #dde4ef; border-radius: 10px; overflow: hidden; }
         .ip-info div { display: flex; flex-direction: column; padding: 8px 12px; background: #f6f8fe; }
-        .ip-info dt { font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #5b6475; }
+        .ip-info dt { font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #5b6475; }
         .ip-info dd { margin: 2px 0 0; font-size: 14px; font-weight: 600; color: #111318; }
         .ip-phrase { margin: 0 0 14px; padding: 12px 14px; border-left: 5px solid #2f5cff; background: #e8eeff; border-radius: 0 10px 10px 0; }
-        .ip-phrase small { display: block; margin-bottom: 4px; font-size: 10px; font-weight: 800; letter-spacing: .16em; color: #2f5cff; }
+        .ip-phrase small { display: block; margin-bottom: 4px; font-size: 12px; font-weight: 800; letter-spacing: .16em; color: #2349d6; }
         .ip-phrase p { margin: 0; font-size: 15px; line-height: 1.55; color: #1a2a55; }
         .ip-h { margin: 18px 0 8px; padding-bottom: 6px; border-bottom: 2px solid #dde4ef; font-size: 16px; font-weight: 800; color: #111318; }
         .ip-box { margin: 0 0 8px; padding: 9px 12px; border: 1px solid #dde4ef; border-radius: 8px; background: #f6f8fe; }
-        .ip-box small { display: block; font-size: 11px; font-weight: 800; color: #1737a8; }
+        .ip-box small { display: block; font-size: 12px; font-weight: 800; color: #1737a8; }
         .ip-box p { margin: 2px 0 0; font-size: 14px; line-height: 1.55; color: #111318; }
         .ip-quads { display: grid; grid-template-columns: 1fr; gap: 10px; }
         .ip-quad { padding: 12px 14px 8px; border-radius: 10px; background: var(--ip-bg); border-top: 5px solid var(--ip-c); }
-        .ip-quad small { display: block; font-size: 11px; font-weight: 800; letter-spacing: .16em; color: var(--ip-c); }
+        .ip-quad small { display: block; font-size: 12px; font-weight: 800; letter-spacing: .16em; color: var(--ip-t); }
         .ip-quad h4 { margin: 2px 0 0; font-size: 16px; font-weight: 800; color: #111318; }
-        .ip-quad em { display: block; margin: 4px 0 6px; font-size: 11px; font-style: normal; font-weight: 700; color: #5b6475; }
+        .ip-quad em { display: block; margin: 4px 0 6px; font-size: 12px; font-style: normal; font-weight: 700; color: #5b6475; }
         .ip-quad ul { list-style: none; margin: 0; padding: 0; }
         .ip-quad li { position: relative; padding: 6px 0 6px 16px; border-bottom: 1px solid #00000014; font-size: 13.5px; color: #1a2433; }
         .ip-quad li::before { content: ''; position: absolute; left: 2px; top: 13px; width: 7px; height: 7px; border-radius: 50%; background: var(--ip-c); }
@@ -317,7 +375,7 @@
         .ip-table tr { display: block; margin-bottom: 8px; border: 1px solid #dde4ef; border-radius: 8px; overflow: hidden; background: #f6f8fe; }
         .ip-table td, .ip-table th[scope="row"] { display: block; padding: 7px 12px; text-align: left; border-bottom: 1px solid #e6ebf4; }
         .ip-table td:last-child { border-bottom: 0; }
-        .ip-table td::before { content: attr(data-label); display: block; margin-bottom: 1px; font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #5b6475; }
+        .ip-table td::before { content: attr(data-label); display: block; margin-bottom: 1px; font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #5b6475; }
         .ip-table th[scope="row"] { background: #eef1f7; font-weight: 800; color: #4b5870; }
         .ip-blur { display: inline-block; filter: blur(4.5px); user-select: none; color: #6b7b92; }
         .ip-acts { display: grid; gap: 6px; margin: 0 0 12px; padding: 0; list-style: none; }
@@ -328,11 +386,11 @@
         .ip-checks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0 0 12px; padding: 0; list-style: none; border: 1px solid #dde4ef; border-radius: 8px; overflow: hidden; background: #dde4ef; gap: 1px; }
         .ip-checks li { display: flex; align-items: center; gap: 8px; padding: 8px 10px; background: #f6f8fe; font-size: 13px; }
         .ip-checks li::before { content: ''; width: 14px; height: 14px; flex-shrink: 0; border: 1.5px solid #2f5cff; border-radius: 2px; background: #fff; }
-        .ip-checks li.on::before { content: '✕'; display: grid; place-items: center; font-size: 10px; font-weight: 800; color: #2f5cff; line-height: 1; }
+        .ip-checks li.on::before { content: '✕'; display: grid; place-items: center; font-size: 12px; font-weight: 800; color: #2f5cff; line-height: 1; }
         .ip-close { margin-top: 14px; padding: 14px 16px; border-left: 5px solid #2f5cff; border-radius: 0 10px 10px 0; background: #111318; color: #fff; }
         .ip-close strong.t { display: block; margin-bottom: 4px; font-size: 15px; color: #8ea6ff; }
         .ip-close p { margin: 0; font-size: 13.5px; line-height: 1.6; }
-        .ip-foot { margin: 10px 2px 0; font-size: 11px; line-height: 1.6; color: #627086; }
+        .ip-foot { margin: 10px 2px 0; font-size: 12px; line-height: 1.6; color: #4f5d70; }
         @media (min-width: 700px) {
             .ip-info { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .ip-quads { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -348,7 +406,92 @@
             .ip-table td::before { content: none; }
             .ip-table th[scope="row"] { display: table-cell; width: 20%; }
         }
+        /* ── Celular: tarjetas M-A-I-P compactas ── */
+        .maip-pillar-more { display: none; }
+        @media (max-width: 767px) {
+            #que-es .maip-pillar { padding: 16px 14px; border-radius: var(--radius-lg); display: flex; flex-direction: column; }
+            #que-es .maip-pillar .maip-pillar-letter { font-size: 40px; line-height: 1; margin-bottom: 4px; }
+            #que-es .maip-pillar h4 { font-size: 17px; margin-bottom: 6px; }
+            #que-es .maip-pillar > p.uppercase { font-size: 12px; line-height: 1.35; letter-spacing: .03em; margin-bottom: 8px; }
+            #que-es .maip-pillar-desc { display: none; font-size: 13px; line-height: 1.55; }
+            #que-es .maip-pillar.is-open .maip-pillar-desc { display: block; }
+            #que-es .maip-pillar-more { display: inline-flex; align-items: center; gap: 6px; margin-top: auto; padding: 8px 0 0; border: 0; background: none; font: inherit; font-size: 13px; font-weight: 700; color: var(--maip-blue); cursor: pointer; }
+            #que-es .maip-pillar-more::after { content: ""; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translateY(-2px); transition: transform .2s; }
+            #que-es .maip-pillar.is-open .maip-pillar-more::after { transform: rotate(-135deg) translateY(-2px); }
+            #que-es .maip-pillar.is-open { grid-column: 1 / -1; }
+        }
+        /* ── Herramientas: tarjetas simétricas (filas compartidas) y vistas previas que llenan el espacio ── */
+        @media (min-width: 768px) {
+            .maip-services-grid { row-gap: 0; }
+            .maip-services-grid > div { display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 0; align-content: stretch; }
+            .maip-services-grid > div:nth-child(n+3) { margin-top: 24px; }
+            .maip-services-grid .adc-preview-wrapper { display: flex; flex-direction: column; margin: 0 0 16px; min-height: 0; }
+            .maip-services-grid .adc-preview-wrapper .dashboard-preview-button { flex: 1 1 auto; display: flex; flex-direction: column; }
+            .maip-services-grid .dashboard-preview-image { flex: 1 1 0; height: 0; min-height: 200px; }
+            .maip-services-grid .dashboard-preview-label { margin-top: auto; }
+            .maip-services-grid .ip-pv-maip { flex: 1 1 auto; grid-auto-rows: 1fr; }
+            .maip-services-grid .rt-week { flex: 1 1 auto; align-content: space-between; }
+            .maip-services-grid > div > .maip-tool-desc > :last-child { margin-bottom: 16px; }
+            .maip-services-grid > div { padding: 24px; }
+            .maip-services-grid .adc-preview-wrapper { padding-top: 20px; border-top: 1px solid #e3e9f1; }
+            .maip-training-optional .adc-preview-wrapper { border-top-color: #ffffff1f; }
+            .maip-services-grid .rt-wd { gap: 6px; padding: 5px 7px; grid-template-columns: 30px 1fr auto; }
+            .maip-services-grid .rt-wd .rt-chip { padding: 2px 7px; letter-spacing: .02em; }
+            .maip-services-grid .dashboard-preview-image { object-position: left top; }
+            .maip-services-grid > div > :first-child { margin-bottom: 18px; }
+            .maip-services-grid .maip-tool-desc .maip-training-copy { line-height: 1.6; margin-bottom: 12px; }
+            .maip-services-grid .maip-tool-desc .maip-training-program { margin: 12px 0 8px; }
+        }
+        @media (min-width: 1320px) { .maip-services-grid > div:nth-child(n+3) { margin-top: 0; } }
+        /* ── Celular: línea de tiempo más compacta ── */
+        @media (max-width: 767px) {
+            #ciclo .maip-timeline > .step-item + .step-item { margin-top: 18px; }
+            #ciclo .maip-timeline .step-item .rounded-2xl { padding: 16px; }
+            #ciclo .maip-timeline .step-item h4 { font-size: 17px; margin-bottom: 6px; }
+            #ciclo .maip-timeline .step-item p { margin-bottom: 10px; }
+            #ciclo .maip-timeline .step-item .md\:hidden { margin-bottom: 8px; }
+        }
+        /* ── Celular: herramientas en carrusel con scroll-snap ── */
+        .maip-carousel-dots { display: none; }
+        @media (max-width: 767px) {
+            #herramientas .maip-services-grid { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; margin-inline: -16px; padding: 4px 16px 10px; scroll-padding-inline: 16px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+            #herramientas .maip-services-grid::-webkit-scrollbar { display: none; }
+            #herramientas .maip-services-grid > div { flex: 0 0 86%; scroll-snap-align: start; padding: 20px; opacity: 1; transform: none; }
+            #herramientas .maip-services-grid { align-items: flex-start; }
+            .maip-carousel-dots { display: flex; justify-content: center; gap: 2px; margin-top: 8px; }
+            .maip-carousel-dot { width: 30px; height: 30px; display: grid; place-items: center; border: 0; background: transparent; cursor: pointer; }
+            .maip-carousel-dot::after { content: ""; width: 8px; height: 8px; border-radius: 99px; background: #b6c3d4; transition: width .2s, background .2s; }
+            .maip-carousel-dot[aria-current="true"]::after { width: 22px; background: var(--maip-blue); }
+        }
+        /* ── Botón flotante de WhatsApp (solo celular) ── */
+        .maip-wa-fab { display: none; }
+        @media (max-width: 767px) {
+            .maip-wa-fab { position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); z-index: 40; width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; background: #25d366; color: #fff; font-size: 30px; text-decoration: none; box-shadow: 0 8px 22px rgba(0,0,0,.3); transition: opacity .2s, transform .2s; }
+            .maip-wa-fab:active { transform: scale(.94); }
+            .maip-wa-fab.is-hidden { opacity: 0; pointer-events: none; transform: scale(.8); }
+            .maip-wa-fab:focus-visible { outline: 3px solid #fff; outline-offset: 2px; box-shadow: 0 0 0 6px #0056b3; }
+        }
+        /* ── Terminación: elevación suave, sombras consistentes y foco ── */
+        section[id] { scroll-margin-top: 80px; }
+        .maip-lift { box-shadow: var(--shadow-1); transition: opacity .7s ease-out, transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+        .maip-lift.fade-in-up.visible:hover { transform: translateY(-3px); box-shadow: var(--shadow-2); border-color: rgba(0,86,179,.3); }
+        .maip-plan { box-shadow: var(--shadow-2); transition: opacity .7s ease-out, transform .3s ease, box-shadow .3s ease; }
+        .maip-plan.fade-in-up.visible:hover { transform: translateY(-4px); box-shadow: var(--shadow-3); }
+        @media (min-width: 768px) {
+            .maip-plan-360 { border: 2px solid var(--maip-blue); box-shadow: var(--shadow-3), 0 0 0 5px rgba(0,86,179,.12); }
+            .maip-plan-360.fade-in-up.visible { transform: translateY(-16px) scale(1.035); }
+            .maip-plan-360.fade-in-up.visible:hover { transform: translateY(-20px) scale(1.035); }
+        }
+        a[href="#contacto"].bg-primary, a[data-programa], .consulta-primary { transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease; }
+        a[href="#contacto"].bg-primary:hover, a[data-programa]:hover, .consulta-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-2); }
+        :where(a, button, summary):focus-visible { outline: 3px solid #4dabf7; outline-offset: 3px; }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+            .fade-in-up { opacity: 1; transform: none; }
+            .maip-lift.fade-in-up.visible:hover, .maip-plan.fade-in-up.visible:hover, a[href="#contacto"].bg-primary:hover, a[data-programa]:hover, .consulta-primary:hover, .maip-cert:hover { transform: none !important; }
+        }
     </style>
+    <link rel="stylesheet" href="tw.css">
 </head>
 <body class="font-sans text-gray-800 bg-lightBg antialiased selection:bg-primary selection:text-white">
 
@@ -357,9 +500,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center gap-3">
-                    <a href="#inicio" aria-label="Método MAIP — Inicio"><img src="img/logo-maip.jpg" alt="Logo Método MAIP by Julián Lell" width="56" height="56" class="maip-nav-logo"></a>
+                    <a href="#inicio" aria-label="Método MAIP — Inicio"><picture><source srcset="img/logo-maip.webp" type="image/webp"><img src="img/logo-maip.jpg" alt="Logo Método MAIP by Julián Lell" width="56" height="56" class="maip-nav-logo"></picture></a>
                     
-                    <a href="#" class="text-xl font-black text-secondary tracking-tight flex flex-col leading-none hidden sm:flex">
+                    <a href="#inicio" class="text-lg sm:text-xl font-black text-secondary tracking-tight flex flex-col leading-none sm:leading-none">
                         <span>MÉTODO</span>
                         <span class="text-primary">MAIP</span>
                     </a>
@@ -400,30 +543,30 @@
     <section id="inicio" class="hero-pattern min-h-[90vh] flex items-center pt-20 relative">
             <div class="hero-athletes" aria-hidden="true">
                 <!-- Foto: Unsplash · https://unsplash.com/photos/1-nuy7fD3fw · Unsplash License -->
-                <img src="img/hero-running.jpg" alt="" data-sport="Running" class="hero-athlete is-active" decoding="async" fetchpriority="high">
+                <picture><source srcset="img/hero-running.webp" type="image/webp"><img src="img/hero-running.jpg" alt="" data-sport="Running" class="hero-athlete is-active" decoding="async" fetchpriority="high"></picture>
                 <!-- Foto: Alexandre Ricart · https://unsplash.com/photos/tbjIlLVmamQ · Unsplash License -->
-                <img src="img/hero-hyrox.jpg" alt="" data-sport="HYROX" class="hero-athlete" decoding="async">
+                <picture><source srcset="img/hero-hyrox.webp" type="image/webp"><img src="img/hero-hyrox.jpg" alt="" data-sport="HYROX" class="hero-athlete" decoding="async"></picture>
                 <!-- Foto: Brian Matangelo · https://unsplash.com/photos/-BUPaAMSOdE · Unsplash License -->
-                <img src="img/hero-natacion.jpg" alt="" data-sport="Natación" class="hero-athlete" decoding="async">
+                <picture><source srcset="img/hero-natacion.webp" type="image/webp"><img src="img/hero-natacion.jpg" alt="" data-sport="Natación" class="hero-athlete" decoding="async"></picture>
                 <!-- Foto: Anastase Maragos · https://unsplash.com/photos/LcQtitblYXw · Unsplash License -->
-                <img src="img/hero-boxeo.jpg" alt="" data-sport="Boxeo" class="hero-athlete" decoding="async">
+                <picture><source srcset="img/hero-boxeo.webp" type="image/webp"><img src="img/hero-boxeo.jpg" alt="" data-sport="Boxeo" class="hero-athlete" decoding="async"></picture>
                 <!-- Foto: Blake Emge · https://unsplash.com/photos/RrfZGnLpU_k · Unsplash License -->
-                <img src="img/hero-futbol.jpg" alt="" data-sport="Fútbol" class="hero-athlete" decoding="async">
+                <picture><source srcset="img/hero-futbol.webp" type="image/webp"><img src="img/hero-futbol.jpg" alt="" data-sport="Fútbol" class="hero-athlete" decoding="async"></picture>
                 <!-- Foto: Max Leveridge · https://unsplash.com/photos/ApRROE5h7Kw · Unsplash License -->
-                <img src="img/hero-rugby.jpg" alt="" data-sport="Rugby" class="hero-athlete" decoding="async">
+                <picture><source srcset="img/hero-rugby.webp" type="image/webp"><img src="img/hero-rugby.jpg" alt="" data-sport="Rugby" class="hero-athlete" decoding="async"></picture>
                 <!-- Foto: Unsplash · https://unsplash.com/photos/CREqtqgBFcU · Unsplash License -->
-                <img src="img/hero-basquet.jpg" alt="" data-sport="Básquet" class="hero-athlete" decoding="async">
+                <picture><source srcset="img/hero-basquet.webp" type="image/webp"><img src="img/hero-basquet.jpg" alt="" data-sport="Básquet" class="hero-athlete" decoding="async"></picture>
                 <!-- Foto: Thierry Rullaud © (firma visible en la imagen) · pendiente de confirmar permiso de uso -->
-                <img src="img/hero-hockey-sub.jpg" alt="" data-sport="Hockey subacuático" class="hero-athlete" decoding="async">
+                <picture><source srcset="img/hero-hockey-sub.webp" type="image/webp"><img src="img/hero-hockey-sub.jpg" alt="" data-sport="Hockey subacuático" class="hero-athlete" decoding="async"></picture>
             </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-5 md:gap-12">
             
-            <div class="md:w-3/5 md:pr-8 mb-12 md:mb-0 fade-in-up mt-10 md:mt-0">
+            <div class="md:w-3/5 md:pr-8 mb-0 fade-in-up mt-6 md:mt-0">
                 <h1 class="text-4xl md:text-5xl lg:text-7xl font-black text-white leading-[1.1] mb-6 tracking-tight">
                     No se puede planificar sin conocer el <span class="text-primary border-b-4 border-primary">punto de partida.</span>
                 </h1>
-                <p class="text-lg md:text-xl text-gray-300 mb-5 max-w-2xl mx-auto md:mx-0 font-light leading-relaxed">
+                <p class="text-lg md:text-xl text-gray-200 mb-5 max-w-2xl mx-auto md:mx-0 font-normal leading-relaxed">
                     Un sistema de 12 semanas que integra nutrición deportiva, antropometría y performance para transformar información en una estrategia adaptada a vos.
                 </p>
                 <p class="flex flex-wrap items-center justify-center md:justify-start gap-x-5 gap-y-2 mb-8 text-sm md:text-base font-semibold text-blue-200">
@@ -432,99 +575,103 @@
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <a href="#contacto" class="bg-primary hover:bg-primaryDark text-white px-8 py-4 rounded-lg font-bold text-lg shadow-[0_4px_14px_0_rgba(0,86,179,0.39)] transition transform hover:-translate-y-1 text-center flex items-center justify-center gap-2">
+                    <a href="#contacto" class="bg-primary hover:bg-primaryDark text-white px-8 py-4 rounded-xl font-bold text-lg shadow-[0_4px_14px_0_rgba(0,86,179,0.39)] transition transform hover:-translate-y-1 text-center flex items-center justify-center gap-2">
                         Quiero ingresar a MAIP <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="#que-es" class="bg-transparent hover:bg-white/5 text-white border border-white/20 px-8 py-4 rounded-lg font-semibold text-lg transition text-center flex items-center justify-center">
+                    <a href="#que-es" class="bg-transparent hover:bg-white/5 text-white border border-white/20 px-8 py-4 rounded-xl font-semibold text-lg transition text-center flex items-center justify-center">
                         Conocer el proceso
                     </a>
                 </div>
             </div>
             
-            <div class="md:w-2/5 flex flex-col items-center fade-in-up" style="transition-delay: 0.2s;">
-                <img src="img/logo-maip.jpg" alt="Método MAIP by Julián Lell" width="1254" height="1254" class="maip-hero-logo" decoding="async">
-                <span class="maip-hero-badge inline-block py-2 px-5 rounded-full bg-blue-900/40 text-blue-300 font-bold text-xs md:text-sm mt-6 border border-blue-500/30 uppercase tracking-widest leading-relaxed text-center backdrop-blur-sm">
+            <div class="maip-hero-brand md:w-2/5 flex flex-col items-center fade-in-up" style="transition-delay: 0.2s;">
+                <picture><source srcset="img/logo-maip.webp" type="image/webp"><img src="img/logo-maip.jpg" alt="Método MAIP by Julián Lell" width="1254" height="1254" class="maip-hero-logo" decoding="async"></picture>
+                <span class="maip-hero-badge inline-block py-2 px-5 rounded-full bg-blue-900/50 text-blue-200 font-bold text-xs md:text-sm mt-0 md:mt-5 border border-blue-400/30 uppercase tracking-widest leading-relaxed text-center backdrop-blur-sm">
                     Nutrición Deportiva · Antropometría · Performance
                 </span>
             </div>
         </div>
         
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce z-20">
-            <span class="text-white/40 text-[10px] tracking-widest uppercase mb-2 font-semibold">Descubrir MAIP</span>
-            <i class="fas fa-chevron-down text-white/40 text-sm"></i>
+            <span class="text-white/70 text-xs tracking-widest uppercase mb-2 font-semibold">Descubrir MAIP</span>
+            <i class="fas fa-chevron-down text-white/70 text-sm"></i>
         </div>
 
         <div class="hero-sport-controls" aria-label="Fotos de disciplinas deportivas"><span id="hero-sport-label" class="hero-sport-label">Running</span><div class="hero-sport-dots"><button class="hero-sport-dot" type="button" aria-label="Ver foto de Running" aria-pressed="true"></button><button class="hero-sport-dot" type="button" aria-label="Ver foto de HYROX" aria-pressed="false"></button><button class="hero-sport-dot" type="button" aria-label="Ver foto de Natación" aria-pressed="false"></button><button class="hero-sport-dot" type="button" aria-label="Ver foto de Boxeo" aria-pressed="false"></button><button class="hero-sport-dot" type="button" aria-label="Ver foto de Fútbol" aria-pressed="false"></button><button class="hero-sport-dot" type="button" aria-label="Ver foto de Rugby" aria-pressed="false"></button><button class="hero-sport-dot" type="button" aria-label="Ver foto de Básquet" aria-pressed="false"></button><button class="hero-sport-dot" type="button" aria-label="Ver foto de Hockey subacuático" aria-pressed="false"></button></div><button id="hero-pause" class="hero-pause" type="button" aria-pressed="false">Pausar fotos</button></div>
     </section>
 
     <!-- Qué es MAIP / Los 4 Pilares -->
-    <section id="que-es" class="py-24 bg-white relative">
+    <section id="que-es" class="py-14 md:py-24 maip-bg-light relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-20 fade-in-up">
-                <h2 class="text-primary font-bold tracking-widest uppercase text-sm mb-3">La Filosofía</h2>
-                <h3 class="text-3xl md:text-5xl font-black text-secondary mb-6 tracking-tight">MAIP transforma datos en decisiones.</h3>
+            <div class="text-center max-w-3xl mx-auto mb-10 md:mb-20 fade-in-up">
+                <h2 class="maip-eyebrow">La Filosofía</h2>
+                <h3 class="maip-h2 mb-5">MAIP transforma datos en decisiones.</h3>
                 <p class="text-lg text-gray-600 leading-relaxed">
                     No se trata de recibir una dieta o una rutina aislada. Se trata de comprender tu punto de partida, establecer prioridades, desarrollar una estrategia y evaluar cómo respondés a ella.
                 </p>
             </div>
 
             <!-- M.A.I.P Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
                 <!-- M -->
-                <div class="bg-lightBg p-8 rounded-2xl border border-gray-100 hover:border-primary/30 transition-all duration-300 fade-in-up group hover:shadow-lg hover:-translate-y-1">
+                <div class="maip-pillar bg-lightBg p-8 rounded-2xl maip-lift border border-gray-100 fade-in-up group">
                     <div class="text-6xl font-black text-primary maip-pillar-letter mb-2 transition-colors">M</div>
                     <h4 class="text-2xl font-bold text-secondary mb-3 flex items-center gap-2">
                         MEDIR
                     </h4>
                     <p class="text-sm font-semibold text-primary mb-4 uppercase tracking-wider">Conocer tu punto de partida</p>
-                    <p class="text-gray-600 text-sm">Medir no significa solamente obtener un peso. Significa construir una imagen completa del deportista: entrenamiento, hábitos, hidratación, descanso y composición corporal.</p>
+                    <p class="maip-pillar-desc text-gray-600 text-sm">Medir no significa solamente obtener un peso. Significa construir una imagen completa del deportista: entrenamiento, hábitos, hidratación, descanso y composición corporal.</p>
+                    <button type="button" class="maip-pillar-more" aria-expanded="false">Ver más</button>
                 </div>
 
                 <!-- A -->
-                <div class="bg-lightBg p-8 rounded-2xl border border-gray-100 hover:border-primary/30 transition-all duration-300 fade-in-up group hover:shadow-lg hover:-translate-y-1" style="transition-delay: 0.1s;">
+                <div class="maip-pillar bg-lightBg p-8 rounded-2xl maip-lift border border-gray-100 fade-in-up group" style="transition-delay: 0.1s;">
                     <div class="text-6xl font-black text-primary maip-pillar-letter mb-2 transition-colors">A</div>
                     <h4 class="text-2xl font-bold text-secondary mb-3 flex items-center gap-2">
                         ANALIZAR
                     </h4>
                     <p class="text-sm font-semibold text-primary mb-4 uppercase tracking-wider">Ordenar la información</p>
-                    <p class="text-gray-600 text-sm">Buscamos relaciones entre alimentación, entrenamiento y recuperación. Detectamos fortalezas, barreras, oportunidades y definimos qué debemos trabajar primero.</p>
+                    <p class="maip-pillar-desc text-gray-600 text-sm">Buscamos relaciones entre alimentación, entrenamiento y recuperación. Detectamos fortalezas, barreras, oportunidades y definimos qué debemos trabajar primero.</p>
+                    <button type="button" class="maip-pillar-more" aria-expanded="false">Ver más</button>
                 </div>
 
                 <!-- I -->
-                <div class="bg-lightBg p-8 rounded-2xl border border-gray-100 hover:border-primary/30 transition-all duration-300 fade-in-up group hover:shadow-lg hover:-translate-y-1" style="transition-delay: 0.2s;">
+                <div class="maip-pillar bg-lightBg p-8 rounded-2xl maip-lift border border-gray-100 fade-in-up group" style="transition-delay: 0.2s;">
                     <div class="text-6xl font-black text-primary maip-pillar-letter mb-2 transition-colors">I</div>
                     <h4 class="text-2xl font-bold text-secondary mb-3 flex items-center gap-2">
                         INTERPRETAR
                     </h4>
                     <p class="text-sm font-semibold text-primary mb-4 uppercase tracking-wider">Entender tus datos</p>
-                    <p class="text-gray-600 text-sm">Los números no determinan una estrategia por sí solos. Interpretamos la info según tu deporte, carga, momento de temporada y contexto para responder: ¿Qué necesitás realmente?</p>
+                    <p class="maip-pillar-desc text-gray-600 text-sm">Los números no determinan una estrategia por sí solos. Interpretamos la info según tu deporte, carga, momento de temporada y contexto para responder: ¿Qué necesitás realmente?</p>
+                    <button type="button" class="maip-pillar-more" aria-expanded="false">Ver más</button>
                 </div>
 
                 <!-- P -->
-                <div class="bg-lightBg p-8 rounded-2xl border border-gray-100 hover:border-primary/30 transition-all duration-300 fade-in-up group hover:shadow-lg hover:-translate-y-1" style="transition-delay: 0.3s;">
+                <div class="maip-pillar bg-lightBg p-8 rounded-2xl maip-lift border border-gray-100 fade-in-up group" style="transition-delay: 0.3s;">
                     <div class="text-6xl font-black text-primary maip-pillar-letter mb-2 transition-colors">P</div>
                     <h4 class="text-2xl font-bold text-secondary mb-3 flex items-center gap-2">
                         PLANIFICAR
                     </h4>
                     <p class="text-sm font-semibold text-primary mb-4 uppercase tracking-wider">Transformar en acción</p>
-                    <p class="text-gray-600 text-sm">Construimos la estrategia: distribución de macros, timing alrededor del entreno, hidratación y organización semanal adaptada a tus días fuertes, suaves y de competencia.</p>
+                    <p class="maip-pillar-desc text-gray-600 text-sm">Construimos la estrategia: distribución de macros, timing alrededor del entreno, hidratación y organización semanal adaptada a tus días fuertes, suaves y de competencia.</p>
+                    <button type="button" class="maip-pillar-more" aria-expanded="false">Ver más</button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- El Ciclo de 12 Semanas -->
-    <section id="ciclo" class="py-24 bg-secondary text-white relative overflow-hidden">
+    <section id="ciclo" class="py-14 md:py-24 maip-bg-dark text-white relative overflow-hidden">
         <!-- Decoraciones sutiles de fondo -->
         <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="flex flex-col lg:flex-row gap-16">
+            <div class="flex flex-col lg:flex-row gap-10 lg:gap-16">
                 
                 <div class="lg:w-1/3 fade-in-up">
-                    <h2 class="text-primary font-bold tracking-widest uppercase text-sm mb-3">El Proceso</h2>
-                    <h3 class="text-3xl md:text-5xl font-black mb-6 tracking-tight">Un ciclo de 12 semanas.</h3>
-                    <p class="text-gray-400 mb-6 text-lg">
+                    <h2 class="maip-eyebrow">El Proceso</h2>
+                    <h3 class="maip-h2 mb-5">Un ciclo de 12 semanas.</h3>
+                    <p class="text-gray-400 mb-6 text-base md:text-lg">
                         Modificar hábitos, composición corporal y rendimiento requiere tiempo. No buscamos cambios improvisados ni soluciones inmediatas.
                     </p>
                     <p class="text-gray-400 mb-8">
@@ -542,14 +689,14 @@
                 </div>
 
                 <div class="lg:w-2/3 fade-in-up" style="transition-delay: 0.2s;">
-                    <div class="relative space-y-8">
+                    <div class="relative space-y-8 maip-timeline">
                         
                         <!-- Baseline -->
                         <div class="relative md:pl-0 step-item">
                             <div class="md:flex items-start gap-8">
                                 <div class="hidden md:block w-32 text-right pt-2 flex-shrink-0">
                                     <span class="text-primary font-bold text-xl block">Semana 0</span>
-                                    <span class="text-gray-500 text-sm">BASELINE</span>
+                                    <span class="text-gray-400 text-sm">BASELINE</span>
                                 </div>
                                 <div class="absolute left-0 top-0 md:relative md:left-auto md:top-auto w-9 h-9 md:w-12 md:h-12 bg-secondary border-[3px] md:border-4 border-primary rounded-full flex items-center justify-center z-10 flex-shrink-0 step-line md:before:left-[22px] md:before:-top-[20px] md:before:bottom-[-80px]">
                                     <i class="fas fa-flag text-primary text-sm"></i>
@@ -570,7 +717,7 @@
                             <div class="md:flex items-start gap-8">
                                 <div class="hidden md:block w-32 text-right pt-2 flex-shrink-0">
                                     <span class="text-primary font-bold text-xl block">Semana 6</span>
-                                    <span class="text-gray-500 text-sm">CHECKPOINT</span>
+                                    <span class="text-gray-400 text-sm">CHECKPOINT</span>
                                 </div>
                                 <div class="absolute left-0 top-0 md:relative md:left-auto md:top-auto w-9 h-9 md:w-12 md:h-12 bg-secondary border-[3px] md:border-4 border-primary rounded-full flex items-center justify-center z-10 flex-shrink-0 step-line md:before:left-[22px] md:before:-top-[20px] md:before:bottom-[-80px]">
                                     <i class="fas fa-search text-primary text-sm"></i>
@@ -590,7 +737,7 @@
                             <div class="md:flex items-start gap-8">
                                 <div class="hidden md:block w-32 text-right pt-2 flex-shrink-0">
                                     <span class="text-primary font-bold text-xl block">Semana 12</span>
-                                    <span class="text-gray-500 text-sm">RESULT</span>
+                                    <span class="text-gray-400 text-sm">RESULT</span>
                                 </div>
                                 <div class="absolute left-0 top-0 md:relative md:left-auto md:top-auto w-9 h-9 md:w-12 md:h-12 bg-secondary border-[3px] md:border-4 border-primary rounded-full flex items-center justify-center z-10 flex-shrink-0 step-line">
                                     <i class="fas fa-trophy text-primary text-sm"></i>
@@ -612,11 +759,11 @@
     </section>
 
     <!-- Herramientas del Método MAIP -->
-    <section id="herramientas" class="py-24 bg-gray-50 border-y border-gray-200">
+    <section id="herramientas" class="py-14 md:py-24 maip-bg-light-2 border-y border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
-                <h2 class="text-primary font-bold tracking-widest uppercase text-sm mb-3">El Sistema Integral</h2>
-                <h3 class="text-3xl md:text-5xl font-black text-secondary mb-6 tracking-tight">Más que solo Nutrición</h3>
+            <div class="text-center max-w-3xl mx-auto mb-10 md:mb-16 fade-in-up">
+                <h2 class="maip-eyebrow">El Sistema Integral</h2>
+                <h3 class="maip-h2 mb-5">Más que solo Nutrición</h3>
             </div>
 
             <div class="maip-services-grid">
@@ -627,10 +774,13 @@
                         <i class="fas fa-ruler"></i>
                     </div>
                     <h4 class="text-xl font-bold mb-3">Antropometría</h4>
-                    <p class="text-gray-600 text-sm mb-4">Una de las herramientas principales. Analizamos la composición corporal mediante el protocolo ISAK.</p>
+                    <div class="maip-tool-desc">
+                        <p class="text-gray-600 text-sm mb-4">Una de las herramientas principales. Analizamos la composición corporal mediante el protocolo ISAK.</p>
+                        <p class="text-gray-600 text-sm mb-4">Medimos pliegues, perímetros y diámetros con técnica estandarizada y comparamos cada control con el anterior para ver cómo evolucionás.</p>
+                    </div>
                     <div class="adc-preview-wrapper">
                         <button id="adc-open" class="dashboard-preview-button" type="button" aria-haspopup="dialog" aria-controls="adc-modal">
-                            <img src="img/adc-report.jpg" alt="Vista previa del reporte antropométrico ADC" class="dashboard-preview-image" loading="lazy" decoding="async">
+                            <picture><source srcset="img/adc-report.webp" type="image/webp"><img src="img/adc-report.jpg" alt="Vista previa del reporte antropométrico ADC" class="dashboard-preview-image" loading="lazy" decoding="async"></picture>
                             <span class="dashboard-preview-label">Ver reporte ADC ampliado <span aria-hidden="true">↗</span></span>
                         </button>
                         <p class="dashboard-preview-note">Composición corporal, comparación entre mediciones y detalle antropométrico.</p>
@@ -644,7 +794,11 @@
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h4 class="text-xl font-bold mb-3">Dashboard MAIP</h4>
-                    <p class="text-gray-600 text-sm mb-4">Cada deportista cuenta con un resumen individual de su proceso. Visualizá tu punto de partida, prioridades, acciones acordadas y seguimiento hasta el próximo control.</p>
+                    <div class="maip-tool-desc">
+                        <p class="text-gray-600 text-sm mb-4">Cada deportista cuenta con un resumen individual de su proceso. Visualizá tu punto de partida, prioridades, acciones acordadas y seguimiento hasta el próximo control.</p>
+                        <p class="text-gray-600 text-sm mb-4">Todo reunido en un solo lugar, de forma clara y ordenada, para que sepas qué hacer y por qué lo hacés.</p>
+                    </div>
+                    <div class="adc-preview-wrapper">
                     <button id="dashboard-open" class="dashboard-preview-button ip-preview" type="button" aria-haspopup="dialog" aria-controls="dashboard-modal" aria-label="Ver el dashboard ampliado: informe MAIP del deportista con estrategia, prioridades, plan y acciones">
                         <span class="ip-pv-head"><b>Informe MAIP del deportista</b><span>Paciente modelo · Running</span></span>
                         <span class="ip-pv-quote">Llegar a los entrenamientos largos con energía, ordenar las comidas alrededor de cada sesión…</span>
@@ -658,6 +812,7 @@
                         <span class="dashboard-preview-label">Ver dashboard ampliado <span aria-hidden="true">↗</span></span>
                     </button>
                     <p class="dashboard-preview-note">Ejemplo con un paciente modelo ficticio: punto de partida, plan nutricional, semana tipo y acciones hasta el próximo control. Algunos detalles se muestran difuminados.</p>
+                    </div>
                 </div>
 
                 <!-- Nutrición -->
@@ -666,10 +821,13 @@
                         <i class="fas fa-utensils" aria-hidden="true"></i>
                     </div>
                     <h4 class="text-xl font-bold mb-3">Nutrición</h4>
-                    <p class="text-gray-600 text-sm mb-4">Construimos un plan de alimentación personalizado según tu objetivo, deporte, horarios y carga de entrenamiento.</p>
+                    <div class="maip-tool-desc">
+                        <p class="text-gray-600 text-sm mb-4">Construimos un plan de alimentación personalizado según tu objetivo, deporte, horarios y carga de entrenamiento.</p>
+                        <p class="text-gray-600 text-sm mb-4">Un plan simple de seguir, que se adapta a tu rutina del día a día y se ajusta en cada control según cómo respondés y cómo te sentís.</p>
+                    </div>
                     <div class="adc-preview-wrapper">
                         <button id="info-plan-open" class="dashboard-preview-button" type="button" aria-haspopup="dialog" aria-controls="info-plan-modal">
-                            <img src="img/plan-pdf/pagina-01.jpg" alt="Primera página del documento: ¿Qué recibirás en tu plan de alimentación?" class="dashboard-preview-image" width="1000" height="1414" loading="lazy" decoding="async">
+                            <picture><source srcset="img/plan-pdf/pagina-01.webp" type="image/webp"><img src="img/plan-pdf/pagina-01.jpg" alt="Primera página del documento: ¿Qué recibirás en tu plan de alimentación?" class="dashboard-preview-image" width="1000" height="1414" loading="lazy" decoding="async"></picture>
                             <span class="dashboard-preview-label">Ver qué incluye tu plan de alimentación <span aria-hidden="true">↗</span></span>
                         </button>
                         <p class="dashboard-preview-note">Plato orientativo, selección de alimentos, intercambios, organización diaria, ideas de menú e hidratación.</p>
@@ -682,9 +840,12 @@
                         <i class="fas fa-dumbbell" aria-hidden="true"></i>
                     </div>
                     <h4 class="text-xl font-bold mb-3">Entrenamiento</h4>
+                    <div class="maip-tool-desc">
                     <p class="maip-training-copy">Evaluación física, programación del entrenamiento y ajustes de carga a cargo del preparador físico, coordinados con tu objetivo.</p>
                     <p class="maip-training-program">MAIP 360</p>
                     <p class="maip-training-copy">Podés sumar nutrición y entrenamiento en un mismo proceso, con seguimiento y coordinación entre profesionales.</p>
+                    </div>
+                    <div class="adc-preview-wrapper">
                     <button id="rutina-open" class="dashboard-preview-button rt-preview" type="button" aria-haspopup="dialog" aria-controls="rutina-modal" aria-label="Ver la planilla de entrenamiento modelo: semana con tipo de día nutricional, ejercicios y carga">
                         <span class="rt-preview-head"><span>Semana modelo · Ciclo 1 Base</span><span>Gimnasio 5 días + running 4 días</span></span>
                         <span class="rt-week" aria-hidden="true">
@@ -699,9 +860,11 @@
                         <span class="dashboard-preview-label rt-preview-label">Ver planilla de entrenamiento <span aria-hidden="true">↗</span></span>
                     </button>
                     <p class="dashboard-preview-note" style="color:#abb4c1">Ejemplo con un paciente modelo ficticio: cada día de entrenamiento marca cómo ajustar la alimentación. Probá el registro de carga dentro.</p>
+                    </div>
                     <p class="maip-training-footnote">El entrenamiento se integra con la nutrición dentro de MAIP 360.</p>
                 </div>
             </div>
+            <div class="maip-carousel-dots" id="herr-dots" role="group" aria-label="Elegir herramienta"></div>
         </div>
     </section>
 
@@ -719,7 +882,7 @@
         </header>
         <div id="adc-scroll" class="dashboard-scroll" tabindex="0" aria-label="Reporte antropométrico completo">
             <div id="adc-document" class="dashboard-document">
-                <figure class="dashboard-page"><figcaption>Reporte ADC · Composición corporal y mediciones antropométricas</figcaption><img src="img/adc-report.jpg" alt="Reporte ADC completo con peso, talla, índice músculo óseo, suma de pliegues, composición corporal, Z scores y medidas brutas" decoding="async"></figure>
+                <figure class="dashboard-page"><figcaption>Reporte ADC · Composición corporal y mediciones antropométricas</figcaption><picture><source srcset="img/adc-report.webp" type="image/webp"><img src="img/adc-report.jpg" alt="Reporte ADC completo con peso, talla, índice músculo óseo, suma de pliegues, composición corporal, Z scores y medidas brutas" loading="lazy" decoding="async"></picture></figure>
             </div>
             <details class="dashboard-transcript"><summary>Leer el contenido del reporte</summary><pre class="adc-transcript-text">INFORME ANTROPOM&#201;TRICO
 PACIENTE MODELO &#183; Running &#183; Ejemplo ilustrativo &#183; Medici&#243;n del 27-08-2026
@@ -807,17 +970,17 @@ Dif.: cambio desde la medici&#243;n anterior (23-03-2026). Emitido el 04-10-2026
         </header>
         <div id="info-plan-scroll" class="dashboard-scroll" tabindex="0" aria-label="Páginas del documento sobre el plan de alimentación">
             <div id="info-plan-document" class="dashboard-document">
-                <figure class="dashboard-page"><figcaption>Página 1 de 11 · Plato orientativo</figcaption><img src="img/plan-pdf/pagina-01.jpg" alt="Documento del plan de alimentación, página 1: título, índice y tres platos orientativos con distintas proporciones de verduras y frutas, proteínas e hidratos" width="1000" height="1414" decoding="async"></figure>
-                <figure class="dashboard-page"><figcaption>Página 2 de 11 · Selección de alimentos</figcaption><img src="img/plan-pdf/pagina-02.jpg" alt="Documento del plan de alimentación, página 2: selección de alimentos por grupo con ejemplos" width="1000" height="1414" loading="lazy" decoding="async"></figure>
-                <figure class="dashboard-page"><figcaption>Página 3 de 11 · Dos caminos para tu plan</figcaption><img src="img/plan-pdf/pagina-03.jpg" alt="Documento del plan de alimentación, página 3: plan cualitativo y plan cuantitativo con el sistema de intercambios" width="1000" height="1414" loading="lazy" decoding="async"></figure>
-                <figure class="dashboard-page"><figcaption>Página 4 de 11 · Organización diaria de las comidas</figcaption><img src="img/plan-pdf/pagina-04.jpg" alt="Documento del plan de alimentación, página 4: horarios de comidas de un día con entrenamiento y ajuste según el tipo de día" width="1000" height="1414" loading="lazy" decoding="async"></figure>
-                <figure class="dashboard-page"><figcaption>Página 5 de 11 · Ideas de menú</figcaption><img src="img/plan-pdf/pagina-05.jpg" alt="Documento del plan de alimentación, página 5: ideas de menú para seis comidas con tres opciones cada una" width="1000" height="1414" loading="lazy" decoding="async"></figure>
-                <figure class="dashboard-page"><figcaption>Página 6 de 11 · Pre, intra y post entrenamiento</figcaption><img src="img/plan-pdf/pagina-06.jpg" alt="Documento del plan de alimentación, página 6: ideas antes, durante y después de entrenar" width="1000" height="1414" loading="lazy" decoding="async"></figure>
-                <figure class="dashboard-page"><figcaption>Página 7 de 11 · Hidratación</figcaption><img src="img/plan-pdf/pagina-07.jpg" alt="Documento del plan de alimentación, página 7: hidratación diaria y alrededor del entrenamiento" width="1000" height="1414" loading="lazy" decoding="async"></figure>
-                <figure class="dashboard-page"><figcaption>Página 8 de 11 · Anexo: lista de intercambios</figcaption><img src="img/plan-pdf/pagina-08.jpg" alt="Documento del plan de alimentación, página 8: valor nutricional de cada intercambio y lista de almidones" width="1000" height="1414" loading="lazy" decoding="async"></figure>
-                <figure class="dashboard-page"><figcaption>Página 9 de 11 · Anexo: lista de intercambios</figcaption><img src="img/plan-pdf/pagina-09.jpg" alt="Documento del plan de alimentación, página 9: lista de intercambios de almidones, frutas y verduras" width="1000" height="1414" loading="lazy" decoding="async"></figure>
-                <figure class="dashboard-page"><figcaption>Página 10 de 11 · Anexo: lista de intercambios</figcaption><img src="img/plan-pdf/pagina-10.jpg" alt="Documento del plan de alimentación, página 10: lista de intercambios de lácteos, carnes, grasas y azúcares simples" width="1000" height="1414" loading="lazy" decoding="async"></figure>
-                <figure class="dashboard-page"><figcaption>Página 11 de 11 · Anexo: lista de intercambios</figcaption><img src="img/plan-pdf/pagina-11.jpg" alt="Documento del plan de alimentación, página 11: azúcares simples, suplementos y medidas comunes" width="1000" height="1414" loading="lazy" decoding="async"></figure>
+                <figure class="dashboard-page"><figcaption>Página 1 de 11 · Plato orientativo</figcaption><picture><source srcset="img/plan-pdf/pagina-01.webp" type="image/webp"><img src="img/plan-pdf/pagina-01.jpg" alt="Documento del plan de alimentación, página 1: título, índice y tres platos orientativos con distintas proporciones de verduras y frutas, proteínas e hidratos" width="1000" height="1414" loading="lazy" decoding="async"></picture></figure>
+                <figure class="dashboard-page"><figcaption>Página 2 de 11 · Selección de alimentos</figcaption><picture><source srcset="img/plan-pdf/pagina-02.webp" type="image/webp"><img src="img/plan-pdf/pagina-02.jpg" alt="Documento del plan de alimentación, página 2: selección de alimentos por grupo con ejemplos" width="1000" height="1414" loading="lazy" decoding="async"></picture></figure>
+                <figure class="dashboard-page"><figcaption>Página 3 de 11 · Dos caminos para tu plan</figcaption><picture><source srcset="img/plan-pdf/pagina-03.webp" type="image/webp"><img src="img/plan-pdf/pagina-03.jpg" alt="Documento del plan de alimentación, página 3: plan cualitativo y plan cuantitativo con el sistema de intercambios" width="1000" height="1414" loading="lazy" decoding="async"></picture></figure>
+                <figure class="dashboard-page"><figcaption>Página 4 de 11 · Organización diaria de las comidas</figcaption><picture><source srcset="img/plan-pdf/pagina-04.webp" type="image/webp"><img src="img/plan-pdf/pagina-04.jpg" alt="Documento del plan de alimentación, página 4: horarios de comidas de un día con entrenamiento y ajuste según el tipo de día" width="1000" height="1414" loading="lazy" decoding="async"></picture></figure>
+                <figure class="dashboard-page"><figcaption>Página 5 de 11 · Ideas de menú</figcaption><picture><source srcset="img/plan-pdf/pagina-05.webp" type="image/webp"><img src="img/plan-pdf/pagina-05.jpg" alt="Documento del plan de alimentación, página 5: ideas de menú para seis comidas con tres opciones cada una" width="1000" height="1414" loading="lazy" decoding="async"></picture></figure>
+                <figure class="dashboard-page"><figcaption>Página 6 de 11 · Pre, intra y post entrenamiento</figcaption><picture><source srcset="img/plan-pdf/pagina-06.webp" type="image/webp"><img src="img/plan-pdf/pagina-06.jpg" alt="Documento del plan de alimentación, página 6: ideas antes, durante y después de entrenar" width="1000" height="1414" loading="lazy" decoding="async"></picture></figure>
+                <figure class="dashboard-page"><figcaption>Página 7 de 11 · Hidratación</figcaption><picture><source srcset="img/plan-pdf/pagina-07.webp" type="image/webp"><img src="img/plan-pdf/pagina-07.jpg" alt="Documento del plan de alimentación, página 7: hidratación diaria y alrededor del entrenamiento" width="1000" height="1414" loading="lazy" decoding="async"></picture></figure>
+                <figure class="dashboard-page"><figcaption>Página 8 de 11 · Anexo: lista de intercambios</figcaption><picture><source srcset="img/plan-pdf/pagina-08.webp" type="image/webp"><img src="img/plan-pdf/pagina-08.jpg" alt="Documento del plan de alimentación, página 8: valor nutricional de cada intercambio y lista de almidones" width="1000" height="1414" loading="lazy" decoding="async"></picture></figure>
+                <figure class="dashboard-page"><figcaption>Página 9 de 11 · Anexo: lista de intercambios</figcaption><picture><source srcset="img/plan-pdf/pagina-09.webp" type="image/webp"><img src="img/plan-pdf/pagina-09.jpg" alt="Documento del plan de alimentación, página 9: lista de intercambios de almidones, frutas y verduras" width="1000" height="1414" loading="lazy" decoding="async"></picture></figure>
+                <figure class="dashboard-page"><figcaption>Página 10 de 11 · Anexo: lista de intercambios</figcaption><picture><source srcset="img/plan-pdf/pagina-10.webp" type="image/webp"><img src="img/plan-pdf/pagina-10.jpg" alt="Documento del plan de alimentación, página 10: lista de intercambios de lácteos, carnes, grasas y azúcares simples" width="1000" height="1414" loading="lazy" decoding="async"></picture></figure>
+                <figure class="dashboard-page"><figcaption>Página 11 de 11 · Anexo: lista de intercambios</figcaption><picture><source srcset="img/plan-pdf/pagina-11.webp" type="image/webp"><img src="img/plan-pdf/pagina-11.jpg" alt="Documento del plan de alimentación, página 11: azúcares simples, suplementos y medidas comunes" width="1000" height="1414" loading="lazy" decoding="async"></picture></figure>
             </div>
             <details class="dashboard-transcript"><summary>Leer el contenido del documento</summary><p><strong>¿Qué recibirás en tu plan de alimentación?</strong> El plan de alimentación es personalizado y adaptado a cada deportista teniendo en cuenta toda la información recopilada en el apartado de MEDIR.</p><p><strong>1. El plato orientativo.</strong> Tres platos según el contexto: 50% verduras y frutas con 25% proteínas y 25% hidratos; 35% verduras y frutas, 35% proteínas y 30% hidratos; 35% verduras y frutas, 25% proteínas y 40% hidratos. El plato se elige de acuerdo al contexto.</p><p><strong>2. Selección de alimentos.</strong> Lácteos, carnes, frutas, hortalizas, cereales, tubérculos, legumbres y grasas, con ejemplos y recomendaciones.</p><p><strong>3. Dos caminos para tu plan.</strong> Plan cualitativo, con cantidades adaptadas y revisión por fotos y videos, o plan cuantitativo, con el sistema de intercambios.</p><p><strong>4. Organización diaria de las comidas.</strong> Horarios, tipo de día (bajo, medio, alto y competencia) y adaptaciones según el entrenamiento.</p><p><strong>5. Ideas de menú.</strong> Desayuno, colación de media mañana, almuerzo, merienda, cena y colación nocturna, con tres opciones cada uno.</p><p><strong>6. Pre, intra y post entrenamiento.</strong> Ideas para antes, durante y después de entrenar.</p><p><strong>7. Hidratación.</strong> Pautas diarias y alrededor del entrenamiento.</p><p><strong>Anexo.</strong> Lista de intercambios por grupo de alimentos, suplementos y medidas comunes.</p></details>
         </div>
@@ -836,7 +999,7 @@ Dif.: cambio desde la medici&#243;n anterior (23-03-2026). Emitido el 04-10-2026
                 <section class="ip-page" aria-labelledby="ip-p1">
                     <p id="ip-p1" class="ip-pagehead">Objetivo y método MAIP aplicado al deportista</p>
                     <div class="ip-banner">
-                        <img src="img/logo-maip.jpg" alt="" width="56" height="56" loading="lazy" decoding="async">
+                        <picture><source srcset="img/logo-maip.webp" type="image/webp"><img src="img/logo-maip.jpg" alt="" width="56" height="56" loading="lazy" decoding="async"></picture>
                         <div><small>MÉTODO MAIP</small><h3>Informe MAIP del deportista</h3><p>Resumen de evaluación y estrategia nutricional personalizada</p></div>
                     </div>
                     <dl class="ip-info">
@@ -935,7 +1098,7 @@ Dif.: cambio desde la medici&#243;n anterior (23-03-2026). Emitido el 04-10-2026
     </dialog>
 
     <!-- Filtro: Para quién es / Qué no es (Nuevo) -->
-    <section class="py-20 bg-gray-900 text-white relative">
+    <section class="py-14 md:py-20 maip-bg-navy text-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div class="fade-in-up">
@@ -963,18 +1126,18 @@ Dif.: cambio desde la medici&#243;n anterior (23-03-2026). Emitido el 04-10-2026
     </section>
 
     <!-- Modalidades Section -->
-    <section id="modalidades" class="py-24 bg-white relative">
+    <section id="modalidades" class="py-14 md:py-24 maip-bg-light relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
-                <h2 class="text-primary font-bold tracking-widest uppercase text-sm mb-3">Ingreso al Método</h2>
-                <h3 class="text-3xl md:text-5xl font-black text-secondary mb-6 tracking-tight">Elegí tu modalidad</h3>
+            <div class="text-center max-w-3xl mx-auto mb-10 md:mb-16 fade-in-up">
+                <h2 class="maip-eyebrow">Ingreso al Método</h2>
+                <h3 class="maip-h2 mb-5">Elegí tu modalidad</h3>
                 <p class="text-lg text-gray-600">Todos los programas están diseñados como un ciclo completo de 12 semanas para medir, aplicar y volver a evaluar tu proceso.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 
                 <!-- MAIP NUTRICIÓN -->
-                <div class="bg-white rounded-3xl shadow-lg border border-gray-100 flex flex-col fade-in-up overflow-hidden group hover:shadow-xl transition-all">
+                <div class="maip-plan bg-white rounded-3xl border border-gray-100 flex flex-col fade-in-up overflow-hidden group">
                     <div class="p-8 flex-grow">
                         <div class="flex justify-between items-start mb-4">
                             <div>
@@ -986,8 +1149,8 @@ Dif.: cambio desde la medici&#243;n anterior (23-03-2026). Emitido el 04-10-2026
                         
                         <div class="mb-8">
                             <span class="text-4xl font-black text-gray-900">$260.000</span>
-                            <p class="text-sm text-gray-500 mt-1">Pago completo por las 12 semanas</p>
-                            <p class="text-xs text-gray-400 mt-1">O 3 pagos de $95.000</p>
+                            <p class="text-sm text-gray-600 mt-1">Pago completo por las 12 semanas</p>
+                            <p class="text-sm font-medium text-gray-600 mt-1">O 3 pagos de $95.000</p>
                         </div>
                         
                         <ul class="space-y-3 mb-8">
@@ -1004,7 +1167,7 @@ Dif.: cambio desde la medici&#243;n anterior (23-03-2026). Emitido el 04-10-2026
                 </div>
 
                 <!-- MAIP 360 -->
-                <div class="bg-secondary rounded-3xl shadow-2xl border border-secondary flex flex-col fade-in-up relative overflow-hidden transform md:-translate-y-4" style="transition-delay: 0.1s;">
+                <div class="maip-plan maip-plan-360 maip-bg-dark rounded-3xl border border-secondary flex flex-col fade-in-up relative overflow-hidden" style="transition-delay: 0.1s;">
                     <div class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl uppercase tracking-wider">
                         Experiencia Integral
                     </div>
@@ -1020,7 +1183,7 @@ Dif.: cambio desde la medici&#243;n anterior (23-03-2026). Emitido el 04-10-2026
                         <div class="mb-8">
                             <span class="text-4xl font-black text-white">$390.000</span>
                             <p class="text-sm text-gray-400 mt-1">Pago completo por las 12 semanas</p>
-                            <p class="text-xs text-gray-500 mt-1">O 3 pagos de $145.000</p>
+                            <p class="text-sm font-medium text-gray-300 mt-1">O 3 pagos de $145.000</p>
                         </div>
                         
                         <ul class="space-y-3 mb-8">
@@ -1041,51 +1204,50 @@ Dif.: cambio desde la medici&#243;n anterior (23-03-2026). Emitido el 04-10-2026
     </section>
 
     <!-- Sobre Julián / Equipo -->
-    <section id="equipo" class="py-24 bg-lightBg relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="flex flex-col md:flex-row items-center gap-16">
-                
-                <div class="md:w-1/2 fade-in-up">
-                    <div class="relative w-72 h-auto md:w-96 mx-auto">
-                        <!-- Decorative shapes -->
-                        <div class="absolute -inset-4 bg-primary/10 rounded-3xl z-0 transform rotate-3"></div>
-                        <div class="absolute -inset-4 bg-secondary/10 rounded-3xl z-0 transform -rotate-3"></div>
-                        <img src="img/julian-lell.jpg" alt="Julián Ignacio Lell, licenciado en Nutrición y director del Método MAIP" width="1216" height="2048" class="relative z-10 rounded-2xl object-cover w-full shadow-2xl maip-professional-photo" loading="lazy" decoding="async">
+    <section id="equipo" class="py-14 md:py-24 maip-bg-light-2 relative overflow-hidden" aria-labelledby="equipo-name">
+        <div class="maip-person max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="maip-person-grid">
+                <div class="fade-in-up">
+                    <div class="maip-photo">
+                        <figure class="maip-photo-frame">
+                            <picture><source srcset="img/julian-lell.webp" type="image/webp"><img src="img/julian-lell.jpg" alt="Julián Ignacio Lell, licenciado en Nutrición y director del Método MAIP" width="1216" height="2048" loading="lazy" decoding="async"></picture>
+                            <figcaption><b>Julián Ignacio Lell</b><span>Director del Método MAIP</span></figcaption>
+                        </figure>
                     </div>
                 </div>
-                
-                <div class="md:w-1/2 fade-in-up" style="transition-delay: 0.2s;">
-                    <h2 class="text-primary font-bold tracking-widest uppercase text-sm mb-2">Director del Método</h2>
-                    <h3 class="text-3xl md:text-5xl font-black text-secondary mb-2 tracking-tight">Julián Ignacio Lell</h3>
-                    <p class="text-primary-dark font-bold mb-6 text-sm bg-blue-50 inline-block px-3 py-1 rounded-full border border-blue-100">Lic. en Nutrición — MP: 8669 | MN: 14319</p>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Me especializo en nutrición deportiva y composición corporal. Mi trabajo se centra en <strong>conocer a la persona detrás del deportista</strong>, simplificar la nutrición, interpretar resultados y planificar una estructura de trabajo para que logre sus objetivos.
-                    </p>
-                    <p class="text-gray-600 mb-8 leading-relaxed">
-                        Creé MAIP al comprender que el abordaje debe ser integral, no una dieta genérica. El rendimiento requiere coordinación. Por eso, en el área Performance trabajo junto a un <strong>preparador físico responsable</strong> para asegurar que tu entrenamiento y nutrición hablen el mismo idioma.
-                    </p>
-                    
-                    <div class="grid grid-cols-2 gap-6 mb-8 border-y border-gray-200 py-6">
+                <div class="fade-in-up" style="transition-delay: 0.2s;">
+                    <h2 class="maip-eyebrow">Director del Método</h2>
+                    <h3 id="equipo-name" class="maip-h2">Julián Ignacio Lell</h3>
+                    <p class="maip-role">Nutrición deportiva y composición corporal</p>
+                    <ul class="maip-chips" aria-label="Matrículas">
+                        <li class="maip-chip"><i class="fas fa-id-card" aria-hidden="true"></i>Lic. en Nutrición — MP: 8669 | MN: 14319</li>
+                        <li class="maip-chip"><i class="fas fa-ruler-combined" aria-hidden="true"></i>Antropometrista ISAK 2</li>
+                    </ul>
+                    <p class="maip-lead">Mi trabajo se centra en <strong>conocer a la persona detrás del deportista</strong>, simplificar la nutrición, interpretar resultados y planificar una estructura de trabajo para que logre sus objetivos.</p>
+                    <div class="maip-callout">
+                        <i class="fas fa-people-arrows" aria-hidden="true"></i>
                         <div>
-                            <h4 class="text-sm font-bold text-secondary mb-1 uppercase">Área Nutrición</h4>
-                            <ul class="text-sm text-gray-500 space-y-1">
-                                <li class="flex gap-2"><span aria-hidden="true">•</span><span>Antropometría ISAK 2</span></li>
-                                <li class="flex gap-2"><span aria-hidden="true">•</span><span>Estrategias nutricionales</span></li>
-                                <li class="flex gap-2"><span aria-hidden="true">•</span><span>Educación alimentaria</span></li>
-                                <li class="flex gap-2"><span aria-hidden="true">•</span><span>Seguimiento 1 a 1</span></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-sm font-bold text-secondary mb-1 uppercase">Área Performance</h4>
-                            <ul class="text-sm text-gray-500 space-y-1">
-                                <li class="flex gap-2"><span aria-hidden="true">•</span><span>Evaluación física</span></li>
-                                <li class="flex gap-2"><span aria-hidden="true">•</span><span>Programación semanal (fuerza, potencia, resistencia, etc.)</span></li>
-                                <li class="flex gap-2"><span aria-hidden="true">•</span><span>Seguimiento 1 a 1 por profesional</span></li>
-                                <li class="flex gap-2"><span aria-hidden="true">•</span><span>Control de carga y adaptación</span></li>
-                            </ul>
+                            <h4>Trabajo en equipo con Martín</h4>
+                            <p>Creé MAIP al comprender que el abordaje debe ser integral, no una dieta genérica. El rendimiento requiere coordinación. Por eso, en el área Performance trabajo junto a un <strong>preparador físico responsable</strong> para asegurar que tu entrenamiento y nutrición hablen el mismo idioma.</p>
                         </div>
                     </div>
-                    
+                    <div class="maip-certs">
+                        <h4 class="maip-certs-title">Certificaciones</h4>
+                        <ul class="maip-cert-list">
+                            <li><button type="button" class="maip-cert" data-cert-ar="1.211" data-cert="img/titulo-lic-nutricion.jpg" data-cert-webp="img/titulo-lic-nutricion.webp" data-cert-alt="Título de Licenciado en Nutrición de Julián Ignacio Lell, Universidad Austral, Facultad de Ciencias Biomédicas" aria-haspopup="dialog">
+                                <picture><source srcset="img/titulo-lic-nutricion-mini.webp" type="image/webp"><img src="img/titulo-lic-nutricion-mini.jpg" alt="" width="420" height="347" loading="lazy" decoding="async"></picture>
+                                <span><b>Licenciado en Nutrición</b><small>Universidad Austral · Facultad de Ciencias Biomédicas</small><em>Ver título <i class="fas fa-up-right-and-down-left-from-center" aria-hidden="true"></i></em></span>
+                            </button></li>
+                            <li><button type="button" class="maip-cert" data-cert-ar="1.435" data-cert="img/cert-holway-nutricion-deportiva.jpg" data-cert-webp="img/cert-holway-nutricion-deportiva.webp" data-cert-alt="Certificado de aprobación del Curso de Nutrición Deportiva de Francis Holway, de 184 horas cátedra, a nombre de Julián Lell" aria-haspopup="dialog">
+                                <picture><source srcset="img/cert-holway-nutricion-deportiva-mini.webp" type="image/webp"><img src="img/cert-holway-nutricion-deportiva-mini.jpg" alt="" width="420" height="293" loading="lazy" decoding="async"></picture>
+                                <span><b>Curso de Nutrición Deportiva</b><small>Francis Holway · 184 horas cátedra</small><em>Ver certificado <i class="fas fa-up-right-and-down-left-from-center" aria-hidden="true"></i></em></span>
+                            </button></li>
+                            <li><button type="button" class="maip-cert" data-cert-ar="0.7075" data-cert="img/cert-isak-nivel-2.jpg" data-cert-webp="img/cert-isak-nivel-2.webp" data-cert-alt="Certificado ISAK de Antropometrista Nivel 2, técnico perfil completo, a nombre de Julián Ignacio Lell" aria-haspopup="dialog">
+                                <picture><source srcset="img/cert-isak-nivel-2-mini.webp" type="image/webp"><img src="img/cert-isak-nivel-2-mini.jpg" alt="" width="330" height="466" loading="lazy" decoding="async"></picture>
+                                <span><b>Antropometrista ISAK Nivel 2</b><small>Técnico · Perfil completo · Válido hasta 29/09/2030</small><em>Ver certificado <i class="fas fa-up-right-and-down-left-from-center" aria-hidden="true"></i></em></span>
+                            </button></li>
+                        </ul>
+                    </div>
                     <a href="#contacto" class="inline-flex items-center gap-2 text-primary font-bold hover:text-primaryDark transition group py-3">
                         Iniciar mi proceso con Julián <i class="fas fa-arrow-right transform group-hover:translate-x-1 transition"></i>
                     </a>
@@ -1093,6 +1255,52 @@ Dif.: cambio desde la medici&#243;n anterior (23-03-2026). Emitido el 04-10-2026
             </div>
         </div>
     </section>
+    <!-- Preparador físico · MAIP Performance -->
+    <section id="preparador" class="pf-section py-14 md:py-24" aria-labelledby="pf-name">
+        <div class="maip-person maip-person--dark max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="maip-person-grid maip-person-grid--flip">
+                <div class="fade-in-up">
+                    <div class="maip-photo">
+                        <figure class="maip-photo-frame">
+                            <picture><source srcset="img/martin-oleas.webp" type="image/webp"><img src="img/martin-oleas.jpg" alt="Martín Oleas, preparador físico de MAIP Performance" width="899" height="1599" style="--pos-d: center 8%; --pos-m: center 7%;" loading="lazy" decoding="async"></picture>
+                            <figcaption><b>Martín Oleas</b><span>Preparador físico · MAIP Performance</span></figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="fade-in-up" style="transition-delay: 0.2s;">
+                    <h2 class="maip-eyebrow">MAIP Performance</h2>
+                    <h3 id="pf-name" class="maip-h2">Martín Oleas</h3>
+                    <p class="maip-role">Preparación física y evaluación de la composición corporal</p>
+                    <ul class="maip-chips" aria-label="Formación y matrículas">
+                        <li class="maip-chip"><i class="fas fa-dumbbell" aria-hidden="true"></i>Instructor en Musculación · Mat. IMHF 9077</li>
+                        <li class="maip-chip"><i class="fas fa-ruler-combined" aria-hidden="true"></i>Antropometrista ISAK 1</li>
+                        <li class="maip-chip"><i class="fas fa-graduation-cap" aria-hidden="true"></i>Lic. en Nutrición · Universidad Austral (último año)</li>
+                    </ul>
+                    <p class="maip-lead">Actualmente cursando el último año de la Licenciatura en Nutrición en la Universidad Austral, lo que me permite entender el entrenamiento junto con la alimentación. Mi trabajo se centra en <strong>entender qué necesita cada deportista</strong> y traducirlo en un plan de entrenamiento claro, medible y que se pueda sostener en el tiempo.</p>
+                    <div class="maip-callout">
+                        <i class="fas fa-people-arrows" aria-hidden="true"></i>
+                        <div>
+                            <h4>Trabajo en equipo con Julián</h4>
+                            <p>Entiendo que el entrenamiento y la alimentación no funcionan por separado. Por eso trabajo codo a codo con Julián; lo que programo en tu entrenamiento responde a lo que él define en tu plan de alimentación, y los ajustes se hacen en conjunto semana a semana.</p>
+                        </div>
+                    </div>
+                    <div class="maip-certs">
+                        <h4 class="maip-certs-title">Certificaciones</h4>
+                        <ul class="maip-cert-list">
+                            <li><button type="button" class="maip-cert" data-cert-ar="1.414" data-cert="img/cert-oleas-musculacion.jpg" data-cert-webp="img/cert-oleas-musculacion.webp" data-cert-alt="Certificado de Instructor en Musculación, High Fitness Trainer. Martín Fernando Oleas Padilla, matrícula IMHF 9077, emitido el 29/10/2026" aria-haspopup="dialog">
+                                <picture><source srcset="img/cert-oleas-musculacion.webp" type="image/webp"><img src="img/cert-oleas-musculacion.jpg" alt="" width="1400" height="990" loading="lazy" decoding="async"></picture>
+                                <span><b>Instructor en Musculación</b><small>High Fitness Trainer · Matrícula IMHF 9077 · Emitido el 29/10/2026</small><em>Ver certificado <i class="fas fa-up-right-and-down-left-from-center" aria-hidden="true"></i></em></span>
+                            </button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <dialog id="cert-modal" class="cert-modal" aria-label="Certificado">
+        <button type="button" id="cert-close" aria-label="Cerrar certificado">Cerrar ✕</button>
+        <img id="cert-modal-img" src="" alt="" decoding="async">
+    </dialog>
 
     <!-- Preparación de consulta MAIP -->
     <section id="contacto" class="maip-consultation" aria-labelledby="consulta-title">
@@ -1160,13 +1368,13 @@ Dif.: cambio desde la medici&#243;n anterior (23-03-2026). Emitido el 04-10-2026
 
 
     <!-- Footer -->
-    <footer class="bg-secondary text-white pt-16 pb-8 border-t border-gray-800">
+    <footer class="maip-bg-dark text-white pt-12 md:pt-16 pb-8 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+            <div class="grid grid-cols-2 md:grid-cols-12 gap-x-6 gap-y-8 mb-8 md:mb-12">
                 
-                <div class="col-span-1 md:col-span-5">
+                <div class="col-span-2 md:col-span-5">
                     <div class="flex items-center gap-3 mb-4">
-                        <a href="#inicio" aria-label="Volver al inicio"><img src="img/logo-maip.jpg" alt="Logo Método MAIP by Julián Lell" width="72" height="72" class="maip-footer-logo" loading="lazy" decoding="async"></a>
+                        <a href="#inicio" aria-label="Volver al inicio"><picture><source srcset="img/logo-maip.webp" type="image/webp"><img src="img/logo-maip.jpg" alt="Logo Método MAIP by Julián Lell" width="72" height="72" class="maip-footer-logo" loading="lazy" decoding="async"></picture></a>
                         
                         <a href="#" class="text-xl font-black text-white tracking-tight flex flex-col leading-none">
                             <span>MÉTODO MAIP</span>
@@ -1174,7 +1382,7 @@ Dif.: cambio desde la medici&#243;n anterior (23-03-2026). Emitido el 04-10-2026
                         </a>
                     </div>
                     <p class="text-gray-400 text-sm mb-2 max-w-sm leading-relaxed">Un sistema de evaluación, planificación y seguimiento diseñado para transformar datos en decisiones de rendimiento.</p>
-                    <p class="text-gray-500 text-xs mb-6 font-bold">Lic. en Nutrición — MP: 8669 | MN: 14319</p>
+                    <p class="text-gray-400 text-xs mb-6 font-bold">Lic. en Nutrición — MP: 8669 | MN: 14319</p>
                     <div class="flex gap-4">
                         <a href="https://www.instagram.com/nutricionconjulian" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Julián Lell" class="text-gray-400 hover:text-white transition inline-flex items-center justify-center p-3 -m-3"><i class="fab fa-instagram text-xl" aria-hidden="true"></i></a>
                         <a href="https://wa.me/5491126108920" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp de Julián Lell" class="text-gray-400 hover:text-white transition inline-flex items-center justify-center p-3 -m-3"><i class="fab fa-whatsapp text-xl" aria-hidden="true"></i></a>
@@ -1205,26 +1413,28 @@ Dif.: cambio desde la medici&#243;n anterior (23-03-2026). Emitido el 04-10-2026
             </div>
             
             <div class="border-t border-gray-800 pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-500 text-xs mb-4 md:mb-0">
+                <p class="text-gray-400 text-xs mb-4 md:mb-0">
                     &copy; 2026 Julián Ignacio Lell - Método MAIP. Todos los derechos reservados.
                 </p>
-                <p class="text-gray-600 text-[10px] uppercase tracking-widest font-bold">
+                <p class="text-gray-400 text-xs uppercase tracking-widest font-bold">
                     Medir · Analizar · Interpretar · Planificar
                 </p>
             </div>
 
             <div class="mt-8 pt-6 border-t border-gray-800 flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-16 text-center" aria-label="Creación de la página">
                 <div>
-                    <p class="text-gray-500 text-[10px] uppercase tracking-widest font-bold mb-1">Creador de la página</p>
+                    <p class="text-gray-400 text-xs uppercase tracking-widest font-bold mb-1">Creador de la página</p>
                     <p class="text-gray-300 text-sm font-semibold tracking-widest">JULIÁN IGNACIO LELL</p>
                 </div>
                 <div>
-                    <p class="text-gray-500 text-[10px] uppercase tracking-widest font-bold mb-1">Colaborador</p>
+                    <p class="text-gray-400 text-xs uppercase tracking-widest font-bold mb-1">Colaborador</p>
                     <p class="text-gray-300 text-sm font-semibold tracking-widest">FRANCO DAVID LELL</p>
                 </div>
             </div>
         </div>
     </footer>
+
+    <a href="https://wa.me/5491126108920" target="_blank" rel="noopener noreferrer" class="maip-wa-fab" id="wa-fab" aria-label="Escribir a Julián por WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -1640,6 +1850,66 @@ Dif.: cambio desde la medici&#243;n anterior (23-03-2026). Emitido el 04-10-2026
         zoomOut.addEventListener('click', () => setZoom(zoom - 25));
         zoomIn.addEventListener('click', () => setZoom(zoom + 25));
         document.getElementById('info-plan-fit').addEventListener('click', () => setZoom(100));
+    });
+    </script>
+    <script>
+    // Celular: tarjetas M-A-I-P desplegables, puntos del carrusel de herramientas y botón flotante de WhatsApp
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.maip-pillar-more').forEach(btn => btn.addEventListener('click', () => {
+            const card = btn.closest('.maip-pillar'), open = card.classList.toggle('is-open');
+            btn.setAttribute('aria-expanded', open); btn.textContent = open ? 'Ver menos' : 'Ver más';
+        }));
+
+        const grid = document.querySelector('#herramientas .maip-services-grid'), dots = document.getElementById('herr-dots');
+        if (grid && dots) {
+            const cards = [...grid.children], buttons = cards.map((card, i) => {
+                const b = document.createElement('button'); b.type = 'button'; b.className = 'maip-carousel-dot';
+                b.setAttribute('aria-label', 'Ir a ' + ((card.querySelector('h4') || {}).textContent || 'herramienta ' + (i + 1)));
+                b.addEventListener('click', () => grid.scrollTo({ left: card.offsetLeft - cards[0].offsetLeft, behavior: 'smooth' }));
+                dots.appendChild(b); return b;
+            });
+            let raf = 0;
+            const mark = () => {
+                raf = 0; let best = 0, dist = Infinity;
+                cards.forEach((c, i) => { const d = Math.abs(c.offsetLeft - cards[0].offsetLeft - grid.scrollLeft); if (d < dist) { dist = d; best = i; } });
+                buttons.forEach((b, i) => b.setAttribute('aria-current', i === best ? 'true' : 'false'));
+            };
+            grid.addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(mark); }, { passive: true });
+            mark();
+        }
+
+        // El botón se oculta sobre el formulario (que ya tiene su propio WhatsApp) y sobre los controles de fotos del hero
+        const fab = document.getElementById('wa-fab'), covered = new Set();
+        if (fab && 'IntersectionObserver' in window) {
+            const io = new IntersectionObserver(entries => {
+                entries.forEach(en => en.isIntersecting ? covered.add(en.target) : covered.delete(en.target));
+                fab.classList.toggle('is-hidden', covered.size > 0);
+            }, { threshold: 0.05 });
+            ['contacto'].map(id => document.getElementById(id)).concat([document.querySelector('.hero-sport-controls')]).forEach(el => el && io.observe(el));
+        }
+    });
+    </script>
+    <script>
+    // Certificados (Julián y Martín) en una misma ventana ampliada
+    document.addEventListener('DOMContentLoaded', () => {
+        const dialog = document.getElementById('cert-modal'), img = document.getElementById('cert-modal-img');
+        const buttons = [...document.querySelectorAll('[data-cert]')];
+        if (!dialog || !img || !buttons.length) return;
+        let previousOverflow = '', opener = null;
+        buttons.forEach(btn => btn.addEventListener('click', () => {
+            opener = btn; const alt = btn.dataset.certAlt || '';
+            img.onerror = () => { img.onerror = null; img.src = btn.dataset.cert; };
+            img.alt = alt; img.src = btn.dataset.certWebp || btn.dataset.cert; dialog.setAttribute('aria-label', alt); dialog.style.setProperty('--ar', btn.dataset.certAr || '1.4');
+            previousOverflow = document.body.style.overflow; dialog.showModal(); document.body.style.overflow = 'hidden';
+            dialog.scrollTop = 0;
+        }));
+        document.getElementById('cert-close').addEventListener('click', () => dialog.close());
+        dialog.addEventListener('close', () => { document.body.style.overflow = previousOverflow; if (opener) opener.focus({preventScroll: true}); });
+        dialog.addEventListener('click', event => {
+            if (event.target !== dialog) return;
+            const r = dialog.getBoundingClientRect();
+            if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) dialog.close();
+        });
     });
     </script>
     <script>
