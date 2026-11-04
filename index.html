@@ -616,6 +616,40 @@
             #herramientas .maip-services-grid { padding-inline: 10vw; scroll-padding-inline: 10vw; }
             #herramientas .maip-services-grid > div { flex: 0 0 80vw; scroll-snap-align: center; }
             #herramientas .maip-carousel-dots, #que-es .maip-carousel-dots { margin-top: 2px; }
+        }        /* ── Para quién es / Para quién no es: viñetas alineadas y menos aire en celular ── */
+        .maip-filter ul li { align-items: flex-start; }
+        .maip-filter ul li > span.w-2 { flex: none; margin-top: 8px; }
+        @media (max-width: 767px) {
+            section.maip-filter { padding-top: 24px; padding-bottom: 24px; }
+            .maip-filter .grid { gap: 26px; }
+            .maip-filter h3 { margin-bottom: 14px; }
+            .maip-filter ul.space-y-4 > li:not(:first-child) { margin-top: 12px; }
+        }        /* ── Precios en pesos (dólar venta del día) ── */
+        .maip-ars { margin-left: 10px; padding-left: 10px; border-left: 2px solid currentColor; font-weight: 700; white-space: nowrap; color: #374151; }
+        .maip-ars--main { font-size: 18px; }
+        .maip-bg-dark .maip-ars { color: #d1d5db; }
+        .maip-simple-price { flex-wrap: wrap; row-gap: 4px; }
+        .maip-simple-price > span { white-space: nowrap; }
+        .maip-simple-price .maip-ars { order: 2; margin-left: 0; }
+        .maip-simple-price small { order: 3; flex-basis: 100%; }
+        .maip-ars-note { max-width: 640px; margin: 14px auto 0; font-size: 12px; line-height: 1.5; text-align: center; color: #4b5563; }
+        /* ── Celular: modalidades en carrusel y menos aire ── */
+        @media (max-width: 767px) {
+            #modalidades { padding-top: 26px; padding-bottom: 26px; }
+            #modalidades .max-w-3xl { margin-bottom: 18px; }
+            #modalidades .maip-plans { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; margin-inline: -16px; padding: 6px 9vw 10px; scroll-padding-inline: 9vw; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+            #modalidades .maip-plans::-webkit-scrollbar { display: none; }
+            #modalidades .maip-plans > .maip-plan { flex: 0 0 82vw; scroll-snap-align: center; opacity: 1; transform: none; }
+            #modalidades .maip-plan > .p-8 { padding: 20px; }
+            #modalidades .maip-plan > .p-6 { padding: 14px 20px; }
+            #modalidades .maip-plan .mb-8 { margin-bottom: 16px; }
+            #modalidades .maip-plan .text-4xl { font-size: 32px; white-space: nowrap; }
+            #modalidades .maip-plan .maip-ars--main { font-size: 16px; margin-left: 8px; padding-left: 8px; }
+            #modalidades .maip-plan .mb-6 { margin-bottom: 14px; }
+            #modalidades .maip-plan ul.space-y-3 { margin-bottom: 4px; }
+            #modalidades .maip-carousel-dots { margin-top: 2px; }
+            #modalidades .maip-simple.mt-12 { margin-top: 14px; }
+            .maip-ars-note { margin-top: 8px; padding-inline: 4px; }
         }    </style>
     <link rel="stylesheet" href="tw.css">
 </head>
@@ -1209,8 +1243,8 @@
         </div>
     </dialog>
 
-    <!-- Filtro: Para quién es / Qué no es (Nuevo) -->
-    <section class="py-14 md:py-20 maip-bg-navy text-white relative">
+    <!-- Filtro: Para quién es / Para quién no es -->
+    <section class="maip-filter py-14 md:py-20 maip-bg-navy text-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div class="fade-in-up">
@@ -1225,12 +1259,12 @@
                 </div>
                 
                 <div class="fade-in-up" style="transition-delay: 0.2s;">
-                    <h3 class="text-2xl md:text-3xl font-black mb-6 flex items-center gap-3"><i class="fas fa-times-circle text-red-500"></i> ¿Qué NO es MAIP?</h3>
+                    <h3 class="text-2xl md:text-3xl font-black mb-6 flex items-center gap-3"><i class="fas fa-times-circle text-red-500"></i> ¿Para quién NO es MAIP?</h3>
                     <ul class="space-y-4">
-                        <li class="flex items-start gap-3 text-gray-400"><i class="fas fa-times text-red-500/70 mt-1"></i> <div><strong class="text-white block">No es una dieta descargable.</strong> La planificación es 100% individual.</div></li>
-                        <li class="flex items-start gap-3 text-gray-400"><i class="fas fa-times text-red-500/70 mt-1"></i> <div><strong class="text-white block">No es una rutina genérica.</strong> MAIP 360 adapta el entrenamiento a tu contexto.</div></li>
-                        <li class="flex items-start gap-3 text-gray-400"><i class="fas fa-times text-red-500/70 mt-1"></i> <div><strong class="text-white block">No es solamente una antropometría.</strong> Los datos se interpretan, no solo se entregan.</div></li>
-                        <li class="flex items-start gap-3 text-gray-400"><i class="fas fa-times text-red-500/70 mt-1"></i> <div><strong class="text-white block">No es perseguir un número en la balanza.</strong> Es un proceso de rendimiento integral.</div></li>
+                        <li class="flex items-start gap-3 text-gray-400"><i class="fas fa-times text-red-500/70 mt-1"></i> <div><strong class="text-white block">Quienes buscan una dieta descargable.</strong> La planificación es 100% individual.</div></li>
+                        <li class="flex items-start gap-3 text-gray-400"><i class="fas fa-times text-red-500/70 mt-1"></i> <div><strong class="text-white block">Quienes buscan una rutina genérica.</strong> MAIP 360 adapta el entrenamiento a tu contexto.</div></li>
+                        <li class="flex items-start gap-3 text-gray-400"><i class="fas fa-times text-red-500/70 mt-1"></i> <div><strong class="text-white block">Quienes buscan solamente una antropometría.</strong> Los datos se interpretan, no solo se entregan.</div></li>
+                        <li class="flex items-start gap-3 text-gray-400"><i class="fas fa-times text-red-500/70 mt-1"></i> <div><strong class="text-white block">Quienes buscan solo perseguir un número en la balanza.</strong> Es un proceso de rendimiento integral.</div></li>
                     </ul>
                 </div>
             </div>
@@ -1246,7 +1280,7 @@
                 <p class="text-lg text-gray-600">Los programas MAIP están diseñados como un ciclo completo de 12 semanas para medir, aplicar y volver a evaluar tu proceso.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div class="maip-plans grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 
                 <!-- MAIP NUTRICIÓN -->
                 <div class="maip-plan bg-white rounded-3xl border border-gray-100 flex flex-col fade-in-up overflow-hidden group">
@@ -1260,9 +1294,9 @@
                         <p class="text-gray-500 mb-6 text-sm">Pensado para deportistas que buscan trabajar principalmente sobre alimentación, composición corporal y recuperación.</p>
                         
                         <div class="mb-8">
-                            <span class="text-4xl font-black text-gray-900">USD 200</span>
+                            <span class="text-4xl font-black text-gray-900">USD 200</span><span class="maip-ars maip-ars--main" data-usd="200" hidden></span>
                             <p class="text-sm text-gray-600 mt-1">Pago completo por las 12 semanas</p>
-                            <p class="text-sm font-medium text-gray-600 mt-1">O 3 pagos de USD 75</p>
+                            <p class="text-sm font-medium text-gray-600 mt-1">O 3 pagos de USD 75<span class="maip-ars" data-usd="75" hidden></span></p>
                         </div>
                         
                         <ul class="space-y-3 mb-8">
@@ -1293,9 +1327,9 @@
                         <p class="text-gray-400 mb-6 text-sm">La modalidad integral. Para quienes quieren coordinar alimentación y programación física (fuerza, hipertrofia, velocidad, HIIT) en un único proceso.</p>
                         
                         <div class="mb-8">
-                            <span class="text-4xl font-black text-white">USD 300</span>
+                            <span class="text-4xl font-black text-white">USD 300</span><span class="maip-ars maip-ars--main" data-usd="300" hidden></span>
                             <p class="text-sm text-gray-400 mt-1">Pago completo por las 12 semanas</p>
-                            <p class="text-sm font-medium text-gray-300 mt-1">O 3 pagos de USD 110</p>
+                            <p class="text-sm font-medium text-gray-300 mt-1">O 3 pagos de USD 110<span class="maip-ars" data-usd="110" hidden></span></p>
                         </div>
                         
                         <ul class="space-y-3 mb-8">
@@ -1310,12 +1344,14 @@
                     </div>
                 </div>
             </div>
+            <div class="maip-carousel-dots" id="plans-dots" role="group" aria-label="Elegir modalidad"></div>
+            <p class="maip-ars-note" id="ars-note" hidden></p>
             <div class="maip-simple max-w-5xl mx-auto mt-12 md:mt-16 fade-in-up">
                 <div>
                     <p class="maip-eyebrow">¿Preferís empezar más simple?</p>
                     <h4 class="maip-simple-title">Consulta individual</h4>
                     <p class="maip-simple-copy">Una consulta nutricional con plan de alimentación y seguimiento 1 a 1, sin mediciones ni ciclo de 12 semanas.</p>
-                    <div class="maip-simple-price"><span>USD 80</span><small>Pago único</small></div>
+                    <div class="maip-simple-price"><span>USD 80</span><small>Pago único</small><b class="maip-ars maip-ars--main" data-usd="80" hidden></b></div>
                     <a href="#contacto" data-programa="Consulta individual" class="block w-full text-center bg-white border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-bold py-3.5 rounded-xl transition duration-300">Pedir una consulta</a>
                 </div>
                 <div class="maip-simple-body">
@@ -1325,7 +1361,7 @@
                         <li class="flex items-start text-sm"><i class="fas fa-check text-green-500 mt-1 mr-3 flex-shrink-0"></i><span class="text-gray-700">Seguimiento 1 a 1, con un control a las 3 semanas</span></li>
                     </ul>
                     <p class="maip-simple-note"><i class="fas fa-circle-info" aria-hidden="true"></i> No incluye antropometría ni Dashboard MAIP.</p>
-                    <p class="maip-simple-bridge">Si después pasás a MAIP Nutrición dentro de los 30 días, te descontamos USD 40.</p>
+                    <p class="maip-simple-bridge">Si después pasás al plan de nutrición, se toma el monto que ya pagaste y se abona el restante.</p>
                 </div>
             </div>
         </div>
@@ -2023,7 +2059,21 @@
         carouselDots(document.querySelector('#que-es .maip-pillars'), document.getElementById('pil-dots'), 'pilar');
         carouselDots(document.querySelector('#herramientas .maip-services-grid'), document.getElementById('herr-dots'), 'herramienta');
         carouselDots(document.getElementById('anthro-slides'), document.getElementById('anthro-dots'), 'imagen');
+        carouselDots(document.querySelector('#modalidades .maip-plans'), document.getElementById('plans-dots'), 'modalidad');
         document.querySelectorAll('.anthro-slide').forEach(b => b.addEventListener('click', () => document.getElementById('adc-open').click()));
+        // Precios en pesos: dólar oficial venta del día (si no se puede consultar, se muestran solo los USD)
+        (async () => {
+            try {
+                const res = await fetch('https://dolarapi.com/v1/dolares/oficial', { cache: 'no-store' });
+                if (!res.ok) throw new Error('sin cotización');
+                const d = await res.json(), venta = Number(d.venta);
+                if (!(venta > 0)) throw new Error('cotización inválida');
+                const peso = n => '$' + Math.round(n).toLocaleString('es-AR');
+                document.querySelectorAll('[data-usd]').forEach(el => { el.textContent = 'ARS ' + peso(Number(el.dataset.usd) * venta); el.hidden = false; });
+                const note = document.getElementById('ars-note'), fecha = d.fechaActualizacion ? new Date(d.fechaActualizacion).toLocaleDateString('es-AR') : '';
+                if (note) { note.textContent = 'Valores en pesos al dólar oficial venta de hoy (' + peso(venta) + (fecha ? ' · ' + fecha : '') + '). El monto final se confirma al momento del pago.'; note.hidden = false; }
+            } catch (e) { /* queda el precio en USD */ }
+        })();
         // El botón se oculta sobre el formulario (que ya tiene su propio WhatsApp)
         const fab = document.getElementById('wa-fab'), covered = new Set();
         if (fab && 'IntersectionObserver' in window) {
