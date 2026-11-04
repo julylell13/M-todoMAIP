@@ -606,7 +606,17 @@
         @media (max-width: 340px) {
             .maip-hero-chips { flex-wrap: wrap; }
         }
-    </style>
+        /* ── Celular: menos aire en "El proceso" y filminas centradas (se asoman las dos vecinas) ── */
+        @media (max-width: 767px) {
+            #ciclo { padding-top: 32px; padding-bottom: 28px; }
+            #que-es { padding-bottom: 32px; }
+            #herramientas { padding-bottom: 28px; }
+            #que-es .maip-pillars { padding-inline: 13vw; scroll-padding-inline: 13vw; }
+            #que-es .maip-pillars > .maip-pillar { flex: 0 0 74vw; scroll-snap-align: center; }
+            #herramientas .maip-services-grid { padding-inline: 10vw; scroll-padding-inline: 10vw; }
+            #herramientas .maip-services-grid > div { flex: 0 0 80vw; scroll-snap-align: center; }
+            #herramientas .maip-carousel-dots, #que-es .maip-carousel-dots { margin-top: 2px; }
+        }    </style>
     <link rel="stylesheet" href="tw.css">
 </head>
 <body class="font-sans text-gray-800 bg-lightBg antialiased selection:bg-primary selection:text-white">
