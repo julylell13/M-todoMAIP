@@ -894,6 +894,40 @@
             .maip-services-grid .ip-pv-quote { margin-bottom: 8px; padding: 7px 9px; }            .maip-services-grid .adc-preview-wrapper { padding-top: 14px; margin-bottom: 12px; }
             .maip-services-grid .dashboard-preview-image { min-height: 150px; }
             .maip-services-grid > div > .maip-tool-desc > :last-child { margin-bottom: 10px; }
+        }        /* ── Herramientas (celular): textos más cortos, antropometría con letra normal e imágenes nítidas y del mismo tamaño ── */
+        .mx-d { display: none; }
+        .mx-m { display: inline; }
+        #herramientas .maip-tool-desc p.mx-m { display: block; }
+        @media (max-width: 767px) {
+            #herramientas .maip-anthro-quote { font-style: normal; font-size: 13px; line-height: 1.45; color: #4b5563; border-left: 0; padding-left: 0; margin: 0 0 8px; }
+            #herramientas .anthro-wrap { padding-top: 0; }
+            #herramientas .anthro-slides { align-items: stretch; gap: 10px; }
+            #herramientas .anthro-slide { flex: 0 0 60%; aspect-ratio: auto; display: flex; flex-direction: column; }
+            #herramientas .anthro-lock { gap: 6px; padding: 12px 12px; }
+            #herramientas .anthro-lock > i:first-child { width: 34px; height: 34px; font-size: 15px; }
+            #herramientas .anthro-lock h4 { font-size: 15px; line-height: 1.2; }
+            #herramientas .anthro-lock p { font-size: 12px; line-height: 1.4; }
+            #herramientas .anthro-lock .plan-lock-btn { min-height: 36px; padding: 0 14px; font-size: 13px; }
+            #herramientas .anthro-slide picture { position: static; flex: none; display: block; }
+            #herramientas .anthro-slide picture img { position: static; inset: auto; display: block; width: 100%; height: auto; aspect-ratio: 13 / 15; object-fit: cover; object-position: top; }
+            #herramientas .anthro-slide .anthro-step { flex: none; }
+            #herramientas .anthro-lock { flex: 0 0 60%; justify-content: center; }
+        }        /* ── Herramientas (tableta y computadora): mismo criterio que en celular ── */
+        @media (min-width: 768px) {
+            #herramientas .maip-anthro-quote { font-style: normal; font-size: 13.5px; line-height: 1.5; color: #4b5563; border-left: 0; padding-left: 0; margin: 0 0 10px; align-self: start; }
+            #herramientas .maip-services-grid .anthro-slides { align-items: stretch; gap: 10px; }
+            #herramientas .maip-services-grid .anthro-slide { flex: 0 0 48%; aspect-ratio: auto; display: flex; flex-direction: column; }
+            #herramientas .maip-services-grid .anthro-slide picture { position: static; flex: none; display: block; }
+            #herramientas .maip-services-grid .anthro-slide picture img { position: static; inset: auto; display: block; width: 100%; height: auto; aspect-ratio: 13 / 15; object-fit: cover; object-position: top; }
+            #herramientas .maip-services-grid .anthro-slide .anthro-step { flex: none; }
+            #herramientas .maip-services-grid .anthro-lock { flex: 0 0 48%; justify-content: center; gap: 6px; padding: 12px 12px; }
+            #herramientas .maip-services-grid .anthro-lock > i:first-child { width: 34px; height: 34px; font-size: 15px; }
+            #herramientas .maip-services-grid .anthro-lock h4 { font-size: 15px; line-height: 1.2; }
+            #herramientas .maip-services-grid .anthro-lock p { font-size: 12px; line-height: 1.4; }
+            #herramientas .maip-services-grid .anthro-lock .plan-lock-btn { min-height: 36px; padding: 0 14px; font-size: 13px; }
+        }
+        @media (min-width: 1320px) {
+            #herramientas .maip-services-grid .anthro-slide, #herramientas .maip-services-grid .anthro-lock { flex-basis: 60%; }
         }    </style>
     <link rel="stylesheet" href="tw.css">
 </head>
@@ -1191,11 +1225,11 @@
                     </div>
                     <div class="adc-preview-wrapper anthro-wrap">
                         <div class="anthro-slides" id="anthro-slides" role="group" aria-label="Cómo se ve un reporte de antropometría, con un paciente de ejemplo. Deslizá para ver más">
-                            <button type="button" class="anthro-slide" data-anthro="0" aria-label="Ampliar: Reporte"><picture><source srcset="img/adc-paso-1-mini.webp" type="image/webp"><img src="img/adc-paso-1-mini.jpg" alt="Reporte de un paciente de ejemplo: peso 71,5 kg, músculo 36,8 kg, adiposa 14,9 kg e IMO 4,63, con los objetivos cumplidos" width="548" height="729" loading="lazy" decoding="async"></picture><span class="anthro-step"><b>1</b> Reporte</span></button>
-                            <button type="button" class="anthro-slide" data-anthro="1" aria-label="Ampliar: Composición"><picture><source srcset="img/adc-paso-2-mini.webp" type="image/webp"><img src="img/adc-paso-2-mini.jpg" alt="Gráfico de anillo con la composición corporal actual de 71,5 kg y la composición objetivo de 71,6 kg" width="548" height="729" loading="lazy" decoding="async"></picture><span class="anthro-step"><b>2</b> Composición</span></button>
-                            <button type="button" class="anthro-slide" data-anthro="2" aria-label="Ampliar: Objetivos"><picture><source srcset="img/adc-paso-3-mini.webp" type="image/webp"><img src="img/adc-paso-3-mini.jpg" alt="Pantalla de objetivos: IMO 4,57 y masa muscular 36,3 kg, con el valor de hoy marcado" width="548" height="729" loading="lazy" decoding="async"></picture><span class="anthro-step"><b>3</b> Objetivos</span></button>
-                            <button type="button" class="anthro-slide" data-anthro="3" aria-label="Ampliar: Evolución"><picture><source srcset="img/adc-paso-4-mini.webp" type="image/webp"><img src="img/adc-paso-4-mini.jpg" alt="Evolución del músculo en tres mediciones, de la semana 0 a la 12, con la barra del objetivo" width="548" height="729" loading="lazy" decoding="async"></picture><span class="anthro-step"><b>4</b> Evolución</span></button>
-                            <div class="anthro-slide anthro-lock" role="note"><i class="fas fa-lock" aria-hidden="true"></i><h4>Seguí viendo el proceso</h4><p>Esta es una muestra. Si querés seguir viendo cómo funciona la antropometría, comunicate con nosotros.</p><a class="plan-lock-btn" href="https://wa.me/5491126108920?text=Hola%20Juli%C3%A1n%2C%20quiero%20ver%20c%C3%B3mo%20funciona%20la%20antropometr%C3%ADa%20y%20que%20eval%C3%BAes%20mi%20caso." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Evaluar caso</a></div>
+                            <button type="button" class="anthro-slide" data-anthro="0" aria-label="Ampliar: Reporte"><picture><source srcset="img/adc-paso-1-mini.webp" type="image/webp"><img src="img/adc-paso-1-mini.jpg" alt="Reporte de un paciente de ejemplo: peso 71,5 kg, músculo 36,8 kg, adiposa 14,9 kg e IMO 4,63, con los objetivos cumplidos" width="585" height="675" loading="lazy" decoding="async"></picture><span class="anthro-step"><b>1</b> Reporte</span></button>
+                            <button type="button" class="anthro-slide" data-anthro="1" aria-label="Ampliar: Composición"><picture><source srcset="img/adc-paso-2-mini.webp" type="image/webp"><img src="img/adc-paso-2-mini.jpg" alt="Gráfico de anillo con la composición corporal actual de 71,5 kg y la composición objetivo de 71,6 kg" width="585" height="675" loading="lazy" decoding="async"></picture><span class="anthro-step"><b>2</b> Composición</span></button>
+                            <button type="button" class="anthro-slide" data-anthro="2" aria-label="Ampliar: Objetivos"><picture><source srcset="img/adc-paso-3-mini.webp" type="image/webp"><img src="img/adc-paso-3-mini.jpg" alt="Pantalla de objetivos: IMO 4,57 y masa muscular 36,3 kg, con el valor de hoy marcado" width="585" height="675" loading="lazy" decoding="async"></picture><span class="anthro-step"><b>3</b> Objetivos</span></button>
+                            <button type="button" class="anthro-slide" data-anthro="3" aria-label="Ampliar: Evolución"><picture><source srcset="img/adc-paso-4-mini.webp" type="image/webp"><img src="img/adc-paso-4-mini.jpg" alt="Evolución del músculo en tres mediciones, de la semana 0 a la 12, con la barra del objetivo" width="585" height="675" loading="lazy" decoding="async"></picture><span class="anthro-step"><b>4</b> Evolución</span></button>
+                            <div class="anthro-slide anthro-lock" role="note"><i class="fas fa-lock" aria-hidden="true"></i><h4>Seguí viendo el proceso</h4><p><span class="mx-d">Esta es una muestra. Si querés seguir viendo cómo funciona la antropometría, comunicate con nosotros.</span><span class="mx-m">Si querés seguir viendo el proceso, comunicate con nosotros.</span></p><a class="plan-lock-btn" href="https://wa.me/5491126108920?text=Hola%20Juli%C3%A1n%2C%20quiero%20ver%20c%C3%B3mo%20funciona%20la%20antropometr%C3%ADa%20y%20que%20eval%C3%BAes%20mi%20caso." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Evaluar caso</a></div>
                         </div>
                         <div class="maip-carousel-dots" id="anthro-dots" role="group" aria-label="Elegir imagen"></div>
                         <button id="adc-open" class="dashboard-preview-button" type="button" aria-haspopup="dialog" aria-controls="adc-modal">
@@ -1213,7 +1247,7 @@
                     <h4 class="text-xl font-bold mb-3">Dashboard MAIP</h4>
                     <div class="maip-tool-desc">
                         <p class="text-gray-600 text-sm mb-4">Cada deportista cuenta con un resumen individual de su proceso. Visualizá tu punto de partida, prioridades, acciones acordadas y seguimiento hasta el próximo control.</p>
-                        <p class="text-gray-600 text-sm mb-4">Todo reunido en un solo lugar, de forma clara y ordenada, para que sepas qué hacer y por qué lo hacés.</p>
+                        <p class="mx-d text-gray-600 text-sm mb-4">Todo reunido en un solo lugar, de forma clara y ordenada, para que sepas qué hacer y por qué lo hacés.</p>
                     </div>
                     <div class="adc-preview-wrapper">
                     <button id="dashboard-open" class="dashboard-preview-button ip-preview" type="button" aria-haspopup="dialog" aria-controls="dashboard-modal" aria-label="Ver el dashboard ampliado: informe MAIP del deportista con estrategia, prioridades, plan y acciones">
@@ -1256,11 +1290,12 @@
                     <div class="maip-training-icon w-12 h-12 rounded-lg flex items-center justify-center text-xl mb-6">
                         <i class="fas fa-dumbbell" aria-hidden="true"></i>
                     </div>
-                    <h4 class="text-xl font-bold mb-3">Entrenamiento</h4>
+                    <h4 class="text-xl font-bold mb-3"><span class="mx-d">Entrenamiento</span><span class="mx-m">Performance</span></h4>
                     <div class="maip-tool-desc">
-                    <p class="maip-training-copy">Evaluación física, programación del entrenamiento y ajustes de carga a cargo del preparador físico, coordinados con tu objetivo.</p>
-                    <p class="maip-training-program">MAIP Performance</p>
-                    <p class="maip-training-copy">Podés sumar nutrición y entrenamiento en un mismo proceso, con seguimiento y coordinación entre profesionales.</p>
+                    <p class="mx-m maip-training-copy">Evaluación física, programación del entrenamiento y ajustes de carga a cargo del preparador físico, nutrición y entrenamiento en un mismo proceso, con seguimiento entre profesionales.</p>
+                    <p class="mx-d maip-training-copy">Evaluación física, programación del entrenamiento y ajustes de carga a cargo del preparador físico, coordinados con tu objetivo.</p>
+                    <p class="mx-d maip-training-program">MAIP Performance</p>
+                    <p class="mx-d maip-training-copy">Podés sumar nutrición y entrenamiento en un mismo proceso, con seguimiento y coordinación entre profesionales.</p>
                     </div>
                     <div class="adc-preview-wrapper">
                     <button id="rutina-open" class="dashboard-preview-button rt-preview" type="button" aria-haspopup="dialog" aria-controls="rutina-modal" aria-label="Ver la planilla de entrenamiento modelo: semana con tipo de día nutricional, ejercicios y carga">
@@ -1299,10 +1334,10 @@
         </header>
         <div id="adc-scroll" class="dashboard-scroll" tabindex="0" aria-label="Proceso de antropometría completo, con un paciente de ejemplo">
             <div id="adc-document" class="dashboard-document">
-                <figure class="dashboard-page"><figcaption>1. Reporte — Peso, músculo, adiposa e IMO contra el objetivo, con la variación respecto de la medición anterior.</figcaption><picture><source srcset="img/adc-paso-1.webp" type="image/webp"><img src="img/adc-paso-1.jpg" alt="Reporte de un paciente de ejemplo: peso 71,5 kg, músculo 36,8 kg, adiposa 14,9 kg e IMO 4,63, con los objetivos cumplidos" width="1096" height="1458" loading="lazy" decoding="async"></picture></figure>
-                <figure class="dashboard-page"><figcaption>2. Composición — Cómo se reparte el peso en músculo, adiposa, ósea, piel y residual, hoy y en el objetivo.</figcaption><picture><source srcset="img/adc-paso-2.webp" type="image/webp"><img src="img/adc-paso-2.jpg" alt="Gráfico de anillo con la composición corporal actual de 71,5 kg y la composición objetivo de 71,6 kg" width="1096" height="1458" loading="lazy" decoding="async"></picture></figure>
-                <figure class="dashboard-page"><figcaption>3. Objetivos — Los objetivos de masa muscular, masa adiposa, peso e IMO para las 12 semanas.</figcaption><picture><source srcset="img/adc-paso-3.webp" type="image/webp"><img src="img/adc-paso-3.jpg" alt="Pantalla de objetivos: IMO 4,57 y masa muscular 36,3 kg, con el valor de hoy marcado" width="1096" height="1458" loading="lazy" decoding="async"></picture></figure>
-                <figure class="dashboard-page"><figcaption>4. Evolución — Semana 0, semana 6 y semana 12: cómo cambia la composición corporal frente al objetivo.</figcaption><picture><source srcset="img/adc-paso-4.webp" type="image/webp"><img src="img/adc-paso-4.jpg" alt="Evolución del músculo en tres mediciones, de la semana 0 a la 12, con la barra del objetivo" width="1096" height="1458" loading="lazy" decoding="async"></picture></figure>
+                <figure class="dashboard-page"><figcaption>1. Reporte — Peso, músculo, adiposa e IMO contra el objetivo, con la variación respecto de la medición anterior.</figcaption><picture><source srcset="img/adc-paso-1.webp" type="image/webp"><img src="img/adc-paso-1.jpg" alt="Reporte de un paciente de ejemplo: peso 71,5 kg, músculo 36,8 kg, adiposa 14,9 kg e IMO 4,63, con los objetivos cumplidos" width="780" height="900" loading="lazy" decoding="async"></picture></figure>
+                <figure class="dashboard-page"><figcaption>2. Composición — Cómo se reparte el peso en músculo, adiposa, ósea, piel y residual, hoy y en el objetivo.</figcaption><picture><source srcset="img/adc-paso-2.webp" type="image/webp"><img src="img/adc-paso-2.jpg" alt="Gráfico de anillo con la composición corporal actual de 71,5 kg y la composición objetivo de 71,6 kg" width="780" height="900" loading="lazy" decoding="async"></picture></figure>
+                <figure class="dashboard-page"><figcaption>3. Objetivos — Los objetivos de masa muscular, masa adiposa, peso e IMO para las 12 semanas.</figcaption><picture><source srcset="img/adc-paso-3.webp" type="image/webp"><img src="img/adc-paso-3.jpg" alt="Pantalla de objetivos: IMO 4,57 y masa muscular 36,3 kg, con el valor de hoy marcado" width="780" height="900" loading="lazy" decoding="async"></picture></figure>
+                <figure class="dashboard-page"><figcaption>4. Evolución — Semana 0, semana 6 y semana 12: cómo cambia la composición corporal frente al objetivo.</figcaption><picture><source srcset="img/adc-paso-4.webp" type="image/webp"><img src="img/adc-paso-4.jpg" alt="Evolución del músculo en tres mediciones, de la semana 0 a la 12, con la barra del objetivo" width="780" height="900" loading="lazy" decoding="async"></picture></figure>
                 <div class="plan-lock" role="note">
                     <i class="fas fa-lock" aria-hidden="true"></i>
                     <h3>Seguí viendo el proceso</h3>
