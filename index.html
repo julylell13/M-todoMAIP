@@ -817,15 +817,43 @@
             .maip-person .maip-callout p, .maip-person .maip-callout strong { color: #fff; }
             .maip-person--dark .maip-callout p, .maip-person--dark .maip-callout strong { color: #0b1d30; }
             .maip-person .maip-callout p { font-size: 16.5px; font-weight: 600; line-height: 1.6; text-align: justify; text-justify: inter-word; hyphens: auto; -webkit-hyphens: auto; text-wrap: pretty; }
-        }        /* ── Bloque 8 (celular): formulario más corto, sin "Empecemos por vos", sin email y pasos sin descripción ── */
+        }        /* ── Bloque 8: contacto sin formulario, solo el cuadro azul con pasos sin descripción ── */
+        .consulta-form-panel { display: none; }
+        .consulta-tag { display: none; }
+        .consulta-card { grid-template-columns: 1fr; }
+        @media (min-width: 1024px) {
+            #contacto .consulta-tag { display: none; }
+            #contacto .consulta-intro { text-align: center; align-items: center; }
+            #contacto .consulta-intro h3 { margin-top: 0; }
+            #contacto .consulta-intro-copy { margin-inline: auto; text-align: center; }
+            #contacto .consulta-steps { width: 100%; max-width: 820px; }
+            #contacto .consulta-steps li { align-items: center; text-align: center; }
+            #contacto .consulta-direct { width: 100%; justify-content: center; }
+            #contacto .consulta-direct > span { text-align: center; }
+        }
+        .consulta-steps p { display: none; }
+        .consulta-steps li { align-items: center; padding-bottom: 16px; }
+        .consulta-steps h4 { margin: 0; font-size: 16px; }
+        .consulta-intro-copy { margin-bottom: 22px; }
+        /* Bloque 9 (celular): solo "Tu próximo paso" y directamente el cartel azul */
         @media (max-width: 767px) {
-            .consulta-form-panel { display: none; }
-            .consulta-form-heading .consulta-eyebrow { display: none; }
-            .consulta-contact-fields .consulta-field:has(#consulta-email), #consulta-contact-hint { display: none; }
-            .consulta-steps p { display: none; }
-            .consulta-steps li { align-items: center; padding-bottom: 16px; }
-            .consulta-steps h4 { margin: 0; font-size: 16px; }
-            .consulta-intro-copy { margin-bottom: 22px; }
+            #contacto .consulta-heading { margin-bottom: 16px; }
+            #contacto .consulta-heading .consulta-eyebrow { margin-bottom: 0; }
+            #contacto .consulta-heading h2 { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+            #contacto .consulta-heading p { display: none; }
+        }
+        @media (min-width: 768px) {
+            .consulta-card { max-width: 980px; margin-inline: auto; }
+            .consulta-intro { padding: 48px 56px; }
+            .consulta-intro h3 { font-size: 38px; margin: 24px 0 16px; }
+            .consulta-intro-copy { font-size: 16px; margin-bottom: 32px; max-width: 620px; }
+            .consulta-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-bottom: 8px; }
+            .consulta-steps li { padding: 0; flex-direction: column; align-items: flex-start; gap: 12px; }
+            .consulta-steps h4 { font-size: 16px; text-wrap: balance; }
+            .consulta-step-number { flex: none; width: 34px; height: 34px; }
+            .consulta-direct { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; }
+            .consulta-direct > span { flex-basis: 100%; margin-bottom: 4px; }
+            .consulta-direct a { margin-top: 0; }
         }    </style>
     <link rel="stylesheet" href="tw.css">
 </head>
@@ -1682,7 +1710,6 @@
                     <div class="consulta-direct">
                         <span>¿Preferís hablar directamente?</span>
                         <a href="https://wa.me/5491126108920" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i><span>WhatsApp · 11 2610 8920 <span aria-hidden="true">↗</span></span></a>
-                        <a href="mailto:lic.julianlell@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i><span>lic.julianlell@gmail.com</span></a>
                         <a href="https://www.instagram.com/nutricionconjulian" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i><span>@nutricionconjulian <span aria-hidden="true">↗</span></span></a>
                     </div>
                 </aside>
