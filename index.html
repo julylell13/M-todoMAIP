@@ -537,12 +537,18 @@
         @media (max-width: 767px) {
             .maip-cta-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: block; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: rgba(248,249,250,.97); border-top: 1px solid #dbe4ef; box-shadow: 0 -6px 20px rgba(8,20,36,.16); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); transition: transform .25s ease, opacity .25s ease; }
             .maip-cta-bar.is-hidden { transform: translateY(100%); opacity: 0; pointer-events: none; }
-            .maip-cta-btn { display: flex; align-items: center; justify-content: center; gap: 10px; height: 52px; border-radius: 12px; background: #0056b3; color: #fff; font-size: 18px; font-weight: 800; text-decoration: none; box-shadow: 0 4px 14px rgba(0,86,179,.35); transition: transform .15s ease, background-color .15s ease; }
-            .maip-cta-btn i { font-size: 22px; }
-            .maip-cta-btn:active { transform: scale(.98); background: #004494; }
+            .maip-cta-btn { display: flex; align-items: center; justify-content: center; gap: 10px; height: 52px; border-radius: 12px; background: #25d366; color: #fff; font-size: 18px; font-weight: 800; text-decoration: none; text-shadow: 0 1px 2px rgba(0,60,25,.35); box-shadow: 0 4px 14px rgba(37,211,102,.45); transition: transform .15s ease, background-color .15s ease; }
+            .maip-cta-btn i { font-size: 24px; }
+            .maip-cta-btn:active { transform: scale(.98); background: #1ebe5b; }
             .maip-cta-btn:focus-visible { outline: 3px solid #1a1a1a; outline-offset: 2px; }
             body { padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
-        }        /* ── Consulta individual (opción simple debajo de las modalidades) ── */
+        }
+        /* ── Botón "Evaluar caso" dentro de los precios (azul) ── */
+        .maip-eval-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; margin-bottom: 0; padding: 14px 16px; border-radius: 12px; background: #0056b3; color: #fff; font-size: 16px; font-weight: 800; text-decoration: none; box-shadow: 0 4px 12px rgba(0,86,179,.28); transition: transform .15s ease, background-color .15s ease; }
+        .maip-eval-btn i { font-size: 20px; }
+        .maip-eval-btn:hover { background: #004494; }
+        .maip-eval-btn:active { transform: scale(.98); background: #004494; }
+        /* ── Consulta individual (opción simple debajo de las modalidades) ── */
         .maip-simple { display: grid; gap: 26px; padding: 26px 22px; background: var(--maip-light-2); border: 1px solid #dbe5ef; border-radius: var(--radius-xl); align-items: center; }
         .maip-simple .maip-eyebrow { margin-bottom: 8px; }
         .maip-simple-title { margin: 0 0 8px; font-size: 26px; font-weight: 900; letter-spacing: -.02em; color: #1a1a1a; }
@@ -1308,8 +1314,7 @@
                         </ul>
                     </div>
                     <div class="p-6 bg-gray-50 border-t border-gray-100">
-                        <a href="#contacto" data-programa="MAIP Nutrición" class="block w-full text-center bg-white border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-bold py-3.5 rounded-xl transition duration-300">Aplicar a Nutrición</a>
-                    </div>
+                        <a href="https://wa.me/5491126108920?text=Hola%20Juli%C3%A1n%2C%20quiero%20que%20eval%C3%BAes%20mi%20caso%20para%20MAIP%20Nutrici%C3%B3n." target="_blank" rel="noopener noreferrer" class="maip-eval-btn"><i class="fab fa-whatsapp" aria-hidden="true"></i><span>Evaluar caso</span></a>                    </div>
                 </div>
 
                 <!-- MAIP 360 -->
@@ -1340,8 +1345,7 @@
                         </ul>
                     </div>
                     <div class="p-6 bg-gray-900 border-t border-gray-800">
-                        <a href="#contacto" data-programa="MAIP 360" class="block w-full text-center bg-primary hover:bg-primaryDark text-white font-bold py-3.5 rounded-xl transition duration-300 shadow-lg">Aplicar a 360</a>
-                    </div>
+                        <a href="https://wa.me/5491126108920?text=Hola%20Juli%C3%A1n%2C%20quiero%20que%20eval%C3%BAes%20mi%20caso%20para%20MAIP%20360." target="_blank" rel="noopener noreferrer" class="maip-eval-btn"><i class="fab fa-whatsapp" aria-hidden="true"></i><span>Evaluar caso</span></a>                    </div>
                 </div>
             </div>
             <div class="maip-carousel-dots" id="plans-dots" role="group" aria-label="Elegir modalidad"></div>
@@ -1352,8 +1356,7 @@
                     <h4 class="maip-simple-title">Consulta individual</h4>
                     <p class="maip-simple-copy">Una consulta nutricional con plan de alimentación y seguimiento 1 a 1, sin mediciones ni ciclo de 12 semanas.</p>
                     <div class="maip-simple-price"><span>USD 80</span><small>Pago único</small><b class="maip-ars maip-ars--main" data-usd="80" hidden></b></div>
-                    <a href="#contacto" data-programa="Consulta individual" class="block w-full text-center bg-white border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-bold py-3.5 rounded-xl transition duration-300">Pedir una consulta</a>
-                </div>
+                    <a href="https://wa.me/5491126108920?text=Hola%20Juli%C3%A1n%2C%20quiero%20que%20eval%C3%BAes%20mi%20caso%20para%20una%20consulta%20individual." target="_blank" rel="noopener noreferrer" class="maip-eval-btn"><i class="fab fa-whatsapp" aria-hidden="true"></i><span>Evaluar caso</span></a>                </div>
                 <div class="maip-simple-body">
                     <ul class="maip-simple-list">
                         <li class="flex items-start text-sm"><i class="fas fa-check text-green-500 mt-1 mr-3 flex-shrink-0"></i><span class="text-gray-700">Consulta nutricional de 1 hora, presencial o virtual</span></li>
