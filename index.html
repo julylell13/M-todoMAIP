@@ -667,11 +667,11 @@
             .maip-person .maip-m-alt { display: inline; }
             .maip-person .maip-callout { padding: 16px; gap: 12px; margin-bottom: 18px; }
             .maip-person .maip-callout > i { display: none; }
-            .maip-person .maip-callout { padding: 20px; background: linear-gradient(135deg, #0a63c9, #0a3d8f); border-color: transparent; box-shadow: 0 10px 26px rgba(0,86,179,.30); }
+            .maip-person .maip-callout { padding: 15px 16px; border-radius: 16px; background: linear-gradient(135deg, #0a63c9, #0a3d8f); border-color: transparent; box-shadow: 0 10px 26px rgba(0,86,179,.30); }
             .maip-person--dark .maip-callout { background: #fff; border-color: transparent; box-shadow: 0 10px 28px rgba(0,0,0,.35); }
             .maip-person .maip-callout p, .maip-person .maip-callout strong { color: #fff; }
             .maip-person--dark .maip-callout p, .maip-person--dark .maip-callout strong { color: #0b1d30; }
-            .maip-person .maip-callout p { font-size: 16.5px; font-weight: 600; line-height: 1.6; }
+            .maip-person .maip-callout p { font-size: 14.5px; font-weight: 600; line-height: 1.55; text-align: justify; text-justify: inter-word; hyphens: auto; -webkit-hyphens: auto; text-wrap: pretty; }
             .maip-person .maip-lead { margin-bottom: 18px; }
             .maip-person .maip-certs { margin-bottom: 0; padding-top: 18px; }
             #contacto.maip-consultation { padding-top: 32px; padding-bottom: 40px; }
@@ -686,6 +686,19 @@
             .maip-person .maip-cert b { font-size: 15px; }
             .maip-person .maip-certs .maip-carousel-dots { margin-top: 0; }
             .maip-person--dark .maip-carousel-dot[aria-current="true"]::after { background: #7fc0ff; }
+        }
+        /* ── Tableta y notebook chica: portada sin choques y precios que no se cortan ── */
+        @media (min-width: 768px) and (max-width: 1279px) {
+            #inicio { padding-top: 108px; padding-bottom: 120px; }
+        }
+        @media (min-width: 768px) and (max-width: 1199px) {
+            #inicio > .animate-bounce { display: none; }
+        }
+        @media (min-width: 768px) and (max-width: 1023px) {
+            #inicio a[href="#contacto"], #inicio a[href="#que-es"] { white-space: nowrap; }
+            #modalidades .maip-plan .text-4xl { white-space: nowrap; }
+            #modalidades .maip-plan .maip-ars--main { display: block; margin: 4px 0 0; padding: 0; border: 0; }
+            .maip-simple-price .maip-ars { border-left: 0; padding-left: 0; flex-basis: 100%; }
         }
     </style>
     <link rel="stylesheet" href="tw.css">
