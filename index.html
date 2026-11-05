@@ -817,6 +817,15 @@
             .maip-person .maip-callout p, .maip-person .maip-callout strong { color: #fff; }
             .maip-person--dark .maip-callout p, .maip-person--dark .maip-callout strong { color: #0b1d30; }
             .maip-person .maip-callout p { font-size: 16.5px; font-weight: 600; line-height: 1.6; text-align: justify; text-justify: inter-word; hyphens: auto; -webkit-hyphens: auto; text-wrap: pretty; }
+        }        /* ── Bloque 8 (celular): formulario más corto, sin "Empecemos por vos", sin email y pasos sin descripción ── */
+        @media (max-width: 767px) {
+            .consulta-form-panel { display: none; }
+            .consulta-form-heading .consulta-eyebrow { display: none; }
+            .consulta-contact-fields .consulta-field:has(#consulta-email), #consulta-contact-hint { display: none; }
+            .consulta-steps p { display: none; }
+            .consulta-steps li { align-items: center; padding-bottom: 16px; }
+            .consulta-steps h4 { margin: 0; font-size: 16px; }
+            .consulta-intro-copy { margin-bottom: 22px; }
         }    </style>
     <link rel="stylesheet" href="tw.css">
 </head>
@@ -1860,6 +1869,7 @@
         const email = document.getElementById('consulta-email');
         const whatsapp = document.getElementById('consulta-whatsapp');
         const error = document.getElementById('consulta-contact-error');
+        const emailHidden = () => getComputedStyle(email.closest('.consulta-field')).display === 'none';
         const status = document.getElementById('consulta-copy-status');
         const programa = document.getElementById('consulta-programa');
         let message = '';
@@ -1880,11 +1890,12 @@
         form.addEventListener('submit', (event) => {
             event.preventDefault();
             if (!form.reportValidity()) return;
-            if (!email.value.trim() && !whatsapp.value.trim()) {
+            if (emailHidden() ? !whatsapp.value.trim() : (!email.value.trim() && !whatsapp.value.trim())) {
+                error.textContent = emailHidden() ? 'Ingresá tu WhatsApp para poder contactarte.' : 'Ingresá tu email o WhatsApp para poder contactarte.';
                 error.hidden = false;
-                email.setAttribute('aria-invalid', 'true');
+                if (!emailHidden()) email.setAttribute('aria-invalid', 'true');
                 whatsapp.setAttribute('aria-invalid', 'true');
-                email.focus();
+                (emailHidden() ? whatsapp : email).focus();
                 return;
             }
             const data = Object.fromEntries(new FormData(form).entries());
