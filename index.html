@@ -532,9 +532,9 @@
             .maip-carousel-dot::after { content: ""; width: 8px; height: 8px; border-radius: 99px; background: #b6c3d4; transition: width .2s, background .2s; }
             .maip-carousel-dot[aria-current="true"]::after { width: 22px; background: var(--maip-blue); }
         }
-        /* ── Barra fija "Evaluar caso" (solo celular) ── */
+        /* ── Botón fijo "Evaluar caso": barra en celular y tableta, flotante en computadora ── */
         .maip-cta-bar { display: none; }
-        @media (max-width: 767px) {
+        @media (max-width: 1023px) {
             .maip-cta-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: block; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: rgba(248,249,250,.97); border-top: 1px solid #dbe4ef; box-shadow: 0 -6px 20px rgba(8,20,36,.16); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); transition: transform .25s ease, opacity .25s ease; }
             .maip-cta-bar.is-hidden { transform: translateY(100%); opacity: 0; pointer-events: none; }
             .maip-cta-btn { display: flex; align-items: center; justify-content: center; gap: 10px; height: 52px; border-radius: 12px; background: #25d366; color: #fff; font-size: 18px; font-weight: 800; text-decoration: none; text-shadow: 0 1px 2px rgba(0,60,25,.35); box-shadow: 0 4px 14px rgba(37,211,102,.45); transition: transform .15s ease, background-color .15s ease; }
@@ -542,6 +542,17 @@
             .maip-cta-btn:active { transform: scale(.98); background: #1ebe5b; }
             .maip-cta-btn:focus-visible { outline: 3px solid #1a1a1a; outline-offset: 2px; }
             body { padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
+        }
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .maip-cta-btn { max-width: 520px; margin-inline: auto; }
+        }
+        @media (min-width: 1024px) {
+            .maip-cta-bar { position: fixed; right: 28px; bottom: 28px; z-index: 40; display: block; transition: transform .25s ease, opacity .25s ease; }
+            .maip-cta-bar.is-hidden { transform: translateY(24px); opacity: 0; pointer-events: none; }
+            .maip-cta-btn { display: flex; align-items: center; gap: 10px; height: 56px; padding: 0 26px 0 22px; border-radius: 999px; background: #25d366; color: #fff; font-size: 17px; font-weight: 800; text-decoration: none; text-shadow: 0 1px 2px rgba(0,60,25,.35); box-shadow: 0 10px 28px rgba(37,211,102,.45), 0 2px 8px rgba(0,0,0,.18); transition: transform .15s ease, background-color .15s ease, box-shadow .15s ease; }
+            .maip-cta-btn i { font-size: 24px; }
+            .maip-cta-btn:hover { transform: translateY(-2px); background: #1ebe5b; box-shadow: 0 14px 32px rgba(37,211,102,.5), 0 2px 8px rgba(0,0,0,.2); }
+            .maip-cta-btn:focus-visible { outline: 3px solid #1a1a1a; outline-offset: 3px; }
         }
         /* ── Botón "Evaluar caso" dentro de los precios (azul) ── */
         .maip-eval-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; margin-bottom: 0; padding: 14px 16px; border-radius: 12px; background: #0056b3; color: #fff; font-size: 16px; font-weight: 800; text-decoration: none; box-shadow: 0 4px 12px rgba(0,86,179,.28); transition: transform .15s ease, background-color .15s ease; }
