@@ -754,7 +754,70 @@
             #modalidades .maip-plan .maip-ars--main { display: block; margin: 4px 0 0; padding: 0; border: 0; }
             .maip-simple-price .maip-ars { border-left: 0; padding-left: 0; flex-basis: 100%; }
         }
-    </style>
+        /* ═══ Cambios de los bloques 1 a 6 también en tableta, notebook y computadora ═══ */
+        /* Bloque 1: portada y menú */
+        #inicio .maip-hero-lead, #hero-pause { display: none; }
+        #inicio .maip-hero-tagline { display: inline-block; }
+        @media (min-width: 768px) {
+            #inicio .maip-hero-tagline { margin-bottom: 20px; }
+            #inicio .maip-hero-badge { display: none; }
+            #navbar .h-20 { height: 68px; }
+            #navbar .maip-nav-brand { flex-direction: row; align-items: baseline; gap: 7px; }
+            .maip-nav-logo { width: 46px; height: 46px; border-radius: 8px; }
+        }
+        /* Bloque 2: la frase inicial sale del párrafo */
+        .maip-lead-first { display: none; }
+        /* Bloque 3: "El proceso" centrado, sin la línea de metodología y "¿Qué pasa después?" bajo las tarjetas MAIP */
+        #ciclo .maip-ciclo-intro .maip-method-line, #ciclo .maip-ciclo-intro .maip-after-card { display: none; }
+        #ciclo .maip-ciclo-intro { text-align: center; }
+        #ciclo .maip-ciclo-intro p { margin-bottom: 0; }
+        .maip-after-mobile { display: block; margin: 22px auto 0; max-width: 900px; padding: 18px 16px; background: #fff; border: 1px solid #dbe5ef; border-radius: var(--radius-lg); box-shadow: var(--shadow-1); }
+        @media (min-width: 768px) {
+            .maip-after-mobile { margin-top: 32px; padding: 24px 28px; }
+            .maip-after-mobile h4 { margin: 0 0 16px; font-size: 18px; font-weight: 800; color: #1a1a1a; }
+            .maip-after-mobile ul { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 0; padding: 0; list-style: none; display: grid; }
+            .maip-after-mobile li { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; line-height: 1.5; color: #4b5563; }
+            .maip-after-mobile li i { flex: none; width: 18px; margin-top: 3px; text-align: center; color: var(--maip-blue); }
+            .maip-after-mobile strong { display: block; color: #1a1a1a; }
+        }
+        @media (min-width: 1024px) {
+            #ciclo .max-w-7xl > .flex { flex-direction: column; align-items: center; gap: 36px; }
+            #ciclo .maip-ciclo-intro { width: 100%; max-width: 760px; }
+            #ciclo .max-w-7xl > .flex > div:last-child { width: 100%; max-width: 920px; }
+        }
+        /* Bloque 4: "El Sistema", sin textos bajo los archivos y frase de antropometría en lugar de la descripción */
+        .maip-eb-more { display: none; }
+        #herramientas .maip-m-hide, #herramientas .dashboard-preview-note { display: none; }
+        @media (min-width: 768px) {
+            .maip-services-grid .maip-anthro-quote { grid-row: 3; align-self: center; margin: 0 0 16px; font-size: 17px; line-height: 1.6; }
+            .maip-services-grid .anthro-slide { flex-basis: 34%; aspect-ratio: 3 / 4; }
+            .anthro-wrap .maip-carousel-dots { display: flex; justify-content: center; gap: 2px; margin-top: 6px; }
+            .anthro-wrap .maip-carousel-dot { width: 30px; height: 30px; display: grid; place-items: center; border: 0; background: transparent; cursor: pointer; }
+            .anthro-wrap .maip-carousel-dot::after { content: ""; width: 8px; height: 8px; border-radius: 99px; background: #b6c3d4; transition: width .2s, background .2s; }
+            .anthro-wrap .maip-carousel-dot[aria-current="true"]::after { width: 22px; background: var(--maip-blue); }
+        }
+        @media (min-width: 1320px) {
+            .maip-services-grid .anthro-slide { flex-basis: 84%; aspect-ratio: 3 / 4.2; }
+        }
+        /* Bloques 4 a 7: menos aire arriba y abajo de cada sección */
+        @media (min-width: 768px) {
+            #que-es, #ciclo, #herramientas, #modalidades { padding-top: 64px; padding-bottom: 64px; }
+            section.maip-filter { padding-top: 52px; padding-bottom: 52px; }
+            #contacto.maip-consultation { padding-top: 64px; padding-bottom: 72px; }
+            #que-es .max-w-3xl, #herramientas .max-w-3xl { margin-bottom: 40px; }
+        }
+        @media (min-width: 1024px) {
+            #equipo, #preparador { padding-top: 64px; padding-bottom: 64px; }
+            /* Bloque 7 en computadora: foto sin cartel, cuadros azul y blanco con el texto corto, sin ícono ni link extra */
+            .maip-photo figcaption { display: none; }
+            .maip-person .maip-m-hide, .maip-person .maip-callout h4, .maip-person .maip-callout > i { display: none; }
+            .maip-person .maip-m-alt { display: inline; }
+            .maip-person .maip-callout { padding: 22px 26px; border-radius: 18px; border-color: transparent; background: linear-gradient(135deg, #0a63c9, #0a3d8f); box-shadow: 0 12px 30px rgba(0,86,179,.30); }
+            .maip-person--dark .maip-callout { background: #fff; box-shadow: 0 12px 32px rgba(0,0,0,.35); }
+            .maip-person .maip-callout p, .maip-person .maip-callout strong { color: #fff; }
+            .maip-person--dark .maip-callout p, .maip-person--dark .maip-callout strong { color: #0b1d30; }
+            .maip-person .maip-callout p { font-size: 16.5px; font-weight: 600; line-height: 1.6; text-align: justify; text-justify: inter-word; hyphens: auto; -webkit-hyphens: auto; text-wrap: pretty; }
+        }    </style>
     <link rel="stylesheet" href="tw.css">
 </head>
 <body class="font-sans text-gray-800 bg-lightBg antialiased selection:bg-primary selection:text-white">
