@@ -280,6 +280,8 @@
         .rt-wd { display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 8px; padding: 5px 8px; border-radius: 8px; background: #fff; border: 1px solid #dbe5ef; font-size: 12px; color: #1a1a1a; }
         .rt-wd b { font-size: 12px; font-weight: 800; color: #0056b3; }
         .rt-wd .rt-chip { font-size: 12px; padding: 2px 7px; }
+        /* Tarjeta de Entrenamiento más chica: solo 4 días a la vista (en todos los tamaños); el resto se ve al abrir la planilla */
+        .rt-week .rt-wd:nth-child(n+5) { display: none; }
         .rt-preview-label { margin: 12px -14px 0; border-top: 1px solid #dbe5ef; }
         .rt-modal .dashboard-scroll { padding: 18px; }
         .rt-wrap { max-width: 1040px; margin: 0 auto; }
@@ -309,6 +311,11 @@
         .rt-sr { font-weight: 800; font-variant-numeric: tabular-nums; color: #0056b3; }
         .rt-lock { display: block; height: 9px; border-radius: 5px; background: #c3cedd; filter: blur(2.5px); }
         .rt-blurtext { filter: blur(4.5px); user-select: none; color: #6b7b92; }
+        /* Difuminado creciente: el día 1 se ve nítido y desde el día 2 aumenta */
+        .rt-day:nth-child(2) .rt-blurtext { filter: blur(2.5px); }
+        .rt-day:nth-child(3) .rt-blurtext { filter: blur(4px); }
+        .rt-day:nth-child(4) .rt-blurtext { filter: blur(5.5px); }
+        .rt-day:nth-child(n+5) .rt-blurtext { filter: blur(7px); }
         .rt-hid .rt-sr { color: #6b7b92; }
         .rt-more { margin-top: 2px; font-size: 12px; font-weight: 700; color: #4f5d70; }
         .rt-cols { display: grid; grid-template-columns: 1fr auto 46px; gap: 8px; margin: 0 0 4px; font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #66748a; }
@@ -384,6 +391,13 @@
         .ip-table td::before { content: attr(data-label); display: block; margin-bottom: 1px; font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #5b6475; }
         .ip-table th[scope="row"] { background: #eef1f7; font-weight: 800; color: #4b5870; }
         .ip-blur { display: inline-block; filter: blur(4.5px); user-select: none; color: #6b7b92; }
+        /* Difuminado progresivo: hoja 1 nítida, hoja 2 parcial (abajo), hoja 3 más fuerte */
+        .ip-blur-1, .ip-blur-2 { position: relative; overflow: hidden; }
+        .ip-blur-1::after, .ip-blur-2::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; pointer-events: none; -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); -webkit-mask-image: linear-gradient(180deg, transparent, #000 55%); mask-image: linear-gradient(180deg, transparent, #000 55%); }
+        .ip-blur-1::after { top: 45%; }
+        .ip-blur-2::after { top: 12%; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); -webkit-mask-image: linear-gradient(180deg, transparent, #000 40%); mask-image: linear-gradient(180deg, transparent, #000 40%); }
+        .ip-blur-1 .ip-blur { filter: blur(3px); }
+        .ip-blur-2 .ip-blur { filter: blur(6.5px); }
         .ip-acts { display: grid; gap: 6px; margin: 0 0 12px; padding: 0; list-style: none; }
         .ip-acts li { display: grid; grid-template-columns: 74px 1fr; align-items: stretch; border: 1px solid #dde4ef; border-radius: 8px; overflow: hidden; background: #f6f8fe; font-size: 13.5px; }
         .ip-acts b { display: grid; place-items: center; padding: 8px 6px; background: #2f5cff; color: #fff; font-size: 12px; }
@@ -446,6 +460,7 @@
         .plan-lock h3 { margin: 0 0 8px; font-size: 20px; font-weight: 800; color: #1a1a1a; }
         .plan-lock p { max-width: 460px; margin: 0 auto 18px; font-size: 15px; line-height: 1.6; color: #4b5563; }
         .plan-lock-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 26px; font-size: 16px; font-weight: 800; color: #fff; text-decoration: none; background: #0056b3; border-radius: 12px; }
+        .rt-days .plan-lock { grid-column: 1 / -1; margin-bottom: 0; }
         .plan-lock-btn:hover { background: #004494; }
         .plan-lock-btn:focus-visible { outline: 3px solid #1a1a1a; outline-offset: 3px; }
         /* ── Celular: herramientas más compactas, tarjetas del mismo tamaño ── */
@@ -475,13 +490,25 @@
             #herramientas .rt-wd .rt-chip { padding: 1px 7px; line-height: 1.4; }
             #herramientas .ip-pv-quote { margin-bottom: 8px; padding: 7px 9px; }
             #herramientas .ip-pv-maip small, #herramientas .ip-pv-meta { display: none; }
-            #herramientas .rt-week .rt-wd:nth-child(n+6) { display: none; }
+            #herramientas .rt-week .rt-wd:nth-child(n+5) { display: none; }
             #herramientas .ip-pv-maip > span { padding: 5px; line-height: 1.25; }        }        /* ── Antropometría: imágenes del reporte deslizables dentro de la tarjeta ── */
         .anthro-slides { display: flex; gap: 10px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; padding-bottom: 2px; }
         .anthro-slides::-webkit-scrollbar { display: none; }
         .anthro-slide { flex: 0 0 76%; aspect-ratio: 3 / 4; padding: 0; overflow: hidden; background: #040813; border: 1px solid #1c2a40; border-radius: 12px; scroll-snap-align: start; cursor: pointer; }
         .anthro-slide img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
-        .anthro-slide[data-anthro="0"] img { object-fit: contain; object-position: center; }
+        .anthro-slide { position: relative; display: flex; flex-direction: column; }
+        .anthro-slide { min-width: 0; }
+        .maip-services-grid > div { grid-template-columns: minmax(0, 1fr); }
+        .anthro-wrap, .anthro-slides { min-width: 0; }
+        .anthro-slide picture { position: relative; display: block; flex: 1 1 0; min-height: 0; min-width: 0; }
+        .anthro-slide picture img { position: absolute; inset: 0; }
+        .anthro-step { flex: none; display: flex; align-items: center; gap: 8px; padding: 9px 12px; font-size: 13px; font-weight: 800; color: #fff; text-align: left; background: #0b1b30; border-top: 1px solid #1c2a40; }
+        .anthro-step b { display: grid; place-items: center; flex: none; width: 22px; height: 22px; border-radius: 50%; background: #62b7ff; color: #06203d; font-size: 12px; }
+        .anthro-lock { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 18px 14px; text-align: center; color: #fff; background: linear-gradient(160deg, #0f3a73, #0a1b30); cursor: default; }
+        .anthro-lock > i:first-child { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: rgba(98,183,255,.18); color: #9ad3ff; font-size: 18px; }
+        .anthro-lock h4 { margin: 0; font-size: 17px; font-weight: 800; color: #fff; }
+        .anthro-lock p { margin: 0; font-size: 13px; line-height: 1.5; color: #cfe3f7; }
+        .anthro-lock .plan-lock-btn { min-height: 42px; padding: 0 18px; font-size: 14px; border-radius: 10px; }
         .anthro-slide:focus-visible { outline: 3px solid #0056b3; outline-offset: 2px; }
         .anthro-wrap .dashboard-preview-button { margin-top: 10px; }
         @media (max-width: 767px) {
@@ -790,14 +817,14 @@
         #herramientas .maip-m-hide, #herramientas .dashboard-preview-note { display: none; }
         @media (min-width: 768px) {
             .maip-services-grid .maip-anthro-quote { grid-row: 3; align-self: center; margin: 0 0 16px; font-size: 17px; line-height: 1.6; }
-            .maip-services-grid .anthro-slide { flex-basis: 34%; aspect-ratio: 3 / 4; }
+            .maip-services-grid .anthro-slide { flex-basis: 44%; aspect-ratio: 3 / 4; }
             .anthro-wrap .maip-carousel-dots { display: flex; justify-content: center; gap: 2px; margin-top: 6px; }
             .anthro-wrap .maip-carousel-dot { width: 30px; height: 30px; display: grid; place-items: center; border: 0; background: transparent; cursor: pointer; }
             .anthro-wrap .maip-carousel-dot::after { content: ""; width: 8px; height: 8px; border-radius: 99px; background: #b6c3d4; transition: width .2s, background .2s; }
             .anthro-wrap .maip-carousel-dot[aria-current="true"]::after { width: 22px; background: var(--maip-blue); }
         }
         @media (min-width: 1320px) {
-            .maip-services-grid .anthro-slide { flex-basis: 84%; aspect-ratio: 3 / 4.2; }
+            .maip-services-grid .anthro-slide { flex-basis: 90%; aspect-ratio: 3 / 4; }
         }
         /* Bloques 4 a 7: menos aire arriba y abajo de cada sección */
         @media (min-width: 768px) {
@@ -854,6 +881,18 @@
             .consulta-direct { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; }
             .consulta-direct > span { flex-basis: 100%; margin-bottom: 4px; }
             .consulta-direct a { margin-top: 0; }
+        }        /* ── Herramientas en tableta y computadora: tarjetas más compactas ── */
+        @media (min-width: 768px) {
+            .maip-services-grid > div { padding: 20px; }
+            .maip-services-grid > div > :first-child { width: 42px; height: 42px; margin-bottom: 12px; font-size: 18px; }
+            .maip-services-grid h4 { margin-bottom: 8px; font-size: 19px; }
+            .maip-services-grid .maip-tool-desc p, .maip-services-grid .maip-tool-desc .maip-training-copy { font-size: 13.5px; line-height: 1.5; margin-bottom: 8px; }
+            .maip-services-grid .maip-anthro-quote { margin-bottom: 10px; font-size: 14.5px; line-height: 1.55; }
+            .maip-services-grid .anthro-slide { aspect-ratio: 1 / 1.05; }
+            .maip-services-grid .ip-pv-meta, .maip-services-grid .ip-pv-maip small { display: none; }
+            .maip-services-grid .ip-pv-quote { margin-bottom: 8px; padding: 7px 9px; }            .maip-services-grid .adc-preview-wrapper { padding-top: 14px; margin-bottom: 12px; }
+            .maip-services-grid .dashboard-preview-image { min-height: 150px; }
+            .maip-services-grid > div > .maip-tool-desc > :last-child { margin-bottom: 10px; }
         }    </style>
     <link rel="stylesheet" href="tw.css">
 </head>
@@ -1150,12 +1189,14 @@
                         <p class="text-gray-600 text-sm mb-4">Medimos pliegues, perímetros y diámetros con técnica estandarizada y comparamos cada control con el anterior para ver cómo evolucionás.</p>
                     </div>
                     <div class="adc-preview-wrapper anthro-wrap">
-                        <div class="anthro-slides" id="anthro-slides" role="group" aria-label="Vista previa del reporte antropométrico. Deslizá para ver más imágenes">
-                            <button type="button" class="anthro-slide" data-anthro="0" aria-label="Ampliar imagen 1 de 3 del reporte"><picture><source srcset="img/antropometria-1-mini.webp" type="image/webp"><img src="img/antropometria-1-mini.jpg" alt="Panel de resultados antropométricos: peso 78,8 kg (objetivo 77,5), músculo 36,7 kg (objetivo 37,4), adiposa 21,1 kg (objetivo 19,1) e IMO 4,29 (objetivo 4,37), con la variación respecto de la medición anterior" width="560" height="536" loading="lazy" decoding="async"></picture></button>
-                            <button type="button" class="anthro-slide" data-anthro="1" aria-label="Ampliar imagen 2 de 3 del reporte"><picture><source srcset="img/antropometria-2-mini.webp" type="image/webp"><img src="img/antropometria-2-mini.jpg" alt="Gráficos de la composición corporal actual (78,8 kg) y la composición objetivo (77,5 kg), con músculo, adiposa, ósea, piel y residual" width="560" height="933" loading="lazy" decoding="async"></picture></button>
-                            <button type="button" class="anthro-slide" data-anthro="2" aria-label="Ampliar imagen 3 de 3 del reporte"><picture><source srcset="img/antropometria-3-mini.webp" type="image/webp"><img src="img/antropometria-3-mini.jpg" alt="Evolución de la composición en tres mediciones: músculo 36,7 kg con objetivo 37,4 kg y adiposa 21,1 kg con objetivo 19,1 kg" width="560" height="974" loading="lazy" decoding="async"></picture></button>
+                        <div class="anthro-slides" id="anthro-slides" role="group" aria-label="Cómo se ve un reporte de antropometría, con un paciente de ejemplo. Deslizá para ver más">
+                            <button type="button" class="anthro-slide" data-anthro="0" aria-label="Ampliar: Reporte"><picture><source srcset="img/adc-paso-1-mini.webp" type="image/webp"><img src="img/adc-paso-1-mini.jpg" alt="Reporte de un paciente de ejemplo: peso 71,5 kg, músculo 36,8 kg, adiposa 14,9 kg e IMO 4,63, con los objetivos cumplidos" width="548" height="729" loading="lazy" decoding="async"></picture><span class="anthro-step"><b>1</b> Reporte</span></button>
+                            <button type="button" class="anthro-slide" data-anthro="1" aria-label="Ampliar: Composición"><picture><source srcset="img/adc-paso-2-mini.webp" type="image/webp"><img src="img/adc-paso-2-mini.jpg" alt="Gráfico de anillo con la composición corporal actual de 71,5 kg y la composición objetivo de 71,6 kg" width="548" height="729" loading="lazy" decoding="async"></picture><span class="anthro-step"><b>2</b> Composición</span></button>
+                            <button type="button" class="anthro-slide" data-anthro="2" aria-label="Ampliar: Objetivos"><picture><source srcset="img/adc-paso-3-mini.webp" type="image/webp"><img src="img/adc-paso-3-mini.jpg" alt="Pantalla de objetivos: IMO 4,57 y masa muscular 36,3 kg, con el valor de hoy marcado" width="548" height="729" loading="lazy" decoding="async"></picture><span class="anthro-step"><b>3</b> Objetivos</span></button>
+                            <button type="button" class="anthro-slide" data-anthro="3" aria-label="Ampliar: Evolución"><picture><source srcset="img/adc-paso-4-mini.webp" type="image/webp"><img src="img/adc-paso-4-mini.jpg" alt="Evolución del músculo en tres mediciones, de la semana 0 a la 12, con la barra del objetivo" width="548" height="729" loading="lazy" decoding="async"></picture><span class="anthro-step"><b>4</b> Evolución</span></button>
+                            <div class="anthro-slide anthro-lock" role="note"><i class="fas fa-lock" aria-hidden="true"></i><h4>Seguí viendo el proceso</h4><p>Esta es una muestra. Si querés seguir viendo cómo funciona la antropometría, comunicate con nosotros.</p><a class="plan-lock-btn" href="https://wa.me/5491126108920?text=Hola%20Juli%C3%A1n%2C%20quiero%20ver%20c%C3%B3mo%20funciona%20la%20antropometr%C3%ADa%20y%20que%20eval%C3%BAes%20mi%20caso." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Evaluar caso</a></div>
                         </div>
-                        <div class="maip-carousel-dots" id="anthro-dots" role="group" aria-label="Elegir imagen del reporte"></div>
+                        <div class="maip-carousel-dots" id="anthro-dots" role="group" aria-label="Elegir imagen"></div>
                         <button id="adc-open" class="dashboard-preview-button" type="button" aria-haspopup="dialog" aria-controls="adc-modal">
                             <span class="dashboard-preview-label">Ver reporte ampliado <span aria-hidden="true">↗</span></span>
                         </button>
@@ -1246,7 +1287,7 @@
     <!-- Reporte antropométrico ADC en ventana ampliada -->
     <dialog id="adc-modal" class="maip-report-modal" aria-labelledby="adc-title" aria-describedby="adc-description">
         <header class="dashboard-toolbar">
-            <div><h2 id="adc-title">Reporte antropométrico</h2><p id="adc-description">Composición corporal y evolución entre mediciones · 3 imágenes</p></div>
+            <div><h2 id="adc-title">Reporte de antropometría</h2><p id="adc-description">Paciente de ejemplo (ficticio) · muestra de 4 imágenes</p></div>
             <div class="dashboard-controls" aria-label="Controles del reporte ADC">
                 <button id="adc-zoom-out" type="button" aria-label="Reducir zoom del reporte ADC">−</button>
                 <output id="adc-zoom-label" aria-live="polite">100%</output>
@@ -1255,11 +1296,18 @@
                 <button id="adc-close" class="report-close" type="button" aria-label="Cerrar reporte ADC" autofocus>✕</button>
             </div>
         </header>
-        <div id="adc-scroll" class="dashboard-scroll" tabindex="0" aria-label="Reporte antropométrico completo">
+        <div id="adc-scroll" class="dashboard-scroll" tabindex="0" aria-label="Proceso de antropometría completo, con un paciente de ejemplo">
             <div id="adc-document" class="dashboard-document">
-                <figure class="dashboard-page"><figcaption>Imagen 1 de 3 · Resumen de la medición</figcaption><picture><source srcset="img/antropometria-1.webp" type="image/webp"><img src="img/antropometria-1.jpg" alt="Panel de resultados antropométricos: peso 78,8 kg (objetivo 77,5), músculo 36,7 kg (objetivo 37,4), adiposa 21,1 kg (objetivo 19,1) e IMO 4,29 (objetivo 4,37), con la variación respecto de la medición anterior" width="960" height="918" loading="lazy" decoding="async"></picture></figure>
-                <figure class="dashboard-page"><figcaption>Imagen 2 de 3 · Composición actual y objetivo</figcaption><picture><source srcset="img/antropometria-2.webp" type="image/webp"><img src="img/antropometria-2.jpg" alt="Gráficos de la composición corporal actual (78,8 kg) y la composición objetivo (77,5 kg), con músculo, adiposa, ósea, piel y residual" width="960" height="1600" loading="lazy" decoding="async"></picture></figure>
-                <figure class="dashboard-page"><figcaption>Imagen 3 de 3 · Evolución de la composición</figcaption><picture><source srcset="img/antropometria-3.webp" type="image/webp"><img src="img/antropometria-3.jpg" alt="Evolución de la composición en tres mediciones: músculo 36,7 kg con objetivo 37,4 kg y adiposa 21,1 kg con objetivo 19,1 kg" width="960" height="1669" loading="lazy" decoding="async"></picture></figure>
+                <figure class="dashboard-page"><figcaption>1. Reporte — Peso, músculo, adiposa e IMO contra el objetivo, con la variación respecto de la medición anterior.</figcaption><picture><source srcset="img/adc-paso-1.webp" type="image/webp"><img src="img/adc-paso-1.jpg" alt="Reporte de un paciente de ejemplo: peso 71,5 kg, músculo 36,8 kg, adiposa 14,9 kg e IMO 4,63, con los objetivos cumplidos" width="1096" height="1458" loading="lazy" decoding="async"></picture></figure>
+                <figure class="dashboard-page"><figcaption>2. Composición — Cómo se reparte el peso en músculo, adiposa, ósea, piel y residual, hoy y en el objetivo.</figcaption><picture><source srcset="img/adc-paso-2.webp" type="image/webp"><img src="img/adc-paso-2.jpg" alt="Gráfico de anillo con la composición corporal actual de 71,5 kg y la composición objetivo de 71,6 kg" width="1096" height="1458" loading="lazy" decoding="async"></picture></figure>
+                <figure class="dashboard-page"><figcaption>3. Objetivos — Los objetivos de masa muscular, masa adiposa, peso e IMO para las 12 semanas.</figcaption><picture><source srcset="img/adc-paso-3.webp" type="image/webp"><img src="img/adc-paso-3.jpg" alt="Pantalla de objetivos: IMO 4,57 y masa muscular 36,3 kg, con el valor de hoy marcado" width="1096" height="1458" loading="lazy" decoding="async"></picture></figure>
+                <figure class="dashboard-page"><figcaption>4. Evolución — Semana 0, semana 6 y semana 12: cómo cambia la composición corporal frente al objetivo.</figcaption><picture><source srcset="img/adc-paso-4.webp" type="image/webp"><img src="img/adc-paso-4.jpg" alt="Evolución del músculo en tres mediciones, de la semana 0 a la 12, con la barra del objetivo" width="1096" height="1458" loading="lazy" decoding="async"></picture></figure>
+                <div class="plan-lock" role="note">
+                    <i class="fas fa-lock" aria-hidden="true"></i>
+                    <h3>Seguí viendo el proceso</h3>
+                    <p>Esta es una muestra de cómo funciona la antropometría. Si querés seguir viendo el proceso completo, comunicate con nosotros.</p>
+                    <a class="plan-lock-btn" href="https://wa.me/5491126108920?text=Hola%20Juli%C3%A1n%2C%20quiero%20ver%20c%C3%B3mo%20funciona%20la%20antropometr%C3%ADa%20y%20que%20eval%C3%BAes%20mi%20caso." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Evaluar caso</a>
+                </div>
             </div>
         </div>
     </dialog>
@@ -1267,7 +1315,7 @@
     <!-- Planilla de entrenamiento modelo (paciente ficticio) en ventana ampliada -->
     <dialog id="rutina-modal" class="maip-report-modal rt-modal" aria-labelledby="rutina-title" aria-describedby="rutina-description">
         <header class="dashboard-toolbar">
-            <div><h2 id="rutina-title">Planilla de entrenamiento modelo</h2><p id="rutina-description">MAIP Performance · Paciente modelo (ejemplo ficticio) · Runner de calle, media maratón</p></div>
+            <div><h2 id="rutina-title">Planilla de entrenamiento modelo</h2><p id="rutina-description">MAIP Performance · Paciente modelo (ejemplo ficticio) · muestra de la semana</p></div>
             <div class="dashboard-controls" aria-label="Controles de la planilla">
                 <button id="rutina-close" class="report-close" type="button" aria-label="Cerrar planilla de entrenamiento" autofocus>✕</button>
             </div>
@@ -1289,7 +1337,7 @@
 
                 <div id="rt-days" class="rt-days" role="tabpanel" aria-labelledby="rt-tab-c1"></div>
 
-                <section class="rt-log" aria-labelledby="rt-log-title">
+                <section class="rt-log" aria-labelledby="rt-log-title" hidden>
                     <h3 id="rt-log-title">Registro y carga de la semana</h3>
                     <p>Cada sesión se registra con su RPE (esfuerzo percibido de 1 a 10). La carga se calcula sola: <strong>sRPE = minutos × RPE</strong>. Probalo: cambiá un RPE y mirá cómo se actualiza el total.</p>
                     <div class="rt-tablewrap">
@@ -1303,7 +1351,7 @@
                     <button id="rt-reset" class="rt-reset" type="button">Volver a los valores del ejemplo</button>
                 </section>
 
-                <p class="rt-foot">Ejemplo ilustrativo de un paciente modelo. Los tiempos y el esfuerzo (RPE) son valores de muestra. En tu planilla real el preparador físico define cada carga, descanso y progresión según tu evaluación, y el tipo de día (bajo, medio o alto) se coordina con tu plan de alimentación.</p>
+                <p class="rt-foot">Ejemplo ilustrativo de un paciente modelo. En tu planilla real el preparador físico define cada carga, descanso y progresión según tu evaluación, y el tipo de día (bajo, medio o alto) se coordina con tu plan de alimentación.</p>
             </div>
         </div>
     </dialog>
@@ -1338,7 +1386,7 @@
     <!-- Informe MAIP del deportista (dashboard), ejemplo ficticio, con difuminado parcial -->
     <dialog id="dashboard-modal" class="maip-report-modal ip-modal" aria-labelledby="dashboard-title" aria-describedby="dashboard-description">
         <header class="dashboard-toolbar">
-            <div><h2 id="dashboard-title">Dashboard MAIP</h2><p id="dashboard-description">Informe del deportista · Paciente modelo (ejemplo ficticio)</p></div>
+            <div><h2 id="dashboard-title">Dashboard MAIP</h2><p id="dashboard-description">Informe del deportista · Paciente modelo (ejemplo ficticio) · muestra del informe</p></div>
             <div class="dashboard-controls" aria-label="Controles del informe">
                 <button id="dashboard-close" type="button" aria-label="Cerrar dashboard" autofocus>✕</button>
             </div>
@@ -1368,14 +1416,14 @@
 
                     <h3 class="ip-h">El método MAIP aplicado a vos</h3>
                     <div class="ip-quads">
-                        <div class="ip-quad ip-m"><small>M — MEDIR</small><h4>Tu punto de partida</h4><em>Datos clave</em><ul><li>Peso 80,5 kg · talla 1,74 m</li><li>Suma de 6 pliegues: 51 mm</li><li aria-hidden="true"><span class="ip-blur">Corre varios días por semana</span></li></ul></div>
-                        <div class="ip-quad ip-a"><small>A — ANALIZAR</small><h4>Qué observamos</h4><em>Hallazgos principales</em><ul><li>Desayuna sin proteína y cena tarde</li><li>Salidas largas en ayunas, con cansancio</li><li aria-hidden="true"><span class="ip-blur">Hallazgo del informe real</span></li></ul></div>
-                        <div class="ip-quad ip-i"><small>I — INTERPRETAR</small><h4>Qué significa para vos</h4><em>Prioridades</em><ul><li>Primero energía; después composición</li><li>Proteína repartida: cuida el músculo</li><li aria-hidden="true"><span class="ip-blur">Prioridad del informe real</span></li></ul></div>
-                        <div class="ip-quad ip-p"><small>P — PLANIFICAR</small><h4>Qué vamos a hacer</h4><em>Acciones</em><ul><li>Desayuno con proteína e hidratos</li><li>Comer antes de salidas de más de 60 min</li><li aria-hidden="true"><span class="ip-blur">Acción del informe real</span></li></ul></div>
+                        <div class="ip-quad ip-m"><small>M — MEDIR</small><h4>Tu punto de partida</h4><em>Datos clave</em><ul><li>Peso 80,5 kg · talla 1,74 m</li><li>Suma de 6 pliegues: 51 mm</li><li>Corre 4 días por semana</li></ul></div>
+                        <div class="ip-quad ip-a"><small>A — ANALIZAR</small><h4>Qué observamos</h4><em>Hallazgos principales</em><ul><li>Desayuna sin proteína y cena tarde</li><li>Salidas largas en ayunas, con cansancio</li><li>Cena liviana y poca hidratación</li></ul></div>
+                        <div class="ip-quad ip-i"><small>I — INTERPRETAR</small><h4>Qué significa para vos</h4><em>Prioridades</em><ul><li>Primero energía; después composición</li><li>Proteína repartida: cuida el músculo</li><li>Ajustar el combustible de las salidas largas</li></ul></div>
+                        <div class="ip-quad ip-p"><small>P — PLANIFICAR</small><h4>Qué vamos a hacer</h4><em>Acciones</em><ul><li>Desayuno con proteína e hidratos</li><li>Comer antes de salidas de más de 60 min</li><li>Hidratarse desde la mañana del sábado</li></ul></div>
                     </div>
                 </section>
 
-                <section class="ip-page" aria-labelledby="ip-p2">
+                <section class="ip-page ip-blur-1" aria-labelledby="ip-p2">
                     <p id="ip-p2" class="ip-pagehead">Prioridades, plan nutricional y combustible del entrenamiento</p>
 
                     <h3 class="ip-h" style="margin-top:0">Tus 3 prioridades actuales</h3>
@@ -1412,7 +1460,7 @@
                     </table>
                 </section>
 
-                <section class="ip-page" aria-labelledby="ip-p3">
+                <section class="ip-page ip-blur-2" aria-labelledby="ip-p3">
                     <p id="ip-p3" class="ip-pagehead">Tu semana y seguimiento hasta el próximo control</p>
 
                     <h3 class="ip-h" style="margin-top:0">Tu semana: no todos los días necesitan lo mismo</h3>
@@ -1441,6 +1489,13 @@
                     <div class="ip-box"><small>Indicador principal</small><p>Cómo se siente al terminar la salida larga del sábado (energía de 1 a 10).</p></div>
                     <div class="ip-close"><strong class="t">El método continúa</strong><p>En el próximo control volvemos a <strong>MEDIR</strong> lo importante, <strong>ANALIZAMOS</strong> tu respuesta, <strong>INTERPRETAMOS</strong> qué cambió y <strong>PLANIFICAMOS</strong> el siguiente ajuste. El plan evoluciona con vos.</p></div>
                 </section>
+
+                <div class="plan-lock" role="note">
+                    <i class="fas fa-lock" aria-hidden="true"></i>
+                    <h3>Seguí viendo el dashboard</h3>
+                    <p>Esta es una muestra del informe. Si querés seguir viendo el dashboard completo, comunicate con nosotros.</p>
+                    <a class="plan-lock-btn" href="https://wa.me/5491126108920?text=Hola%20Juli%C3%A1n%2C%20quiero%20ver%20el%20dashboard%20completo%20y%20que%20eval%C3%BAes%20mi%20caso." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Evaluar caso</a>
+                </div>
 
                 <p class="ip-foot">Ejemplo ilustrativo de un paciente modelo ficticio. Algunos detalles se muestran difuminados: en tu informe real encontrás el plan completo, hecho a tu medida.</p>
             </div>
@@ -2043,7 +2098,7 @@
                 note: 'Construimos la base: técnica, fuerza general y volumen aeróbico. 35 km de running y 5 sesiones de gimnasio por semana.',
                 days: [
                     { day: 'Lunes', title: 'Tren superior A', type: 'medio', sessions: [
-                        { name: 'Fuerza', min: 50, rpe: 7, items: [ex('Press de banco', '4×6'), ex('Remo con barra', '4×6')], hid: 3 },
+                        { name: 'Fuerza', min: 50, rpe: 7, items: [ex('Press de banco', '4×6'), ex('Remo con barra', '4×6'), ex('Press inclinado con mancuernas', '3×8'), ex('Jalón al pecho', '3×10'), ex('Fondos en paralelas', '3×10')] },
                         { name: 'Trote suave', min: 30, rpe: 3, items: [st('5 km a ritmo suave')] } ] },
                     { day: 'Martes', title: 'Pierna: fuerza', type: 'alto', sessions: [
                         { name: 'Fuerza', min: 50, rpe: 8, items: [ex('Sentadilla trasera', '4×5'), ex('Peso muerto rumano', '4×6')], hid: 4 } ] },
@@ -2064,7 +2119,7 @@
                 note: 'Progresión: más carga en fuerza, más potencia y un tempo de 20 minutos. 37 km de running y 5 sesiones de gimnasio por semana.',
                 days: [
                     { day: 'Lunes', title: 'Tren superior A', type: 'medio', sessions: [
-                        { name: 'Fuerza', min: 55, rpe: 7, items: [ex('Press de banco', '5×5'), ex('Remo con barra', '5×5')], hid: 3 },
+                        { name: 'Fuerza', min: 55, rpe: 7, items: [ex('Press de banco', '5×5'), ex('Remo con barra', '5×5'), ex('Press inclinado con mancuernas', '3×8'), ex('Jalón al pecho', '3×10'), ex('Fondos en paralelas', '3×10')] },
                         { name: 'Trote suave', min: 30, rpe: 3, items: [st('5 km a ritmo suave')] } ] },
                     { day: 'Martes', title: 'Pierna: fuerza', type: 'alto', sessions: [
                         { name: 'Fuerza', min: 55, rpe: 8, items: [ex('Sentadilla trasera', '5×4'), ex('Peso muerto rumano', '4×5')], hid: 4 } ] },
@@ -2087,6 +2142,7 @@
         const fmt = (n, d = 0) => n.toLocaleString('es-AR', { minimumFractionDigits: d, maximumFractionDigits: d });
         const rpeState = { c1: {}, c2: {} };   // RPE elegido por sesión: { cicloId: { 'día-índice': valor } }
         let current = 'c1';
+        const SHOWN_DAYS = 5;   // se muestran los primeros días; después aparece el cartel para contactarse
 
         const sessionsOf = id => CYCLES[id].days.flatMap((d, di) => d.sessions.map((s, si) => ({ ...s, day: d.day, key: di + '-' + si })));
         const rpeOf = (id, s) => rpeState[id][s.key] ?? s.rpe;
@@ -2115,7 +2171,8 @@
                 const nutri = d.nutri ? '<p class="rt-nutri"><i class="fas fa-utensils" aria-hidden="true"></i><strong>Nutrición:</strong> ' + d.nutri + '</p>' : '';
                 return '<article class="rt-day rt-t-' + d.type + '"><div class="rt-dayhead"><span class="rt-dayname">' + d.day + '</span><span class="rt-chip">' + TYPE_LABEL[d.type] + '</span></div>' +
                     '<h3 class="rt-daytitle">' + d.title + '</h3>' + blocks + rest + nutri + '</article>';
-            }).join('');
+            }).slice(0, SHOWN_DAYS).join('') +
+                '<div class="plan-lock" role="note"><i class="fas fa-lock" aria-hidden="true"></i><h3>Seguí viendo la planilla</h3><p>Esta es una muestra de la semana. Si querés seguir viendo la planilla completa, comunicate con nosotros.</p><a class="plan-lock-btn" href="https://wa.me/5491126108920?text=Hola%20Juli%C3%A1n%2C%20quiero%20ver%20la%20planilla%20de%20entrenamiento%20completa%20y%20que%20eval%C3%BAes%20mi%20caso." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Evaluar caso</a></div>';
         }
 
         function renderLog() {
@@ -2276,7 +2333,11 @@
             list.addEventListener('scroll', upd, { passive: true });
             window.addEventListener('resize', upd); upd();
         });
-        document.querySelectorAll('.anthro-slide').forEach(b => b.addEventListener('click', () => document.getElementById('adc-open').click()));
+        document.querySelectorAll('.anthro-slide:not(.anthro-lock)').forEach(b => b.addEventListener('click', () => {
+            document.getElementById('adc-open').click();
+            const fig = document.querySelectorAll('#adc-document .dashboard-page')[Number(b.dataset.anthro) || 0];
+            if (fig) setTimeout(() => { const sc = document.getElementById('adc-scroll'); sc.scrollTop = fig.offsetTop - sc.offsetTop - 8; }, 60);
+        }));
         // Precios en pesos: dólar oficial venta del día (si no se puede consultar, se muestran solo los USD)
         (async () => {
             try {
