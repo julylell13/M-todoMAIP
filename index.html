@@ -1708,7 +1708,7 @@
                         <li><span class="consulta-step-number">3</span><div><h4>Acordamos el proceso</h4><p>Definimos programa, consultas virtuales y antropometrías presenciales según tus necesidades.</p></div></li>
                     </ol>
                     <div class="consulta-direct">
-                        <span>¿Preferís hablar directamente?</span>
+                        <span>Comunicate conmigo vía:</span>
                         <a href="https://wa.me/5491126108920" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i><span>WhatsApp · 11 2610 8920 <span aria-hidden="true">↗</span></span></a>
                         <a href="https://www.instagram.com/nutricionconjulian" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i><span>@nutricionconjulian <span aria-hidden="true">↗</span></span></a>
                     </div>
@@ -2290,15 +2290,7 @@
                 if (note) { note.textContent = 'Valores en pesos al dólar oficial venta de hoy (' + peso(venta) + (fecha ? ' · ' + fecha : '') + '). El monto final se confirma al momento del pago.'; note.hidden = false; }
             } catch (e) { /* queda el precio en USD */ }
         })();
-        // El botón se oculta sobre el formulario (que ya tiene su propio WhatsApp)
-        const fab = document.getElementById('wa-fab'), covered = new Set();
-        if (fab && 'IntersectionObserver' in window) {
-            const io = new IntersectionObserver(entries => {
-                entries.forEach(en => en.isIntersecting ? covered.add(en.target) : covered.delete(en.target));
-                fab.classList.toggle('is-hidden', covered.size > 0);
-            }, { threshold: 0.05 });
-            ['contacto'].map(id => document.getElementById(id)).forEach(el => el && io.observe(el));
-        }
+        // El botón fijo "Evaluar caso" queda visible en toda la página
     });
     </script>
     <script>
