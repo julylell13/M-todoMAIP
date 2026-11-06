@@ -928,7 +928,70 @@
         #herramientas .anthro-slide { aspect-ratio: 3 / 4; background: #040813; }
         #herramientas .anthro-slide picture { position: relative; display: block; flex: 1 1 auto; width: 100%; height: 100%; min-height: 0; }
         #herramientas .anthro-slide picture img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
-        #herramientas .anthro-slide .anthro-step { display: none; }    </style>
+        #herramientas .anthro-slide .anthro-step { display: none; }
+.pv-ars[hidden]{display:none}
+.pvC-card{position:relative;display:flex;flex-direction:column;overflow:hidden;padding:30px 26px 26px;background:#fff;border:2px solid #0a63c9;border-radius:26px;box-shadow:0 12px 34px rgba(0,86,179,.14)}
+.pvC-card.is-hero{color:#fff;border-color:#2a2d36;background:linear-gradient(160deg,#171a21 0%,#111318 55%,#0a0b0e 100%);box-shadow:0 26px 60px rgba(8,12,24,.45),0 0 0 1px rgba(98,183,255,.18)}
+.pvC-card.is-hero::after{content:"";position:absolute;right:-70px;top:-70px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(0,110,230,.35),rgba(0,110,230,0) 70%);pointer-events:none}
+.pvC-ribbon{position:absolute;top:16px;right:16px;z-index:1;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;font-size:11.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;background:#0a63c9;color:#fff}
+.pvC-top{position:relative;z-index:1}
+.pvC-name{margin:0;font-size:28px;font-weight:900;letter-spacing:-.02em}
+.is-hero .pvC-name{padding-top:26px}
+.pvC-tag{margin:4px 0 12px;font-size:12.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#0056b3}
+.is-hero .pvC-tag{color:#62b7ff}
+.pvC-promise{margin:0 0 20px;font-size:16px;font-weight:600;line-height:1.4;color:#4b5563}
+.is-hero .pvC-promise{color:#d9e2ee}
+.pvC-prices{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr 1fr;gap:10px}
+.pvC-box{display:grid;align-content:start;gap:2px;padding:14px 14px 12px;border-radius:16px;background:#f1f6fc;border:1px solid #d9e6f5;color:#0b1d30}
+.pvC-box.is-main{background:#fff;border:2px solid #0a63c9;box-shadow:0 6px 16px rgba(0,86,179,.16)}
+.is-hero .pvC-box{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.18);color:#fff}
+.is-hero .pvC-box.is-main{background:#fff;border-color:#fff;color:#0b1d30}
+.pvC-box small{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#4b5563}
+.is-hero .pvC-box:not(.is-main) small{color:#b9c6d8}
+.pvC-box b{font-size:30px;font-weight:900;line-height:1.05;letter-spacing:-.03em;white-space:nowrap}
+.pvC-box .pv-ars{font-size:13.5px;font-weight:700;color:#374151;white-space:nowrap}
+.is-hero .pvC-box:not(.is-main) .pv-ars{color:#dbe5f2}
+.pvC-box em{font-style:normal;font-size:12.5px;color:#5b6678}
+.is-hero .pvC-box:not(.is-main) em{color:#9fb0c6}
+.pvC-save{position:relative;z-index:1;display:flex;align-items:center;gap:8px;margin:14px 0 18px;font-size:14px;font-weight:800;color:#0f6b3a}
+.is-hero .pvC-save{color:#7be3a6}
+.pvC-list{position:relative;z-index:1;display:grid;gap:12px;flex:1;margin:0 0 22px;padding:0;list-style:none;align-content:start}
+.pvC-list li{display:flex;align-items:center;gap:12px;font-size:14.5px;line-height:1.4;color:#374151}
+.is-hero .pvC-list li{color:#e8eef7}
+.pvC-list li>i{flex:none;display:grid;place-items:center;width:30px;height:30px;border-radius:10px;font-size:13.5px;background:#e7f0fb;color:#0056b3}
+.is-hero .pvC-list li>i{background:rgba(98,183,255,.16);color:#8fd0ff}
+.pvC-foot{position:relative;z-index:1}
+.pvC-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:15px 16px;border-radius:14px;font-size:16px;font-weight:800;text-decoration:none;color:#fff;background:#0056b3;box-shadow:0 8px 20px rgba(0,86,179,.30)}
+.is-hero .pvC-btn{background:#0a63c9;color:#fff;box-shadow:0 8px 22px rgba(10,99,201,.40)}
+.pvC-btn i{font-size:20px}
+@media (max-width:767px){.pvC-card{padding:24px 20px 20px}.pvC-name{font-size:24px}.pvC-box b{font-size:26px}.pvC-prices{grid-template-columns:1.2fr 1fr}}
+
+.pvC-simple{display:grid;gap:22px;padding:28px 24px;background:#fff;border:2px solid #0a63c9;border-radius:26px;box-shadow:0 12px 34px rgba(0,86,179,.12);align-items:start}
+.pvC-simple .maip-eyebrow{margin-bottom:8px}
+.pvC-simple .pvC-name{padding-top:0}
+.pvC-simple .pvC-promise{margin-bottom:16px}
+.pvC-prices--one{grid-template-columns:minmax(0,320px);margin-bottom:18px}
+.pvC-btn--inline{width:100%;max-width:320px}
+.pvC-s-right .pvC-list{flex:none;margin-bottom:16px}
+.pvC-s-right .maip-simple-note{margin:0 0 12px}
+@media (min-width:768px){.pvC-simple{grid-template-columns:5fr 7fr;gap:44px;padding:36px 40px}.pvC-s-right{padding-left:40px;border-left:1px solid #d3deeb;align-self:stretch;display:flex;flex-direction:column;justify-content:center}}
+.pvC-simple{position:relative;overflow:hidden;color:#fff;border-color:transparent;background:linear-gradient(155deg,#1a7be8 0%,#0a4fb3 48%,#082b66 100%);box-shadow:0 26px 60px rgba(0,70,170,.38)}
+.pvC-simple::after{content:"";position:absolute;right:-80px;top:-80px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(160,215,255,.42),rgba(160,215,255,0) 70%);pointer-events:none}
+.pvC-simple>*{position:relative;z-index:1}
+.pvC-simple .maip-eyebrow{color:#bfe0ff}
+.pvC-simple .pvC-name{color:#fff}
+.pvC-simple .pvC-promise{color:#e8f2ff}
+.pvC-simple .pvC-box.is-main{border-color:#fff;box-shadow:0 8px 20px rgba(0,20,60,.28)}
+.pvC-simple .pvC-btn{background:#fff;color:#0a4fb3;box-shadow:0 8px 22px rgba(0,20,60,.30)}
+.pvC-simple .pvC-list li{color:#f1f7ff}
+.pvC-simple .pvC-list li>i{background:rgba(255,255,255,.16);color:#fff}
+.pvC-simple .maip-simple-note{color:#d7e9ff}
+.pvC-simple .maip-simple-note i{color:#bfe0ff}
+.pvC-simple .maip-simple-bridge{color:#fff;background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.30)}
+@media (min-width:768px){.pvC-s-right{border-left-color:rgba(255,255,255,.28)!important}}
+@media (max-width:767px){.pvC-simple{padding:22px 18px}.pvC-btn--inline{max-width:none}.pvC-prices--one{grid-template-columns:1fr}}
+
+    </style>
     <link rel="stylesheet" href="tw.css">
 </head>
 <body class="font-sans text-gray-800 bg-lightBg antialiased selection:bg-primary selection:text-white">
@@ -1575,85 +1638,55 @@
                 <p class="text-lg text-gray-600">Los programas MAIP están diseñados como un ciclo completo de 12 semanas para medir, aplicar y volver a evaluar tu proceso.</p>
             </div>
 
-            <div class="maip-plans grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                
-                <!-- MAIP NUTRICIÓN -->
-                <div class="maip-plan bg-white rounded-3xl border border-gray-100 flex flex-col fade-in-up overflow-hidden group">
-                    <div class="p-8 flex-grow">
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <h4 class="text-2xl font-black text-secondary mb-1">MAIP NUTRICIÓN</h4>
-                                <p class="text-primary text-sm font-bold uppercase tracking-wider">Nutrición + Antropometría</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-500 mb-6 text-sm">Pensado para deportistas que buscan trabajar principalmente sobre alimentación, composición corporal y recuperación.</p>
-                        
-                        <div class="mb-8">
-                            <span class="text-4xl font-black text-gray-900">USD 200</span><span class="maip-ars maip-ars--main" data-usd="200" hidden></span>
-                            <p class="text-sm text-gray-600 mt-1">Pago completo por las 12 semanas</p>
-                            <p class="text-sm font-medium text-gray-600 mt-1">O 3 pagos de USD 75<span class="maip-ars" data-usd="75" hidden></span></p>
-                        </div>
-                        
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-start text-sm"><i class="fas fa-check text-green-500 mt-1 mr-3 flex-shrink-0"></i><span class="text-gray-700">Evaluación inicial y Antropometría</span></li>
-                            <li class="flex items-start text-sm"><i class="fas fa-check text-green-500 mt-1 mr-3 flex-shrink-0"></i><span class="text-gray-700">Informe ADC y Dashboard MAIP</span></li>
-                            <li class="flex items-start text-sm"><i class="fas fa-check text-green-500 mt-1 mr-3 flex-shrink-0"></i><span class="text-gray-700">Planificación nutricional e intercambios</span></li>
-                            <li class="flex items-start text-sm"><i class="fas fa-check text-green-500 mt-1 mr-3 flex-shrink-0"></i><span class="text-gray-700">Estrategias pre, intra y post entreno</span></li>
-                            <li class="flex items-start text-sm"><i class="fas fa-check text-green-500 mt-1 mr-3 flex-shrink-0"></i><span class="text-gray-700">Seguimiento, controles y reevaluaciones</span></li>
-                        </ul>
-                    </div>
-                    <div class="p-6 bg-gray-50 border-t border-gray-100">
-                        <a href="https://wa.me/5491126108920?text=Hola%20Juli%C3%A1n%2C%20quiero%20que%20eval%C3%BAes%20mi%20caso%20para%20MAIP%20Nutrici%C3%B3n." target="_blank" rel="noopener noreferrer" class="maip-eval-btn"><i class="fab fa-whatsapp" aria-hidden="true"></i><span>Evaluar caso</span></a>                    </div>
-                </div>
-
-                <!-- MAIP Performance -->
-                <div class="maip-plan maip-plan-360 maip-bg-dark rounded-3xl border border-secondary flex flex-col fade-in-up relative overflow-hidden" style="transition-delay: 0.1s;">
-                    <div class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl uppercase tracking-wider">
-                        Experiencia Integral
-                    </div>
-                    <div class="p-8 flex-grow">
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <h4 class="text-2xl font-black text-white mb-1">MAIP Performance</h4>
-                                <p class="text-primary-300 text-sm font-bold uppercase tracking-wider text-blue-300">Nutrición + Antropometría + Performance</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-400 mb-6 text-sm">La modalidad integral. Para quienes quieren coordinar alimentación y programación física (fuerza, hipertrofia, velocidad, HIIT) en un único proceso.</p>
-                        
-                        <div class="mb-8">
-                            <span class="text-4xl font-black text-white">USD 300</span><span class="maip-ars maip-ars--main" data-usd="300" hidden></span>
-                            <p class="text-sm text-gray-400 mt-1">Pago completo por las 12 semanas</p>
-                            <p class="text-sm font-medium text-gray-300 mt-1">O 3 pagos de USD 110<span class="maip-ars" data-usd="110" hidden></span></p>
-                        </div>
-                        
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-start text-sm"><i class="fas fa-plus text-primary mt-1 mr-3 flex-shrink-0"></i><span class="text-gray-300 font-semibold">Todo lo incluido en MAIP Nutrición, más:</span></li>
-                            <li class="flex items-start text-sm"><i class="fas fa-check text-primary mt-1 mr-3 flex-shrink-0"></i><span class="text-gray-300">Rutina personalizada por preparador físico</span></li>
-                            <li class="flex items-start text-sm"><i class="fas fa-check text-primary mt-1 mr-3 flex-shrink-0"></i><span class="text-gray-300">Periodización de cargas (Fuerza, Potencia, etc.)</span></li>
-                            <li class="flex items-start text-sm"><i class="fas fa-check text-primary mt-1 mr-3 flex-shrink-0"></i><span class="text-gray-300">Ajustes conjuntos (Nutrición + Entrenamiento)</span></li>
-                        </ul>
-                    </div>
-                    <div class="p-6 bg-gray-900 border-t border-gray-800">
-                        <a href="https://wa.me/5491126108920?text=Hola%20Juli%C3%A1n%2C%20quiero%20que%20eval%C3%BAes%20mi%20caso%20para%20MAIP%20Performance." target="_blank" rel="noopener noreferrer" class="maip-eval-btn"><i class="fab fa-whatsapp" aria-hidden="true"></i><span>Evaluar caso</span></a>                    </div>
-                </div>
-            </div>
+            <div class="maip-plans grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
+<div class="maip-plan pvC-card fade-in-up">
+  
+  <div class="pvC-top">
+    <h4 class="pvC-name">MAIP Nutrición</h4>
+    <p class="pvC-tag">Nutrición + Antropometría</p>
+    <p class="pvC-promise">Ordená tu alimentación con datos reales.</p>
+  </div>
+  <div class="pvC-prices">
+    <div class="pvC-box is-main"><small>Pago único</small><b>USD 200</b><span class="pv-ars" data-usd="200" hidden></span><em>12 semanas</em></div>
+    <div class="pvC-box"><small>3 cuotas de</small><b>USD 75</b><span class="pv-ars" data-usd="75" hidden></span><em>cada una</em></div>
+  </div>
+  <p class="pvC-save"><i class="fas fa-circle-check" aria-hidden="true"></i> Pagando una vez ahorrás USD 25</p>
+  <ul class="pvC-list"><li><i class="fas fa-ruler" aria-hidden="true"></i><span>Evaluación inicial y Antropometría</span></li><li><i class="fas fa-chart-line" aria-hidden="true"></i><span>Informe ADC y Dashboard MAIP</span></li><li><i class="fas fa-utensils" aria-hidden="true"></i><span>Planificación nutricional e intercambios</span></li><li><i class="fas fa-bolt" aria-hidden="true"></i><span>Estrategias pre, intra y post entreno</span></li><li><i class="fas fa-rotate" aria-hidden="true"></i><span>Seguimiento, controles y reevaluaciones</span></li></ul>
+  <div class="pvC-foot"><a href="https://wa.me/5491126108920?text=Hola%20Juli%C3%A1n%2C%20quiero%20que%20eval%C3%BAes%20mi%20caso%20para%20MAIP%20Nutrici%C3%B3n." target="_blank" rel="noopener noreferrer" class="pvC-btn"><i class="fab fa-whatsapp" aria-hidden="true"></i><span>Evaluar caso</span></a></div>
+</div>
+<div class="maip-plan pvC-card is-hero fade-in-up" style="transition-delay:.1s">
+  <div class="pvC-ribbon"><i class="fas fa-star" aria-hidden="true"></i> Experiencia integral</div>
+  <div class="pvC-top">
+    <h4 class="pvC-name">MAIP Performance</h4>
+    <p class="pvC-tag">Nutrición + Antropometría + Performance</p>
+    <p class="pvC-promise">Nutrición y entrenamiento en un solo proceso.</p>
+  </div>
+  <div class="pvC-prices">
+    <div class="pvC-box is-main"><small>Pago único</small><b>USD 300</b><span class="pv-ars" data-usd="300" hidden></span><em>12 semanas</em></div>
+    <div class="pvC-box"><small>3 cuotas de</small><b>USD 110</b><span class="pv-ars" data-usd="110" hidden></span><em>cada una</em></div>
+  </div>
+  <p class="pvC-save"><i class="fas fa-circle-check" aria-hidden="true"></i> Pagando una vez ahorrás USD 30</p>
+  <ul class="pvC-list"><li><i class="fas fa-plus" aria-hidden="true"></i><span>Todo lo incluido en MAIP Nutrición, más:</span></li><li><i class="fas fa-dumbbell" aria-hidden="true"></i><span>Rutina personalizada por preparador físico</span></li><li><i class="fas fa-wave-square" aria-hidden="true"></i><span>Periodización de cargas (Fuerza, Potencia, etc.)</span></li><li><i class="fas fa-people-arrows" aria-hidden="true"></i><span>Ajustes conjuntos (Nutrición + Entrenamiento)</span></li></ul>
+  <div class="pvC-foot"><a href="https://wa.me/5491126108920?text=Hola%20Juli%C3%A1n%2C%20quiero%20que%20eval%C3%BAes%20mi%20caso%20para%20MAIP%20Performance." target="_blank" rel="noopener noreferrer" class="pvC-btn"><i class="fab fa-whatsapp" aria-hidden="true"></i><span>Evaluar caso</span></a></div>
+</div></div>
             <div class="maip-carousel-dots" id="plans-dots" role="group" aria-label="Elegir modalidad"></div>
             <p class="maip-ars-note" id="ars-note" hidden></p>
-            <div class="maip-simple max-w-5xl mx-auto mt-12 md:mt-16 fade-in-up">
-                <div>
+            <div class="maip-simple pvC-simple max-w-5xl mx-auto mt-12 md:mt-16 fade-in-up">
+                <div class="pvC-s-left">
                     <p class="maip-eyebrow">¿Preferís empezar más simple?</p>
-                    <h4 class="maip-simple-title">Consulta individual</h4>
-                    <p class="maip-simple-copy">Una consulta nutricional con plan de alimentación y seguimiento 1 a 1, sin mediciones ni ciclo de 12 semanas.</p>
-                    <div class="maip-simple-price"><span>USD 80</span><small>Pago único</small><b class="maip-ars maip-ars--main" data-usd="80" hidden></b></div>
-                    <a href="https://wa.me/5491126108920?text=Hola%20Juli%C3%A1n%2C%20quiero%20que%20eval%C3%BAes%20mi%20caso%20para%20una%20consulta%20individual." target="_blank" rel="noopener noreferrer" class="maip-eval-btn"><i class="fab fa-whatsapp" aria-hidden="true"></i><span>Evaluar caso</span></a>                </div>
-                <div class="maip-simple-body">
-                    <ul class="maip-simple-list">
-                        <li class="flex items-start text-sm"><i class="fas fa-check text-green-500 mt-1 mr-3 flex-shrink-0"></i><span class="text-gray-700">Consulta nutricional de 1 hora, presencial o virtual</span></li>
-                        <li class="flex items-start text-sm"><i class="fas fa-check text-green-500 mt-1 mr-3 flex-shrink-0"></i><span class="text-gray-700">Plan de alimentación personalizado</span></li>
-                        <li class="flex items-start text-sm"><i class="fas fa-check text-green-500 mt-1 mr-3 flex-shrink-0"></i><span class="text-gray-700">Seguimiento 1 a 1, con un control a las 3 semanas</span></li>
+                    <h4 class="pvC-name">Consulta individual</h4>
+                    <p class="pvC-promise">Una consulta nutricional con plan de alimentación y seguimiento 1 a 1, sin mediciones ni ciclo de 12 semanas.</p>
+                    <div class="pvC-prices pvC-prices--one"><div class="pvC-box is-main"><small>Pago único</small><b>USD 80</b><span class="pv-ars" data-usd="80" hidden></span><em>consulta de 1 hora</em></div></div>
+                    <a href="https://wa.me/5491126108920?text=Hola%20Juli%C3%A1n%2C%20quiero%20que%20eval%C3%BAes%20mi%20caso%20para%20una%20consulta%20individual." target="_blank" rel="noopener noreferrer" class="pvC-btn pvC-btn--inline"><i class="fab fa-whatsapp" aria-hidden="true"></i><span>Evaluar caso</span></a>
+                </div>
+                <div class="pvC-s-right">
+                    <ul class="pvC-list">
+                        <li><i class="fas fa-comments" aria-hidden="true"></i><span>Consulta nutricional de 1 hora, presencial o virtual</span></li>
+                        <li><i class="fas fa-utensils" aria-hidden="true"></i><span>Plan de alimentación personalizado</span></li>
+                        <li><i class="fas fa-rotate" aria-hidden="true"></i><span>Seguimiento 1 a 1, con un control a las 3 semanas</span></li>
                     </ul>
                     <p class="maip-simple-note"><i class="fas fa-circle-info" aria-hidden="true"></i> No incluye antropometría ni Dashboard MAIP.</p>
-                    <p class="maip-simple-bridge">Si después pasás al plan de nutrición, se toma el monto que ya pagaste y se abona el restante.</p>
+                    <p class="maip-simple-bridge">Si en un plazo de 30 días pasás al plan de nutrición o Performance, se toma el monto que ya pagaste y se abona el restante.</p>
                 </div>
             </div>
         </div>
